@@ -129,7 +129,7 @@ module.exports = function(endpoints)
         for(let i = 0; i < parts.length; i++)
         {
             // Check if the folder already exists
-            let existingFolder = insomniaResources.find(r => (r.name === parts[i] && r.parent === lastParent));
+            let existingFolder = insomniaResources.find(r => (r.name === parts[i] && r.parentId === lastParent));
             if(existingFolder)
             {
                 lastParent = existingFolder['_id'];
