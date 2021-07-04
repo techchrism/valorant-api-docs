@@ -21,6 +21,13 @@ async function generateMarkdownDocs(docsDir, dataManager)
         const endpointFile = path.join(docsDir, ...(endpoint.folder || '').split('/'), `${endpoint.method} ${endpoint.name}.md`);
         await fs.writeFile(endpointFile, dataManager.renderFile(endpoint.name, 'github'), 'utf-8');
     }
+    
+    // Write docs
+    for(const docName in dataManager.docs)
+    {
+        const docFile = path.join(docsDir, docName + '.md');
+        await fs.writeFile(docFile, dataManager.renderFile(docName, 'github'), 'utf-8');
+    }
 }
 
 module.exports = generateMarkdownDocs;
