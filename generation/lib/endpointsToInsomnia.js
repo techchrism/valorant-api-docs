@@ -12,7 +12,7 @@ function insertValorantPluginTemplates(url)
                .replaceAll('{party id}', '{% partyid  %}');
 }
 
-module.exports = function(endpoints)
+module.exports = function(dataManager)
 {
     let insomniaResources = [];
     let folders = {};
