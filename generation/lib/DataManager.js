@@ -96,38 +96,32 @@ class DataManager
                 text += `\nMethod: \`${endpoint.method}\`  \nURL: \`${endpoint.url}\`  \n`;
                 
                 const headers = [];
-                if(endpoint.extraHeaders || endpoint.typicalAuth || endpoint.localAuth || endpoint.requiresClientVersion || endpoint.requiresClientPlatform)
+                if(endpoint.extraHeaders)
                 {
-                    text += 'Headers:\n';
-                    if(endpoint.extraHeaders)
-                    {
-                        for(const headerName in endpoint.extraHeaders)
-                        {
-                            text += ` - \`${headerName}\`: \`${endpoint.extraHeaders[headerName]}\`\n`;
-                        }
-                    }
-                    if(endpoint.typicalAuth)
-                    {
-                        text += ' - `Authorization`: `Bearer {base64 encoded Riot token}`\n';
-                        text += ' - `X-Riot-Entitlements-JWT`: `{Riot entitlement}`\n';
-                    }
-                    if(endpoint.localAuth)
-                    {
-                        text += ' - `Authorization`: `Basic {base64 encoded "riot:{lockfile password}"}`\n';
-                    }
-                    if(endpoint.requiresClientVersion)
-                    {
-                        text += ' - `X-Riot-ClientVersion`: `{client version}`\n';
-                    }
-                    if(endpoint.requiresClientPlatform)
-                    {
-                        text += ' - `X-Riot-ClientPlatform`: `{client platform}`\n';
-                    }
+                    headers.push(...endpoint.extraHeaders);
+                }
+                if(endpoint.typicalAuth)
+                {
+                    headers.push({name: 'Authorization', value: 'Bearer {base64 encoded Riot token}'});
+                    headers.push({name: 'X-Riot-Entitlements-JWT', value: '{Riot entitlement}'});
+                }
+                if(endpoint.localAuth)
+                {
+                    headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
+                }
+                if(endpoint.requiresClientVersion)
+                {
+                    headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
+                }
+                if(endpoint.requiresClientPlatform)
+                {
+                    headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
                 }
     
                 if(headers.length !== 0)
                 {
-        
+                    text += 'Headers:\n';
+                    text += headers.map(({name, value}) => ` - \`${name}\`: \`${value}\`\n`).join('') + '\n';
                 }
                 
                 if(endpoint.body)
@@ -136,6 +130,17 @@ class DataManager
                 }
             }
             
+            const components = [];
+            if(endpoint.typicalAuth)
+            {
+                components.push({name: '{base64 encoded Riot token}', value: 'Read [Common Components - Riot Token]({{#linkto}}common-components{{/linkto}})'});
+            }
+            
+            if(components.length !== 0)
+            {
+                text += 'Variables:\n';
+                text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
+            }
             
             if(endpoint.localAuth)
             {

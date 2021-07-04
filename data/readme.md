@@ -13,7 +13,7 @@
  - `body`  
     Optional string with body data for requests
  - `extraHeaders`  
-    Optional object with any additional headers needed for the request
+    Optional array with any additional headers needed for the request. Array is comprised of objects with "name" and "value" properties.
  - `typicalAuth`  
     Optional boolean value for whether to include the `X-Riot-Entitlements-JWT` and Bearer authorization headers.
  - `localAuth`  
