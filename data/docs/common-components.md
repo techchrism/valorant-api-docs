@@ -3,13 +3,14 @@ These variables show up in requests often. Here's how to get them.
 
 ### PUUID
 To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession]({{#linkto}}TEXT_CHAT_RNet_FetchSession{{/linkto}}) endpoint or the remote
-`https://auth.riotgames.com/userinfo` endpoint with a token.
+[RSO_GetPlayerInfo]({{#linkto}}RSO_GetPlayerInfo{{/linkto}}) endpoint with a token.
 
 ### Riot Token
 Riot tokens can be obtained through the auth flow or thorough the local API.
 Currently, they expire one hour after generation.
 
-Locally, use the endpoint `entitlements/v1/token`. This also gives you the entitlement.
+Locally, use the endpoint [RSO_RNet_GetEntitlementsToken]({{#linkto}}RSO_RNet_GetEntitlementsToken{{/linkto}}).
+This also gives you the entitlement.
 
 ### Riot Entitlement
 If you have a token from the auth flow, you can get an entitlement from the url `https://entitlements.auth.riotgames.com/api/token/v1`
@@ -20,7 +21,7 @@ It's a text file with a single line where the data is seperated by colons. The f
 
 ### Region
 The region is important for remote APIs and it can be found a couple ways locally.
-One method is using the `product-session/v1/external-sessions` endpoint then getting the value of the `-ares-deployment=` argument.
+One method is using the [RiotClientSession_FetchSessions]({{#linkto}}RiotClientSession_FetchSessions{{/linkto}}) endpoint then getting the value of the `-ares-deployment=` argument.
 Another way is to scrape the ShooterGame log for requests that contain the region in the url.
 
 Alternatively, you can ask the user what their region is. It can take the following values:
@@ -34,7 +35,7 @@ Alternatively, you can ask the user what their region is. It can take the follow
 
 ### Client Version
 This is the version the client is running.
-It can be obtained locally through parsing the ShooterGame log or remotely with the third-party `https://valorant-api.com/v1/version` API. 
+It can be obtained locally through parsing the ShooterGame log or remotely with the third-party [Version]({{#linkto}}Version{{/linkto}}) API. 
 
 ### Client Platform
 A string representing the platform of the client.
@@ -44,14 +45,15 @@ A string representing the platform of the client.
 The ID of the match while it's in the pre-game phase.
 This can be obtained live with the `OnJsonApiEvent_riot-messaging-service_v1_message` local websocket event
 (when the URI starts with `/riot-messaging-service/v1/message/ares-pregame/pregame/v1/matches/`)
-or on request with the `PreGame_GetPlayer` endpoint.
+or on request with the [Pregame_GetPlayer]({{#linkto}}Pregame_GetPlayer{{/linkto}}) endpoint.
 
 ### Coregame Match ID
 The ID of the match after it's passed the pre-game phase.
 This can be obtained live with the `OnJsonApiEvent_riot-messaging-service_v1_message` local websocket event
 (when the URI starts with `/riot-messaging-service/v1/message/ares-core-game/core-game/v1/matches/`)
-or on request with the `CoreGame_GetPlayer` endpoint.
+or on request with the [CoreGame_FetchPlayer]({{#linkto}}CoreGame_FetchPlayer{{/linkto}}) endpoint.
 
 ### Party ID
 The ID of the party the player is in. To get this live, the `OnJsonApiEvent_chat_v4_presences` websocket event can be used.
-On request, the remote `Party_FetchPlayer` or the local `PRESENCE_RNet_GET_ALL` endpoint can be used.
+On request, the remote [Party_FetchPlayer]({{#linkto}}Party_FetchPlayer{{/linkto}}) or the local
+[PRESENCE_RNet_GET_ALL]({{#linkto}}PRESENCE_RNet_GET_ALL{{/linkto}}) endpoint can be used.

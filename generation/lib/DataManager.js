@@ -57,9 +57,9 @@ class DataManager
         else
         {
             const endpoint = this.endpoints.find(endpoint => endpoint.name === parts[0]);
-            if(endpoint === null)
+            if(!endpoint)
             {
-                throw new Error('Unknown "to" id');
+                throw new Error('Unknown "to" id: "' + to + '"');
             }
             loc = `${endpoint.folder}/${endpoint.method} ${endpoint.name}.md${hash}`;
         }
