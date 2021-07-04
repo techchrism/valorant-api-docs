@@ -2,7 +2,7 @@
 These variables show up in requests often. Here's how to get them.
 
 ### PUUID
-To get the player's UUID, you can use the local `/chat/v1/session` endpoint or the remote
+To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession]({{#linkto}}TEXT_CHAT_RNet_FetchSession{{/linkto}}) endpoint or the remote
 `https://auth.riotgames.com/userinfo` endpoint with a token.
 
 ### Riot Token

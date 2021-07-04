@@ -46,29 +46,31 @@ class DataManager
     
     linkTo(to, from, platform)
     {
+        const parts = to.split('#');
+        const hash = parts.length === 2 ? `#${parts[1]}` : '';
         // First see if it matches a known doc name
         let loc;
-        if(this.docs.hasOwnProperty(to))
+        if(this.docs.hasOwnProperty(parts[0]))
         {
-            loc = to + '.md';
+            loc = parts[0] + '.md' + hash;
         }
         else
         {
-            const endpoint = this.endpoints.find(endpoint => endpoint.name === to);
+            const endpoint = this.endpoints.find(endpoint => endpoint.name === parts[0]);
             if(endpoint === null)
             {
                 throw new Error('Unknown "to" id');
             }
-            loc = `${endpoint.folder}/${endpoint.method} ${endpoint.name}.md`;
+            loc = `${endpoint.folder}/${endpoint.method} ${endpoint.name}.md${hash}`;
         }
         
         if(platform === 'insomnia')
         {
-            return githubURL + '/docs/' + loc;
+            return encodeURIComponent(githubURL + '/docs/' + loc);
         }
         else
         {
-            return path.relative(from, loc);
+            return encodeURIComponent(path.relative(from, loc));
         }
     }
     
@@ -133,7 +135,7 @@ class DataManager
             const components = [];
             if(endpoint.typicalAuth)
             {
-                components.push({name: '{base64 encoded Riot token}', value: 'Read [Common Components - Riot Token]({{#linkto}}common-components{{/linkto}})'});
+                components.push({name: '{base64 encoded Riot token}', value: 'Read [Common Components - Riot Token]({{#linkto}}common-components#riot-token{{/linkto}})'});
             }
             
             if(components.length !== 0)
