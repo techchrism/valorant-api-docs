@@ -85,7 +85,10 @@ class DataManager
             }
             loc = endpoint.folder;
             text = (platform === 'insomnia') ? '' : `# ${endpoint.name}\n`;
-            text += endpoint.description;
+            if(endpoint.description)
+            {
+                text += '\n' + endpoint.description + '\n';
+            }
             
             if(platform !== 'insomnia')
             {

@@ -13,7 +13,30 @@ async function generateMarkdownDocs(docsDir, dataManager)
     } catch(ignored) {}
     
     // Create folders
-    await Promise.all(dataManager.folders.map(folder => fs.mkdir(path.join(docsDir, ...folder.split('/')), {recursive: true})));
+    for(const folder of dataManager.folders)
+    {
+        const folderParts = folder.split('/')
+        const folderPath = path.join(docsDir, ...folderParts);
+        await fs.mkdir(folderPath, {recursive: true});
+        
+        let readmeText = `# ${folderParts[folderParts.length - 1]}\n\n`;
+        const endpointsForFolder = dataManager.endpoints.filter(endpoint => endpoint.folder === folder);
+        if(endpointsForFolder.length !== 0)
+        {
+            readmeText += '### Endpoints:\n';
+            for(const endpoint of endpointsForFolder)
+            {
+                readmeText += ` - [${endpoint.name}](${endpoint.method}%20${endpoint.name}.md)`;
+                if(endpoint.description)
+                {
+                    readmeText += ' - ' + endpoint.description.split('\n')[0];
+                }
+                readmeText += '\n';
+            }
+            readmeText += '\n';
+        }
+        await fs.writeFile(path.join(folderPath, 'readme.md'), readmeText, 'utf-8');
+    }
     
     // Write endpoints
     for(const endpoint of dataManager.endpoints)
