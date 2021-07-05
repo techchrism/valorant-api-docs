@@ -39,7 +39,7 @@ module.exports = function(dataManager)
             created: now,
             url: insertValorantPluginTemplates(endpoint.url),
             name: endpoint.name,
-            description: dataManager.renderFile(endpoint.name, 'insomnia'),
+            description: dataManager.renderEndpoint(endpoint, 'insomnia'),
             method: endpoint.method,
             body: {},
             parameters: [],

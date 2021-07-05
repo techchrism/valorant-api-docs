@@ -48,7 +48,10 @@ class DataManager
         }
         else
         {
-            const endpoint = this.endpoints.find(endpoint => endpoint.name === parts[0]);
+            const endpoint = this.endpoints.find(endpoint =>
+            {
+                return (parts[0] === endpoint.method + ' ' + endpoint.name || endpoint.name === parts[0]);
+            });
             if(!endpoint)
             {
                 throw new Error('Unknown "to" id: "' + to + '"');
@@ -68,98 +71,8 @@ class DataManager
         return url.replaceAll(' ', '%20');
     }
     
-    renderFile(name, platform)
+    renderText(text, loc, platform)
     {
-        let loc, text;
-        if(this.docs.hasOwnProperty(name))
-        {
-            loc = '';
-            text = this.docs[name];
-        }
-        else
-        {
-            const endpoint = this.endpoints.find(endpoint => endpoint.name === name);
-            if(endpoint === null)
-            {
-                throw new Error('Unknown "to" id');
-            }
-            loc = endpoint.folder;
-            text = (platform === 'insomnia') ? '' : `# ${endpoint.name}\n`;
-            if(endpoint.description)
-            {
-                text += '\n' + endpoint.description + '\n';
-            }
-            
-            if(platform !== 'insomnia')
-            {
-                text += `\nMethod: \`${endpoint.method}\`  \nURL: \`${endpoint.url}\`  \n`;
-                
-                const headers = [];
-                
-                if(endpoint.typicalAuth)
-                {
-                    headers.push({name: 'Authorization', value: 'Bearer {base64 encoded Riot token}'});
-                    headers.push({name: 'X-Riot-Entitlements-JWT', value: '{Riot entitlement}'});
-                }
-                if(endpoint.localAuth) headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
-                if(endpoint.requiresClientVersion) headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
-                if(endpoint.requiresClientPlatform) headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
-                if(endpoint.extraHeaders) headers.push(...endpoint.extraHeaders);
-    
-                if(headers.length !== 0)
-                {
-                    text += 'Headers:\n';
-                    text += headers.map(({name, value}) => ` - \`${name}\`: \`${value}\`\n`).join('') + '\n';
-                }
-                
-                if(endpoint.body)
-                {
-                    text += `Body:  \n\`\`\`\n${endpoint.body}\n\`\`\`\n`;
-                }
-            }
-            
-            function readCommon(name, id)
-            {
-                return `Read [Common Components - ${name}]({{#linkto}}common-components#${id}{{/linkto}})`;
-            }
-            const components = [];
-            if(endpoint.typicalAuth)
-            {
-                components.push({name: '{base64 encoded Riot token}', value: readCommon('Riot Token', 'riot-token')});
-                components.push({name: '{Riot entitlement}', value: readCommon('Riot Entitlement', 'riot-entitlement')});
-            }
-            if(endpoint.localAuth) components.push({name: '{lockfile password} and {lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
-            if(endpoint.requiresClientVersion) components.push({name: '{client version}', value: readCommon('Client Version', 'client-version')});
-            if(endpoint.requiresClientPlatform) components.push({name: '{client platform}', value: readCommon('Client Platform', 'client-platform')});
-            
-            const componentInsertions = [
-                ['{region}', 'Region', 'region'],
-                ['{puuid}', 'PUUID', 'puuid'],
-                ['{in-progress match id}', 'Coregame Match ID', 'coregame-match-id'],
-                ['{pre-game match id}', 'Pregame Match ID', 'pregame-match-id'],
-                ['{party id}', 'Party ID', 'party-id']
-            ];
-            
-            for(const [tag, name, id] of componentInsertions)
-            {
-                if(endpoint.url.includes(tag) || endpoint.body?.includes(tag))
-                {
-                    components.push({name: tag, value: readCommon(name, id)});
-                }
-            }
-            
-            if(endpoint.uniqueVariableDescription)
-            {
-                components.push(...endpoint.uniqueVariableDescription);
-            }
-            
-            if(components.length !== 0)
-            {
-                text += 'Variables:\n';
-                text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
-            }
-        }
-        
         const view = {
             linkto: () =>
             {
@@ -170,6 +83,102 @@ class DataManager
             }
         };
         return Mustache.render(text, view);
+    }
+    
+    renderEndpoint(endpoint, platform)
+    {
+        if(endpoint === null)
+        {
+            throw new Error('Unknown "to" id');
+        }
+        let text = (platform === 'insomnia') ? '' : `# ${endpoint.method} ${endpoint.name}\n`;
+        if(endpoint.description)
+        {
+            text += '\n' + endpoint.description + '  \n\n';
+        }
+    
+        if(platform !== 'insomnia')
+        {
+            text += `\nMethod: \`${endpoint.method}\`  \nURL: \`${endpoint.url}\`  \n`;
+        
+            const headers = [];
+        
+            if(endpoint.typicalAuth)
+            {
+                headers.push({name: 'Authorization', value: 'Bearer {base64 encoded Riot token}'});
+                headers.push({name: 'X-Riot-Entitlements-JWT', value: '{Riot entitlement}'});
+            }
+            if(endpoint.localAuth) headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
+            if(endpoint.requiresClientVersion) headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
+            if(endpoint.requiresClientPlatform) headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
+            if(endpoint.extraHeaders) headers.push(...endpoint.extraHeaders);
+        
+            if(headers.length !== 0)
+            {
+                text += 'Headers:\n';
+                text += headers.map(({name, value}) => ` - \`${name}\`: \`${value}\`\n`).join('') + '\n';
+            }
+        
+            if(endpoint.body)
+            {
+                text += `Body:  \n\`\`\`\n${endpoint.body}\n\`\`\`\n`;
+            }
+        }
+    
+        function readCommon(name, id)
+        {
+            return `Read [Common Components - ${name}]({{#linkto}}common-components#${id}{{/linkto}})`;
+        }
+        const components = [];
+        if(endpoint.typicalAuth)
+        {
+            components.push({name: '{base64 encoded Riot token}', value: readCommon('Riot Token', 'riot-token')});
+            components.push({name: '{Riot entitlement}', value: readCommon('Riot Entitlement', 'riot-entitlement')});
+        }
+        if(endpoint.localAuth) components.push({name: '{lockfile password} and {lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
+        if(endpoint.requiresClientVersion) components.push({name: '{client version}', value: readCommon('Client Version', 'client-version')});
+        if(endpoint.requiresClientPlatform) components.push({name: '{client platform}', value: readCommon('Client Platform', 'client-platform')});
+    
+        const componentInsertions = [
+            ['{region}', 'Region', 'region'],
+            ['{puuid}', 'PUUID', 'puuid'],
+            ['{in-progress match id}', 'Coregame Match ID', 'coregame-match-id'],
+            ['{pre-game match id}', 'Pregame Match ID', 'pregame-match-id'],
+            ['{party id}', 'Party ID', 'party-id']
+        ];
+    
+        for(const [tag, name, id] of componentInsertions)
+        {
+            if(endpoint.url.includes(tag) || endpoint.body?.includes(tag))
+            {
+                components.push({name: tag, value: readCommon(name, id)});
+            }
+        }
+    
+        if(endpoint.uniqueVariableDescription)
+        {
+            components.push(...endpoint.uniqueVariableDescription);
+        }
+    
+        if(components.length !== 0)
+        {
+            text += 'Variables:\n';
+            text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
+        }
+        
+        return this.renderText(text, endpoint.folder, platform);
+    }
+    
+    renderDoc(name, platform)
+    {
+        if(this.docs.hasOwnProperty(name))
+        {
+            return this.renderText(this.docs[name], '', platform);
+        }
+        else
+        {
+            throw new Error('Unknown doc');
+        }
     }
 }
 
