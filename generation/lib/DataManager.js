@@ -9,7 +9,6 @@ class DataManager
     constructor(dataDir)
     {
         this.dataDir = dataDir;
-        this.snippets = {};
         this.docs = {};
         this.endpoints = null;
         this.folders = [];
@@ -17,13 +16,6 @@ class DataManager
     
     async readFiles()
     {
-        // Read snippets
-        const snippetsDir = path.join(this.dataDir, 'snippets');
-        for(const snippetName of await fs.readdir(snippetsDir))
-        {
-            this.snippets[path.parse(snippetName).name] = await fs.readFile(path.join(snippetsDir, snippetName), 'utf-8');
-        }
-        
         // Read docs
         const docsDir = path.join(this.dataDir, 'docs');
         for(const docName of await fs.readdir(docsDir))
