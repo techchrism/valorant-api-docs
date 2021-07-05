@@ -64,14 +64,16 @@ class DataManager
             loc = `${endpoint.folder}/${endpoint.method} ${endpoint.name}.md${hash}`;
         }
         
+        let url;
         if(platform === 'insomnia')
         {
-            return encodeURIComponent(githubURL + '/docs/' + loc);
+            url = githubURL + '/docs/' + loc;
         }
         else
         {
-            return encodeURIComponent(path.relative(from, loc));
+            url = path.relative(from, loc);
         }
+        return url.replaceAll(' ', '%20');
     }
     
     renderFile(name, platform)
@@ -98,27 +100,16 @@ class DataManager
                 text += `\nMethod: \`${endpoint.method}\`  \nURL: \`${endpoint.url}\`  \n`;
                 
                 const headers = [];
-                if(endpoint.extraHeaders)
-                {
-                    headers.push(...endpoint.extraHeaders);
-                }
+                
                 if(endpoint.typicalAuth)
                 {
                     headers.push({name: 'Authorization', value: 'Bearer {base64 encoded Riot token}'});
                     headers.push({name: 'X-Riot-Entitlements-JWT', value: '{Riot entitlement}'});
                 }
-                if(endpoint.localAuth)
-                {
-                    headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
-                }
-                if(endpoint.requiresClientVersion)
-                {
-                    headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
-                }
-                if(endpoint.requiresClientPlatform)
-                {
-                    headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
-                }
+                if(endpoint.localAuth) headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
+                if(endpoint.requiresClientVersion) headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
+                if(endpoint.requiresClientPlatform) headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
+                if(endpoint.extraHeaders) headers.push(...endpoint.extraHeaders);
     
                 if(headers.length !== 0)
                 {
@@ -132,21 +123,45 @@ class DataManager
                 }
             }
             
+            function readCommon(name, id)
+            {
+                return `Read [Common Components - ${name}]({{#linkto}}common-components#${id}{{/linkto}})`;
+            }
             const components = [];
             if(endpoint.typicalAuth)
             {
-                components.push({name: '{base64 encoded Riot token}', value: 'Read [Common Components - Riot Token]({{#linkto}}common-components#riot-token{{/linkto}})'});
+                components.push({name: '{base64 encoded Riot token}', value: readCommon('Riot Token', 'riot-token')});
+                components.push({name: '{Riot entitlement}', value: readCommon('Riot Entitlement', 'riot-entitlement')});
+            }
+            if(endpoint.localAuth) components.push({name: '{lockfile password} and {lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
+            if(endpoint.requiresClientVersion) components.push({name: '{client version}', value: readCommon('Client Version', 'client-version')});
+            if(endpoint.requiresClientPlatform) components.push({name: '{client platform}', value: readCommon('Client Platform', 'client-platform')});
+            
+            const componentInsertions = [
+                ['{region}', 'Region', 'region'],
+                ['{puuid}', 'PUUID', 'puuid'],
+                ['{in-progress match id}', 'Coregame Match ID', 'coregame-match-id'],
+                ['{pre-game match id}', 'Pregame Match ID', 'pregame-match-id'],
+                ['{party id}', 'Party ID', 'party-id']
+            ];
+            
+            for(const [tag, name, id] of componentInsertions)
+            {
+                if(endpoint.url.includes(tag) || endpoint.body?.includes(tag))
+                {
+                    components.push({name: tag, value: readCommon(name, id)});
+                }
+            }
+            
+            if(endpoint.uniqueVariableDescription)
+            {
+                components.push(...endpoint.uniqueVariableDescription);
             }
             
             if(components.length !== 0)
             {
                 text += 'Variables:\n';
                 text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
-            }
-            
-            if(endpoint.localAuth)
-            {
-                text += '\n' + this.snippets['lockfile'];
             }
         }
         

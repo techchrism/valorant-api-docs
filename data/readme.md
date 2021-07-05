@@ -23,4 +23,4 @@
  - `requiresClientPlatform`  
     Optional boolean value for the inclusion of the `X-Riot-ClientPlatform` header
  - `uniqueVariableDescription`  
-    Optional object to describe any variables that are not on the common components list.
+    Optional array to describe any variables that are not on the common components list. Array is comprised of objects with "name" and "value" properties.
