@@ -25,7 +25,7 @@ module.exports = function(dataManager)
     let folderSortKey = 0;
     
     const now = (new Date()).getTime();
-    for(const endpoint of endpoints)
+    for(const endpoint of dataManager.endpoints)
     {
         if(!folders.hasOwnProperty(endpoint.folder))
         {
@@ -39,7 +39,7 @@ module.exports = function(dataManager)
             created: now,
             url: insertValorantPluginTemplates(endpoint.url),
             name: endpoint.name,
-            description: endpoint.description || '',
+            description: dataManager.renderFile(endpoint.name, 'insomnia'),
             method: endpoint.method,
             body: {},
             parameters: [],
@@ -105,6 +105,17 @@ module.exports = function(dataManager)
                 mimeType: 'application/json',
                 text: endpoint.body
             };
+        }
+        if(endpoint.extraHeaders)
+        {
+            for(const [name, value] of endpoint.extraHeaders)
+            {
+                resource.headers.push({
+                    id: `__PAIR_${pairID++}__`,
+                    name, value,
+                    description: '',
+                });
+            }
         }
         
         insomniaResources.push(resource);
