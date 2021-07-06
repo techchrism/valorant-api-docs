@@ -3,7 +3,7 @@ These variables show up in requests often. Here's how to get them.
 
 ### PUUID
 To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession](Useful%20Local/GET%20TEXT_CHAT_RNet_FetchSession.md) endpoint or the remote
-[RSO_GetPlayerInfo](Riot/GET%20RSO_GetPlayerInfo.md) endpoint with a token.
+[RSO_GetPlayerInfo](Riot%20Auth/GET%20RSO_GetPlayerInfo.md) endpoint with a token.
 
 ### Riot Token
 Riot tokens can be obtained through the auth flow or thorough the local API.
@@ -12,8 +12,12 @@ Currently, they expire one hour after generation.
 Locally, use the endpoint [RSO_RNet_GetEntitlementsToken](Useful%20Local/GET%20RSO_RNet_GetEntitlementsToken.md).
 This also gives you the entitlement.
 
+Remotely, use [Auth Cookies](Riot%20Auth/POST%20Auth%20Cookies.md) followed by [Auth Request](Riot%20Auth/PUT%20Auth%20Request.md) to get a token.
+You must save the cookies from the Auth Cookies request and use them on the Auth Request.
+If you save the cookies from the Auth Request, you can use them with [Cookie Reauth](Riot%20Auth/GET%20Cookie%20Reauth.md) to get a new token without saving and re-sending the password.
+
 ### Riot Entitlement
-If you have a token from the auth flow, you can get an entitlement from the url `https://entitlements.auth.riotgames.com/api/token/v1`
+After you have a token, use the [Entitlement](Riot%20Auth/POST%20Entitlement.md) endpoint to get the entitlement.
 
 ### Lockfile Data
 When the game is running, the lockfile is located at `%LocalAppData%\Riot Games\Riot Client\Config\lockfile` and contains the info needed to connect to the local api.
@@ -35,7 +39,7 @@ Alternatively, you can ask the user what their region is. It can take the follow
 
 ### Client Version
 This is the version the client is running.
-It can be obtained locally through parsing the ShooterGame log or remotely with the third-party [Version](Third-Party%20API%20by%20Officer/GET%20Version.md) API. 
+It can be obtained locally through parsing the ShooterGame log or remotely either with the [Session_Get](Session/GET%20Session_Get.md) endpoint or with the third-party [Version](Third-Party%20API%20by%20Officer/GET%20Version.md) API. 
 
 ### Client Platform
 A string representing the platform of the client.

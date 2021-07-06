@@ -858,12 +858,71 @@
             "typicalAuth": true
         },
         {
+            "name": "Auth Cookies",
+            "description": "Prepare cookies for auth request",
+            "url": "https://auth.riotgames.com/api/v1/authorization",
+            "method": "POST",
+            "folder": "Riot Auth",
+            "body": "{\"client_id\":\"play-valorant-web-prod\",\"nonce\":\"1\",\"redirect_uri\":\"https://playvalorant.com/opt_in\",\"response_type\":\"token id_token\"}",
+            "extraHeaders": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ]
+        },
+        {
+            "name": "Auth Request",
+            "description": "Perform authorization request to get token  \nRequires cookies from the [Auth Cookies]({{#linkto}}Auth Cookies{{/linkto}}) stage. The token can be found in the `uri` property.",
+            "url": "https://auth.riotgames.com/api/v1/authorization",
+            "method": "PUT",
+            "folder": "Riot Auth",
+            "body": "{\n    \"type\": \"auth\",\n    \"username\": \"{username}\",\n    \"password\": \"{password}\",\n    \"remember\": true,\n    \"language\": \"en_US\"\n}",
+            "extraHeaders": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "uniqueVariableDescription": [
+                {
+                    "name": "{username}",
+                    "value": "The player username / email for signing in"
+                },
+                {
+                    "name": "{password}",
+                    "value": "The player password for signing in"
+                }
+            ]
+        },
+        {
+            "name": "Cookie Reauth",
+            "description": "Get a new token using the cookies from a previous authorization request  \nUse the saved cookies from [Auth Request]({{#linkto}}Auth Request{{/linkto}}). The token can be found from the url this request redirects to.  \nRecommended to use this endpoint instead of storing the password and sending it again.",
+            "url": "https://auth.riotgames.com/authorize?redirect_uri=https%3A%2F%2Fplayvalorant.com%2Fopt_in&client_id=play-valorant-web-prod&response_type=token%20id_token",
+            "method": "GET",
+            "folder": "Riot Auth"
+        },
+        {
+            "name": "Entitlement",
+            "description": "Get entitlement for remote requests with a token",
+            "url": "https://entitlements.auth.riotgames.com/api/token/v1",
+            "method": "POST",
+            "folder": "Riot Auth",
+            "tokenAuth": true,
+            "extraHeaders": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ]
+        },
+        {
             "name": "RSO_GetPlayerInfo",
             "description": "Get the PUUID from a token",
             "url": "https://auth.riotgames.com/userinfo",
             "method": "GET",
-            "folder": "Riot",
-            "typicalAuth": true
+            "folder": "Riot Auth",
+            "tokenAuth": true
         },
         {
             "name": "Agents",

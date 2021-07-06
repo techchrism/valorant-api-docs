@@ -12,8 +12,12 @@ Currently, they expire one hour after generation.
 Locally, use the endpoint [RSO_RNet_GetEntitlementsToken]({{#linkto}}RSO_RNet_GetEntitlementsToken{{/linkto}}).
 This also gives you the entitlement.
 
+Remotely, use [Auth Cookies]({{#linkto}}Auth Cookies{{/linkto}}) followed by [Auth Request]({{#linkto}}Auth Request{{/linkto}}) to get a token.
+You must save the cookies from the Auth Cookies request and use them on the Auth Request.
+If you save the cookies from the Auth Request, you can use them with [Cookie Reauth]({{#linkto}}Cookie Reauth{{/linkto}}) to get a new token without saving and re-sending the password.
+
 ### Riot Entitlement
-If you have a token from the auth flow, you can get an entitlement from the url `https://entitlements.auth.riotgames.com/api/token/v1`
+After you have a token, use the [Entitlement]({{#linkto}}Entitlement{{/linkto}}) endpoint to get the entitlement.
 
 ### Lockfile Data
 When the game is running, the lockfile is located at `%LocalAppData%\Riot Games\Riot Client\Config\lockfile` and contains the info needed to connect to the local api.
@@ -35,7 +39,7 @@ Alternatively, you can ask the user what their region is. It can take the follow
 
 ### Client Version
 This is the version the client is running.
-It can be obtained locally through parsing the ShooterGame log or remotely with the third-party [Version]({{#linkto}}Version{{/linkto}}) API. 
+It can be obtained locally through parsing the ShooterGame log or remotely either with the [Session_Get]({{#linkto}}Session_Get{{/linkto}}) endpoint or with the third-party [Version]({{#linkto}}Version{{/linkto}}) API. 
 
 ### Client Platform
 A string representing the platform of the client.
