@@ -16,6 +16,8 @@
     Optional array with any additional headers needed for the request. Array is comprised of objects with "name" and "value" properties.
  - `typicalAuth`  
     Optional boolean value for whether to include the `X-Riot-Entitlements-JWT` and Bearer authorization headers.
+ - `tokenAuth`  
+    Optional boolean value for whether to include just the Bearer authorization header.
  - `localAuth`  
     Optional boolean value for whether to include the Basic authorization headers for the local api.
  - `requiresClientVersion`  

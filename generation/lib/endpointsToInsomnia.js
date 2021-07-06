@@ -64,6 +64,9 @@ module.exports = function(dataManager)
                 value: '{% entitlement  %}',
                 description: '',
             });
+        }
+        if(endpoint.typicalAuth || endpoint.tokenAuth)
+        {
             resource.authentication = {
                 type: 'bearer',
                 token: '{% token  %}',
@@ -108,11 +111,12 @@ module.exports = function(dataManager)
         }
         if(endpoint.extraHeaders)
         {
-            for(const [name, value] of endpoint.extraHeaders)
+            for(const {name, value} of endpoint.extraHeaders)
             {
                 resource.headers.push({
                     id: `__PAIR_${pairID++}__`,
-                    name, value,
+                    name,
+                    value: insertValorantPluginTemplates(value),
                     description: '',
                 });
             }
