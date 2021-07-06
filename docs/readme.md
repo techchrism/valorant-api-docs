@@ -13,7 +13,7 @@ with the requests yourself in a REST client like Insomnia.
 
  - Download and install Insomnia here: [https://insomnia.rest/download](https://insomnia.rest/download)
  - Go to Application -> Preferences -> Plugins and add the plugin `insomnia-plugin-valorant`
- - From the dashboard, click "Create", then import from url and enter `https://github.com/techchrism/valorant-api-docs/docs/valorant-workspace-insomnia.json`
+ - From the dashboard, click "Create", then import from url and enter `https://raw.githubusercontent.com/techchrism/valorant-api-docs/trunk/docs/valorant-workspace-insomnia.json`
 
 To learn about how to make the API request yourself, check the "Docs" tab on any request.
 You can right-click a request and click "Generate Code" to see how to make the request in the language and library of your choice.
