@@ -135,7 +135,7 @@ class DataManager
             components.push({name: '{base64 encoded Riot token}', value: readCommon('Riot Token', 'riot-token')});
             components.push({name: '{Riot entitlement}', value: readCommon('Riot Entitlement', 'riot-entitlement')});
         }
-        if(endpoint.localAuth) components.push({name: '{lockfile password} and {lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
+        if(endpoint.localAuth) components.push({name: '{lockfile password}` and `{lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
         if(endpoint.requiresClientVersion) components.push({name: '{client version}', value: readCommon('Client Version', 'client-version')});
         if(endpoint.requiresClientPlatform) components.push({name: '{client platform}', value: readCommon('Client Platform', 'client-platform')});
     

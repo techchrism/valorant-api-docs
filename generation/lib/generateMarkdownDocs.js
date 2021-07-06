@@ -26,7 +26,7 @@ async function generateMarkdownDocs(docsDir, dataManager)
             readmeText += '### Endpoints:\n';
             for(const endpoint of endpointsForFolder)
             {
-                readmeText += ` - [${endpoint.name}](${endpoint.method}%20${endpoint.name}.md)`;
+                readmeText += ` - [${endpoint.name}](${endpoint.method}%20${endpoint.name.replaceAll(' ', '%20')}.md)`;
                 if(endpoint.description)
                 {
                     readmeText += ' - ' + endpoint.description.split('\n')[0];
