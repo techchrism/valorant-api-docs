@@ -68,7 +68,7 @@ class DataManager
         {
             url = path.relative(from, loc);
         }
-        return url.replaceAll(' ', '%20');
+        return url.replaceAll(' ', '%20').replaceAll('\\', '/');
     }
     
     renderText(text, loc, platform)

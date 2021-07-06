@@ -2,14 +2,14 @@
 These variables show up in requests often. Here's how to get them.
 
 ### PUUID
-To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession](Useful%20Local\GET%20TEXT_CHAT_RNet_FetchSession.md) endpoint or the remote
-[RSO_GetPlayerInfo](Riot\GET%20RSO_GetPlayerInfo.md) endpoint with a token.
+To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession](Useful%20Local/GET%20TEXT_CHAT_RNet_FetchSession.md) endpoint or the remote
+[RSO_GetPlayerInfo](Riot/GET%20RSO_GetPlayerInfo.md) endpoint with a token.
 
 ### Riot Token
 Riot tokens can be obtained through the auth flow or thorough the local API.
 Currently, they expire one hour after generation.
 
-Locally, use the endpoint [RSO_RNet_GetEntitlementsToken](Useful%20Local\GET%20RSO_RNet_GetEntitlementsToken.md).
+Locally, use the endpoint [RSO_RNet_GetEntitlementsToken](Useful%20Local/GET%20RSO_RNet_GetEntitlementsToken.md).
 This also gives you the entitlement.
 
 ### Riot Entitlement
@@ -21,7 +21,7 @@ It's a text file with a single line where the data is seperated by colons. The f
 
 ### Region
 The region is important for remote APIs and it can be found a couple ways locally.
-One method is using the [RiotClientSession_FetchSessions](Useful%20Local\GET%20RiotClientSession_FetchSessions.md) endpoint then getting the value of the `-ares-deployment=` argument.
+One method is using the [RiotClientSession_FetchSessions](Useful%20Local/GET%20RiotClientSession_FetchSessions.md) endpoint then getting the value of the `-ares-deployment=` argument.
 Another way is to scrape the ShooterGame log for requests that contain the region in the url.
 
 Alternatively, you can ask the user what their region is. It can take the following values:
@@ -35,7 +35,7 @@ Alternatively, you can ask the user what their region is. It can take the follow
 
 ### Client Version
 This is the version the client is running.
-It can be obtained locally through parsing the ShooterGame log or remotely with the third-party [Version](Third-Party%20API%20by%20Officer\GET%20Version.md) API. 
+It can be obtained locally through parsing the ShooterGame log or remotely with the third-party [Version](Third-Party%20API%20by%20Officer/GET%20Version.md) API. 
 
 ### Client Platform
 A string representing the platform of the client.
@@ -45,15 +45,15 @@ A string representing the platform of the client.
 The ID of the match while it's in the pre-game phase.
 This can be obtained live with the `OnJsonApiEvent_riot-messaging-service_v1_message` local websocket event
 (when the URI starts with `/riot-messaging-service/v1/message/ares-pregame/pregame/v1/matches/`)
-or on request with the [Pregame_GetPlayer](Pre-Game\GET%20Pregame_GetPlayer.md) endpoint.
+or on request with the [Pregame_GetPlayer](Pre-Game/GET%20Pregame_GetPlayer.md) endpoint.
 
 ### Coregame Match ID
 The ID of the match after it's passed the pre-game phase.
 This can be obtained live with the `OnJsonApiEvent_riot-messaging-service_v1_message` local websocket event
 (when the URI starts with `/riot-messaging-service/v1/message/ares-core-game/core-game/v1/matches/`)
-or on request with the [CoreGame_FetchPlayer](Current%20Game\GET%20CoreGame_FetchPlayer.md) endpoint.
+or on request with the [CoreGame_FetchPlayer](Current%20Game/GET%20CoreGame_FetchPlayer.md) endpoint.
 
 ### Party ID
 The ID of the party the player is in. To get this live, the `OnJsonApiEvent_chat_v4_presences` websocket event can be used.
-On request, the remote [Party_FetchPlayer](Party\GET%20Party_FetchPlayer.md) or the local
-[PRESENCE_RNet_GET_ALL](Useful%20Local\GET%20PRESENCE_RNet_GET_ALL.md) endpoint can be used.
+On request, the remote [Party_FetchPlayer](Party/GET%20Party_FetchPlayer.md) or the local
+[PRESENCE_RNet_GET_ALL](Useful%20Local/GET%20PRESENCE_RNet_GET_ALL.md) endpoint can be used.

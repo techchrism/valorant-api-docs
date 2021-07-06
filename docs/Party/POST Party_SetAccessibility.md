@@ -16,9 +16,9 @@ Body:
 }
 ```
 Variables:
- - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](..\common-components.md#riot-token)
- - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](..\common-components.md#riot-entitlement)
- - `{region}`: Read [Common Components - Region](..\common-components.md#region)
- - `{party id}`: Read [Common Components - Party ID](..\common-components.md#party-id)
+ - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
+ - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
+ - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{party id}`: Read [Common Components - Party ID](../common-components.md#party-id)
  - `{accessibility}`: Can be either `OPEN` or `CLOSED`.
 

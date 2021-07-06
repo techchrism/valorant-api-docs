@@ -10,6 +10,6 @@ Headers:
  - `Authorization`: `Basic {base64 encoded "riot:{lockfile password}"}`
 
 Variables:
- - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](..\common-components.md#lockfile-data)
- - `{region}`: Read [Common Components - Region](..\common-components.md#region)
+ - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
+ - `{region}`: Read [Common Components - Region](../common-components.md#region)
 

@@ -9,6 +9,6 @@ Headers:
  - `X-Riot-ClientVersion`: `{client version}`
 
 Variables:
- - `{client version}`: Read [Common Components - Client Version](..\common-components.md#client-version)
- - `{region}`: Read [Common Components - Region](..\common-components.md#region)
+ - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
+ - `{region}`: Read [Common Components - Region](../common-components.md#region)
 
