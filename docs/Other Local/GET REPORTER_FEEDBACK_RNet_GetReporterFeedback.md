@@ -1,0 +1,10 @@
+# GET REPORTER_FEEDBACK_RNet_GetReporterFeedback
+
+Method: `GET`  
+URL: `https://127.0.0.1:{lockfile port}/player-reporting/v1/reporter-feedback`  
+Headers:
+ - `Authorization`: `Basic {base64 encoded "riot:{lockfile password}"}`
+
+Variables:
+ - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](..\common-components.md#lockfile-data)
+
