@@ -6,6 +6,8 @@ However, as long as you use common sense and don't do anything a Riot employee w
 
 You can join the Discord server here: [https://discord.gg/a9yzrw3KAm](https://discord.gg/a9yzrw3KAm)
 
+![Screenshot](https://i.imgur.com/dFWuYt2.png)
+
 ## Getting Started
 
 One of the easiest ways to get started and get a feel for what kinds of data you can get from the apis is to play around
@@ -22,8 +24,8 @@ For info on common request components, see [Common Components](common-components
 
 ## Connecting to Local APIs
 
-For the https local api, you need the password and the port from the lockfile (read [Common Components - Lockfile Data]({{#linkto}}common-components#lockfile-data{{/linkto}})).
-The local server has a self-signed certificate so you'll need to allow invalid certificates in the requests library you're using.
+For the https local api, you need the password and port from the lockfile (read [Common Components - Lockfile Data]({{#linkto}}common-components#lockfile-data{{/linkto}})).
+The local server has a self-signed certificate meaning you'll need to allow invalid certificates in the http library you're using.
 
 The websocket has the uri `wss://riot:{lockfile password}@localhost:{lockfile port}` and it also uses a self-signed certificate.
 Websocket events can be found from the [Local Help]({{#linkto}}Local Help{{/linkto}}) endpoint. For info on subscribing to events, see here: [https://www.hextechdocs.dev/lol/lcuapi/5.getting-started-with-the-lcu-websocket](https://www.hextechdocs.dev/lol/lcuapi/5.getting-started-with-the-lcu-websocket)
