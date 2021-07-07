@@ -548,6 +548,14 @@
             "typicalAuth": true
         },
         {
+            "name": "Local Help",
+            "description": "Get local endpoint names and websocket events",
+            "url": "https://127.0.0.1:{lockfile port}/help",
+            "method": "GET",
+            "folder": "Useful Local",
+            "localAuth": true
+        },
+        {
             "name": "RiotClientSession_FetchSessions",
             "description": "Gets info about the running Valorant process including start arguments",
             "url": "https://127.0.0.1:{lockfile port}/product-session/v1/external-sessions",

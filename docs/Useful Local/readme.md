@@ -1,6 +1,7 @@
 # Useful Local
 
 ### Endpoints:
+ - [Local Help](GET%20Local%20Help.md) - Get local endpoint names and websocket events
  - [RiotClientSession_FetchSessions](GET%20RiotClientSession_FetchSessions.md) - Gets info about the running Valorant process including start arguments
  - [PlayerAlias_RNet_GetActiveAlias](GET%20PlayerAlias_RNet_GetActiveAlias.md) - Gets the player username and tagline
  - [RSO_RNet_GetEntitlementsToken](GET%20RSO_RNet_GetEntitlementsToken.md) - Gets both the token and entitlement for API usage  
