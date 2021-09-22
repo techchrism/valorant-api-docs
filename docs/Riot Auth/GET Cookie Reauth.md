@@ -6,4 +6,4 @@ Recommended to use this endpoint instead of storing the password and sending it 
 
 
 Method: `GET`  
-URL: `https://auth.riotgames.com/authorize?redirect_uri=https%3A%2F%2Fplayvalorant.com%2Fopt_in&client_id=play-valorant-web-prod&response_type=token%20id_token`  
+URL: `https://auth.riotgames.com/authorize?redirect_uri=https%3A%2F%2Fplayvalorant.com%2Fopt_in&client_id=play-valorant-web-prod&response_type=token%20id_token&nonce=1`  
