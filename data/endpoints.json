@@ -906,7 +906,7 @@
         {
             "name": "Cookie Reauth",
             "description": "Get a new token using the cookies from a previous authorization request  \nUse the saved cookies from [Auth Request]({{#linkto}}Auth Request{{/linkto}}). The token can be found from the url this request redirects to.  \nRecommended to use this endpoint instead of storing the password and sending it again.",
-            "url": "https://auth.riotgames.com/authorize?redirect_uri=https%3A%2F%2Fplayvalorant.com%2Fopt_in&client_id=play-valorant-web-prod&response_type=token%20id_token",
+            "url": "https://auth.riotgames.com/authorize?redirect_uri=https%3A%2F%2Fplayvalorant.com%2Fopt_in&client_id=play-valorant-web-prod&response_type=token%20id_token&nonce=1",
             "method": "GET",
             "folder": "Riot Auth"
         },
