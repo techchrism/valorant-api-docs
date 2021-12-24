@@ -18,6 +18,9 @@ Category names and IDs:
 
 Method: `GET`  
 URL: `https://pd.{region}.a.pvp.net/store/v1/entitlements/{puuid}`  
+
+Get specific `ItemTypeID` URL: `https://pd.{region}.a.pvp.net/store/v1/entitlements/{puuid}/{ItemTypeID}`  
+
 Headers:
  - `X-Riot-Entitlements-JWT`: `{Riot entitlement}`
  - `Authorization`: `Bearer {base64 encoded Riot token}`
@@ -27,4 +30,4 @@ Variables:
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
-
+ - `{ItemTypeID}`: As show in the table above
