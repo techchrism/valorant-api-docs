@@ -30,4 +30,4 @@ Variables:
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
- - `{ItemTypeID}`: As show in the table above
+ - `{ItemTypeID}`: As shown in the table above
