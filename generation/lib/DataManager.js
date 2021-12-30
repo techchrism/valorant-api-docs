@@ -11,6 +11,7 @@ class DataManager
         this.dataDir = dataDir;
         this.docs = {};
         this.endpoints = null;
+        this.version = null;
         this.folders = [];
     }
 
@@ -24,7 +25,9 @@ class DataManager
         }
 
         // Read endpoints
-        this.endpoints = JSON.parse(await fs.readFile(path.join(this.dataDir, 'endpoints.json'), 'utf-8'))['endpoints'];
+        const endpointsData = JSON.parse(await fs.readFile(path.join(this.dataDir, 'endpoints.json'), 'utf-8'));
+        this.endpoints = endpointsData['endpoints'];
+        this.version = endpointsData['version'];
 
         // Prepare folders
         for(const endpoint of this.endpoints)
