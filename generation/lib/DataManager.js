@@ -13,7 +13,7 @@ class DataManager
         this.endpoints = null;
         this.folders = [];
     }
-    
+
     async readFiles()
     {
         // Read docs
@@ -22,10 +22,10 @@ class DataManager
         {
             this.docs[path.parse(docName).name] = await fs.readFile(path.join(docsDir, docName), 'utf-8');
         }
-        
+
         // Read endpoints
         this.endpoints = JSON.parse(await fs.readFile(path.join(this.dataDir, 'endpoints.json'), 'utf-8'))['endpoints'];
-    
+
         // Prepare folders
         for(const endpoint of this.endpoints)
         {
@@ -35,7 +35,7 @@ class DataManager
             }
         }
     }
-    
+
     linkTo(to, from, platform)
     {
         const parts = to.split('#');
@@ -58,7 +58,7 @@ class DataManager
             }
             loc = `${endpoint.folder}/${endpoint.method} ${endpoint.name}.md${hash}`;
         }
-        
+
         let url;
         if(platform === 'insomnia')
         {
@@ -70,7 +70,7 @@ class DataManager
         }
         return url.replaceAll(' ', '%20').replaceAll('\\', '/');
     }
-    
+
     renderText(text, loc, platform)
     {
         const view = {
@@ -84,7 +84,7 @@ class DataManager
         };
         return Mustache.render(text, view);
     }
-    
+
     renderEndpoint(endpoint, platform)
     {
         if(endpoint === null)
@@ -96,32 +96,32 @@ class DataManager
         {
             text += '\n' + endpoint.description + '  \n\n';
         }
-    
+
         if(platform !== 'insomnia')
         {
             text += `\nMethod: \`${endpoint.method}\`  \nURL: \`${endpoint.url}\`  \n`;
-        
+
             const headers = [];
-        
+
             if(endpoint.typicalAuth) headers.push({name: 'X-Riot-Entitlements-JWT', value: '{Riot entitlement}'});
             if(endpoint.typicalAuth || endpoint.tokenAuth) headers.push({name: 'Authorization', value: 'Bearer {base64 encoded Riot token}'});
             if(endpoint.localAuth) headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
             if(endpoint.requiresClientVersion) headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
             if(endpoint.requiresClientPlatform) headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
             if(endpoint.extraHeaders) headers.push(...endpoint.extraHeaders);
-        
+
             if(headers.length !== 0)
             {
                 text += 'Headers:\n';
                 text += headers.map(({name, value}) => ` - \`${name}\`: \`${value}\`\n`).join('') + '\n';
             }
-        
+
             if(endpoint.body)
             {
                 text += `Body:  \n\`\`\`\n${endpoint.body}\n\`\`\`\n`;
             }
         }
-    
+
         function readCommon(name, id)
         {
             return `Read [Common Components - ${name}]({{#linkto}}common-components#${id}{{/linkto}})`;
@@ -132,15 +132,16 @@ class DataManager
         if(endpoint.localAuth) components.push({name: '{lockfile password}` and `{lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
         if(endpoint.requiresClientVersion) components.push({name: '{client version}', value: readCommon('Client Version', 'client-version')});
         if(endpoint.requiresClientPlatform) components.push({name: '{client platform}', value: readCommon('Client Platform', 'client-platform')});
-    
+
         const componentInsertions = [
             ['{region}', 'Region', 'region'],
             ['{puuid}', 'PUUID', 'puuid'],
             ['{in-progress match id}', 'Coregame Match ID', 'coregame-match-id'],
             ['{pre-game match id}', 'Pregame Match ID', 'pregame-match-id'],
-            ['{party id}', 'Party ID', 'party-id']
+            ['{party id}', 'Party ID', 'party-id'],
+            ['{cid}', 'Chat ID', 'chat-id']
         ];
-    
+
         for(const [tag, name, id] of componentInsertions)
         {
             if(endpoint.url.includes(tag) || endpoint.body?.includes(tag))
@@ -148,21 +149,21 @@ class DataManager
                 components.push({name: tag, value: readCommon(name, id)});
             }
         }
-    
+
         if(endpoint.uniqueVariableDescription)
         {
             components.push(...endpoint.uniqueVariableDescription);
         }
-    
+
         if(components.length !== 0)
         {
             text += 'Variables:\n';
             text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
         }
-        
+
         return this.renderText(text, endpoint.folder, platform);
     }
-    
+
     renderDoc(name, platform)
     {
         if(this.docs.hasOwnProperty(name))

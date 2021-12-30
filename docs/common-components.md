@@ -61,3 +61,10 @@ or on request with the [CoreGame_FetchPlayer](Current%20Game/GET%20CoreGame_Fetc
 The ID of the party the player is in. To get this live, the `OnJsonApiEvent_chat_v4_presences` websocket event can be used.
 On request, the remote [Party_FetchPlayer](Party/GET%20Party_FetchPlayer.md) or the local
 [PRESENCE_RNet_GET_ALL](Useful%20Local/GET%20PRESENCE_RNet_GET_ALL.md) endpoint can be used.
+
+### Chat ID
+The ID of a chat. For game chat this can be obtained from [Pregame Chat Info](Local%20Chat/GET%20Pregame%20Chat%20Info.md)
+before the match starts (team chat only) and [Game Chat Info](Local%20Chat/GET%20Game%20Chat%20Info.md)
+once the match has started (team and all chat). For parties, [Party Chat Info](Local%20Chat/GET%20Party%20Chat%20Info.md)
+can be used to get the CID. When whispering, a friend's PID can be used as a CID.
+Friends and their PIDs can be found from [CHATFRIENDS_RNet_GET_ALL](Useful%20Local/GET%20CHATFRIENDS_RNet_GET_ALL.md).
