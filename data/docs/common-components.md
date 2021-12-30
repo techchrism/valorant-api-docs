@@ -31,11 +31,11 @@ Another way is to scrape the ShooterGame log for requests that contain the regio
 Alternatively, you can ask the user what their region is. It can take the following values:
 
 | Region ID | Region Name   |
-| --------- | -----------   |
+|-----------| -----------   |
 | na        | North America |
 | eu        | Europe        |
 | ap        | Asia Pacific  |
-| ko        | Korea         |
+| kr        | Korea         |
 
 ### Client Version
 This is the version the client is running.
