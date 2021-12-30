@@ -3,7 +3,7 @@
         {
             "name": "Content_FetchContent",
             "description": "Get names and ids for game content such as agents, maps, guns, etc.",
-            "url": "https://shared.{region}.a.pvp.net/content-service/v2/content",
+            "url": "https://shared.{region}.a.pvp.net/content-service/v3/content",
             "method": "GET",
             "folder": "PVP Endpoints",
             "requiresClientVersion": true,
@@ -508,7 +508,7 @@
         {
             "name": "ContractDefinitions_Fetch",
             "description": "Get names and descriptions for contracts",
-            "url": "https://pd.{region}.a.pvp.net/contract-definitions/v2/definitions",
+            "url": "https://pd.{region}.a.pvp.net/contract-definitions/v3/item-upgrades",
             "method": "GET",
             "folder": "Contracts",
             "typicalAuth": true
