@@ -1,6 +1,7 @@
 # Other Local
 
 ### Endpoints:
+ - [Local Swagger Docs](GET%20Local%20Swagger%20Docs.md) - Fetches json Swagger docs for local endpoints. Can be imported into Swagger or Insomnia.
  - [URNetClient_GetProcessInfo](GET%20URNetClient_GetProcessInfo.md) - Gets the Valorant process ID
  - [URNetClient_CheckPluginStatus](GET%20URNetClient_CheckPluginStatus.md) - Gets plugin status
  - [URNetClient_CheckRMSSession](GET%20URNetClient_CheckRMSSession.md) - Gets the token for Riot Messaging Service

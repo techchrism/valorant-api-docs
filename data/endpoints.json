@@ -594,6 +594,14 @@
             "localAuth": true
         },
         {
+            "name": "Local Swagger Docs",
+            "description": "Fetches json Swagger docs for local endpoints. Can be imported into Swagger or Insomnia.",
+            "url": "https://127.0.0.1:{lockfile port}/swagger/v3/openapi.json",
+            "method": "GET",
+            "folder": "Other Local",
+            "localAuth": true
+        },
+        {
             "name": "URNetClient_GetProcessInfo",
             "description": "Gets the Valorant process ID",
             "url": "https://127.0.0.1:{lockfile port}/process-control/v1/process",
