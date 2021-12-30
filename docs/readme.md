@@ -28,7 +28,7 @@ For the https local api, you need the password and port from the lockfile (read 
 The local server has a self-signed certificate meaning you'll need to allow invalid certificates in the http library you're using.
 
 The websocket has the uri `wss://riot:{lockfile password}@localhost:{lockfile port}` and it also uses a self-signed certificate.
-Websocket events can be found from the [Local Help](Useful%20Local/GET%20Local%20Help.md) endpoint. For info on subscribing to events, see here: [https://hextechdocs.dev/getting-started-with-the-lcu-websocket](https://hextechdocs.dev/getting-started-with-the-lcu-websocket)
+Websocket events can be found from the [Local Help](Useful%20Local/GET%20Local%20Help.md) endpoint. For info on subscribing to events, see here: [https://www.hextechdocs.dev/lol/lcuapi/5.getting-started-with-the-lcu-websocket](https://www.hextechdocs.dev/lol/lcuapi/5.getting-started-with-the-lcu-websocket)
 
 ## Investigating Endpoints and Websocket Events
 

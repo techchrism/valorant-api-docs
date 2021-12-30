@@ -4,7 +4,7 @@ Get names and ids for game content such as agents, maps, guns, etc.
 
 
 Method: `GET`  
-URL: `https://shared.{region}.a.pvp.net/content-service/v2/content`  
+URL: `https://shared.{region}.a.pvp.net/content-service/v3/content`  
 Headers:
  - `X-Riot-ClientVersion`: `{client version}`
  - `X-Riot-ClientPlatform`: `{client platform}`
