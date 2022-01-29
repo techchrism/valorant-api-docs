@@ -6,7 +6,7 @@ To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession](Us
 [RSO_GetPlayerInfo](Riot%20Auth/GET%20RSO_GetPlayerInfo.md) endpoint with a token.
 
 ### Riot Token
-Riot tokens can be obtained through the auth flow or thorough the local API.
+Riot tokens can be obtained through the auth flow or through the local API.
 Currently, they expire one hour after generation.
 
 Locally, use the endpoint [RSO_RNet_GetEntitlementsToken](Useful%20Local/GET%20RSO_RNet_GetEntitlementsToken.md).
