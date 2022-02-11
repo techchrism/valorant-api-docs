@@ -4,7 +4,7 @@ Checks for any gameplay penalties on the account
 
 
 Method: `GET`  
-URL: `https://pd.{region}.a.pvp.net/restrictions/v2/penalties`  
+URL: `https://pd.{region}.a.pvp.net/restrictions/v3/penalties`  
 Headers:
  - `X-Riot-Entitlements-JWT`: `{Riot entitlement}`
  - `Authorization`: `Bearer {base64 encoded Riot token}`
