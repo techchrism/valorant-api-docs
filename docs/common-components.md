@@ -1,6 +1,14 @@
 # Common Components
 These variables show up in requests often. Here's how to get them.
 
+### Base URLs
+```
+base_endpoint_local = "http://127.0.0.1:{port}"
+base_endpoint = "https://pd.{shard}.a.pvp.net"
+base_endpoint_glz = "https://glz-{region}-1.{shard}.a.pvp.net"
+base_endpoint_shared = "https://shared.{shard}.a.pvp.net"
+```
+
 ### PUUID
 To get the player's UUID, you can use the local [TEXT_CHAT_RNet_FetchSession](Useful%20Local/GET%20TEXT_CHAT_RNet_FetchSession.md) endpoint or the remote
 [RSO_GetPlayerInfo](Riot%20Auth/GET%20RSO_GetPlayerInfo.md) endpoint with a token.
@@ -30,12 +38,28 @@ Another way is to scrape the ShooterGame log for requests that contain the regio
 
 Alternatively, you can ask the user what their region is. It can take the following values:
 
-| Region ID | Region Name   |
-|-----------| -----------   |
-| na        | North America |
-| eu        | Europe        |
-| ap        | Asia Pacific  |
-| kr        | Korea         |
+| Region ID | Region Name      |
+|-----------| ---------------- |
+| na        | North America    |
+| latam     | Latin America    |
+| br        | Brazil           |
+| eu        | Europe           |
+| ap        | Asia Pacific     |
+| kr        | Korea            |
+
+#### A note on regions and shards
+Generally, each region has its own shard (i.e. `eu` region is on the `eu` shard, which is relevant when accessing a *glz* endpoint). However, some regions share the same shard, and similarly, some regions have multiple shards.
+
+| Region ID | Shard(s) |
+|-----------|-------|
+| latam | na |
+| br | na |
+| na | na OR pbe |
+| eu | eu |
+| ap | ap |
+| kr | kr |
+
+> NA has two compatible shards, `na` and `pbe` (public beta environment).
 
 ### Client Version
 This is the version the client is running.
