@@ -105,7 +105,7 @@
         {
             "name": "Restrictions_FetchPlayerRestrictionsV2",
             "description": "Checks for any gameplay penalties on the account",
-            "url": "https://pd.{region}.a.pvp.net/restrictions/v2/penalties",
+            "url": "https://pd.{region}.a.pvp.net/restrictions/v3/penalties",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true
