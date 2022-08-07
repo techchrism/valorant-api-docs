@@ -25,15 +25,12 @@ async function generateMarkdownDocs(docsDir, dataManager)
         const endpointsForFolder = dataManager.endpoints.filter(endpoint => endpoint.folder === folder);
         if(endpointsForFolder.length !== 0)
         {
-            readmeText += '### Endpoints:\n';
+            readmeText += '### Endpoints:\n' +
+                '|Name|Description|\n' +
+                '|---|---|\n';
             for(const endpoint of endpointsForFolder)
             {
-                readmeText += ` - [${endpoint.name}](${endpoint.method}%20${endpoint.name.replaceAll(' ', '%20')}.md)`;
-                if(endpoint.description)
-                {
-                    readmeText += ' - ' + endpoint.description.split('\n')[0];
-                }
-                readmeText += '\n';
+                readmeText += `|[${endpoint.name}](${endpoint.method}%20${endpoint.name.replaceAll(' ', '%20')}.md)|${endpoint.description?.split('\n')?.[0]}|\n`;
             }
             readmeText += '\n';
         }
