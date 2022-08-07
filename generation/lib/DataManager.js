@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const Mustache = require('mustache');
 
-const githubURL = 'https://github.com/techchrism/valorant-api-docs';
+const githubURL = 'https://github.com/techchrism/valorant-api-docs/tree/trunk/';
 
 class DataManager
 {
