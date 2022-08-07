@@ -6,17 +6,24 @@ See https://github.com/techchrism/valorant-api-docs/blob/trunk/contributing.md f
 
 -->
 
-# POST Auth Cookies
+# PUT Multi-Factor Authentication
 
-Prepare cookies for auth request  
+Submits a multi-factor authentication code for login  
 
 
-Method: `POST`  
+Method: `PUT`  
 URL: `https://auth.riotgames.com/api/v1/authorization`  
 Headers:
  - `Content-Type`: `application/json`
 
 Body:  
 ```
-{"client_id":"play-valorant-web-prod","nonce":"1","redirect_uri":"https://playvalorant.com/opt_in","response_type":"token id_token"}
+{
+    "type": "multifactor",
+    "code": "{mfa code}",
+    "rememberDevice": true
+}
 ```
+Variables:
+ - `{mfa code}`: The code received from the secondary location (email)
+
