@@ -16,10 +16,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18.x
-      - run: npm ci
-        working-directory: generation
-      - run: npm run generate
-        working-directory: generation
+      - run: '(cd ./generation && npm ci && npm run generate; cd -)'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: automatically build docs
