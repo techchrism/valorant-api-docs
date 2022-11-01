@@ -36,11 +36,11 @@ For the https local api, you need the password and port from the lockfile (read 
 The local server has a self-signed certificate meaning you'll need to allow invalid certificates in the http library you're using.
 
 The websocket has the uri `wss://riot:{lockfile password}@localhost:{lockfile port}` and it also uses a self-signed certificate.
-Websocket events can be found from the [Local Help](Useful%20Local/GET%20Local%20Help.md) endpoint. For info on subscribing to events, see here: [https://www.hextechdocs.dev/lol/lcuapi/5.getting-started-with-the-lcu-websocket](https://www.hextechdocs.dev/lol/lcuapi/5.getting-started-with-the-lcu-websocket)
+Websocket events can be found from the [Local Help](Useful%20Local/GET%20Local%20Help.md) endpoint. For info on subscribing to events, see here: [https://hextechdocs.dev/getting-started-with-the-lcu-websocket/](https://hextechdocs.dev/getting-started-with-the-lcu-websocket/)
 
 ## Investigating Endpoints and Websocket Events
 
-Endpoints are commonly found from the ShooterGame log located at `%LocalAppData\VALORANT\Saved\Logs\ShooterGame.log`
+Endpoints are commonly found from the ShooterGame log located at `%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log`
 You can use [Valorant Log Endpoint Scraper](https://github.com/techchrism/valorant-log-endpoint-scraper) to quickly export a list of endpoints and other urls found in the log.
 
 For websockets, you can use [Valorant Websocket Logger](https://github.com/techchrism/valorant-websocket-logger) which will listen to all events and export them to a file.

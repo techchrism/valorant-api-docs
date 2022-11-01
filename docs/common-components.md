@@ -74,7 +74,15 @@ This is the version the client is running.
 It can be obtained locally through parsing the ShooterGame log or remotely either with the [Session_Get](Session/GET%20Session_Get.md) endpoint or with the third-party [Version](Third-Party%20API%20by%20Officer/GET%20Version.md) API. 
 
 ### Client Platform
-A string representing the platform of the client.
+A string representing the platform of the client. Base-64 encoded JSON with the following fields:
+```json
+{
+    "platformType": "PC",
+    "platformOS": "Windows",
+    "platformOSVersion": "10.0.19042.1.256.64bit",
+    "platformChipset": "Unknown"
+}
+```
 `ew0KCSJwbGF0Zm9ybVR5cGUiOiAiUEMiLA0KCSJwbGF0Zm9ybU9TIjogIldpbmRvd3MiLA0KCSJwbGF0Zm9ybU9TVmVyc2lvbiI6ICIxMC4wLjE5MDQyLjEuMjU2LjY0Yml0IiwNCgkicGxhdGZvcm1DaGlwc2V0IjogIlVua25vd24iDQp9` is a value that currently works.
 
 ### Pregame Match ID
