@@ -17,14 +17,10 @@ URL: `https://pd.{region}.a.pvp.net/match-details/v1/matches/{match id}`
 Headers:
  - `X-Riot-Entitlements-JWT`: `{Riot entitlement}`
  - `Authorization`: `Bearer {base64 encoded Riot token}`
- - `X-Riot-ClientVersion`: `{client version}`
- - `X-Riot-ClientPlatform`: `{client platform}`
 
 Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
- - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
- - `{client platform}`: Read [Common Components - Client Platform](../common-components.md#client-platform)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{match id}`: The ID of a previous match. Can be obtained from [MatchHistory_FetchMatchHistory](GET%20MatchHistory_FetchMatchHistory.md)
 
