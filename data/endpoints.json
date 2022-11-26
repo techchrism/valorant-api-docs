@@ -362,7 +362,8 @@
             "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/customgameconfigs",
             "method": "GET",
             "folder": "Party",
-            "requiresClientVersion": true
+            "requiresClientVersion": true,
+            "requiresClientPlatform": true
         },
         {
             "name": "Party_FetchMUCToken",
