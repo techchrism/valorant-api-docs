@@ -15,8 +15,10 @@ Method: `GET`
 URL: `https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/customgameconfigs`  
 Headers:
  - `X-Riot-ClientVersion`: `{client version}`
+ - `X-Riot-ClientPlatform`: `{client platform}`
 
 Variables:
  - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
+ - `{client platform}`: Read [Common Components - Client Platform](../common-components.md#client-platform)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
 
