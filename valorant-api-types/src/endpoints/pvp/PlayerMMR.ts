@@ -20,11 +20,11 @@ export const playerMMREndpoint = {
             Version: z.number(),
             Subject: playerUUIDSchema,
             NewPlayerExperienceFinished: z.boolean(),
-            QueueSkills: z.map(queueIDSchema, z.object({
+            QueueSkills: z.record(queueIDSchema, z.object({
                 TotalGamesNeededForRating: z.number(),
                 TotalGamesNeededForLeaderboard: z.number(),
                 CurrentSeasonGamesNeededForRating: z.number(),
-                SeasonalInfoBySeasonID: z.map(seasonIDSchema, z.object({
+                SeasonalInfoBySeasonID: z.record(seasonIDSchema, z.object({
                     SeasonID: seasonIDSchema,
                     NumberOfWins: z.number(),
                     NumberOfWinsWithPlacements: z.number(),
@@ -34,7 +34,7 @@ export const playerMMREndpoint = {
                     LeaderboardRank: z.number(),
                     CompetitiveTier: z.number(),
                     RankedRating: z.number(),
-                    WinsByTier: z.map(z.string().describe("Tier ID"), z.number()).transform(val => {
+                    WinsByTier: z.record(z.string().describe("Tier ID"), z.number()).transform(val => {
                         const winsMap = new Map<number, number>()
                         for(const [key, value] of Object.entries(val)) {
                             winsMap.set(parseInt(key), value)
