@@ -81,6 +81,9 @@ export interface ValorantEndpoint {
     // The body of the request
     body?: string
 
+    // The query parameters of the request
+    query?: Map<string, ZodType>
+
     // Type info for the variables in the url, headers, and body
     variables?: Map<string, ZodType>
 
