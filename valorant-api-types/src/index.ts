@@ -9,5 +9,6 @@ export * from './endpoints/pvp/CompetitiveUpdates'
 export * from './endpoints/pvp/Leaderboard'
 export * from './endpoints/pvp/Penalties'
 export * from './endpoints/pvp/ItemUpgrades'
+export * from './endpoints/pvp/Config'
 
 export * from './endpoints'
