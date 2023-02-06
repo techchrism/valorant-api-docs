@@ -5,5 +5,6 @@ export * from './endpoints/pvp/SetPlayerLoadout'
 export * from './endpoints/pvp/PlayerMMR'
 export * from './endpoints/pvp/MatchHistory'
 export * from './endpoints/pvp/MatchDetails'
+export * from './endpoints/pvp/CompetitiveUpdates'
 
 export * from './endpoints'

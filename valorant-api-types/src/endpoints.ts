@@ -5,6 +5,7 @@ import {setPlayerLoadoutEndpoint} from './endpoints/pvp/SetPlayerLoadout'
 import {playerMMREndpoint} from './endpoints/pvp/PlayerMMR'
 import {matchHistoryEndpoint} from './endpoints/pvp/MatchHistory'
 import {matchDetailsEndpoint} from './endpoints/pvp/MatchDetails'
+import {competitiveUpdatesEndpoint} from './endpoints/pvp/CompetitiveUpdates'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -13,5 +14,6 @@ export const endpoints = {
     setPlayerLoadoutEndpoint,
     playerMMREndpoint,
     matchHistoryEndpoint,
-    matchDetailsEndpoint
+    matchDetailsEndpoint,
+    competitiveUpdatesEndpoint
 }
