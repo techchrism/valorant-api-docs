@@ -8,6 +8,7 @@ import {matchDetailsEndpoint} from './endpoints/pvp/MatchDetails'
 import {competitiveUpdatesEndpoint} from './endpoints/pvp/CompetitiveUpdates'
 import {leaderboardEndpoint} from './endpoints/pvp/Leaderboard'
 import {penaltiesEndpoint} from './endpoints/pvp/Penalties'
+import {itemUpgradesEndpoint} from './endpoints/pvp/ItemUpgrades'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -19,5 +20,6 @@ export const endpoints = {
     matchDetailsEndpoint,
     competitiveUpdatesEndpoint,
     leaderboardEndpoint,
-    penaltiesEndpoint
+    penaltiesEndpoint,
+    itemUpgradesEndpoint
 }
