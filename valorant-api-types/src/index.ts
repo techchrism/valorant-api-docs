@@ -7,5 +7,6 @@ export * from './endpoints/pvp/MatchHistory'
 export * from './endpoints/pvp/MatchDetails'
 export * from './endpoints/pvp/CompetitiveUpdates'
 export * from './endpoints/pvp/Leaderboard'
+export * from './endpoints/pvp/Penalties'
 
 export * from './endpoints'
