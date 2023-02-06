@@ -6,6 +6,7 @@ import {playerMMREndpoint} from './endpoints/pvp/PlayerMMR'
 import {matchHistoryEndpoint} from './endpoints/pvp/MatchHistory'
 import {matchDetailsEndpoint} from './endpoints/pvp/MatchDetails'
 import {competitiveUpdatesEndpoint} from './endpoints/pvp/CompetitiveUpdates'
+import {leaderboardEndpoint} from './endpoints/pvp/Leaderboard'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -15,5 +16,6 @@ export const endpoints = {
     playerMMREndpoint,
     matchHistoryEndpoint,
     matchDetailsEndpoint,
-    competitiveUpdatesEndpoint
+    competitiveUpdatesEndpoint,
+    leaderboardEndpoint
 }
