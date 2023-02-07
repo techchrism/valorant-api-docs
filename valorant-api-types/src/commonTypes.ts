@@ -120,3 +120,64 @@ export const offerSchema = z.object({
         Quantity: z.number()
     }))
 })
+
+
+const pregameTeamSchema = z.object({
+    TeamID: z.enum(['Blue', 'Red']).or(playerUUIDSchema),
+    Players: z.array(z.object({
+        Subject: playerUUIDSchema,
+        CharacterID: characterIDSchema,
+        CharacterSelectionState: z.enum(['', 'selected']),
+        PregamePlayerState: z.enum(['joined']), //TODO find other values
+        CompetitiveTier: z.number(),
+        PlayerIdentity: z.object({
+            Subject: playerUUIDSchema,
+            PlayerCardID: cardIDSchema,
+            PlayerTitleID: titleIDSchema,
+            AccountLevel: z.number(),
+            PreferredLevelBorderID: preferredLevelBorderIDSchema,
+            Incognito: z.boolean(),
+            HideAccountLevel: z.boolean()
+        }),
+        SeasonalBadgeInfo: z.object({
+            SeasonID: seasonIDSchema.or(z.literal('')),
+            NumberOfWins: z.number(),
+            WinsByTier: z.null(),
+            Rank: z.number(),
+            LeaderboardRank: z.number()
+        }),
+        IsCaptain: z.boolean()
+    }))
+})
+export const pregameMatchSchema = z.object({
+    ID: pregameIDSchema,
+    Version: z.number(),
+    Teams: z.array(pregameTeamSchema),
+    AllyTeam: pregameTeamSchema.nullable(),
+    EnemyTeam: pregameTeamSchema.nullable(),
+    ObserverSubjects: z.array(z.unknown()), //TODO verify
+    MatchCoaches: z.array(z.unknown()), //TODO verify
+    EnemyTeamSize: z.number(),
+    EnemyTeamLockCount: z.number(),
+    PregameState: z.enum(['character_select_active']), //TODO find other values
+    LastUpdated: dateSchema,
+    MapID: mapIDSchema,
+    MapSelectPool: z.array(z.unknown()),
+    BannedMapIDs: z.array(z.unknown()),
+    CastedVotes: z.unknown(),
+    MapSelectSteps: z.array(z.unknown()),
+    MapSelectStep: z.number(),
+    Team1: z.enum(['Blue', 'Red']).or(playerUUIDSchema),
+    GamePodID: z.string(),
+    Mode: gameModeSchema,
+    VoiceSessionID: z.string(),
+    MUCName: z.string(),
+    QueueID: queueIDSchema.or(z.literal('')),
+    ProvisioningFlow: z.enum(['Matchmaking', 'CustomGame']),
+    IsRanked: z.boolean(),
+    PhaseTimeRemainingNS: z.number(),
+    StepTimeRemainingNS: z.number(),
+    altModesFlagADA: z.boolean(),
+    TournamentMetadata: z.null(),
+    RosterMetadata: z.null()
+})

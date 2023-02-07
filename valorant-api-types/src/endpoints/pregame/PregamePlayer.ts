@@ -3,8 +3,8 @@ import {z} from 'zod'
 import {playerUUIDSchema, pregameIDSchema} from '../../commonTypes'
 
 export const pregamePlayerEndpoint = {
-    name: 'Pregame Player',
-    description: 'Get the pregame match ID for the provided player',
+    name: 'Pre-Game Player',
+    description: 'Get the pre-game match ID for the provided player',
     queryName: 'Pregame_GetPlayer',
     category: 'Pre-Game Endpoints',
     type: 'glz',
