@@ -45,5 +45,6 @@ export * from './endpoints/pregame/PregameQuit'
 
 export * from './endpoints/currentgame/CurrentGamePlayer'
 export * from './endpoints/currentgame/CurrentGameMatch'
+export * from './endpoints/currentgame/CurrentGameLoadouts'
 
 export * from './endpoints'
