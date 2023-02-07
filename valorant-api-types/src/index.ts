@@ -27,5 +27,6 @@ export * from './endpoints/party/SetCustomGameSettings'
 export * from './endpoints/party/PartyInvite'
 export * from './endpoints/party/PartyRequest'
 export * from './endpoints/party/PartyDecline'
+export * from './endpoints/party/CustomGameConfigs'
 
 export * from './endpoints'
