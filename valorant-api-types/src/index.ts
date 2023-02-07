@@ -38,5 +38,6 @@ export * from './endpoints/store/OwnedItems'
 
 export * from './endpoints/pregame/PregamePlayer'
 export * from './endpoints/pregame/PregameMatch'
+export * from './endpoints/pregame/PregameLoadouts'
 
 export * from './endpoints'

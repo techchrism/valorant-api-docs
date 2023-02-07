@@ -35,6 +35,7 @@ import {walletEndpoint} from './endpoints/store/Wallet'
 import {ownedItemsEndpoint} from './endpoints/store/OwnedItems'
 import {pregamePlayerEndpoint} from './endpoints/pregame/PregamePlayer'
 import {pregameMatchEndpoint} from './endpoints/pregame/PregameMatch'
+import {pregameLoadoutsEndpoint} from './endpoints/pregame/PregameLoadouts'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -76,5 +77,6 @@ export const endpoints = {
     ownedItemsEndpoint,
 
     pregamePlayerEndpoint,
-    pregameMatchEndpoint
+    pregameMatchEndpoint,
+    pregameLoadoutsEndpoint
 }
