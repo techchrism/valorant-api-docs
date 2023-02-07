@@ -4,6 +4,8 @@ export const stringBooleanSchema = z.string().transform(val => val === 'true')
 
 export const playerUUIDSchema = z.string().uuid().describe('Player UUID')
 export const matchIDSchema = z.string().uuid().describe('Match ID')
+export const pregameIDSchema = z.string().uuid().describe('Pre-Game Match ID')
+export const currentGameIDSchema = z.string().uuid().describe('Current Game Match ID')
 export const partyIDSchema = z.string().uuid().describe('Party ID')
 export const gameModeSchema = z.string().describe('Game Mode')
 export const dateSchema = z.string().datetime().transform(val => new Date(val)).describe('Date in ISO 8601 format')
