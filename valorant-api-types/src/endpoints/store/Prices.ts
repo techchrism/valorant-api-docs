@@ -16,7 +16,7 @@ export const pricesEndpoint = {
     responses: {
         '200': z.object({
             Offers: z.array(z.object({
-                OfferId: z.string(),
+                OfferID: z.string(),
                 IsDirectPurchase: z.boolean(),
                 StartDate: dateSchema,
                 Cost: z.record(currencyIDSchema, z.number()),

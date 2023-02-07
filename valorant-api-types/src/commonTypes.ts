@@ -106,3 +106,15 @@ export const partySchema = z.object({
     }),
     XPBonuses: z.array(z.unknown())
 })
+
+export const offerSchema = z.object({
+    OfferID: z.string(),
+    IsDirectPurchase: z.boolean(),
+    StartDate: dateSchema,
+    Cost: z.record(currencyIDSchema, z.number()),
+    Rewards: z.array(z.object({
+        ItemTypeID: itemTypeIDSchema,
+        ItemID: itemIDSchema,
+        Quantity: z.number()
+    }))
+})
