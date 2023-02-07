@@ -34,5 +34,6 @@ export * from './endpoints/party/PartyVoiceToken'
 export * from './endpoints/store/Prices'
 export * from './endpoints/store/Storefront'
 export * from './endpoints/store/Wallet'
+export * from './endpoints/store/OwnedItems'
 
 export * from './endpoints'
