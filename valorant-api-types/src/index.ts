@@ -16,5 +16,6 @@ export * from './endpoints/party/PartyPlayer'
 export * from './endpoints/party/PartyRemovePlayer'
 export * from './endpoints/party/PartySetMemberReady'
 export * from './endpoints/party/RefreshCompetitiveTier'
+export * from './endpoints/party/RefreshPlayerIdentity'
 
 export * from './endpoints'
