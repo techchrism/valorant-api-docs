@@ -27,6 +27,7 @@ import {partyInviteEndpoint} from './endpoints/party/PartyInvite'
 import {partyRequestEndpoint} from './endpoints/party/PartyRequest'
 import {partyDeclineEndpoint} from './endpoints/party/PartyDecline'
 import {customGameConfigsEndpoint} from './endpoints/party/CustomGameConfigs'
+import {partyChatTokenEndpoint} from './endpoints/party/PartyChatToken'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -58,5 +59,6 @@ export const endpoints = {
     partyInviteEndpoint,
     partyRequestEndpoint,
     partyDeclineEndpoint,
-    customGameConfigsEndpoint
+    customGameConfigsEndpoint,
+    partyChatTokenEndpoint
 }
