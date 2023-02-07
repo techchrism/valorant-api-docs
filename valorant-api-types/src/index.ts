@@ -40,5 +40,6 @@ export * from './endpoints/pregame/PregamePlayer'
 export * from './endpoints/pregame/PregameMatch'
 export * from './endpoints/pregame/PregameLoadouts'
 export * from './endpoints/pregame/SelectCharacter'
+export * from './endpoints/pregame/LockCharacter'
 
 export * from './endpoints'

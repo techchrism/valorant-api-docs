@@ -2,18 +2,18 @@ import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
 import {pregameMatchSchema} from '../../commonTypes'
 
-export const selectCharacterEndpoint = {
-    name: 'Select Character',
-    description: 'Select an agent  \n' +
+export const lockCharacterEndpoint = {
+    name: 'Lock Character',
+    description: 'Lock in an agent  \n' +
         '**DO NOT USE THIS FOR INSTALOCKING**  \n' +
         'Riot doesn\'t like this. You may get banned or get the API restricted for the rest of us.  ',
-    queryName: 'Pregame_SelectCharacter',
+    queryName: 'Pregame_LockCharacter',
     category: 'Pre-Game Endpoints',
     type: 'glz',
     method: 'POST',
-    suffix: 'pregame/v1/matches/{pre-game match id}/select/{agent id}',
+    suffix: 'pregame/v1/matches/{pre-game match id}/lock/{agent id}',
     variables: new Map([
-        ['{agent id}', z.string().uuid().describe('The agent ID to select')]
+        ['{agent id}', z.string().uuid().describe('The agent ID to lock in')]
     ]),
     riotRequirements: {
         token: true,
@@ -24,4 +24,4 @@ export const selectCharacterEndpoint = {
     }
 } satisfies ValorantEndpoint
 
-export type SelectCharacterResponse = z.infer<typeof selectCharacterEndpoint.responses['200']>
+export type LockCharacterResponse = z.infer<typeof lockCharacterEndpoint.responses['200']>
