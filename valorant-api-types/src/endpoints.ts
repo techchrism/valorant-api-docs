@@ -25,6 +25,7 @@ import {setPartyAccessibilityEndpoint} from './endpoints/party/SetPartyAccessibi
 import {setCustomGameSettingsEndpoint} from './endpoints/party/SetCustomGameSettings'
 import {partyInviteEndpoint} from './endpoints/party/PartyInvite'
 import {partyRequestEndpoint} from './endpoints/party/PartyRequest'
+import {partyDeclineEndpoint} from './endpoints/party/PartyDecline'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -54,5 +55,6 @@ export const endpoints = {
     setPartyAccessibilityEndpoint,
     setCustomGameSettingsEndpoint,
     partyInviteEndpoint,
-    partyRequestEndpoint
+    partyRequestEndpoint,
+    partyDeclineEndpoint
 }
