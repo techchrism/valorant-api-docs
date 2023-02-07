@@ -24,5 +24,6 @@ export * from './endpoints/party/EnterMatchmakingQueue'
 export * from './endpoints/party/LeaveMatchmakingQueue'
 export * from './endpoints/party/SetPartyAccessibility'
 export * from './endpoints/party/SetCustomGameSettings'
+export * from './endpoints/party/PartyInvite'
 
 export * from './endpoints'
