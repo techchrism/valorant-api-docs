@@ -18,6 +18,7 @@ import {refreshCompetitiveTierEndpoint} from './endpoints/party/RefreshCompetiti
 import {refreshPlayerIdentityEndpoint} from './endpoints/party/RefreshPlayerIdentity'
 import {refreshPingsEndpoint} from './endpoints/party/RefreshPings'
 import {changeQueueEndpoint} from './endpoints/party/ChangeQueue'
+import {startCustomGameEndpoint} from './endpoints/party/StartCustomGame'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -40,5 +41,6 @@ export const endpoints = {
     refreshCompetitiveTierEndpoint,
     refreshPlayerIdentityEndpoint,
     refreshPingsEndpoint,
-    changeQueueEndpoint
+    changeQueueEndpoint,
+    startCustomGameEndpoint
 }
