@@ -14,6 +14,7 @@ import {partyEndpoint} from './endpoints/party/Party'
 import {partyPlayerEndpoint} from './endpoints/party/PartyPlayer'
 import {partyRemovePlayerEndpoint} from './endpoints/party/PartyRemovePlayer'
 import {partySetMemberReadyEndpoint} from './endpoints/party/PartySetMemberReady'
+import {refreshCompetitiveTierEndpoint} from './endpoints/party/RefreshCompetitiveTier'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -32,5 +33,6 @@ export const endpoints = {
     partyEndpoint,
     partyPlayerEndpoint,
     partyRemovePlayerEndpoint,
-    partySetMemberReadyEndpoint
+    partySetMemberReadyEndpoint,
+    refreshCompetitiveTierEndpoint
 }
