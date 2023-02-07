@@ -31,4 +31,6 @@ export * from './endpoints/party/CustomGameConfigs'
 export * from './endpoints/party/PartyChatToken'
 export * from './endpoints/party/PartyVoiceToken'
 
+export * from './endpoints/store/Prices'
+
 export * from './endpoints'
