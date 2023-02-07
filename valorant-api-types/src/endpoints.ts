@@ -21,6 +21,7 @@ import {changeQueueEndpoint} from './endpoints/party/ChangeQueue'
 import {startCustomGameEndpoint} from './endpoints/party/StartCustomGame'
 import {enterMatchmakingQueueEndpoint} from './endpoints/party/EnterMatchmakingQueue'
 import {leaveMatchmakingQueueEndpoint} from './endpoints/party/LeaveMatchmakingQueue'
+import {setPartyAccessibilityEndpoint} from './endpoints/party/SetPartyAccessibility'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -46,5 +47,6 @@ export const endpoints = {
     changeQueueEndpoint,
     startCustomGameEndpoint,
     enterMatchmakingQueueEndpoint,
-    leaveMatchmakingQueueEndpoint
+    leaveMatchmakingQueueEndpoint,
+    setPartyAccessibilityEndpoint
 }
