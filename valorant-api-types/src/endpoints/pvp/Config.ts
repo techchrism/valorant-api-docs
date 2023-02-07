@@ -1,8 +1,7 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {dateSchema} from '../../commonTypes'
+import {dateSchema, stringBooleanSchema} from '../../commonTypes'
 
-const stringBooleanSchema = z.string().transform(val => val === 'true')
 const stringNumberSchema = z.string().transform(val => Number(val))
 
 export const configEndpoint = {

@@ -10,6 +10,7 @@ import {leaderboardEndpoint} from './endpoints/pvp/Leaderboard'
 import {penaltiesEndpoint} from './endpoints/pvp/Penalties'
 import {itemUpgradesEndpoint} from './endpoints/pvp/ItemUpgrades'
 import {configEndpoint} from './endpoints/pvp/Config'
+import {partyEndpoint} from './endpoints/party/Party'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -23,5 +24,7 @@ export const endpoints = {
     leaderboardEndpoint,
     penaltiesEndpoint,
     itemUpgradesEndpoint,
-    configEndpoint
+    configEndpoint,
+
+    partyEndpoint
 }
