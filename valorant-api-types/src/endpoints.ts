@@ -31,6 +31,7 @@ import {partyChatTokenEndpoint} from './endpoints/party/PartyChatToken'
 import {partyVoiceTokenEndpoint} from './endpoints/party/PartyVoiceToken'
 import {pricesEndpoint} from './endpoints/store/Prices'
 import {storefrontEndpoint} from './endpoints/store/Storefront'
+import {walletEndpoint} from './endpoints/store/Wallet'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -67,5 +68,6 @@ export const endpoints = {
     partyVoiceTokenEndpoint,
 
     pricesEndpoint,
-    storefrontEndpoint
+    storefrontEndpoint,
+    walletEndpoint
 }
