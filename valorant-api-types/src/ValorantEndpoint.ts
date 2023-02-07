@@ -79,7 +79,7 @@ export interface ValorantEndpoint {
     headers?: Map<string, string>
 
     // The body of the request
-    body?: string
+    body?: string | ZodType
 
     // The query parameters of the request
     query?: Map<string, ZodType>

@@ -18,5 +18,6 @@ export * from './endpoints/party/PartySetMemberReady'
 export * from './endpoints/party/RefreshCompetitiveTier'
 export * from './endpoints/party/RefreshPlayerIdentity'
 export * from './endpoints/party/RefreshPings'
+export * from './endpoints/party/ChangeQueue'
 
 export * from './endpoints'
