@@ -38,6 +38,7 @@ import {pregameMatchEndpoint} from './endpoints/pregame/PregameMatch'
 import {pregameLoadoutsEndpoint} from './endpoints/pregame/PregameLoadouts'
 import {selectCharacterEndpoint} from './endpoints/pregame/SelectCharacter'
 import {lockCharacterEndpoint} from './endpoints/pregame/LockCharacter'
+import {pregameQuitEndpoint} from './endpoints/pregame/PregameQuit'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -82,5 +83,6 @@ export const endpoints = {
     pregameMatchEndpoint,
     pregameLoadoutsEndpoint,
     selectCharacterEndpoint,
-    lockCharacterEndpoint
+    lockCharacterEndpoint,
+    pregameQuitEndpoint
 }
