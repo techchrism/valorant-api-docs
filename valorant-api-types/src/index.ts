@@ -12,5 +12,6 @@ export * from './endpoints/pvp/ItemUpgrades'
 export * from './endpoints/pvp/Config'
 export * from './endpoints/party/Party'
 export * from './endpoints/party/PartyPlayer'
+export * from './endpoints/party/PartyRemovePlayer'
 
 export * from './endpoints'
