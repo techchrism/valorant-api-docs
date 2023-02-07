@@ -20,5 +20,6 @@ export * from './endpoints/party/RefreshPlayerIdentity'
 export * from './endpoints/party/RefreshPings'
 export * from './endpoints/party/ChangeQueue'
 export * from './endpoints/party/StartCustomGame'
+export * from './endpoints/party/EnterMatchmakingQueue'
 
 export * from './endpoints'
