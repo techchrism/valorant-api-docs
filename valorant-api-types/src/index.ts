@@ -43,4 +43,6 @@ export * from './endpoints/pregame/SelectCharacter'
 export * from './endpoints/pregame/LockCharacter'
 export * from './endpoints/pregame/PregameQuit'
 
+export * from './endpoints/currentgame/CurrentGamePlayer'
+
 export * from './endpoints'
