@@ -50,4 +50,6 @@ export * from './endpoints/contracts/ItemUpgrades'
 export * from './endpoints/contracts/Contracts'
 export * from './endpoints/contracts/ActivateContract'
 
+export * from './endpoints/local/LocalHelp'
+
 export * from './endpoints'
