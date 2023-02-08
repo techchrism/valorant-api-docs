@@ -55,5 +55,6 @@ export * from './endpoints/local/Sessions'
 export * from './endpoints/local/RSOUserInfo'
 export * from './endpoints/local/ClientRegion'
 export * from './endpoints/local/AccountAlias'
+export * from './endpoints/local/EntitlementsToken'
 
 export * from './endpoints'
