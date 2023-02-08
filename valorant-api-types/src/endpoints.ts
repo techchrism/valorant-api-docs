@@ -44,6 +44,7 @@ import {currentGameMatchEndpoint} from './endpoints/currentgame/CurrentGameMatch
 import {currentGameLoadoutsEndpoint} from './endpoints/currentgame/CurrentGameLoadouts'
 import {currentGameQuitEndpoint} from './endpoints/currentgame/CurrentGameQuit'
 import {contractsEndpoint} from './endpoints/contracts/Contracts'
+import {activateContractEndpoint} from './endpoints/contracts/ActivateContract'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -96,5 +97,6 @@ export const endpoints = {
     currentGameQuitEndpoint,
 
     itemUpgradesEndpoint,
-    contractsEndpoint
+    contractsEndpoint,
+    activateContractEndpoint
 }
