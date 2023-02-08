@@ -47,6 +47,7 @@ import {contractsEndpoint} from './endpoints/contracts/Contracts'
 import {activateContractEndpoint} from './endpoints/contracts/ActivateContract'
 import {localHelpEndpoint} from './endpoints/local/LocalHelp'
 import {sessionsEndpoint} from './endpoints/local/Sessions'
+import {rsoUserInfoEndpoint} from './endpoints/local/RSOUserInfo'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -103,5 +104,6 @@ export const endpoints = {
     activateContractEndpoint,
 
     localHelpEndpoint,
-    sessionsEndpoint
+    sessionsEndpoint,
+    rsoUserInfoEndpoint
 }

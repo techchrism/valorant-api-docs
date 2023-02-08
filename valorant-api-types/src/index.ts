@@ -52,5 +52,6 @@ export * from './endpoints/contracts/ActivateContract'
 
 export * from './endpoints/local/LocalHelp'
 export * from './endpoints/local/Sessions'
+export * from './endpoints/local/RSOUserInfo'
 
 export * from './endpoints'
