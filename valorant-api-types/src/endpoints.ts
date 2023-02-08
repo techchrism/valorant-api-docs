@@ -46,6 +46,7 @@ import {currentGameQuitEndpoint} from './endpoints/currentgame/CurrentGameQuit'
 import {contractsEndpoint} from './endpoints/contracts/Contracts'
 import {activateContractEndpoint} from './endpoints/contracts/ActivateContract'
 import {localHelpEndpoint} from './endpoints/local/LocalHelp'
+import {sessionsEndpoint} from './endpoints/local/Sessions'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -101,5 +102,6 @@ export const endpoints = {
     contractsEndpoint,
     activateContractEndpoint,
 
-    localHelpEndpoint
+    localHelpEndpoint,
+    sessionsEndpoint
 }

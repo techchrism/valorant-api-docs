@@ -51,5 +51,6 @@ export * from './endpoints/contracts/Contracts'
 export * from './endpoints/contracts/ActivateContract'
 
 export * from './endpoints/local/LocalHelp'
+export * from './endpoints/local/Sessions'
 
 export * from './endpoints'
