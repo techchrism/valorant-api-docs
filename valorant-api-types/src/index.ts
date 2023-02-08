@@ -8,7 +8,6 @@ export * from './endpoints/pvp/MatchDetails'
 export * from './endpoints/pvp/CompetitiveUpdates'
 export * from './endpoints/pvp/Leaderboard'
 export * from './endpoints/pvp/Penalties'
-export * from './endpoints/pvp/ItemUpgrades'
 export * from './endpoints/pvp/Config'
 
 export * from './endpoints/party/Party'
@@ -46,5 +45,7 @@ export * from './endpoints/pregame/PregameQuit'
 export * from './endpoints/currentgame/CurrentGamePlayer'
 export * from './endpoints/currentgame/CurrentGameMatch'
 export * from './endpoints/currentgame/CurrentGameLoadouts'
+
+export * from './endpoints/contracts/ItemUpgrades'
 
 export * from './endpoints'

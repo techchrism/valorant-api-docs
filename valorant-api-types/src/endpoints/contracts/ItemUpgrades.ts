@@ -12,7 +12,7 @@ export const itemUpgradesEndpoint = {
     name: 'Item Upgrades',
     description: 'Get details for item upgrades',
     queryName: 'ItemProgressionDefinitionsV2_Fetch', // not a typo - the query name incorrectly uses V2 instead of V3
-    category: 'PVP Endpoints',
+    category: 'Contract Endpoints',
     type: 'pd',
     suffix: 'contract-definitions/v3/item-upgrades',
     riotRequirements: {

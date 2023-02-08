@@ -8,7 +8,7 @@ import {matchDetailsEndpoint} from './endpoints/pvp/MatchDetails'
 import {competitiveUpdatesEndpoint} from './endpoints/pvp/CompetitiveUpdates'
 import {leaderboardEndpoint} from './endpoints/pvp/Leaderboard'
 import {penaltiesEndpoint} from './endpoints/pvp/Penalties'
-import {itemUpgradesEndpoint} from './endpoints/pvp/ItemUpgrades'
+import {itemUpgradesEndpoint} from './endpoints/contracts/ItemUpgrades'
 import {configEndpoint} from './endpoints/pvp/Config'
 import {partyEndpoint} from './endpoints/party/Party'
 import {partyPlayerEndpoint} from './endpoints/party/PartyPlayer'
@@ -55,7 +55,6 @@ export const endpoints = {
     competitiveUpdatesEndpoint,
     leaderboardEndpoint,
     penaltiesEndpoint,
-    itemUpgradesEndpoint,
     configEndpoint,
 
     partyEndpoint,
@@ -93,5 +92,7 @@ export const endpoints = {
     currentGamePlayerEndpoint,
     currentGameMatchEndpoint,
     currentGameLoadoutsEndpoint,
-    currentGameQuitEndpoint
+    currentGameQuitEndpoint,
+
+    itemUpgradesEndpoint
 }
