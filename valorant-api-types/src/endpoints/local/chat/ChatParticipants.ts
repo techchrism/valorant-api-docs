@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../../ValorantEndpoint'
 import {z} from 'zod'
-import {participantsSchema} from '../../../commonTypes'
+import {playerUUIDSchema} from '../../../commonTypes'
 
 export const chatParticipantsEndpoint = {
     name: 'Chat Participants',
@@ -15,7 +15,19 @@ export const chatParticipantsEndpoint = {
         localAuth: true
     },
     responses: {
-        '200': participantsSchema
+        '200': z.object({
+            participants: z.array(z.object({
+                activePlatform: z.null(),
+                cid: z.string(),
+                game_name: z.string(),
+                game_tag: z.string(),
+                muted: z.boolean(),
+                name: z.string(),
+                pid: z.string(),
+                puuid: playerUUIDSchema,
+                region: z.string()
+            }))
+        })
     }
 } satisfies ValorantEndpoint
 
