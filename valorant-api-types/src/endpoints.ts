@@ -54,6 +54,7 @@ import {entitlementsTokenEndpoint} from './endpoints/local/EntitlementsToken'
 import {chatSessionEndpoint} from './endpoints/local/ChatSession'
 import {friendsEndpoint} from './endpoints/local/Friends'
 import {presenceEndpoint} from './endpoints/local/Presence'
+import {settingsEndpoint} from './endpoints/local/Settings'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -117,5 +118,6 @@ export const endpoints = {
     entitlementsTokenEndpoint,
     chatSessionEndpoint,
     friendsEndpoint,
-    presenceEndpoint
+    presenceEndpoint,
+    settingsEndpoint
 }
