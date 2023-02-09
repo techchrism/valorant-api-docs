@@ -58,6 +58,7 @@ import {settingsEndpoint} from './endpoints/local/Settings'
 import {friendRequestsEndpoint} from './endpoints/local/FriendRequests'
 import {partyChatInfoEndpoint} from './endpoints/local/chat/PartyChatInfo'
 import {pregameChatInfoEndpoint} from './endpoints/local/chat/PregameChatInfo'
+import {currentGameChatInfoEndpoint} from './endpoints/local/chat/CurrentGameChatInfo'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -126,5 +127,6 @@ export const endpoints = {
     friendRequestsEndpoint,
 
     partyChatInfoEndpoint,
-    pregameChatInfoEndpoint
+    pregameChatInfoEndpoint,
+    currentGameChatInfoEndpoint
 }

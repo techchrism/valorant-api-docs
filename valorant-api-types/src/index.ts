@@ -64,5 +64,6 @@ export * from './endpoints/local/FriendRequests'
 
 export * from './endpoints/local/chat/PartyChatInfo'
 export * from './endpoints/local/chat/PregameChatInfo'
+export * from './endpoints/local/chat/CurrentGameChatInfo'
 
 export * from './endpoints'
