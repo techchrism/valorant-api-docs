@@ -251,3 +251,21 @@ export const contractsResponse = z.object({
         WeeklyRefillTime: dateSchema
     })
 })
+
+export const conversationsSchema = z.object({
+    conversations: z.array(z.object({
+        cid: z.string(),
+        direct_messages: z.boolean(),
+        global_readership: z.boolean(),
+        message_history: z.boolean(),
+        mid: z.string(),
+        muted: z.boolean(),
+        mutedRestriction: z.boolean(),
+        type: z.enum(['groupchat', 'chat']),
+        uiState: z.object({
+            changedSinceHidden: z.boolean(),
+            hidden: z.boolean()
+        }),
+        unread_count: z.number()
+    }))
+})
