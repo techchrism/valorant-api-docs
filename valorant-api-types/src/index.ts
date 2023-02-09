@@ -57,5 +57,6 @@ export * from './endpoints/local/ClientRegion'
 export * from './endpoints/local/AccountAlias'
 export * from './endpoints/local/EntitlementsToken'
 export * from './endpoints/local/ChatSession'
+export * from './endpoints/local/Friends'
 
 export * from './endpoints'
