@@ -67,5 +67,6 @@ export * from './endpoints/local/chat/PregameChatInfo'
 export * from './endpoints/local/chat/CurrentGameChatInfo'
 export * from './endpoints/local/chat/AllChatInfo'
 export * from './endpoints/local/chat/ChatParticipants'
+export * from './endpoints/local/chat/SendChat'
 
 export * from './endpoints'

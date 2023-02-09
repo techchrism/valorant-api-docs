@@ -269,3 +269,21 @@ export const conversationsSchema = z.object({
         unread_count: z.number()
     }))
 })
+
+export const chatMessagesSchema = z.object({
+    messages: z.array(z.object({
+        body: z.string(),
+        cid: z.string(),
+        game_name: z.string(),
+        game_tag: z.string(),
+        id: z.string(),
+        mid: z.string(),
+        name: z.string(),
+        pid: z.string(),
+        puuid: playerUUIDSchema,
+        read: z.boolean(),
+        region: z.string(),
+        time: z.string().transform(s => new Date(Number(s))).describe('Time in milliseconds since epoch'),
+        type: z.enum(['chat', 'groupchat'])
+    }))
+})
