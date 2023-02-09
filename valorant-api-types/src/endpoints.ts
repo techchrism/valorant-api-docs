@@ -51,6 +51,7 @@ import {rsoUserInfoEndpoint} from './endpoints/local/RSOUserInfo'
 import {clientRegionEndpoint} from './endpoints/local/ClientRegion'
 import {accountAliasEndpoint} from './endpoints/local/AccountAlias'
 import {entitlementsTokenEndpoint} from './endpoints/local/EntitlementsToken'
+import {chatSessionEndpoint} from './endpoints/local/ChatSession'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -111,5 +112,6 @@ export const endpoints = {
     rsoUserInfoEndpoint,
     clientRegionEndpoint,
     accountAliasEndpoint,
-    entitlementsTokenEndpoint
+    entitlementsTokenEndpoint,
+    chatSessionEndpoint
 }
