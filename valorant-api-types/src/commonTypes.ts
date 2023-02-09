@@ -1,29 +1,32 @@
 import {z} from 'zod'
 
+// Zod's UUID type is too strict, so we use a weaker regex
+export const weakUUIDSchema = z.string().regex(/^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$/i).describe('UUID')
+
 export const stringBooleanSchema = z.string().transform(val => val === 'true')
 
-export const playerUUIDSchema = z.string().uuid().describe('Player UUID')
-export const matchIDSchema = z.string().uuid().describe('Match ID')
-export const pregameIDSchema = z.string().uuid().describe('Pre-Game Match ID')
-export const currentGameIDSchema = z.string().uuid().describe('Current Game Match ID')
-export const partyIDSchema = z.string().uuid().describe('Party ID')
+export const playerUUIDSchema = weakUUIDSchema.describe('Player UUID')
+export const matchIDSchema = weakUUIDSchema.describe('Match ID')
+export const pregameIDSchema = weakUUIDSchema.describe('Pre-Game Match ID')
+export const currentGameIDSchema = weakUUIDSchema.describe('Current Game Match ID')
+export const partyIDSchema = weakUUIDSchema.describe('Party ID')
 export const gameModeSchema = z.string().describe('Game Mode')
 export const dateSchema = z.string().datetime().transform(val => new Date(val)).describe('Date in ISO 8601 format')
 export const millisSchema = z.number().transform(val => new Date(val)).describe('Milliseconds since epoch')
 
 // IDs that can be derived from game files
-export const seasonIDSchema = z.string().uuid().describe('Season ID')
+export const seasonIDSchema = weakUUIDSchema.describe('Season ID')
 export const queueIDSchema = z.string().describe('Queue ID')
 export const mapIDSchema = z.string().describe('Map ID')
-export const characterIDSchema = z.string().uuid().describe('Character ID')
-export const cardIDSchema = z.string().uuid().describe('Card ID')
-export const titleIDSchema = z.string().uuid().describe('Title ID')
-export const preferredLevelBorderIDSchema = z.string().uuid().describe('Preferred Level Border ID')
+export const characterIDSchema = weakUUIDSchema.describe('Character ID')
+export const cardIDSchema = weakUUIDSchema.describe('Card ID')
+export const titleIDSchema = weakUUIDSchema.describe('Title ID')
+export const preferredLevelBorderIDSchema = weakUUIDSchema.describe('Preferred Level Border ID')
 export const xpModificationIDSchema = z.string().describe('XP Modification ID')
-export const itemIDSchema = z.string().uuid().describe('Item ID')
-export const itemTypeIDSchema = z.string().uuid().describe('Item Type ID')
-export const armorIDSchema = z.string().uuid().describe('Armor ID')
-export const currencyIDSchema = z.string().uuid().describe('Currency ID')
+export const itemIDSchema = weakUUIDSchema.describe('Item ID')
+export const itemTypeIDSchema = weakUUIDSchema.describe('Item Type ID')
+export const armorIDSchema = weakUUIDSchema.describe('Armor ID')
+export const currencyIDSchema = weakUUIDSchema.describe('Currency ID')
 
 
 const partyMembershipSchema = z.array(z.object({Subject: playerUUIDSchema})).nullable()
@@ -186,7 +189,7 @@ export const contractsResponse = z.object({
     Version: z.number(),
     Subject: playerUUIDSchema,
     Contracts: z.array(z.object({
-        ContractDefinitionID: z.string().uuid(),
+        ContractDefinitionID: weakUUIDSchema,
         ContractProgression: z.object({
             TotalProgressionEarned: z.number(),
             TotalProgressionEarnedVersion: z.number(),
@@ -219,26 +222,26 @@ export const contractsResponse = z.object({
             NumAFKRounds: z.number()
         }).nullable(),
         RewardGrants: z.object({}).nullable(),
-        MissionDeltas: z.record(z.string().uuid(), z.object({
-            ID: z.string().uuid(),
-            Objectives: z.record(z.string().uuid(), z.number()),
-            ObjectiveDeltas: z.record(z.string().uuid(), z.object({
-                ID: z.string().uuid(),
+        MissionDeltas: z.record(weakUUIDSchema, z.object({
+            ID: weakUUIDSchema,
+            Objectives: z.record(weakUUIDSchema, z.number()),
+            ObjectiveDeltas: z.record(weakUUIDSchema, z.object({
+                ID: weakUUIDSchema,
                 ProgressBefore: z.number(),
                 ProgressAfter: z.number()
             }))
         })).nullable(),
-        ContractDeltas: z.record(z.string().uuid(), z.object({
-            ID: z.string().uuid(),
+        ContractDeltas: z.record(weakUUIDSchema, z.object({
+            ID: weakUUIDSchema,
             TotalXPBefore: z.number(),
             TotalXPAfter: z.number(),
         })).nullable(),
         CouldProgressMissions: z.boolean()
     })),
-    ActiveSpecialContract: z.string().uuid(),
+    ActiveSpecialContract: weakUUIDSchema,
     Missions: z.array(z.object({
-        ID: z.string().uuid(),
-        Objectives: z.record(z.string().uuid(), z.number()),
+        ID: weakUUIDSchema,
+        Objectives: z.record(weakUUIDSchema, z.number()),
         Complete: z.boolean(),
         ExpirationTime: dateSchema
     })),

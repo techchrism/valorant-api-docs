@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {itemIDSchema, itemTypeIDSchema} from '../../commonTypes'
+import {itemIDSchema, itemTypeIDSchema, weakUUIDSchema} from '../../commonTypes'
 export const ownedItemsEndpoint = {
     name: 'Owned Items',
     description: 'List what the player owns (agents, skins, buddies, ect.)\n' +
@@ -32,9 +32,9 @@ export const ownedItemsEndpoint = {
             EntitlementsByTypes: z.array(z.object({
                 ItemTypeID: z.string(),
                 Entitlements: z.array(z.object({
-                    TypeID: z.string().uuid(),
+                    TypeID: weakUUIDSchema,
                     ItemID: itemIDSchema,
-                    InstanceID: z.string().uuid().optional()
+                    InstanceID: weakUUIDSchema.optional()
                 }))
             }))
         })

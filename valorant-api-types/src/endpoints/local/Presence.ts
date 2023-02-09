@@ -6,14 +6,14 @@ import {
     millisSchema,
     partyIDSchema,
     playerUUIDSchema, preferredLevelBorderIDSchema,
-    queueIDSchema, titleIDSchema
+    queueIDSchema, titleIDSchema, weakUUIDSchema
 } from '../../commonTypes'
 import {atob} from 'iso-base64'
 
 const leagueOfLegendsPresenceSchema = z.object({
     bannerIdSelected: z.string(),
     challengeCrystalSelected: z.string(),
-    challengeTitleSelected: z.string().uuid(),
+    challengeTitleSelected: weakUUIDSchema,
     challengeTokensSelected: z.string().transform(val => val.split(',').map(v => parseInt(v))),
     championId: z.string(),
     companionId: z.string(),

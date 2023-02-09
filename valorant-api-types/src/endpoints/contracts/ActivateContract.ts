@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {contractsResponse} from '../../commonTypes'
+import {contractsResponse, weakUUIDSchema} from '../../commonTypes'
 
 export const activateContractEndpoint = {
     name: 'Activate Contract',
@@ -10,7 +10,7 @@ export const activateContractEndpoint = {
     type: 'pd',
     suffix: 'contracts/v1/contracts/{puuid}/special/{contract id}',
     variables: new Map([
-        ['contract id', z.string().uuid().describe('The contract ID to activate')]
+        ['contract id', weakUUIDSchema.describe('The contract ID to activate')]
     ]),
     riotRequirements: {
         token: true,

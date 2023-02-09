@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {pregameMatchSchema} from '../../commonTypes'
+import {pregameMatchSchema, weakUUIDSchema} from '../../commonTypes'
 
 export const lockCharacterEndpoint = {
     name: 'Lock Character',
@@ -13,7 +13,7 @@ export const lockCharacterEndpoint = {
     method: 'POST',
     suffix: 'pregame/v1/matches/{pre-game match id}/lock/{agent id}',
     variables: new Map([
-        ['{agent id}', z.string().uuid().describe('The agent ID to lock in')]
+        ['{agent id}', weakUUIDSchema.describe('The agent ID to lock in')]
     ]),
     riotRequirements: {
         token: true,

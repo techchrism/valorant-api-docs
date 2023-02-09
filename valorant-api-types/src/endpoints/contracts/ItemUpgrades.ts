@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {currencyIDSchema, itemIDSchema, itemTypeIDSchema} from '../../commonTypes'
+import {currencyIDSchema, itemIDSchema, itemTypeIDSchema, weakUUIDSchema} from '../../commonTypes'
 
 const itemSchema = z.object({
     ItemTypeID: itemTypeIDSchema,
@@ -22,7 +22,7 @@ export const itemUpgradesEndpoint = {
     responses: {
         '200': z.object({
             Definitions: z.array(z.object({
-                ID: z.string().uuid(),
+                ID: weakUUIDSchema,
                 Item: itemSchema,
                 RequiredEntitlement: itemSchema,
                 ProgressionSchedule: z.object({
@@ -31,7 +31,7 @@ export const itemUpgradesEndpoint = {
                     ProgressionDeltaPerLevel: z.array(z.number()).nullable()
                 }),
                 RewardSchedule: z.object({
-                    ID: z.string().uuid(),
+                    ID: weakUUIDSchema,
                     Name: z.string(),
                     Prerequisites: z.null(),
                     RewardsPerLevel: z.array(z.object({
@@ -41,9 +41,9 @@ export const itemUpgradesEndpoint = {
                     })).nullable()
                 }),
                 Sidegrades: z.array(z.object({
-                    SidegradeID: z.string().uuid(),
+                    SidegradeID: weakUUIDSchema,
                     Options: z.array(z.object({
-                        OptionID: z.string().uuid(),
+                        OptionID: weakUUIDSchema,
                         Cost: z.object({
                             WalletCosts: z.array(z.object({
                                 CurrencyID: currencyIDSchema,

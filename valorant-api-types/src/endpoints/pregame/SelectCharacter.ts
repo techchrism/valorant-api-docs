@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {pregameMatchSchema} from '../../commonTypes'
+import {pregameMatchSchema, weakUUIDSchema} from '../../commonTypes'
 
 export const selectCharacterEndpoint = {
     name: 'Select Character',
@@ -13,7 +13,7 @@ export const selectCharacterEndpoint = {
     method: 'POST',
     suffix: 'pregame/v1/matches/{pre-game match id}/select/{agent id}',
     variables: new Map([
-        ['{agent id}', z.string().uuid().describe('The agent ID to select')]
+        ['{agent id}', weakUUIDSchema.describe('The agent ID to select')]
     ]),
     riotRequirements: {
         token: true,

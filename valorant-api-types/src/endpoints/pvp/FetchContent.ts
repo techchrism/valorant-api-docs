@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {dateSchema} from '../../commonTypes'
+import {dateSchema, weakUUIDSchema} from '../../commonTypes'
 
 export const fetchContentEndpoint = {
     name: 'Fetch Content',
@@ -17,7 +17,7 @@ export const fetchContentEndpoint = {
         '200': z.object({
             DisabledIDs: z.array(z.unknown()),
             Seasons: z.array(z.object({
-                ID: z.string().uuid(),
+                ID: weakUUIDSchema,
                 Name: z.string(),
                 Type: z.enum(['episode', 'act']),
                 StartTime: dateSchema,
@@ -25,7 +25,7 @@ export const fetchContentEndpoint = {
                 IsActive: z.boolean()
             })),
             Events: z.array(z.object({
-                ID: z.string().uuid(),
+                ID: weakUUIDSchema,
                 Name: z.string(),
                 StartTime: dateSchema,
                 EndTime: dateSchema,

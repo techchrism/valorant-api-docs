@@ -1,10 +1,10 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {currencyIDSchema, itemIDSchema, itemTypeIDSchema, offerSchema} from '../../commonTypes'
+import {currencyIDSchema, itemIDSchema, itemTypeIDSchema, offerSchema, weakUUIDSchema} from '../../commonTypes'
 
 const bundleSchema = z.object({
-    ID: z.string().uuid(),
-    DataAssetID: z.string().uuid(),
+    ID: weakUUIDSchema,
+    DataAssetID: weakUUIDSchema,
     CurrencyID: currencyIDSchema,
     Items: z.array(z.object({
         Item: z.object({

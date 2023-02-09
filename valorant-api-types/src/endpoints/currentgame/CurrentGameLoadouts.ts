@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {characterIDSchema, itemIDSchema, itemTypeIDSchema} from '../../commonTypes'
+import {characterIDSchema, itemIDSchema, itemTypeIDSchema, weakUUIDSchema} from '../../commonTypes'
 
 export const currentGameLoadoutsEndpoint = {
     name: 'Current Game Loadouts',
@@ -20,16 +20,16 @@ export const currentGameLoadoutsEndpoint = {
                 Loadout: z.object({
                     Sprays: z.object({
                         SpraySelection: z.array(z.object({
-                            SocketID: z.string().uuid(),
-                            SprayID: z.string().uuid(),
-                            LevelID: z.string().uuid()
+                            SocketID: weakUUIDSchema,
+                            SprayID: weakUUIDSchema,
+                            LevelID: weakUUIDSchema
                         }))
                     }),
                     Items: z.record(z.object({
                         ID: itemIDSchema,
                         TypeID: itemTypeIDSchema,
                         Sockets: z.record(z.object({
-                            ID: z.string().uuid(),
+                            ID: weakUUIDSchema,
                             Item: z.object({
                                 ID: itemIDSchema,
                                 TypeID: itemTypeIDSchema
