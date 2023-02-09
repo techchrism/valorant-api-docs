@@ -53,6 +53,7 @@ import {accountAliasEndpoint} from './endpoints/local/AccountAlias'
 import {entitlementsTokenEndpoint} from './endpoints/local/EntitlementsToken'
 import {chatSessionEndpoint} from './endpoints/local/ChatSession'
 import {friendsEndpoint} from './endpoints/local/Friends'
+import {presenceEndpoint} from './endpoints/local/Presence'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -115,5 +116,6 @@ export const endpoints = {
     accountAliasEndpoint,
     entitlementsTokenEndpoint,
     chatSessionEndpoint,
-    friendsEndpoint
+    friendsEndpoint,
+    presenceEndpoint
 }
