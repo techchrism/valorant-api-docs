@@ -55,6 +55,7 @@ import {chatSessionEndpoint} from './endpoints/local/ChatSession'
 import {friendsEndpoint} from './endpoints/local/Friends'
 import {presenceEndpoint} from './endpoints/local/Presence'
 import {settingsEndpoint} from './endpoints/local/Settings'
+import {friendRequestsEndpoint} from './endpoints/local/FriendRequests'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -119,5 +120,6 @@ export const endpoints = {
     chatSessionEndpoint,
     friendsEndpoint,
     presenceEndpoint,
-    settingsEndpoint
+    settingsEndpoint,
+    friendRequestsEndpoint
 }
