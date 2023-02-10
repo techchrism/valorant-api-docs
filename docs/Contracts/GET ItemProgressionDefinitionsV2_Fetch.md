@@ -22,3 +22,78 @@ Variables:
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
 
+
+### Response Format:
+```ts
+{
+    Definitions: {
+        /** UUID */
+        ID: string;
+        Item: {
+            /** Item Type ID */
+            ItemTypeID: string;
+            /** Item ID */
+            ItemID: string;
+        };
+        RequiredEntitlement: {
+            /** Item Type ID */
+            ItemTypeID: string;
+            /** Item ID */
+            ItemID: string;
+        };
+        ProgressionSchedule: {
+            Name: string;
+            /** Currency ID */
+            ProgressionCurrencyID: string;
+            ProgressionDeltaPerLevel: number[] | null;
+        };
+        RewardSchedule: {
+            /** UUID */
+            ID: string;
+            Name: string;
+            Prerequisites: null;
+            RewardsPerLevel: {
+                EntitlementRewards: {
+                    Amount: number;
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                }[];
+                WalletRewards: null;
+                CounterRewards: null;
+            }[] | null;
+        };
+        Sidegrades: {
+            /** UUID */
+            SidegradeID: string;
+            Options: {
+                /** UUID */
+                OptionID: string;
+                Cost: {
+                    WalletCosts: {
+                        /** Currency ID */
+                        CurrencyID: string;
+                        AmountToDeduct: number;
+                    }[];
+                };
+                Rewards: {
+                    Amount: number;
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                }[];
+            }[];
+            Prerequisites: {
+                RequiredEntitlements: {
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                }[];
+            };
+        }[] | null;
+    }[];
+}
+```

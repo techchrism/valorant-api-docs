@@ -22,3 +22,13 @@ Variables:
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
 
+
+### Response Format:
+```ts
+{
+    /** Player UUID */
+    Subject: string;
+    Penalties: unknown[];
+    Version: number;
+}
+```

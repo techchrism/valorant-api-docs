@@ -23,3 +23,14 @@ Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
 
+
+### Response Format:
+```ts
+{
+    /** Player UUID */
+    Subject: string;
+    /** Pre-Game Match ID */
+    MatchID: string;
+    Version: number;
+}
+```

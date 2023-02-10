@@ -19,3 +19,42 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    data: {
+        actionMappings: {
+            alt: boolean;
+            bindIndex: number;
+            characterName: string;
+            cmd: boolean;
+            ctrl: boolean;
+            key: string;
+            name: string;
+            shift: boolean;
+        }[];
+        axisMappings: unknown[];
+        boolSettings: {
+            settingEnum: string;
+            value: boolean;
+        }[];
+        floatSettings: {
+            settingEnum: string;
+            value: number;
+        }[];
+        intSettings: {
+            settingEnum: string;
+            value: number;
+        }[];
+        roamingSetttingsVersion: number;
+        settingsProfiles: unknown[];
+        stringSettings: {
+            settingEnum: string;
+            value: string;
+        }[];
+    };
+    modified: number;
+    type: "Ares.PlayerSettings";
+}
+```

@@ -23,3 +23,8 @@ Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{party id}`: Read [Common Components - Party ID](../common-components.md#party-id)
 
+
+### Response Format:
+```ts
+unknown
+```

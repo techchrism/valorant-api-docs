@@ -20,3 +20,26 @@ Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
  - `{cid}`: Read [Common Components - Chat ID](../common-components.md#chat-id)
 
+
+### Response Format:
+```ts
+{
+    messages: {
+        body: string;
+        cid: string;
+        game_name: string;
+        game_tag: string;
+        id: string;
+        mid: string;
+        name: string;
+        pid: string;
+        /** Player UUID */
+        puuid: string;
+        read: boolean;
+        region: string;
+        /** Time in milliseconds since epoch */
+        time: string;
+        type: "chat" | "groupchat";
+    }[];
+}
+```

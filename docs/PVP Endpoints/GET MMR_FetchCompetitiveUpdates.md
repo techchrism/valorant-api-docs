@@ -26,3 +26,30 @@ Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
 
+
+### Response Format:
+```ts
+{
+    Version: number;
+    /** Player UUID */
+    Subject: string;
+    Matches: {
+        /** Match ID */
+        MatchID: string;
+        /** Map ID */
+        MapID: string;
+        /** Season ID */
+        SeasonID: string;
+        /** Milliseconds since epoch */
+        MatchStartTime: number;
+        TierAfterUpdate: number;
+        TierBeforeUpdate: number;
+        RankedRatingAfterUpdate: number;
+        RankedRatingBeforeUpdate: number;
+        RankedRatingEarned: number;
+        RankedRatingPerformanceBonus: number;
+        CompetitiveMovement: "MOVEMENT_UNKNOWN";
+        AFKPenalty: number;
+    }[];
+}
+```

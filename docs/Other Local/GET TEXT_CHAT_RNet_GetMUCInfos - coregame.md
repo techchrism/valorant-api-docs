@@ -19,3 +19,24 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    conversations: {
+        cid: string;
+        direct_messages: boolean;
+        global_readership: boolean;
+        message_history: boolean;
+        mid: string;
+        muted: boolean;
+        mutedRestriction: boolean;
+        type: "groupchat" | "chat";
+        uiState: {
+            changedSinceHidden: boolean;
+            hidden: boolean;
+        };
+        unread_count: number;
+    }[];
+}
+```

@@ -23,3 +23,45 @@ Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{in-progress match id}`: Read [Common Components - Coregame Match ID](../common-components.md#coregame-match-id)
 
+
+### Response Format:
+```ts
+{
+    Loadouts: {
+        /** Character ID */
+        CharacterID: string;
+        Loadout: {
+            Sprays: {
+                SpraySelection: {
+                    /** UUID */
+                    SocketID: string;
+                    /** UUID */
+                    SprayID: string;
+                    /** UUID */
+                    LevelID: string;
+                }[];
+            };
+            Items: {
+                [x: string]: {
+                    /** Item ID */
+                    ID: string;
+                    /** Item Type ID */
+                    TypeID: string;
+                    Sockets: {
+                        [x: string]: {
+                            /** UUID */
+                            ID: string;
+                            Item: {
+                                /** Item ID */
+                                ID: string;
+                                /** Item Type ID */
+                                TypeID: string;
+                            };
+                        };
+                    };
+                };
+            };
+        };
+    }[];
+}
+```

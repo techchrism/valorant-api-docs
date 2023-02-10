@@ -19,3 +19,13 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    locale: string;
+    region: string;
+    webLanguage: string;
+    webRegion: string;
+}
+```

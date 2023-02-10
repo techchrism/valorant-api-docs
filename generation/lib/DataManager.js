@@ -1,6 +1,9 @@
 import {promises as fs} from 'node:fs'
 import path from 'node:path'
 import Mustache from 'mustache'
+import {endpoints as newEndpoints} from 'valorant-api-types'
+import {printNode, zodToTs} from 'zod-to-ts'
+
 
 const githubURL = 'https://github.com/techchrism/valorant-api-docs/tree/trunk';
 
@@ -11,6 +14,7 @@ export class DataManager
         this.dataDir = dataDir;
         this.docs = {};
         this.endpoints = null;
+        this.correlations = null;
         this.version = null;
         this.folders = [];
     }
@@ -26,6 +30,7 @@ export class DataManager
 
         // Read endpoints
         const endpointsData = JSON.parse(await fs.readFile(path.join(this.dataDir, 'endpoints.json'), 'utf-8'));
+        this.correlations = JSON.parse(await fs.readFile(path.join(this.dataDir, 'correlations.json'), 'utf-8'));
         this.endpoints = endpointsData['endpoints'];
         this.version = endpointsData['version'];
 
@@ -162,6 +167,17 @@ export class DataManager
         {
             text += 'Variables:\n';
             text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
+        }
+
+        const correlation = this.correlations.find(c => c.old.name === endpoint.name && c.old.method === endpoint.method);
+        if(correlation !== undefined)
+        {
+            const newEndpoint = newEndpoints[correlation.newID];
+            if(newEndpoint.responses?.['200'])
+            {
+                const response = newEndpoint.responses['200'];
+                text += '\n### Response Format:\n```ts\n' + printNode(zodToTs(response, 'Response').node) + '\n```\n';
+            }
         }
 
         return this.renderText(text, endpoint.folder, platform);

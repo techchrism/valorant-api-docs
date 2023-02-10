@@ -20,3 +20,17 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    /** Used as the token in requests */
+    accessToken: string;
+    entitlements: unknown[];
+    issuer: string;
+    /** Player UUID */
+    subject: string;
+    /** Used as the entitlement in requests */
+    token: string;
+}
+```

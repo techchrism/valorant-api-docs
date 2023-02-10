@@ -37,3 +37,20 @@ Variables:
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
  - `{ItemTypeID}`: Optional url path to only return entitlements belonging to this type ID. If omitted, this endpoint will return entitlements of all types.
 
+
+### Response Format:
+```ts
+{
+    EntitlementsByTypes: {
+        ItemTypeID: string;
+        Entitlements: {
+            /** UUID */
+            TypeID: string;
+            /** Item ID */
+            ItemID: string;
+            /** UUID */
+            InstanceID?: string | undefined;
+        }[];
+    }[];
+}
+```

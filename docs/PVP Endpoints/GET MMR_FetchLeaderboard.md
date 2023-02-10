@@ -28,3 +28,44 @@ Variables:
  - `{start index}`: The index to start the leaderboard from. Typically `0`
  - `{size}`: The number of results to get from the leaderboard. Typically `510`
 
+
+### Response Format:
+```ts
+{
+    Deployment: string;
+    /** Queue ID */
+    QueueID: string;
+    /** Season ID */
+    SeasonID: string;
+    Players: {
+        /** Card ID */
+        PlayerCardID: string;
+        /** Title ID */
+        TitleID: string;
+        IsBanned: boolean;
+        IsAnonymized: boolean;
+        /** Player UUID */
+        puuid: string;
+        gameName: string;
+        tagLine: string;
+        leaderboardRank: number;
+        rankedRating: number;
+        numberOfWins: number;
+        competitiveTier: number;
+    }[];
+    totalPlayers: number;
+    immortalStartingPage: number;
+    immortalStartingIndex: number;
+    topTierRRThreshold: number;
+    topTierStartingPage: number;
+    tierDetails: {
+        [x: string]: {
+            rankedRatingThreshold: number;
+            startingPage: number;
+            startingIndex: number;
+        };
+    };
+    startIndex: number;
+    query: string;
+}
+```

@@ -20,3 +20,10 @@ Headers:
 Variables:
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
 
+
+### Response Format:
+```ts
+{
+    entitlements_token: string;
+}
+```

@@ -26,3 +26,97 @@ Variables:
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
  - `{contract id}`: The ID of the contract to activate. Can be found from the [ContractDefinitions_Fetch](GET%20ContractDefinitions_Fetch.md) endpoint.
 
+
+### Response Format:
+```ts
+{
+    Version: number;
+    /** Player UUID */
+    Subject: string;
+    Contracts: {
+        /** UUID */
+        ContractDefinitionID: string;
+        ContractProgression: {
+            TotalProgressionEarned: number;
+            TotalProgressionEarnedVersion: number;
+            HighestRewardedLevel: {
+                [x: string]: {
+                    Amount: number;
+                    Version: number;
+                };
+            };
+        };
+        ProgressionLevelReached: number;
+        ProgressionTowardsNextLevel: number;
+    }[];
+    ProcessedMatches: {
+        /** Match ID */
+        ID: string;
+        /** Milliseconds since epoch */
+        StartTime: number;
+        XPGrants: {
+            GamePlayed: number;
+            GameWon: number;
+            RoundPlayed: number;
+            RoundWon: number;
+            Missions: {};
+            Modifier: {
+                Value: number;
+                BaseMultiplierValue: number;
+                Modifiers: {
+                    Value: number;
+                    Name: "RESTRICTIONS_XP" | "PREMIUM_CONTRACT_XP";
+                    BaseOnly: boolean;
+                }[];
+            };
+            NumAFKRounds: number;
+        } | null;
+        RewardGrants: {} | null;
+        MissionDeltas: {
+            [x: string]: {
+                /** UUID */
+                ID: string;
+                Objectives: {
+                    [x: string]: number;
+                };
+                ObjectiveDeltas: {
+                    [x: string]: {
+                        /** UUID */
+                        ID: string;
+                        ProgressBefore: number;
+                        ProgressAfter: number;
+                    };
+                };
+            };
+        } | null;
+        ContractDeltas: {
+            [x: string]: {
+                /** UUID */
+                ID: string;
+                TotalXPBefore: number;
+                TotalXPAfter: number;
+            };
+        } | null;
+        CouldProgressMissions: boolean;
+    }[];
+    /** UUID */
+    ActiveSpecialContract: string;
+    Missions: {
+        /** UUID */
+        ID: string;
+        Objectives: {
+            [x: string]: number;
+        };
+        Complete: boolean;
+        /** Date in ISO 8601 format */
+        ExpirationTime: string;
+    }[];
+    MissionMetadata: {
+        NPECompleted: boolean;
+        /** Date in ISO 8601 format */
+        WeeklyCheckpoint: string;
+        /** Date in ISO 8601 format */
+        WeeklyRefillTime: string;
+    };
+}
+```

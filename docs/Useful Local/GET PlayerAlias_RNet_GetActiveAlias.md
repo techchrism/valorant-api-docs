@@ -19,3 +19,15 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    active: boolean;
+    /** Milliseconds since epoch */
+    created_datetime: number;
+    game_name: string;
+    summoner: boolean;
+    tag_line: string;
+}
+```

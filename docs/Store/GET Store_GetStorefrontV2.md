@@ -23,3 +23,101 @@ Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
 
+
+### Response Format:
+```ts
+{
+    FeaturedBundle: {
+        Bundle: {
+            /** UUID */
+            ID: string;
+            /** UUID */
+            DataAssetID: string;
+            /** Currency ID */
+            CurrencyID: string;
+            Items: {
+                Item: {
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                    Quantity: number;
+                };
+                BasePrice: number;
+                /** Currency ID */
+                CurrencyID: string;
+                DiscountPercent: number;
+                DiscountedPrice: number;
+                IsPromoItem: boolean;
+            }[];
+        };
+        Bundles: {
+            /** UUID */
+            ID: string;
+            /** UUID */
+            DataAssetID: string;
+            /** Currency ID */
+            CurrencyID: string;
+            Items: {
+                Item: {
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                    Quantity: number;
+                };
+                BasePrice: number;
+                /** Currency ID */
+                CurrencyID: string;
+                DiscountPercent: number;
+                DiscountedPrice: number;
+                IsPromoItem: boolean;
+            }[];
+        }[];
+        BundleRemainingDurationInSeconds: number;
+    };
+    SkinsPanelLayout: {
+        SingleItemOffers: string[];
+        SingleItemStoreOffers: {
+            OfferID: string;
+            IsDirectPurchase: boolean;
+            /** Date in ISO 8601 format */
+            StartDate: string;
+            Cost: {
+                [x: string]: number;
+            };
+            Rewards: {
+                /** Item Type ID */
+                ItemTypeID: string;
+                /** Item ID */
+                ItemID: string;
+                Quantity: number;
+            }[];
+        }[];
+        SingleItemOffersRemainingDurationInSeconds: number;
+    };
+    UpgradeCurrencyStore: {
+        UpgradeCurrencyOffers: {
+            OfferID: string;
+            /** Item ID */
+            StorefrontItemID: string;
+            Offer: {
+                OfferID: string;
+                IsDirectPurchase: boolean;
+                /** Date in ISO 8601 format */
+                StartDate: string;
+                Cost: {
+                    [x: string]: number;
+                };
+                Rewards: {
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                    Quantity: number;
+                }[];
+            };
+        }[];
+    };
+}
+```

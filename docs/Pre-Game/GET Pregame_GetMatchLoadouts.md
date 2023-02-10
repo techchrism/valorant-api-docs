@@ -23,3 +23,16 @@ Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
  - `{pre-game match id}`: Read [Common Components - Pregame Match ID](../common-components.md#pregame-match-id)
 
+
+### Response Format:
+```ts
+{
+    Loadouts: {
+        Sprays: {
+            SpraySelections: null;
+        };
+        Items: null;
+    }[];
+    LoadoutsValid: false;
+}
+```

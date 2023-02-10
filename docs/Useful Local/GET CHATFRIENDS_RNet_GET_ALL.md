@@ -19,3 +19,24 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    friends: {
+        activePlatform: string | null;
+        displayGroup: string;
+        game_name: string;
+        game_tag: string;
+        group: string;
+        /** Milliseconds since epoch */
+        last_online_ts: number | null;
+        name: string;
+        note: string;
+        pid: string;
+        /** Player UUID */
+        puuid: string;
+        region: string;
+    }[];
+}
+```

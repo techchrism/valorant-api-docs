@@ -19,3 +19,26 @@ Headers:
 Variables:
  - `{lockfile password}` and `{lockfile port}`: Read [Common Components - Lockfile Data](../common-components.md#lockfile-data)
 
+
+### Response Format:
+```ts
+{
+    [x: string]: {
+        exitCode: number;
+        exitReason: null;
+        isInternal: boolean;
+        launchConfiguration: {
+            arguments: string[];
+            executable: string;
+            locale: string | null;
+            voiceLocale: null;
+            workingDirectory: string;
+        };
+        patchlineFullName: "VALORANT" | "riot_client";
+        patchlineId: "" | "live" | "pbe";
+        phase: string;
+        productId: "valorant" | "riot_client";
+        version: string;
+    };
+}
+```

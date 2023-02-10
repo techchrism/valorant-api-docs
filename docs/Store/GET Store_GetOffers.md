@@ -22,3 +22,25 @@ Variables:
  - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
 
+
+### Response Format:
+```ts
+{
+    Offers: {
+        OfferID: string;
+        IsDirectPurchase: boolean;
+        /** Date in ISO 8601 format */
+        StartDate: string;
+        Cost: {
+            [x: string]: number;
+        };
+        Rewards: {
+            /** Item Type ID */
+            ItemTypeID: string;
+            /** Item ID */
+            ItemID: string;
+            Quantity: number;
+        }[];
+    }[];
+}
+```
