@@ -1,0 +1,39 @@
+{
+  "name": "valorant-api-types",
+  "version": "0.2.0",
+  "description": "A collection of documented endpoints and return types for the unofficial Valorant API",
+  "homepage": "https://github.com/techchrism/valorant-api-docs#readme",
+  "bugs": {
+    "url": "https://github.com/techchrism/valorant-api-docs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techchrism/valorant-api-docs.git",
+    "directory": "valorant-api-types"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [
+    "valorant",
+    "typescript",
+    "api",
+    "zod",
+    "documentation"
+  ],
+  "author": "techchrism",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "iso-base64": "^1.0.0",
+    "zod": "^3.20.2"
+  }
+}

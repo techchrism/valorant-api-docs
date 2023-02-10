@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "outDir": "./dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
+}
