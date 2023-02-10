@@ -7,6 +7,7 @@ export const entitlementEndpoint = {
     category: 'Authentication Endpoints',
     type: 'other',
     suffix: 'https://entitlements.auth.riotgames.com/api/token/v1',
+    method: 'POST',
     riotRequirements: {
         token: true
     },
