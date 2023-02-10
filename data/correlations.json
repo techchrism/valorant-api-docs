@@ -439,5 +439,117 @@
             "method": "GET"
         },
         "newID": "playerInfoEndpoint"
+    },
+    {
+        "old": {
+            "name": "MatchDetails_FetchMatchDetails",
+            "method": "GET"
+        },
+        "newID": "matchDetailsEndpoint"
+    },
+    {
+        "old": {
+            "name": "MMR_FetchLeaderboard",
+            "method": "GET"
+        },
+        "newID": "leaderboardEndpoint"
+    },
+    {
+        "old": {
+            "name": "Store_GetOffers",
+            "method": "GET"
+        },
+        "newID": "pricesEndpoint"
+    },
+    {
+        "old": {
+            "name": "Party_InviteToPartyByDisplayName",
+            "method": "POST"
+        },
+        "newID": "partyInviteEndpoint"
+    },
+    {
+        "old": {
+            "name": "CoreGame_FetchMatch",
+            "method": "GET"
+        },
+        "newID": "currentGameMatchEndpoint"
+    },
+    {
+        "old": {
+            "name": "CoreGame_FetchMatchLoadouts",
+            "method": "GET"
+        },
+        "newID": "currentGameLoadoutsEndpoint"
+    },
+    {
+        "old": {
+            "name": "CoreGame_DisassociatePlayer",
+            "method": "POST"
+        },
+        "newID": "currentGameQuitEndpoint"
+    },
+    {
+        "old": {
+            "name": "Contracts_Activate",
+            "method": "POST"
+        },
+        "newID": "activateContractEndpoint"
+    },
+    {
+        "old": {
+            "name": "All Chat Info",
+            "method": "GET"
+        },
+        "newID": "allChatInfoEndpoint"
+    },
+    {
+        "old": {
+            "name": "TEXT_CHAT_RNet_FetchParticipants",
+            "method": "GET"
+        },
+        "newID": "chatParticipantsEndpoint"
+    },
+    {
+        "old": {
+            "name": "All Chat Participants",
+            "method": "GET"
+        },
+        "newID": "chatParticipantsEndpoint"
+    },
+    {
+        "old": {
+            "name": "Send Whisper",
+            "method": "POST"
+        },
+        "newID": "sendChatEndpoint"
+    },
+    {
+        "old": {
+            "name": "Send Chat",
+            "method": "POST"
+        },
+        "newID": "sendChatEndpoint"
+    },
+    {
+        "old": {
+            "name": "Specific Chat History",
+            "method": "GET"
+        },
+        "newID": "chatHistoryEndpoint"
+    },
+    {
+        "old": {
+            "name": "Multi-Factor Authentication",
+            "method": "PUT"
+        },
+        "newID": "multiFactorAuthenticationEndpoint"
+    },
+    {
+        "old": {
+            "name": "Entitlement",
+            "method": "POST"
+        },
+        "newID": "entitlementEndpoint"
     }
 ]
