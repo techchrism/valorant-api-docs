@@ -40,7 +40,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type OwnedItemsResponse = {
     EntitlementsByTypes: {
         ItemTypeID: string;
         Entitlements: {
@@ -52,5 +52,5 @@ Variables:
             InstanceID?: string | undefined;
         }[];
     }[];
-}
+};
 ```

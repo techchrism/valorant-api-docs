@@ -22,12 +22,12 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type AccountAliasResponse = {
     active: boolean;
     /** Milliseconds since epoch */
     created_datetime: number;
     game_name: string;
     summoner: boolean;
     tag_line: string;
-}
+};
 ```

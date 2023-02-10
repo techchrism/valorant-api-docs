@@ -27,7 +27,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type MatchDetailsResponse = {
     matchInfo: {
         /** Match ID */
         matchID: string;
@@ -317,5 +317,5 @@ Variables:
             isSecondaryFireMode: boolean;
         };
     }[];
-}
+};
 ```

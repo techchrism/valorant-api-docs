@@ -19,7 +19,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ConfigResponse = {
     /** Date in ISO 8601 format */
     LastApplication: string;
     Collapsed: {
@@ -150,5 +150,5 @@ Variables:
         "voice.provider": string;
         "whisper.enabled": string;
     };
-}
+};
 ```

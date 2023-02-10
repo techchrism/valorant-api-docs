@@ -30,7 +30,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PlayerMMRResponse = {
     Version: number;
     /** Player UUID */
     Subject: string;
@@ -80,5 +80,5 @@ Variables:
     };
     IsLeaderboardAnonymized: boolean;
     IsActRankBadgeHidden: boolean;
-}
+};
 ```

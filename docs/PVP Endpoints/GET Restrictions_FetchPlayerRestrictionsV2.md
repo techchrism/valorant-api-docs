@@ -25,10 +25,10 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PenaltiesResponse = {
     /** Player UUID */
     Subject: string;
     Penalties: unknown[];
     Version: number;
-}
+};
 ```

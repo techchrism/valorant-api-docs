@@ -23,7 +23,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type EntitlementsTokenResponse = {
     /** Used as the token in requests */
     accessToken: string;
     entitlements: unknown[];
@@ -32,5 +32,5 @@ Variables:
     subject: string;
     /** Used as the entitlement in requests */
     token: string;
-}
+};
 ```

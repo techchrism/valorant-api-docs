@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type Pre-GameMatchResponse = {
     /** Pre-Game Match ID */
     ID: string;
     Version: number;
@@ -161,5 +161,5 @@ Variables:
     altModesFlagADA: boolean;
     TournamentMetadata: null;
     RosterMetadata: null;
-}
+};
 ```

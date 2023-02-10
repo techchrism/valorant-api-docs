@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PlayerInfoResponse = {
     country: string;
     /** Player UUID */
     sub: string;
@@ -55,5 +55,5 @@ Variables:
     affinity: {
         [x: string]: string;
     };
-}
+};
 ```

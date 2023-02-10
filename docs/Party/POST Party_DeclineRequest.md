@@ -27,7 +27,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PartyDeclineResponse = {
     /** Party ID */
     ID: string;
     MUCName: string;
@@ -135,5 +135,5 @@ Variables:
         ForcePostGameProcessing: boolean;
     };
     XPBonuses: unknown[];
-}
+};
 ```

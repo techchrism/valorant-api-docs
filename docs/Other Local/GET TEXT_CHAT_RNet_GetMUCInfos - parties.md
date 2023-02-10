@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PartyChatInfoResponse = {
     conversations: {
         cid: string;
         direct_messages: boolean;
@@ -38,5 +38,5 @@ Variables:
         };
         unread_count: number;
     }[];
-}
+};
 ```

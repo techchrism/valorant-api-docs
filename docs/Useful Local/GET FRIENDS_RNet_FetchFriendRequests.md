@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type FriendRequestsResponse = {
     requests: {
         game_name: string;
         game_tag: string;
@@ -34,5 +34,5 @@ Variables:
         region: string;
         subscription: "pending_out" | "pending_in";
     }[];
-}
+};
 ```

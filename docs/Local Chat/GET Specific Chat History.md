@@ -23,7 +23,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ChatHistoryResponse = {
     messages: {
         body: string;
         cid: string;
@@ -41,5 +41,5 @@ Variables:
         time: string;
         type: "chat" | "groupchat";
     }[];
-}
+};
 ```

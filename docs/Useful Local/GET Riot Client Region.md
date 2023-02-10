@@ -22,10 +22,10 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ClientRegionResponse = {
     locale: string;
     region: string;
     webLanguage: string;
     webRegion: string;
-}
+};
 ```

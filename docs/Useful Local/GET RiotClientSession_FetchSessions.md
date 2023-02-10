@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type SessionsResponse = {
     [x: string]: {
         exitCode: number;
         exitReason: null;
@@ -40,5 +40,5 @@ Variables:
         productId: "valorant" | "riot_client";
         version: string;
     };
-}
+};
 ```

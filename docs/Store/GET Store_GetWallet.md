@@ -27,9 +27,9 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type WalletResponse = {
     Balances: {
         [x: string]: number;
     };
-}
+};
 ```

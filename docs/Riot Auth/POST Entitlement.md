@@ -23,7 +23,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type EntitlementResponse = {
     entitlements_token: string;
-}
+};
 ```

@@ -33,7 +33,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ChangeQueueResponse = {
     /** Party ID */
     ID: string;
     MUCName: string;
@@ -141,5 +141,5 @@ Variables:
         ForcePostGameProcessing: boolean;
     };
     XPBonuses: unknown[];
-}
+};
 ```

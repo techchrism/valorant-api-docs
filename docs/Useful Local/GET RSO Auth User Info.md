@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type RSOUserInfoResponse = {
     userInfo: string;
-}
+};
 ```

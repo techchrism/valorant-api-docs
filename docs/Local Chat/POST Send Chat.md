@@ -32,7 +32,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type SendChatResponse = {
     messages: {
         body: string;
         cid: string;
@@ -50,5 +50,5 @@ Variables:
         time: string;
         type: "chat" | "groupchat";
     }[];
-}
+};
 ```

@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type CurrentGameMatchResponse = {
     /** Current Game Match ID */
     MatchID: string;
     Version: number;
@@ -83,5 +83,5 @@ Variables:
         IsAssociated: boolean;
     }[];
     MatchmakingData: null;
-}
+};
 ```

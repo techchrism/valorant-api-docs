@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type CurrentGameLoadoutsResponse = {
     Loadouts: {
         /** Character ID */
         CharacterID: string;
@@ -63,5 +63,5 @@ Variables:
             };
         };
     }[];
-}
+};
 ```

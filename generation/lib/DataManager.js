@@ -2,7 +2,7 @@ import {promises as fs} from 'node:fs'
 import path from 'node:path'
 import Mustache from 'mustache'
 import {endpoints as newEndpoints} from 'valorant-api-types'
-import {printNode, zodToTs} from 'zod-to-ts'
+import {createTypeAlias, printNode, zodToTs} from 'zod-to-ts'
 
 
 const githubURL = 'https://github.com/techchrism/valorant-api-docs/tree/trunk';
@@ -176,7 +176,13 @@ export class DataManager
             if(newEndpoint.responses?.['200'])
             {
                 const response = newEndpoint.responses['200'];
-                text += '\n### Response Format:\n```ts\n' + printNode(zodToTs(response, 'Response').node) + '\n```\n';
+                text += '\n### Response Format:\n```ts\n' +
+                    printNode(
+                        createTypeAlias(
+                            zodToTs(response, 'Response').node,
+                            newEndpoint.name.replaceAll(' ', '') + 'Response')
+                    ) +
+                    '\n```\n';
             }
         }
 

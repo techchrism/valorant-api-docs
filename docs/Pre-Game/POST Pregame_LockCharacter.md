@@ -29,7 +29,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type LockCharacterResponse = {
     /** Pre-Game Match ID */
     ID: string;
     Version: number;
@@ -164,5 +164,5 @@ Variables:
     altModesFlagADA: boolean;
     TournamentMetadata: null;
     RosterMetadata: null;
-}
+};
 ```

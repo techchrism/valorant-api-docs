@@ -25,7 +25,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PricesResponse = {
     Offers: {
         OfferID: string;
         IsDirectPurchase: boolean;
@@ -42,5 +42,5 @@ Variables:
             Quantity: number;
         }[];
     }[];
-}
+};
 ```

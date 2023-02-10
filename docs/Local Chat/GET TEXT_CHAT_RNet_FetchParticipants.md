@@ -23,7 +23,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ChatParticipantsResponse = {
     participants: {
         activePlatform: null;
         cid: string;
@@ -36,5 +36,5 @@ Variables:
         puuid: string;
         region: string;
     }[];
-}
+};
 ```

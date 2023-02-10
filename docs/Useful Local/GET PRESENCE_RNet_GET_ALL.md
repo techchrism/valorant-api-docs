@@ -23,7 +23,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PresenceResponse = {
     presences: {
         actor?: unknown | null;
         basic: string;
@@ -48,5 +48,5 @@ Variables:
         /** Milliseconds since epoch */
         time: number;
     }[];
-}
+};
 ```

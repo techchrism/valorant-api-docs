@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type LocalHelpResponse = {
     events: {
         [x: string]: string;
     };
@@ -32,5 +32,5 @@ Variables:
     types: {
         [x: string]: string;
     };
-}
+};
 ```

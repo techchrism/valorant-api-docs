@@ -29,7 +29,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type CompetitiveUpdatesResponse = {
     Version: number;
     /** Player UUID */
     Subject: string;
@@ -51,5 +51,5 @@ Variables:
         CompetitiveMovement: "MOVEMENT_UNKNOWN";
         AFKPenalty: number;
     }[];
-}
+};
 ```

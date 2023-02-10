@@ -28,7 +28,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PartyPlayerResponse = {
     /** Player UUID */
     Subject: string;
     Version: number;
@@ -54,5 +54,5 @@ Variables:
         platformOSVersion: string;
         platformChipset: "Unknown";
     };
-}
+};
 ```

@@ -22,5 +22,5 @@ Variables:
 
 ### Response Format:
 ```ts
-unknown
+type LocalSwaggerDocsResponse = unknown;
 ```

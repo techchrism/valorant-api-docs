@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type LeaveMatchmakingQueueResponse = {
     /** Party ID */
     ID: string;
     MUCName: string;
@@ -134,5 +134,5 @@ Variables:
         ForcePostGameProcessing: boolean;
     };
     XPBonuses: unknown[];
-}
+};
 ```

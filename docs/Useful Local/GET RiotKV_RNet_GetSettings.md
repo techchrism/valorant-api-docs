@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type SettingsResponse = {
     data: {
         actionMappings: {
             alt: boolean;
@@ -56,5 +56,5 @@ Variables:
     };
     modified: number;
     type: "Ares.PlayerSettings";
-}
+};
 ```

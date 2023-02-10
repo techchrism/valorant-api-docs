@@ -27,7 +27,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type SetPlayerLoadoutResponse = {
     /** Player UUID */
     Subject: string;
     Version: number;
@@ -66,5 +66,5 @@ Variables:
         HideAccountLevel: boolean;
     };
     Incognito: boolean;
-}
+};
 ```

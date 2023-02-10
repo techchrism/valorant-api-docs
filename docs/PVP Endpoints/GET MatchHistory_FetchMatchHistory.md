@@ -31,7 +31,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type MatchHistoryResponse = {
     /** Player UUID */
     Subject: string;
     BeginIndex: number;
@@ -45,5 +45,5 @@ Variables:
         /** Queue ID */
         QueueID: string;
     }[];
-}
+};
 ```

@@ -31,7 +31,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type LeaderboardResponse = {
     Deployment: string;
     /** Queue ID */
     QueueID: string;
@@ -67,5 +67,5 @@ Variables:
     };
     startIndex: number;
     query: string;
-}
+};
 ```

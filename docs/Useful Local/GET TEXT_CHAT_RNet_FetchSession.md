@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ChatSessionResponse = {
     federated: boolean;
     game_name: string;
     game_tag: string;
@@ -34,5 +34,5 @@ Variables:
     region: string;
     resource: string;
     state: string;
-}
+};
 ```

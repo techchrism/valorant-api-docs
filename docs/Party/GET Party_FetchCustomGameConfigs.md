@@ -25,7 +25,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type CustomGameConfigsResponse = {
     Enabled: boolean;
     EnabledMaps: string[];
     EnabledModes: string[];
@@ -74,5 +74,5 @@ Variables:
             PingProxyAddresses: string[];
         };
     };
-}
+};
 ```

@@ -29,7 +29,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ActivateContractResponse = {
     Version: number;
     /** Player UUID */
     Subject: string;
@@ -118,5 +118,5 @@ Variables:
         /** Date in ISO 8601 format */
         WeeklyRefillTime: string;
     };
-}
+};
 ```

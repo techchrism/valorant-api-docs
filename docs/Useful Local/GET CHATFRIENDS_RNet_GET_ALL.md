@@ -22,7 +22,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type FriendsResponse = {
     friends: {
         activePlatform: string | null;
         displayGroup: string;
@@ -38,5 +38,5 @@ Variables:
         puuid: string;
         region: string;
     }[];
-}
+};
 ```

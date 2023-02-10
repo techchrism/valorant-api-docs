@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type Pre-GameLoadoutsResponse = {
     Loadouts: {
         Sprays: {
             SpraySelections: null;
@@ -34,5 +34,5 @@ Variables:
         Items: null;
     }[];
     LoadoutsValid: false;
-}
+};
 ```

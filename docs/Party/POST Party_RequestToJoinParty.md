@@ -26,5 +26,5 @@ Variables:
 
 ### Response Format:
 ```ts
-unknown
+type PartyRequestResponse = unknown;
 ```

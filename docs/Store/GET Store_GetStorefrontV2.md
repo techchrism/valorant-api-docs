@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type StorefrontResponse = {
     FeaturedBundle: {
         Bundle: {
             /** UUID */
@@ -119,5 +119,5 @@ Variables:
             };
         }[];
     };
-}
+};
 ```

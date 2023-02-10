@@ -26,8 +26,8 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PartyVoiceTokenResponse = {
     Token: string;
     Room: string;
-}
+};
 ```

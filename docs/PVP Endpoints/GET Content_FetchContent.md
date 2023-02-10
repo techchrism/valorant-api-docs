@@ -25,7 +25,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type FetchContentResponse = {
     DisabledIDs: unknown[];
     Seasons: {
         /** UUID */
@@ -48,5 +48,5 @@ Variables:
         EndTime: string;
         IsActive: boolean;
     }[];
-}
+};
 ```

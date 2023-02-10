@@ -26,7 +26,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type AccountXPResponse = {
     Version: number;
     /** Player UUID */
     Subject: string;
@@ -58,5 +58,5 @@ Variables:
     LastTimeGrantedFirstWin: string;
     /** Date in ISO 8601 format */
     NextTimeFirstWinAvailable: string;
-}
+};
 ```

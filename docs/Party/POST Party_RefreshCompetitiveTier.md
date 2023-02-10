@@ -29,7 +29,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type RefreshCompetitiveTierResponse = {
     /** Party ID */
     ID: string;
     MUCName: string;
@@ -137,5 +137,5 @@ Variables:
         ForcePostGameProcessing: boolean;
     };
     XPBonuses: unknown[];
-}
+};
 ```

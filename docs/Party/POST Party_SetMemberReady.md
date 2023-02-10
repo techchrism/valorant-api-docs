@@ -33,7 +33,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type PartySetMemberReadyResponse = {
     /** Party ID */
     ID: string;
     MUCName: string;
@@ -141,5 +141,5 @@ Variables:
         ForcePostGameProcessing: boolean;
     };
     XPBonuses: unknown[];
-}
+};
 ```

@@ -28,7 +28,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ContractsResponse = {
     Version: number;
     /** Player UUID */
     Subject: string;
@@ -117,5 +117,5 @@ Variables:
         /** Date in ISO 8601 format */
         WeeklyRefillTime: string;
     };
-}
+};
 ```

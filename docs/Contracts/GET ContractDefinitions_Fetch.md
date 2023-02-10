@@ -25,7 +25,7 @@ Variables:
 
 ### Response Format:
 ```ts
-{
+type ItemUpgradesResponse = {
     Definitions: {
         /** UUID */
         ID: string;
@@ -95,5 +95,5 @@ Variables:
             };
         }[] | null;
     }[];
-}
+};
 ```
