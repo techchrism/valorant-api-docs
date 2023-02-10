@@ -66,6 +66,7 @@ import {chatHistoryEndpoint} from './endpoints/local/chat/ChatHistory'
 import {localSwaggerDocsEndpoint} from './endpoints/local/LocalSwaggerDocs'
 import {authCookiesEndpoint} from './endpoints/auth/AuthCookies'
 import {authRequestEndpoint} from './endpoints/auth/AuthRequest'
+import {multiFactorAuthenticationEndpoint} from './endpoints/auth/MultiFactorAuthentication'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -143,5 +144,6 @@ export const endpoints = {
     chatHistoryEndpoint,
 
     authCookiesEndpoint,
-    authRequestEndpoint
+    authRequestEndpoint,
+    multiFactorAuthenticationEndpoint
 }
