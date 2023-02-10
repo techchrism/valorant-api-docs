@@ -76,5 +76,6 @@ export * from './endpoints/auth/AuthRequest'
 export * from './endpoints/auth/MultiFactorAuthentication'
 export * from './endpoints/auth/CookieReauth'
 export * from './endpoints/auth/Entitlement'
+export * from './endpoints/auth/PlayerInfo'
 
 export * from './endpoints'
