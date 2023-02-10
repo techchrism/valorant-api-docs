@@ -1,10 +1,10 @@
-const fs = require('fs').promises;
-const path = require('path');
-const Mustache = require('mustache');
+import {promises as fs} from 'node:fs'
+import path from 'node:path'
+import Mustache from 'mustache'
 
 const githubURL = 'https://github.com/techchrism/valorant-api-docs/tree/trunk';
 
-class DataManager
+export class DataManager
 {
     constructor(dataDir)
     {
@@ -179,5 +179,3 @@ class DataManager
         }
     }
 }
-
-module.exports = DataManager;

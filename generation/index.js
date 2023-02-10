@@ -1,11 +1,12 @@
-const fs = require('fs').promises;
-const path = require('path');
-const endpointsToInsomnia = require('./lib/endpointsToInsomnia');
-const generateMarkdownDocs = require('./lib/generateMarkdownDocs');
-const DataManager = require('./lib/DataManager');
+import {promises as fs} from 'node:fs'
+import path from 'node:path'
+import {DataManager} from './lib/DataManager.js'
+import {generateMarkdownDocs} from './lib/generateMarkdownDocs.js'
+import {endpointsToInsomnia} from './lib/endpointsToInsomnia.js'
 
 (async () =>
 {
+    const __dirname = '.'
     const dataDir = path.join(__dirname, '..', 'data');
     const docsDir = path.join(__dirname, '..', 'docs');
 
