@@ -2,20 +2,7 @@
 
 This is a collection of documented endpoints and return types for the unofficial Valorant API.
 
-It is currently incomplete, here's a basic progress map:
- - [ ] web endpoints
-   - [x] pvp
-   - [x] store
-   - [x] party
-   - [x] current game
-   - [x] pre-game
-   - [x] contracts
-   - [x] useful local
-   - [ ] local chat
-   - [ ] other local
-   - [ ] riot auth
- - [ ] websocket events/data
- - [ ] xmpp events/data
+In the future, this project could include types for the websocket events and xmpp events.
 
 Types may be incomplete or incorrect, please open an issue if you find any problems.
 
