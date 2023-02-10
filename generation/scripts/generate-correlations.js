@@ -12,8 +12,8 @@ import {promises as fs} from 'node:fs'
     const mappings = []
     for(const oldEndpoint of oldEndpoints) {
         let found = null
-        for(const endpoint of Object.values(endpoints)) {
-            if(oldEndpoint.url.endsWith(endpoint.suffix)) {
+        for(const [newID, endpoint] of Object.entries(endpoints)) {
+            if(oldEndpoint.url.endsWith(endpoint.suffix) && oldEndpoint.method === (endpoint.method || 'GET')) {
                 if(found !== null) {
                     found = null
                     console.log(`Found multiple matches for ${endpoint.name}`)
@@ -21,8 +21,11 @@ import {promises as fs} from 'node:fs'
                 }
 
                 found = {
-                    old: oldEndpoint.name,
-                    'new': endpoint.name
+                    old: {
+                        name: oldEndpoint.name,
+                        method: oldEndpoint.method
+                    },
+                    newID: newID
                 }
             }
         }
@@ -31,7 +34,7 @@ import {promises as fs} from 'node:fs'
             mappings.push(found)
         }
     }
-    const missing = oldEndpoints.filter(old => !mappings.find(m => m.old === old.name))
+    const missing = oldEndpoints.filter(old => !mappings.find(m => m.old.name === old.name))
 
     console.log(`Mapped ${mappings.length} endpoints and found ${missing.length} missing endpoints:`)
     for(const missingEndpoint of missing) {
