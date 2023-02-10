@@ -9,6 +9,7 @@ export const activateContractEndpoint = {
     category: 'Contract Endpoints',
     type: 'pd',
     suffix: 'contracts/v1/contracts/{puuid}/special/{contract id}',
+    method: 'POST',
     variables: new Map([
         ['contract id', weakUUIDSchema.describe('The contract ID to activate')]
     ]),
