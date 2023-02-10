@@ -1,0 +1,238 @@
+[
+    {
+        "old": "Content_FetchContent",
+        "new": "Fetch Content"
+    },
+    {
+        "old": "AccountXP_GetPlayer",
+        "new": "Account XP"
+    },
+    {
+        "old": "MMR_FetchPlayer",
+        "new": "Player MMR"
+    },
+    {
+        "old": "MatchHistory_FetchMatchHistory",
+        "new": "Match History"
+    },
+    {
+        "old": "MMR_FetchCompetitiveUpdates",
+        "new": "Competitive Updates"
+    },
+    {
+        "old": "Restrictions_FetchPlayerRestrictionsV2",
+        "new": "Penalties"
+    },
+    {
+        "old": "ItemProgressionDefinitionsV2_Fetch",
+        "new": "Item Upgrades"
+    },
+    {
+        "old": "Config_FetchConfig",
+        "new": "Config"
+    },
+    {
+        "old": "Store_GetStorefrontV2",
+        "new": "Storefront"
+    },
+    {
+        "old": "Store_GetWallet",
+        "new": "Wallet"
+    },
+    {
+        "old": "Store_GetEntitlements",
+        "new": "Owned Items"
+    },
+    {
+        "old": "Party_FetchParty",
+        "new": "Party"
+    },
+    {
+        "old": "Party_SetMemberReady",
+        "new": "Party Set Member Ready"
+    },
+    {
+        "old": "Party_RefreshCompetitiveTier",
+        "new": "Refresh Competitive Tier"
+    },
+    {
+        "old": "Party_RefreshPlayerIdentity",
+        "new": "Refresh Player Identity"
+    },
+    {
+        "old": "Party_RefreshPings",
+        "new": "Refresh Pings"
+    },
+    {
+        "old": "Party_ChangeQueue",
+        "new": "Change Queue"
+    },
+    {
+        "old": "Party_StartCustomGame",
+        "new": "Start Custom Game"
+    },
+    {
+        "old": "Party_EnterMatchmakingQueue",
+        "new": "Enter Matchmaking Queue"
+    },
+    {
+        "old": "Party_LeaveMatchmakingQueue",
+        "new": "Leave Matchmaking Queue"
+    },
+    {
+        "old": "Party_SetAccessibility",
+        "new": "Set Party Accessibility"
+    },
+    {
+        "old": "Party_SetCustomGameSettings",
+        "new": "Set Custom Game Settings"
+    },
+    {
+        "old": "Party_RequestToJoinParty",
+        "new": "Party Request"
+    },
+    {
+        "old": "Party_DeclineRequest",
+        "new": "Party Decline"
+    },
+    {
+        "old": "Party_FetchCustomGameConfigs",
+        "new": "Custom Game Configs"
+    },
+    {
+        "old": "Party_FetchMUCToken",
+        "new": "Party Chat Token"
+    },
+    {
+        "old": "Party_FetchVoiceToken",
+        "new": "Party Voice Token"
+    },
+    {
+        "old": "CoreGame_FetchPlayer",
+        "new": "Current Game Player"
+    },
+    {
+        "old": "Pregame_GetPlayer",
+        "new": "Pre-Game Player"
+    },
+    {
+        "old": "Pregame_GetMatch",
+        "new": "Pre-Game Match"
+    },
+    {
+        "old": "Pregame_GetMatchLoadouts",
+        "new": "Pre-Game Loadouts"
+    },
+    {
+        "old": "Pregame_SelectCharacter",
+        "new": "Select Character"
+    },
+    {
+        "old": "Pregame_LockCharacter",
+        "new": "Lock Character"
+    },
+    {
+        "old": "Pregame_QuitMatch",
+        "new": "Pre-Game Quit"
+    },
+    {
+        "old": "ContractDefinitions_Fetch",
+        "new": "Item Upgrades"
+    },
+    {
+        "old": "Contracts_Fetch",
+        "new": "Contracts"
+    },
+    {
+        "old": "Contracts_Activate",
+        "new": "Activate Contract"
+    },
+    {
+        "old": "ItemProgressionDefinitionsV2_Fetch",
+        "new": "Item Upgrades"
+    },
+    {
+        "old": "Local Help",
+        "new": "Local Help"
+    },
+    {
+        "old": "RiotClientSession_FetchSessions",
+        "new": "Sessions"
+    },
+    {
+        "old": "RSO Auth User Info",
+        "new": "RSO User Info"
+    },
+    {
+        "old": "Riot Client Region",
+        "new": "Client Region"
+    },
+    {
+        "old": "PlayerAlias_RNet_GetActiveAlias",
+        "new": "Account Alias"
+    },
+    {
+        "old": "RSO_RNet_GetEntitlementsToken",
+        "new": "Entitlements Token"
+    },
+    {
+        "old": "TEXT_CHAT_RNet_FetchSession",
+        "new": "Chat Session"
+    },
+    {
+        "old": "CHATFRIENDS_RNet_GET_ALL",
+        "new": "Friends"
+    },
+    {
+        "old": "PRESENCE_RNet_GET_ALL",
+        "new": "Presence"
+    },
+    {
+        "old": "RiotKV_RNet_GetSettings",
+        "new": "Settings"
+    },
+    {
+        "old": "FRIENDS_RNet_FetchFriendRequests",
+        "new": "Friend Requests"
+    },
+    {
+        "old": "Party Chat Info",
+        "new": "Party Chat Info"
+    },
+    {
+        "old": "Pregame Chat Info",
+        "new": "Pre-Game Chat Info"
+    },
+    {
+        "old": "Game Chat Info",
+        "new": "Current Game Chat Info"
+    },
+    {
+        "old": "Local Swagger Docs",
+        "new": "Local Swagger Docs"
+    },
+    {
+        "old": "TEXT_CHAT_RNet_GetMUCInfos - pregame",
+        "new": "Pre-Game Chat Info"
+    },
+    {
+        "old": "TEXT_CHAT_RNet_GetMUCInfos - parties",
+        "new": "Party Chat Info"
+    },
+    {
+        "old": "TEXT_CHAT_RNet_GetMUCInfos - coregame",
+        "new": "Current Game Chat Info"
+    },
+    {
+        "old": "Cookie Reauth",
+        "new": "Cookie Reauth"
+    },
+    {
+        "old": "Entitlement",
+        "new": "Entitlement"
+    },
+    {
+        "old": "RSO_GetPlayerInfo",
+        "new": "Player Info"
+    }
+]
