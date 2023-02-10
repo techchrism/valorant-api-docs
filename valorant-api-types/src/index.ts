@@ -74,5 +74,6 @@ export * from './endpoints/local/chat/ChatHistory'
 export * from './endpoints/auth/AuthCookies'
 export * from './endpoints/auth/AuthRequest'
 export * from './endpoints/auth/MultiFactorAuthentication'
+export * from './endpoints/auth/CookieReauth'
 
 export * from './endpoints'
