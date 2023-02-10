@@ -10,17 +10,13 @@ const gunCommonSchema = z.object({
 })
 
 export const playerLoadoutSchema = z.object({
-    Guns: z.array(z.discriminatedUnion("ID", [
-        z.object({
-            ID: z.literal('2f59173c-4bed-b6c3-2191-dea9b58be9c7')
-        }).merge(gunCommonSchema),
-        z.object({
+    Guns: z.array(z.object({
             ID: weakUUIDSchema,
             CharmInstanceID: weakUUIDSchema,
             CharmID: weakUUIDSchema,
             CharmLevelID: weakUUIDSchema
-        }).merge(gunCommonSchema)
-    ])).describe("Guns and knife. Note that the knife (ID: 2f59173c-4bed-b6c3-2191-dea9b58be9c7) does not have charm data (buddies)."),
+        }).merge(gunCommonSchema).describe("Guns and knife. Note that the knife (ID: 2f59173c-4bed-b6c3-2191-dea9b58be9c7) does not have charm data (buddies)."),
+    ),
     Sprays: z.array(z.object({
         EquipSlotID: weakUUIDSchema,
         SprayID: weakUUIDSchema,
