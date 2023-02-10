@@ -68,6 +68,7 @@ import {authCookiesEndpoint} from './endpoints/auth/AuthCookies'
 import {authRequestEndpoint} from './endpoints/auth/AuthRequest'
 import {multiFactorAuthenticationEndpoint} from './endpoints/auth/MultiFactorAuthentication'
 import {cookieReauthEndpoint} from './endpoints/auth/CookieReauth'
+import {entitlementEndpoint} from './endpoints/auth/Entitlement'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -147,5 +148,6 @@ export const endpoints = {
     authCookiesEndpoint,
     authRequestEndpoint,
     multiFactorAuthenticationEndpoint,
-    cookieReauthEndpoint
+    cookieReauthEndpoint,
+    entitlementEndpoint
 }
