@@ -63,6 +63,7 @@ import {allChatInfoEndpoint} from './endpoints/local/chat/AllChatInfo'
 import {chatParticipantsEndpoint} from './endpoints/local/chat/ChatParticipants'
 import {sendChatEndpoint} from './endpoints/local/chat/SendChat'
 import {chatHistoryEndpoint} from './endpoints/local/chat/ChatHistory'
+import {localSwaggerDocsEndpoint} from './endpoints/local/LocalSwaggerDocs'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -129,6 +130,7 @@ export const endpoints = {
     presenceEndpoint,
     settingsEndpoint,
     friendRequestsEndpoint,
+    localSwaggerDocsEndpoint,
 
     partyChatInfoEndpoint,
     pregameChatInfoEndpoint,

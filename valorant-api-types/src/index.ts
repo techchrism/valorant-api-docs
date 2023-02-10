@@ -61,6 +61,7 @@ export * from './endpoints/local/Friends'
 export * from './endpoints/local/Presence'
 export * from './endpoints/local/Settings'
 export * from './endpoints/local/FriendRequests'
+export * from './endpoints/local/LocalSwaggerDocs'
 
 export * from './endpoints/local/chat/PartyChatInfo'
 export * from './endpoints/local/chat/PregameChatInfo'
