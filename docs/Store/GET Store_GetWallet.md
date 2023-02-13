@@ -13,15 +13,14 @@ Valorant points have the id `85ad13f7-3d1b-5128-9eb2-7cd8ee0b5741` and Radianite
 
 
 Method: `GET`  
-URL: `https://pd.{region}.a.pvp.net/store/v1/wallet/{puuid}`  
+URL: `https://pd.{shard}.a.pvp.net/store/v1/wallet/{puuid}`  
 Headers:
  - `X-Riot-Entitlements-JWT`: `{Riot entitlement}`
- - `Authorization`: `Bearer {base64 encoded Riot token}`
+ - `Authorization`: `Bearer {Riot token}`
 
 Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
- - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
- - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
 
 

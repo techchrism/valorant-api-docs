@@ -13,15 +13,14 @@ Includes everything that the in-game match details screen shows including damage
 
 
 Method: `GET`  
-URL: `https://pd.{region}.a.pvp.net/match-details/v1/matches/{match id}`  
+URL: `https://pd.{shard}.a.pvp.net/match-details/v1/matches/{match id}`  
 Headers:
  - `X-Riot-Entitlements-JWT`: `{Riot entitlement}`
- - `Authorization`: `Bearer {base64 encoded Riot token}`
+ - `Authorization`: `Bearer {Riot token}`
 
 Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
- - `{base64 encoded Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
- - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{match id}`: The ID of a previous match. Can be obtained from [MatchHistory_FetchMatchHistory](GET%20MatchHistory_FetchMatchHistory.md)
 
 

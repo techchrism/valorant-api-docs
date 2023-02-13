@@ -12,7 +12,7 @@ Get information about the available gamemodes
 
 
 Method: `GET`  
-URL: `https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/customgameconfigs`  
+URL: `https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/customgameconfigs`  
 Headers:
  - `X-Riot-ClientVersion`: `{client version}`
  - `X-Riot-ClientPlatform`: `{client platform}`
