@@ -12,7 +12,7 @@ export const sendChatEndpoint = {
     body: z.object({
         cid: z.string().describe('The conversation ID of the group to send the message to'),
         message: z.string(),
-        type: z.enum(['groupchat', 'chat']).describe('Use chat for whispers and groupchat for group messages')
+        type: z.enum(['groupchat', 'chat', 'system']).describe('Use `chat` for whispers, `groupchat` for group messages, and `system` for system messages'),
     }),
     riotRequirements: {
         localAuth: true
