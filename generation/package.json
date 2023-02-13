@@ -1,6 +1,6 @@
 {
   "name": "valorant-api-docs-generator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Generate API docs for Valorant",
   "main": "index.js",
   "type": "module",

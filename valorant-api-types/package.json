@@ -1,6 +1,6 @@
 {
   "name": "valorant-api-types",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A collection of documented endpoints and return types for the unofficial Valorant API",
   "homepage": "https://github.com/techchrism/valorant-api-docs#readme",
   "bugs": {
