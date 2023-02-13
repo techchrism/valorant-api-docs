@@ -143,6 +143,7 @@ export class DataManager
 
         const componentInsertions = [
             ['{region}', 'Region', 'region'],
+            ['{shard}', 'Shard', 'shard'],
             ['{puuid}', 'PUUID', 'puuid'],
             ['{in-progress match id}', 'Coregame Match ID', 'coregame-match-id'],
             ['{pre-game match id}', 'Pregame Match ID', 'pregame-match-id'],
