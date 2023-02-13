@@ -33,6 +33,7 @@ Headers:
 Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
  - `{ItemTypeID}`: Optional url path to only return entitlements belonging to this type ID. If omitted, this endpoint will return entitlements of all types.
 

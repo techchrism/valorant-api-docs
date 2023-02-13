@@ -21,5 +21,6 @@ Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{pre-game match id}`: Read [Common Components - Pregame Match ID](../common-components.md#pregame-match-id)
 

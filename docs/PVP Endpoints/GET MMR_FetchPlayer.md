@@ -24,6 +24,7 @@ Variables:
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
  - `{client platform}`: Read [Common Components - Client Platform](../common-components.md#client-platform)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
 
 

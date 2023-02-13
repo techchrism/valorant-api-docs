@@ -27,6 +27,7 @@ Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{party id}`: Read [Common Components - Party ID](../common-components.md#party-id)
  - `{queue id}`: The ID of the queue. Possible values can be found from the [Party_FetchParty](GET%20Party_FetchParty.md) endpoint under the property `EligibleQueues`.
 

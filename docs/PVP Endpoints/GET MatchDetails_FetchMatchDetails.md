@@ -21,6 +21,7 @@ Headers:
 Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{match id}`: The ID of a previous match. Can be obtained from [MatchHistory_FetchMatchHistory](GET%20MatchHistory_FetchMatchHistory.md)
 
 

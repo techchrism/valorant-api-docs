@@ -55,7 +55,7 @@ Alternatively, you can ask the user what their region is. It can take the follow
 | ap        | Asia Pacific     |
 | kr        | Korea            |
 
-#### A note on regions and shards
+### Shard
 Generally, each region has its own shard (i.e. `eu` region is on the `eu` shard, which is relevant when accessing a *glz* endpoint). However, some regions share the same shard, and similarly, some regions have multiple shards.
 
 | Region ID | Shard(s) |

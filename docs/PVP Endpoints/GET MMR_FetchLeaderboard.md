@@ -23,6 +23,7 @@ Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{season id}`: The ID for the season. Can be found using the `Seasons` property from the [Content_FetchContent](GET%20Content_FetchContent.md) endpoint.
  - `{start index}`: The index to start the leaderboard from. Typically `0`
  - `{size}`: The number of results to get from the leaderboard. Typically `510`
