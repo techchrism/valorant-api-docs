@@ -1,6 +1,6 @@
 import {ZodType} from 'zod'
 
-type EndpointType = {
+export type EndpointType = {
     type: 'pd',
     shard: string
 }  | {
@@ -16,11 +16,11 @@ type EndpointType = {
 } | {
     type: 'other'
 }
-type EndpointTypeName = EndpointType['type']
+export type EndpointTypeName = EndpointType['type']
 
 type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
 
-function typeToPrefix(options: EndpointType): string {
+export function typeToPrefix(options: EndpointType): string {
     switch(options.type) {
         case 'pd':
             return `https://pd.${options.shard}.a.pvp.net/`

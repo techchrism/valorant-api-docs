@@ -79,3 +79,5 @@ export * from './endpoints/auth/Entitlement'
 export * from './endpoints/auth/PlayerInfo'
 
 export * from './endpoints'
+export * from './commonTypes'
+export * from './ValorantEndpoint'
