@@ -4,7 +4,7 @@
         {
             "name": "Content_FetchContent",
             "description": "Get names and ids for game content such as agents, maps, guns, etc.",
-            "url": "https://shared.{region}.a.pvp.net/content-service/v3/content",
+            "url": "https://shared.{shard}.a.pvp.net/content-service/v3/content",
             "method": "GET",
             "folder": "PVP Endpoints",
             "requiresClientVersion": true,
@@ -13,7 +13,7 @@
         {
             "name": "AccountXP_GetPlayer",
             "description": "Get the account level, XP, and XP history for the given player",
-            "url": "https://pd.{region}.a.pvp.net/account-xp/v1/players/{puuid}",
+            "url": "https://pd.{shard}.a.pvp.net/account-xp/v1/players/{puuid}",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true
@@ -21,7 +21,7 @@
         {
             "name": "playerLoadoutUpdate",
             "description": "Get the player's current loadout",
-            "url": "https://pd.{region}.a.pvp.net/personalization/v2/players/{puuid}/playerloadout",
+            "url": "https://pd.{shard}.a.pvp.net/personalization/v2/players/{puuid}/playerloadout",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true
@@ -29,7 +29,7 @@
         {
             "name": "playerLoadoutUpdate",
             "description": "Set the player's loadout  \nUse the values from [GET playerLoadoutUpdate]({{#linkto}}GET playerLoadoutUpdate{{/linkto}}) excluding properties like `subject` and `version`. Loadout changes take effect when starting a new game.",
-            "url": "https://pd.{region}.a.pvp.net/personalization/v2/players/{puuid}/playerloadout",
+            "url": "https://pd.{shard}.a.pvp.net/personalization/v2/players/{puuid}/playerloadout",
             "method": "PUT",
             "folder": "PVP Endpoints",
             "typicalAuth": true
@@ -37,7 +37,7 @@
         {
             "name": "MMR_FetchPlayer",
             "description": "Get the match making rating for a player",
-            "url": "https://pd.{region}.a.pvp.net/mmr/v1/players/{puuid}",
+            "url": "https://pd.{shard}.a.pvp.net/mmr/v1/players/{puuid}",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true,
@@ -47,7 +47,7 @@
         {
             "name": "MatchHistory_FetchMatchHistory",
             "description": "Get recent matches for a player  \nThere are 3 optional query parameters: `startIndex`, `endIndex`, and `queue`. `queue` can be one of `null`, `competitive`, `custom`, `deathmatch`, `ggteam`, `newmap`, `onefa`, `snowball`, `spikerush`, or `unrated`.",
-            "url": "https://pd.{region}.a.pvp.net/match-history/v1/history/{puuid}",
+            "url": "https://pd.{shard}.a.pvp.net/match-history/v1/history/{puuid}",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true,
@@ -57,7 +57,7 @@
         {
             "name": "MatchDetails_FetchMatchDetails",
             "description": "Get the full info for a previous match  \nIncludes everything that the in-game match details screen shows including damage and kill positions.",
-            "url": "https://pd.{region}.a.pvp.net/match-details/v1/matches/{match id}",
+            "url": "https://pd.{shard}.a.pvp.net/match-details/v1/matches/{match id}",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true,
@@ -71,7 +71,7 @@
         {
             "name": "MMR_FetchCompetitiveUpdates",
             "description": "Get recent games and how they changed ranking  \nThere are 3 optional query parameters: `startIndex`, `endIndex`, and `queue`. `queue` can be one of `null`, `competitive`, `custom`, `deathmatch`, `ggteam`, `newmap`, `onefa`, `snowball`, `spikerush`, or `unrated`.",
-            "url": "https://pd.{region}.a.pvp.net/mmr/v1/players/{puuid}/competitiveupdates",
+            "url": "https://pd.{shard}.a.pvp.net/mmr/v1/players/{puuid}/competitiveupdates",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true,
@@ -80,7 +80,7 @@
         {
             "name": "MMR_FetchLeaderboard",
             "description": "Get the competitive leaderboard for a given season  \nThe query parameter `query` can be added to search for a username.",
-            "url": "https://pd.{region}.a.pvp.net/mmr/v1/leaderboards/affinity/na/queue/competitive/season/{season id}?startIndex={start index}&size={size}",
+            "url": "https://pd.{shard}.a.pvp.net/mmr/v1/leaderboards/affinity/na/queue/competitive/season/{season id}?startIndex={start index}&size={size}",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true,
@@ -103,7 +103,7 @@
         {
             "name": "Restrictions_FetchPlayerRestrictionsV2",
             "description": "Checks for any gameplay penalties on the account",
-            "url": "https://pd.{region}.a.pvp.net/restrictions/v3/penalties",
+            "url": "https://pd.{shard}.a.pvp.net/restrictions/v3/penalties",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true
@@ -111,7 +111,7 @@
         {
             "name": "ItemProgressionDefinitionsV2_Fetch",
             "description": "Get details for item upgrades",
-            "url": "https://pd.{region}.a.pvp.net/contract-definitions/v3/item-upgrades",
+            "url": "https://pd.{shard}.a.pvp.net/contract-definitions/v3/item-upgrades",
             "method": "GET",
             "folder": "PVP Endpoints",
             "typicalAuth": true
@@ -119,14 +119,14 @@
         {
             "name": "Config_FetchConfig",
             "description": "Get various internal game configuration settings set by Riot",
-            "url": "https://shared.{region}.a.pvp.net/v1/config/{region}",
+            "url": "https://shared.{shard}.a.pvp.net/v1/config/{region}",
             "method": "GET",
             "folder": "PVP Endpoints"
         },
         {
             "name": "Store_GetOffers",
             "description": "Get prices for all store items",
-            "url": "https://pd.{region}.a.pvp.net/store/v1/offers/",
+            "url": "https://pd.{shard}.a.pvp.net/store/v1/offers/",
             "method": "GET",
             "folder": "Store",
             "typicalAuth": true
@@ -134,7 +134,7 @@
         {
             "name": "Store_GetStorefrontV2",
             "description": "Get the currently available items in the store",
-            "url": "https://pd.{region}.a.pvp.net/store/v2/storefront/{puuid}",
+            "url": "https://pd.{shard}.a.pvp.net/store/v2/storefront/{puuid}",
             "method": "GET",
             "folder": "Store",
             "typicalAuth": true
@@ -142,7 +142,7 @@
         {
             "name": "Store_GetWallet",
             "description": "Get amount of Valorant points and Radianite the player has  \nValorant points have the id `85ad13f7-3d1b-5128-9eb2-7cd8ee0b5741` and Radianite points have the id `e59aa87c-4cbf-517a-5983-6e81511be9b7`",
-            "url": "https://pd.{region}.a.pvp.net/store/v1/wallet/{puuid}",
+            "url": "https://pd.{shard}.a.pvp.net/store/v1/wallet/{puuid}",
             "method": "GET",
             "folder": "Store",
             "typicalAuth": true
@@ -150,7 +150,7 @@
         {
             "name": "Store_GetOrder",
             "description": "",
-            "url": "https://pd.{region}.a.pvp.net/store/v1/order/{order id}",
+            "url": "https://pd.{shard}.a.pvp.net/store/v1/order/{order id}",
             "method": "GET",
             "folder": "Store",
             "typicalAuth": true,
@@ -164,7 +164,7 @@
         {
             "name": "Store_GetEntitlements",
             "description": "List what the player owns (agents, skins, buddies, ect.)  \nCorrelate with the UUIDs in [Content_FetchContent]({{#linkto}}Content_FetchContent{{/linkto}}) to know what items are owned.   \nCategory names and IDs:  \n\n`ItemTypeID` | Name\n--- | ---\n`01bb38e1-da47-4e6a-9b3d-945fe4655707` | Agents\n`f85cb6f7-33e5-4dc8-b609-ec7212301948` | Contracts\n`d5f120f8-ff8c-4aac-92ea-f2b5acbe9475` | Sprays\n`dd3bf334-87f3-40bd-b043-682a57a8dc3a` | Gun Buddies\n`3f296c07-64c3-494c-923b-fe692a4fa1bd` | Cards\n`e7c63390-eda7-46e0-bb7a-a6abdacd2433` | Skins\n`3ad1b2b2-acdb-4524-852f-954a76ddae0a` | Skin Variants\n`de7caa6b-adf7-4588-bbd1-143831e786c6` | Titles",
-            "url": "https://pd.{region}.a.pvp.net/store/v1/entitlements/{puuid}/{ItemTypeID}",
+            "url": "https://pd.{shard}.a.pvp.net/store/v1/entitlements/{puuid}/{ItemTypeID}",
             "method": "GET",
             "folder": "Store",
             "typicalAuth": true,
@@ -178,7 +178,7 @@
         {
             "name": "Party_FetchPlayer",
             "description": "Get the Party ID that a given player belongs to",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/players/{puuid}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/players/{puuid}",
             "method": "GET",
             "folder": "Party",
             "typicalAuth": true,
@@ -187,7 +187,7 @@
         {
             "name": "Party_RemovePlayer",
             "description": "Removes a player from the current party",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/players/{puuid}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/players/{puuid}",
             "method": "DELETE",
             "folder": "Party",
             "typicalAuth": true
@@ -195,7 +195,7 @@
         {
             "name": "Party_FetchParty",
             "description": "Get details about a given party id",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}",
             "method": "GET",
             "folder": "Party",
             "typicalAuth": true
@@ -203,7 +203,7 @@
         {
             "name": "Party_SetMemberReady",
             "description": "Sets whether a party member is ready for queueing or not",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/setReady",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/setReady",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -212,7 +212,7 @@
         {
             "name": "Party_RefreshCompetitiveTier",
             "description": "Refreshes the competitive tier for a player",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/refreshCompetitiveTier",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/refreshCompetitiveTier",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -221,7 +221,7 @@
         {
             "name": "Party_RefreshPlayerIdentity",
             "description": "Refreshes the identity for a player",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/refreshPlayerIdentity",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/refreshPlayerIdentity",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -230,7 +230,7 @@
         {
             "name": "Party_RefreshPings",
             "description": "Refreshes the pings for a player",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/refreshPings",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/members/{puuid}/refreshPings",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -239,7 +239,7 @@
         {
             "name": "Party_ChangeQueue",
             "description": "Sets the matchmaking queue for the party",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/queue",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/queue",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -254,7 +254,7 @@
         {
             "name": "Party_StartCustomGame",
             "description": "Starts a custom game",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/startcustomgame",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/startcustomgame",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -263,7 +263,7 @@
         {
             "name": "Party_EnterMatchmakingQueue",
             "description": "Enters the matchmaking queue",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/matchmaking/join",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/matchmaking/join",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true
@@ -271,7 +271,7 @@
         {
             "name": "Party_LeaveMatchmakingQueue",
             "description": "Leaves the matchmaking queue",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/matchmaking/leave",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/matchmaking/leave",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true
@@ -279,7 +279,7 @@
         {
             "name": "Party_SetAccessibility",
             "description": "Changes the party accessibility to be open or closed",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/accessibility",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/accessibility",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -294,7 +294,7 @@
         {
             "name": "Party_SetCustomGameSettings",
             "description": "Changes the settings for a custom game",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/customgamesettings",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/customgamesettings",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -318,7 +318,7 @@
         {
             "name": "Party_InviteToPartyByDisplayName",
             "description": "Invites a player to the party with their display name",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/invites/name/{name}/tag/{tag}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/invites/name/{name}/tag/{tag}",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -337,7 +337,7 @@
         {
             "name": "Party_RequestToJoinParty",
             "description": "Requests to join a party",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/request",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/request",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true
@@ -345,7 +345,7 @@
         {
             "name": "Party_DeclineRequest",
             "description": "Declines a party request",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/request/{request id}/decline",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/request/{request id}/decline",
             "method": "POST",
             "folder": "Party",
             "typicalAuth": true,
@@ -359,7 +359,7 @@
         {
             "name": "Party_FetchCustomGameConfigs",
             "description": "Get information about the available gamemodes",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/customgameconfigs",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/customgameconfigs",
             "method": "GET",
             "folder": "Party",
             "requiresClientVersion": true,
@@ -368,7 +368,7 @@
         {
             "name": "Party_FetchMUCToken",
             "description": "Get a token for party chat",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/muctoken",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/muctoken",
             "method": "GET",
             "folder": "Party",
             "typicalAuth": true
@@ -376,7 +376,7 @@
         {
             "name": "Party_FetchVoiceToken",
             "description": "Get a token for party voice",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/parties/v1/parties/{party id}/voicetoken",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/parties/v1/parties/{party id}/voicetoken",
             "method": "GET",
             "folder": "Party",
             "typicalAuth": true
@@ -384,7 +384,7 @@
         {
             "name": "CoreGame_FetchPlayer",
             "description": "Get the game ID for an ongoing game the player is in",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/core-game/v1/players/{puuid}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/core-game/v1/players/{puuid}",
             "method": "GET",
             "folder": "Current Game",
             "typicalAuth": true
@@ -392,7 +392,7 @@
         {
             "name": "CoreGame_FetchMatch",
             "description": "Get information about an ongoing game",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/core-game/v1/matches/{in-progress match id}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/core-game/v1/matches/{in-progress match id}",
             "method": "GET",
             "folder": "Current Game",
             "typicalAuth": true
@@ -400,7 +400,7 @@
         {
             "name": "CoreGame_FetchMatchLoadouts",
             "description": "Get player skins and sprays for an ongoing game",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/core-game/v1/matches/{in-progress match id}/loadouts",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/core-game/v1/matches/{in-progress match id}/loadouts",
             "method": "GET",
             "folder": "Current Game",
             "typicalAuth": true
@@ -408,7 +408,7 @@
         {
             "name": "CoreGame_FetchTeamChatMUCToken",
             "description": "Get a token for team chat",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/core-game/v1/matches/{in-progress match id}/teamchatmuctoken",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/core-game/v1/matches/{in-progress match id}/teamchatmuctoken",
             "method": "GET",
             "folder": "Current Game",
             "typicalAuth": true
@@ -416,7 +416,7 @@
         {
             "name": "CoreGame_FetchAllChatMUCToken",
             "description": "Get a token for all chat",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/core-game/v1/matches/{in-progress match id}/allchatmuctoken",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/core-game/v1/matches/{in-progress match id}/allchatmuctoken",
             "method": "GET",
             "folder": "Current Game",
             "typicalAuth": true
@@ -424,7 +424,7 @@
         {
             "name": "CoreGame_DisassociatePlayer",
             "description": "Leave an in-progress game",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/core-game/v1/players/{puuid}/disassociate/{in-progress match id}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/core-game/v1/players/{puuid}/disassociate/{in-progress match id}",
             "method": "POST",
             "folder": "Current Game",
             "typicalAuth": true
@@ -432,7 +432,7 @@
         {
             "name": "Pregame_GetPlayer",
             "description": "Get the ID of a game in the pre-game stage",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/players/{puuid}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/players/{puuid}",
             "method": "GET",
             "folder": "Pre-Game",
             "typicalAuth": true
@@ -440,7 +440,7 @@
         {
             "name": "Pregame_GetMatch",
             "description": "Get info for a game in the pre-game stage",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}",
             "method": "GET",
             "folder": "Pre-Game",
             "typicalAuth": true
@@ -448,7 +448,7 @@
         {
             "name": "Pregame_GetMatchLoadouts",
             "description": "Get player skins and sprays for a game in the pre-game stage",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}/loadouts",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}/loadouts",
             "method": "GET",
             "folder": "Pre-Game",
             "typicalAuth": true
@@ -456,7 +456,7 @@
         {
             "name": "Pregame_FetchChatToken",
             "description": "Get a chat token",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}/chattoken",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}/chattoken",
             "method": "GET",
             "folder": "Pre-Game",
             "typicalAuth": true
@@ -464,7 +464,7 @@
         {
             "name": "Pregame_FetchVoiceToken",
             "description": "Get a voice token",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}/voicetoken",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}/voicetoken",
             "method": "GET",
             "folder": "Pre-Game",
             "typicalAuth": true
@@ -472,7 +472,7 @@
         {
             "name": "Pregame_SelectCharacter",
             "description": "Select an agent  \n**DO NOT USE THIS FOR INSTALOCKING**  \nRiot doesn't like this. You may get banned or get the API restricted for the rest of us.",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}/select/{agent id}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}/select/{agent id}",
             "method": "POST",
             "folder": "Pre-Game",
             "typicalAuth": true,
@@ -486,7 +486,7 @@
         {
             "name": "Pregame_LockCharacter",
             "description": "Lock in an agent  \n**DO NOT USE THIS FOR INSTALOCKING**  \nRiot doesn't like this. You may get banned or get the API restricted for the rest of us.",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}/lock/{agent id}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}/lock/{agent id}",
             "method": "POST",
             "folder": "Pre-Game",
             "typicalAuth": true,
@@ -500,7 +500,7 @@
         {
             "name": "Pregame_QuitMatch",
             "description": "Quit a match in the pre-game stage",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pre-game match id}/quit",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/pregame/v1/matches/{pre-game match id}/quit",
             "method": "POST",
             "folder": "Pre-Game",
             "typicalAuth": true
@@ -508,7 +508,7 @@
         {
             "name": "ContractDefinitions_Fetch",
             "description": "Get names and descriptions for contracts",
-            "url": "https://pd.{region}.a.pvp.net/contract-definitions/v3/item-upgrades",
+            "url": "https://pd.{shard}.a.pvp.net/contract-definitions/v3/item-upgrades",
             "method": "GET",
             "folder": "Contracts",
             "typicalAuth": true
@@ -516,7 +516,7 @@
         {
             "name": "Contracts_Fetch",
             "description": "Get a list of contracts and completion status including match history",
-            "url": "https://pd.{region}.a.pvp.net/contracts/v1/contracts/{puuid}",
+            "url": "https://pd.{shard}.a.pvp.net/contracts/v1/contracts/{puuid}",
             "method": "GET",
             "folder": "Contracts",
             "typicalAuth": true,
@@ -525,7 +525,7 @@
         {
             "name": "Contracts_Activate",
             "description": "Activate a particular contract",
-            "url": "https://pd.{region}.a.pvp.net/contracts/v1/contracts/{puuid}/special/{contract id}",
+            "url": "https://pd.{shard}.a.pvp.net/contracts/v1/contracts/{puuid}/special/{contract id}",
             "method": "POST",
             "folder": "Contracts",
             "typicalAuth": true,
@@ -540,7 +540,7 @@
         {
             "name": "ContractDefinitions_FetchActiveStory",
             "description": "Get the battlepass contracts",
-            "url": "https://pd.{region}.a.pvp.net/contract-definitions/v2/definitions/story",
+            "url": "https://pd.{shard}.a.pvp.net/contract-definitions/v2/definitions/story",
             "method": "GET",
             "folder": "Contracts",
             "typicalAuth": true
@@ -548,7 +548,7 @@
         {
             "name": "ItemProgressionDefinitionsV2_Fetch",
             "description": "Get item upgrades",
-            "url": "https://pd.{region}.a.pvp.net/contract-definitions/v3/item-upgrades",
+            "url": "https://pd.{shard}.a.pvp.net/contract-definitions/v3/item-upgrades",
             "method": "GET",
             "folder": "Contracts",
             "typicalAuth": true
@@ -978,7 +978,7 @@
         {
             "name": "Session_Get",
             "description": "Get information about the current game session",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/session/v1/sessions/{puuid}",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/session/v1/sessions/{puuid}",
             "method": "GET",
             "folder": "Session",
             "typicalAuth": true
@@ -986,7 +986,7 @@
         {
             "name": "Session_ReConnect",
             "description": "",
-            "url": "https://glz-{region}-1.{region}.a.pvp.net/session/v1/sessions/{puuid}/reconnect",
+            "url": "https://glz-{region}-1.{shard}.a.pvp.net/session/v1/sessions/{puuid}/reconnect",
             "method": "GET",
             "folder": "Session",
             "typicalAuth": true
