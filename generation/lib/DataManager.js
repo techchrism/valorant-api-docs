@@ -112,7 +112,7 @@ export class DataManager
             const headers = [];
 
             if(endpoint.typicalAuth) headers.push({name: 'X-Riot-Entitlements-JWT', value: '{Riot entitlement}'});
-            if(endpoint.typicalAuth || endpoint.tokenAuth) headers.push({name: 'Authorization', value: 'Bearer {base64 encoded Riot token}'});
+            if(endpoint.typicalAuth || endpoint.tokenAuth) headers.push({name: 'Authorization', value: 'Bearer {Riot token}'});
             if(endpoint.localAuth) headers.push({name: 'Authorization', value: 'Basic {base64 encoded "riot:{lockfile password}"}'});
             if(endpoint.requiresClientVersion) headers.push({name: 'X-Riot-ClientVersion', value: '{client version}'});
             if(endpoint.requiresClientPlatform) headers.push({name: 'X-Riot-ClientPlatform', value: '{client platform}'});
@@ -136,7 +136,7 @@ export class DataManager
         }
         const components = [];
         if(endpoint.typicalAuth) components.push({name: '{Riot entitlement}', value: readCommon('Riot Entitlement', 'riot-entitlement')});
-        if(endpoint.typicalAuth || endpoint.tokenAuth) components.push({name: '{base64 encoded Riot token}', value: readCommon('Riot Token', 'riot-token')});
+        if(endpoint.typicalAuth || endpoint.tokenAuth) components.push({name: '{Riot token}', value: readCommon('Riot Token', 'riot-token')});
         if(endpoint.localAuth) components.push({name: '{lockfile password}` and `{lockfile port}', value: readCommon('Lockfile Data', 'lockfile-data')});
         if(endpoint.requiresClientVersion) components.push({name: '{client version}', value: readCommon('Client Version', 'client-version')});
         if(endpoint.requiresClientPlatform) components.push({name: '{client platform}', value: readCommon('Client Platform', 'client-platform')});
