@@ -82,7 +82,7 @@ type SetCustomGameSettingsResponse = {
         IsReady: boolean;
         IsModerator: boolean;
         UseBroadcastHUD: boolean;
-        PlatformType: string;
+        PlatformType: "PC";
     }[];
     State: string;
     PreviousState: string;

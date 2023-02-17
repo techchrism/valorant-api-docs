@@ -98,6 +98,7 @@ type StorefrontResponse = {
     };
     UpgradeCurrencyStore: {
         UpgradeCurrencyOffers: {
+            /** UUID */
             OfferID: string;
             /** Item ID */
             StorefrontItemID: string;
@@ -119,5 +120,33 @@ type StorefrontResponse = {
             };
         }[];
     };
+    /** Night market */
+    BonusStore?: {
+        BonusStoreOffers: {
+            /** UUID */
+            BonusOfferID: string;
+            Offer: {
+                OfferID: string;
+                IsDirectPurchase: boolean;
+                /** Date in ISO 8601 format */
+                StartDate: string;
+                Cost: {
+                    [x: string]: number;
+                };
+                Rewards: {
+                    /** Item Type ID */
+                    ItemTypeID: string;
+                    /** Item ID */
+                    ItemID: string;
+                    Quantity: number;
+                }[];
+            };
+            DiscountPercent: number;
+            DiscountCosts: {
+                [x: string]: number;
+            };
+            IsSeen: boolean;
+        };
+    } | undefined;
 };
 ```
