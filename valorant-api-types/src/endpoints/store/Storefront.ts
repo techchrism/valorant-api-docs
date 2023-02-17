@@ -45,11 +45,20 @@ export const storefrontEndpoint = {
             }),
             UpgradeCurrencyStore: z.object({
                 UpgradeCurrencyOffers: z.array(z.object({
-                    OfferID: z.string(),
+                    OfferID: weakUUIDSchema,
                     StorefrontItemID: itemIDSchema,
                     Offer: offerSchema
                 }))
-            })
+            }),
+            BonusStore: z.object({
+                BonusStoreOffers: z.object({
+                    BonusOfferID: weakUUIDSchema,
+                    Offer: offerSchema,
+                    DiscountPercent: z.number(),
+                    DiscountCosts: z.record(weakUUIDSchema, z.number()),
+                    IsSeen: z.boolean()
+                })
+            }).optional().describe('Night market')
         })
     }
 } satisfies ValorantEndpoint
