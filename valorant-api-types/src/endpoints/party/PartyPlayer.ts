@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {dateSchema, partyIDSchema, playerUUIDSchema} from '../../commonTypes'
+import {dateSchema, partyIDSchema, platformSchema, playerUUIDSchema} from '../../commonTypes'
 
 export const partyPlayerEndpoint = {
     name: 'Party Player',
@@ -29,12 +29,7 @@ export const partyPlayerEndpoint = {
                 RefreshedAt: dateSchema,
                 ExpiresIn: z.number()
             })),
-            PlatformInfo: z.object({
-                platformType: z.literal('PC'),
-                platformOS: z.literal('Windows'),
-                platformOSVersion: z.string(),
-                platformChipset: z.literal('Unknown')
-            })
+            PlatformInfo: platformSchema
         })
     }
 } satisfies ValorantEndpoint

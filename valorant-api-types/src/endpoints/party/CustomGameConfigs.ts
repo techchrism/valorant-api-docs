@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {queueIDSchema, stringBooleanSchema} from '../../commonTypes'
+import {platformSchema, queueIDSchema, stringBooleanSchema} from '../../commonTypes'
 
 export const customGameConfigsEndpoint = {
     name: 'Custom Game Configs',
@@ -42,7 +42,7 @@ export const customGameConfigsEndpoint = {
                 UseAccountLevelRequirement: z.boolean(),
                 MinimumAccountLevelRequired: z.number(),
                 GameRules: z.record(stringBooleanSchema),
-                SupportedPlatformTypes: z.array(z.literal('PC')).length(1),
+                SupportedPlatformTypes: z.array(platformSchema.shape.platformType).length(1),
                 DisabledContent: z.array(z.unknown()),
                 queueFieldA: z.array(z.unknown()),
                 NextScheduleChangeSeconds: z.number(),

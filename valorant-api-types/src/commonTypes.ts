@@ -28,6 +28,12 @@ export const itemTypeIDSchema = weakUUIDSchema.describe('Item Type ID')
 export const armorIDSchema = weakUUIDSchema.describe('Armor ID')
 export const currencyIDSchema = weakUUIDSchema.describe('Currency ID')
 
+export const platformSchema = z.object({
+    platformType: z.literal('PC'),
+    platformOS: z.literal('Windows'),
+    platformOSVersion: z.string(),
+    platformChipset: z.literal('Unknown')
+})
 
 const partyMembershipSchema = z.array(z.object({Subject: playerUUIDSchema})).nullable()
 export const partySchema = z.object({
@@ -58,7 +64,7 @@ export const partySchema = z.object({
         IsReady: z.boolean(),
         IsModerator: z.boolean(),
         UseBroadcastHUD: z.boolean(),
-        PlatformType: z.string()
+        PlatformType: platformSchema.shape.platformType
     })),
     State: z.string(),
     PreviousState: z.string(),

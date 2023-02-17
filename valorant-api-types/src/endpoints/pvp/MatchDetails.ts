@@ -6,7 +6,7 @@ import {
     gameModeSchema, itemIDSchema,
     mapIDSchema,
     matchIDSchema,
-    partyIDSchema, playerUUIDSchema, preferredLevelBorderIDSchema,
+    partyIDSchema, platformSchema, playerUUIDSchema, preferredLevelBorderIDSchema,
     queueIDSchema,
     seasonIDSchema, titleIDSchema, xpModificationIDSchema
 } from '../../commonTypes'
@@ -86,7 +86,7 @@ export const matchDetailsEndpoint = {
                 isMatchSampled: z.boolean(),
                 seasonId: seasonIDSchema,
                 completionState: z.enum(['Surrendered', 'Completed', 'VoteDraw']), // TODO find remake string
-                platformType: z.literal('PC'),
+                platformType: platformSchema.shape.platformType,
                 partyRRPenalties: z.record(partyIDSchema, z.number()),
                 shouldMatchDisablePenalties: z.boolean(),
             }),
@@ -94,12 +94,7 @@ export const matchDetailsEndpoint = {
                 subject: playerUUIDSchema,
                 gameName: z.string(),
                 tagLine: z.string(),
-                platformInfo: z.object({
-                    platformType: z.literal('PC'),
-                    platformOS: z.literal('Windows'),
-                    platformOSVersion: z.string(),
-                    platformChipset: z.literal('Unknown')
-                }),
+                platformInfo: platformSchema,
                 teamId: teamOrPlayerSchema,
                 partyId: partyIDSchema,
                 characterId: characterIDSchema,
