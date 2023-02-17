@@ -15,6 +15,7 @@ Method: `GET`
 URL: `https://shared.{shard}.a.pvp.net/v1/config/{region}`  
 Variables:
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
 
 
 ### Response Format:

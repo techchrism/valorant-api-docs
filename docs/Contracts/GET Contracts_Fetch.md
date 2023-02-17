@@ -22,6 +22,7 @@ Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{puuid}`: Read [Common Components - PUUID](../common-components.md#puuid)
 
 

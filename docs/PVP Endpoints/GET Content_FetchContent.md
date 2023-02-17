@@ -20,6 +20,7 @@ Headers:
 Variables:
  - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
  - `{client platform}`: Read [Common Components - Client Platform](../common-components.md#client-platform)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
 
 
 ### Response Format:

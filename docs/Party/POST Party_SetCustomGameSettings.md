@@ -39,6 +39,7 @@ Variables:
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
  - `{client version}`: Read [Common Components - Client Version](../common-components.md#client-version)
  - `{region}`: Read [Common Components - Region](../common-components.md#region)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{party id}`: Read [Common Components - Party ID](../common-components.md#party-id)
  - `{map}`: Appears to be of the format `/Game/Maps/{map name}/{map name}` where `{map name}` is the asset name for the map. You can use the [Content_FetchContent](../PVP%20Endpoints/GET%20Content_FetchContent.md) endpoint to get map asset names.
  - `{mode}`: The asset path for the gamemode in the format `/Game/GameModes/{id}/{name}.{name}_C`. For example, in unrated, the `{id}` is `Bomb` and the `{name}` is `BombGameMode`. It's easiest to experiment with this value by changing the mode in Valorant and using the [Party_FetchParty](GET%20Party_FetchParty.md) endpoint to see the resulting value.

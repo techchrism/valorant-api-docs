@@ -17,5 +17,6 @@ Headers:
 Variables:
  - `{Riot entitlement}`: Read [Common Components - Riot Entitlement](../common-components.md#riot-entitlement)
  - `{Riot token}`: Read [Common Components - Riot Token](../common-components.md#riot-token)
+ - `{shard}`: Read [Common Components - Shard](../common-components.md#shard)
  - `{order id}`: The ID of the order. Can be obtained when creating an order.
 
