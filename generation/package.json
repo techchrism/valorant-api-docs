@@ -16,7 +16,7 @@
     "nanoid": "^3.1.23",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.5",
-    "valorant-api-types": "^0.4.0",
+    "valorant-api-types": "~0.4.1",
     "zod": "^3.20.6",
     "zod-to-ts": "^1.1.2"
   }
