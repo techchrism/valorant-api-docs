@@ -1,5 +1,5 @@
 ---
-import '../styles/base.css';
+import '../styles/base.css'
 
 export interface Props {
 	title: string;
@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50">
 		<slot />
 	</body>
 </html>
