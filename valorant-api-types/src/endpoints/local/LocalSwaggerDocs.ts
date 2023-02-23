@@ -13,4 +13,4 @@ export const localSwaggerDocsEndpoint = {
     responses: {
         '200': z.unknown().describe('Swagger doc schema')
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint

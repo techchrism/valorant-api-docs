@@ -19,4 +19,4 @@ export const authRequestEndpoint = {
         remember: z.boolean(),
         language: z.literal('en_US')
     })
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint

@@ -216,6 +216,6 @@ export const matchDetailsEndpoint = {
             kills: z.array(killSchema),
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type MatchDetailsResponse = z.infer<typeof matchDetailsEndpoint.responses['200']>

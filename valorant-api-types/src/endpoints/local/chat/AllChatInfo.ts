@@ -14,6 +14,6 @@ export const allChatInfoEndpoint = {
     responses: {
         '200': conversationsSchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type AllChatInfoResponse = z.input<typeof allChatInfoEndpoint.responses['200']>

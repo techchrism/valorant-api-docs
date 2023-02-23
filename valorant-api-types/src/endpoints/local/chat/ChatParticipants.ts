@@ -29,6 +29,6 @@ export const chatParticipantsEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ChatParticipantsResponse = z.input<typeof chatParticipantsEndpoint.responses['200']>

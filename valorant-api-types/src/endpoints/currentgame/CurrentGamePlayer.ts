@@ -20,6 +20,6 @@ export const currentGamePlayerEndpoint = {
             Version: z.number()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type CurrentGamePlayerResponse = z.input<typeof currentGamePlayerEndpoint.responses['200']>

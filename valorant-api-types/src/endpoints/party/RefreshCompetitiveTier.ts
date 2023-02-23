@@ -18,6 +18,6 @@ export const refreshCompetitiveTierEndpoint = {
     responses: {
         '200': partySchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type RefreshCompetitiveTierResponse = z.input<typeof refreshCompetitiveTierEndpoint.responses['200']>

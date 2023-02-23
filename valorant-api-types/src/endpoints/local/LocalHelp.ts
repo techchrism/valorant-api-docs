@@ -17,6 +17,6 @@ export const localHelpEndpoint = {
             types: z.record(z.string().describe('Type name'), z.string().describe('Type description'))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type LocalHelpResponse = z.input<typeof localHelpEndpoint.responses['200']>

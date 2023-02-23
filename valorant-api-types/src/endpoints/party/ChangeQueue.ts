@@ -20,6 +20,6 @@ export const changeQueueEndpoint = {
     responses: {
         '200': partySchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ChangeQueueResponse = z.input<typeof changeQueueEndpoint.responses['200']>

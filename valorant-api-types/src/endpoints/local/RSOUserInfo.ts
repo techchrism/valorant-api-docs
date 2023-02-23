@@ -54,6 +54,6 @@ export const rsoUserInfoEndpoint = {
             userInfo: z.string().transform((str) => userInfoSchema.parse(JSON.parse(str)))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type RSOUserInfoResponse = z.input<typeof rsoUserInfoEndpoint.responses['200']>

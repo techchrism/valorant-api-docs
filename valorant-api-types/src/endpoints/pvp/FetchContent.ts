@@ -33,6 +33,6 @@ export const fetchContentEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type FetchContentResponse = z.input<typeof fetchContentEndpoint.responses['200']>

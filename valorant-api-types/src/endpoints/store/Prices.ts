@@ -28,6 +28,6 @@ export const pricesEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PricesResponse = z.input<typeof pricesEndpoint.responses['200']>

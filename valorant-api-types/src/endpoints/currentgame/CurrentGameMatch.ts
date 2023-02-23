@@ -69,6 +69,6 @@ export const currentGameMatchEndpoint = {
             MatchmakingData: z.null()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type CurrentGameMatchResponse = z.input<typeof currentGameMatchEndpoint.responses['200']>

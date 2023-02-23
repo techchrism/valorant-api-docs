@@ -17,6 +17,6 @@ export const walletEndpoint = {
             Balances: z.record(currencyIDSchema, z.number())
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type WalletResponse = z.input<typeof walletEndpoint.responses['200']>

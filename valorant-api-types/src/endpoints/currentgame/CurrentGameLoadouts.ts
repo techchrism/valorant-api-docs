@@ -40,6 +40,6 @@ export const currentGameLoadoutsEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type CurrentGameLoadoutsResponse = z.input<typeof currentGameLoadoutsEndpoint.responses['200']>
