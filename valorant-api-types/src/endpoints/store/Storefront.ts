@@ -61,6 +61,6 @@ export const storefrontEndpoint = {
             }).optional().describe('Night market')
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type StorefrontResponse = z.input<typeof storefrontEndpoint.responses['200']>

@@ -54,6 +54,6 @@ export const leaderboardEndpoint = {
             query: z.string()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type LeaderboardResponse = z.input<typeof leaderboardEndpoint.responses['200']>

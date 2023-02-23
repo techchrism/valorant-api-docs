@@ -59,6 +59,6 @@ export const customGameConfigsEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type CustomGameConfigsResponse = z.input<typeof customGameConfigsEndpoint.responses['200']>

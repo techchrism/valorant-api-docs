@@ -25,6 +25,6 @@ export const chatSessionEndpoint = {
             state: z.string()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ChatSessionResponse = z.input<typeof chatSessionEndpoint.responses['200']>

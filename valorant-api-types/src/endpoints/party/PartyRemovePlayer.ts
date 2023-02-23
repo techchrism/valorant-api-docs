@@ -16,4 +16,4 @@ export const partyRemovePlayerEndpoint = {
     responses: {
         '204': z.undefined()
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint

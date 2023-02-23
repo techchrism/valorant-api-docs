@@ -18,4 +18,4 @@ export const authCookiesEndpoint = {
         response_type: z.literal("token id_token"),
         scope: z.literal("account openid")
     })
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint

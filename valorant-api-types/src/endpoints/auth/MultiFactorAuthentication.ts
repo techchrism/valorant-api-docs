@@ -16,4 +16,4 @@ export const multiFactorAuthenticationEndpoint = {
         code: z.string().describe('The multi-factor authentication code'),
         rememberDevice: z.boolean()
     })
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint

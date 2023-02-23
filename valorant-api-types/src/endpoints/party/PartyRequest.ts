@@ -16,6 +16,6 @@ export const partyRequestEndpoint = {
     responses: {
         '200': z.unknown() //TODO verify
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PartyRequestResponse = z.input<typeof partyRequestEndpoint.responses['200']>

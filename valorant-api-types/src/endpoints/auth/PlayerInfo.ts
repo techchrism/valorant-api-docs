@@ -41,6 +41,6 @@ export const playerInfoEndpoint = {
             affinity: z.record(z.string())
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PlayerInfoResponse = z.input<typeof playerInfoEndpoint.responses['200']>

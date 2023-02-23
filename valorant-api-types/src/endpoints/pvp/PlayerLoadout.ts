@@ -49,6 +49,6 @@ export const playerLoadoutEndpoint = {
             Version: z.number()
         }).merge(playerLoadoutSchema)
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PlayerLoadoutResponse = z.input<typeof playerLoadoutEndpoint.responses['200']>

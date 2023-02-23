@@ -20,6 +20,6 @@ export const pregamePlayerEndpoint = {
             Version: z.number()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PregamePlayerResponse = z.input<typeof pregamePlayerEndpoint.responses['200']>

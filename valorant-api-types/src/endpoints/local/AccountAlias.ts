@@ -20,6 +20,6 @@ export const accountAliasEndpoint = {
             tag_line: z.string()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type AccountAliasResponse = z.input<typeof accountAliasEndpoint.responses['200']>

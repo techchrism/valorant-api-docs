@@ -18,6 +18,6 @@ export const partyChatTokenEndpoint = {
             Room: z.string()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PartyChatTokenResponse = z.input<typeof partyChatTokenEndpoint.responses['200']>

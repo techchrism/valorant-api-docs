@@ -39,6 +39,6 @@ export const accountXPEndpoint = {
             NextTimeFirstWinAvailable: dateSchema
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type AccountXPResponse = z.input<typeof accountXPEndpoint.responses['200']>

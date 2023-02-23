@@ -18,6 +18,6 @@ export const clientRegionEndpoint = {
             webRegion: z.string()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ClientRegionResponse = z.input<typeof clientRegionEndpoint.responses['200']>

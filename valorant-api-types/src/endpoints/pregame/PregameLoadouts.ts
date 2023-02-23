@@ -23,6 +23,6 @@ export const pregameLoadoutsEndpoint = {
             LoadoutsValid: z.literal(false)
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PregameLoadoutsResponse = z.infer<typeof pregameLoadoutsEndpoint.responses['200']>

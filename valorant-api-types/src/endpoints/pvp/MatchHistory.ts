@@ -31,6 +31,6 @@ export const matchHistoryEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type MatchHistoryResponse = z.input<typeof matchHistoryEndpoint.responses['200']>

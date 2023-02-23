@@ -20,6 +20,6 @@ export const setPartyAccessibilityEndpoint = {
     responses: {
         '200': partySchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type SetPartyAccessibilityResponse = z.input<typeof setPartyAccessibilityEndpoint.responses['200']>

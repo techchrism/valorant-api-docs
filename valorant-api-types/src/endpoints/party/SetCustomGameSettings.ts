@@ -31,6 +31,6 @@ export const setCustomGameSettingsEndpoint = {
     responses: {
         '200': partySchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type SetCustomGameSettingsResponse = z.input<typeof setCustomGameSettingsEndpoint.responses['200']>

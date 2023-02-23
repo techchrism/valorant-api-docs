@@ -28,6 +28,6 @@ export const friendsEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type FriendsResponse = z.input<typeof friendsEndpoint.responses['200']>
