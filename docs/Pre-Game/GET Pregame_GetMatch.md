@@ -50,7 +50,7 @@ type Pre-GameMatchResponse = {
                 PlayerTitleID: string;
                 AccountLevel: number;
                 /** Preferred Level Border ID */
-                PreferredLevelBorderID: string;
+                PreferredLevelBorderID: string | "";
                 Incognito: boolean;
                 HideAccountLevel: boolean;
             };
@@ -84,7 +84,7 @@ type Pre-GameMatchResponse = {
                 PlayerTitleID: string;
                 AccountLevel: number;
                 /** Preferred Level Border ID */
-                PreferredLevelBorderID: string;
+                PreferredLevelBorderID: string | "";
                 Incognito: boolean;
                 HideAccountLevel: boolean;
             };
@@ -118,7 +118,7 @@ type Pre-GameMatchResponse = {
                 PlayerTitleID: string;
                 AccountLevel: number;
                 /** Preferred Level Border ID */
-                PreferredLevelBorderID: string;
+                PreferredLevelBorderID: string | "";
                 Incognito: boolean;
                 HideAccountLevel: boolean;
             };

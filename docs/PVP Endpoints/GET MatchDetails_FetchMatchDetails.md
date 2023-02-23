@@ -101,7 +101,7 @@ type MatchDetailsResponse = {
         /** Title ID */
         playerTitle: string;
         /** Preferred Level Border ID */
-        preferredLevelBorder: string;
+        preferredLevelBorder: string | "";
         accountLevel: number;
         sessionPlaytimeMinutes: number;
         xpModifications?: {

@@ -47,7 +47,7 @@ type EnterMatchmakingQueueResponse = {
             PlayerTitleID: string;
             AccountLevel: number;
             /** Preferred Level Border ID */
-            PreferredLevelBorderID: string;
+            PreferredLevelBorderID: string | "";
             Incognito: boolean;
             HideAccountLevel: boolean;
         };
