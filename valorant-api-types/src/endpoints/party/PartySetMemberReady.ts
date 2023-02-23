@@ -14,12 +14,9 @@ export const partySetMemberReadyEndpoint = {
         token: true,
         entitlement: true
     },
-    body: '{ready status}',
-    variables: new Map([
-        ['{ready status}', z.object({
-            ready: z.boolean()
-        })]
-    ]),
+    body: z.object({
+        ready: z.boolean().describe("Ready Status")
+    }),
     responses: {
         '200': partySchema
     }
