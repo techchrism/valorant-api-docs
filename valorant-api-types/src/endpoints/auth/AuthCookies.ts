@@ -1,4 +1,5 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
+import {z} from "zod"
 
 export const authCookiesEndpoint = {
     name: 'Auth Cookies',
@@ -10,5 +11,11 @@ export const authCookiesEndpoint = {
     headers: new Map([
         ['Content-Type', 'application/json'],
     ]),
-    body: '{"client_id":"play-valorant-web-prod","nonce":"1","redirect_uri":"https://playvalorant.com/opt_in","response_type":"token id_token","scope":"account openid"}'
+    body: z.object({
+        client_id: z.literal("play-valorant-web-prod"),
+        nonce: z.literal("1"),
+        redirect_uri: z.literal("https://playvalorant.com/opt_in"),
+        response_type: z.literal("token id_token"),
+        scope: z.literal("account openid")
+    })
 } satisfies ValorantEndpoint

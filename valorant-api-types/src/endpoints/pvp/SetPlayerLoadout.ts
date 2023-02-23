@@ -21,10 +21,8 @@ export const setPlayerLoadoutEndpoint = {
             Version: z.number()
         }).merge(playerLoadoutSchema)
     },
-    body: '{loadout data}',
-    variables: new Map([
-        ['{loadout data}', playerLoadoutSchema.describe('JSON-encoded player loadout object. See the Player Loadout endpoint for an example. Exclude the Subject and Version properties.')]
-    ])
+    body: playerLoadoutSchema.describe('JSON-encoded player loadout object. See the Player Loadout endpoint for an example. Exclude the Subject and Version properties.'),
+
 } satisfies ValorantEndpoint
 
 export type SetPlayerLoadoutResponse = PlayerLoadoutResponse
