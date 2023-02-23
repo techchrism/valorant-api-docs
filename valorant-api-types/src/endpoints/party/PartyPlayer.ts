@@ -32,6 +32,6 @@ export const partyPlayerEndpoint = {
             PlatformInfo: platformSchema
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PartyPlayerResponse = z.input<typeof partyPlayerEndpoint.responses['200']>

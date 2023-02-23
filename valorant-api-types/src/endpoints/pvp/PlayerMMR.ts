@@ -64,6 +64,6 @@ export const playerMMREndpoint = {
         })
     }
 
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PlayerMMRResponse = z.input<typeof playerMMREndpoint.responses['200']>

@@ -31,6 +31,6 @@ export const sessionsEndpoint = {
             version: z.string()
         }))
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type SessionsResponse = z.input<typeof sessionsEndpoint.responses['200']>

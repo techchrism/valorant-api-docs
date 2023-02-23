@@ -47,6 +47,6 @@ export const settingsEndpoint = {
             type: z.literal('Ares.PlayerSettings')
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type SettingsResponse = z.input<typeof settingsEndpoint.responses['200']>

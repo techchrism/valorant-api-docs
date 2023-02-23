@@ -16,6 +16,6 @@ export const entitlementEndpoint = {
             entitlements_token: z.string()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type EntitlementResponse = z.input<typeof entitlementEndpoint.responses['200']>

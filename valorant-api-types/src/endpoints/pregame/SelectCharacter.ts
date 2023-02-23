@@ -22,6 +22,6 @@ export const selectCharacterEndpoint = {
     responses: {
         '200': pregameMatchSchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type SelectCharacterResponse = z.infer<typeof selectCharacterEndpoint.responses['200']>

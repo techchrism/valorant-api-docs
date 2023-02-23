@@ -59,6 +59,6 @@ export const itemUpgradesEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ItemUpgradesResponse = z.input<typeof itemUpgradesEndpoint.responses['200']>

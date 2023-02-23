@@ -39,6 +39,6 @@ export const ownedItemsEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type OwnedItemsResponse = z.input<typeof ownedItemsEndpoint.responses['200']>

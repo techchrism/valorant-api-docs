@@ -20,6 +20,6 @@ export const sendChatEndpoint = {
     responses: {
         '200': chatMessagesSchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type SendChatResponse = z.input<typeof sendChatEndpoint.responses['200']>

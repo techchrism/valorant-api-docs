@@ -21,6 +21,6 @@ export const activateContractEndpoint = {
     responses: {
         '200': contractsResponse
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ActivateContractResponse = z.input<typeof activateContractEndpoint.responses['200']>

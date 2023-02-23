@@ -17,6 +17,6 @@ export const chatHistoryEndpoint = {
     responses: {
         '200': chatMessagesSchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type ChatHistoryResponse = z.input<typeof chatHistoryEndpoint.responses['200']>

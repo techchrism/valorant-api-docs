@@ -22,6 +22,6 @@ export const lockCharacterEndpoint = {
     responses: {
         '200': pregameMatchSchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type LockCharacterResponse = z.infer<typeof lockCharacterEndpoint.responses['200']>

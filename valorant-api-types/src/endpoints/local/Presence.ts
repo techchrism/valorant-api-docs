@@ -123,6 +123,6 @@ export const presenceEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PresenceResponse = z.input<typeof presenceEndpoint.responses['200']>

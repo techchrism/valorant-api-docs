@@ -20,6 +20,6 @@ export const penaltiesEndpoint = {
             Version: z.number()
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PenaltiesResponse = z.input<typeof penaltiesEndpoint.responses['200']>

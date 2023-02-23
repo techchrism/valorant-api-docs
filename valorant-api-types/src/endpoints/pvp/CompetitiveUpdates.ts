@@ -39,6 +39,6 @@ export const competitiveUpdatesEndpoint = {
             }))
         })
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type CompetitiveUpdatesResponse = z.input<typeof competitiveUpdatesEndpoint.responses['200']>

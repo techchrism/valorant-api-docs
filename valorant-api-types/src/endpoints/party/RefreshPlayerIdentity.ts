@@ -18,6 +18,6 @@ export const refreshPlayerIdentityEndpoint = {
     responses: {
         '200': partySchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type RefreshPlayerIdentityResponse = z.input<typeof refreshPlayerIdentityEndpoint.responses['200']>

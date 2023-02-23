@@ -22,6 +22,6 @@ export const partyInviteEndpoint = {
     responses: {
         '200': partySchema
     }
-} satisfies ValorantEndpoint
+} as const satisfies ValorantEndpoint
 
 export type PartyInviteResponse = z.input<typeof partyInviteEndpoint.responses['200']>
