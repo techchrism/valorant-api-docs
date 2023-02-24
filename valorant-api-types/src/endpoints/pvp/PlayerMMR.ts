@@ -40,7 +40,7 @@ export const playerMMREndpoint = {
                             winsMap.set(parseInt(key), value)
                         }
                         return winsMap
-                    }),
+                    }).nullable(),
                     GamesNeededForRating: z.number(),
                     TotalWinsNeededForRank: z.number()
                 }))
