@@ -8,6 +8,9 @@ export const entitlementEndpoint = {
     type: 'other',
     suffix: 'https://entitlements.auth.riotgames.com/api/token/v1',
     method: 'POST',
+    headers: new Map([
+        ['Content-Type', 'application/json'],
+    ]),
     riotRequirements: {
         token: true
     },
