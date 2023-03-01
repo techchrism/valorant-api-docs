@@ -36,52 +36,50 @@ const {endpointName} = Astro.props
 <input type="checkbox" id="toggler" class="hidden"/>
 
 
-<aside id="sidebar" class="md:sticky top-0 left-0 z-40 md:h-screen" aria-label="Sidebar">
-   <div class="h-full overflow-y-auto bg-gray-50 dark:bg-gray-800">
-      <div class="sticky top-0 px-3 py-4 bg-gray-50 dark:bg-gray-800">
-         <h2>Valorant API Docs</h2>
-         <div class="md:hidden">
-            <label for="toggler" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
-               class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+<aside id="sidebar" class="md:sticky top-0 left-0 z-40 md:h-screen overflow-y-auto bg-gray-50 dark:bg-gray-800" aria-label="Sidebar">
+   <div class="sticky top-0 px-3 py-4 bg-gray-50 dark:bg-gray-800">
+      <h2>Valorant API Docs</h2>
+      <div class="md:hidden">
+         <label for="toggler" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
 
-               <span>Open sidebar</span>
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true" id="opener-arrow" fill="currentColor" class="transition-transform ease-in-out">
-                  <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
-               </svg>
-            </label>
-         </div>
+            <span>Open sidebar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true" id="opener-arrow" fill="currentColor" class="transition-transform ease-in-out">
+               <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+            </svg>
+         </label>
       </div>
-
-      <ul class="px-3 my-4 space-y-2 hidden md:block" id="sidebar-list">
-         {Array.from(categories).map(([category, endpoints]) => {
-            return (
-               <li>
-                  <h3 class="px-3 py-2 text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">{category}</h3>
-                  <ul class="space-y-1">
-                     {endpoints.map(endpoint => {
-                        return (
-                           <li>
-                              <a href={getEndpointSlug(endpoint)} class={
-                                 'flex items-center p-2 text-sm font-normal text-gray-900 rounded-lg dark:text-white ' +
-                                 ((endpointName === endpoint.name) ?
-                                    'hover:bg-blue-100 dark:hover:bg-blue-700 bg-blue-900' :
-                                    'hover:bg-gray-100 dark:hover:bg-gray-700')
-                                 }>
-                                 <span class="flex-1 ml-3 whitespace-nowrap">
-                                    <span class={getEndpointMethodColor(endpoint) + ' font-semibold mr-1'}>{endpoint.method || 'GET'}</span>
-                                    {endpoint.name}
-                                 </span>
-                              </a>
-                           </li>
-                        )
-                     })}
-                  </ul>
-               </li>
-            )
-         })}
-         
-      </ul>
    </div>
+
+   <ul class="px-3 my-4 space-y-2 hidden md:block" id="sidebar-list">
+      {Array.from(categories).map(([category, endpoints]) => {
+         return (
+            <li>
+               <h3 class="px-3 py-2 text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">{category}</h3>
+               <ul class="space-y-1">
+                  {endpoints.map(endpoint => {
+                     return (
+                        <li>
+                           <a href={getEndpointSlug(endpoint)} class={
+                              'flex items-center p-2 text-sm font-normal text-gray-900 rounded-lg dark:text-white ' +
+                              ((endpointName === endpoint.name) ?
+                                 'hover:bg-blue-100 dark:hover:bg-blue-700 bg-blue-900 active-endpoint' :
+                                 'hover:bg-gray-100 dark:hover:bg-gray-700')
+                              }>
+                              <span class="flex-1 ml-3 whitespace-nowrap">
+                                 <span class={getEndpointMethodColor(endpoint) + ' font-semibold mr-1'}>{endpoint.method || 'GET'}</span>
+                                 {endpoint.name}
+                              </span>
+                           </a>
+                        </li>
+                     )
+                  })}
+               </ul>
+            </li>
+         )
+      })}
+      
+   </ul>
 </aside>
 
 <style>
@@ -93,3 +91,21 @@ const {endpointName} = Astro.props
    transform: rotate(90deg);
 }
 </style>
+
+<script>
+const sidebar = document.getElementById('sidebar')!
+
+const previousTop = sessionStorage.getItem('sidebar-scroll')
+if(previousTop !== null) {
+   sidebar.scrollTop = parseInt(previousTop)
+} else {
+   const active = document.getElementsByClassName('active-endpoint')[0]
+   if(active !== undefined) {
+      active.scrollIntoView({block: 'center'})
+   }
+}
+
+window.addEventListener('beforeunload', () => {
+   sessionStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString())
+});
+</script>
