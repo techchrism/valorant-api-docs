@@ -1,0 +1,33 @@
+---
+import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+import Layout from '../../layouts/Layout.astro'
+
+function getEndpointSlug(endpoint: ValorantEndpoint) {
+   return endpoint.name.toLowerCase().replace(/ /g, '-')
+}
+
+const endpointsBySlug = new Map<string, ValorantEndpoint>()
+for(const endpoint of Object.values(endpoints)) {
+    endpointsBySlug.set(getEndpointSlug(endpoint), endpoint)
+}
+
+export function getStaticPaths() {
+    const staticPaths = []
+    for(const endpoint of Object.values(endpoints)) {
+        staticPaths.push({
+            params: {slug: endpoint.name.toLowerCase().replace(/ /g, '-')}
+        })
+    }
+    return staticPaths
+}
+
+const {slug} = Astro.params
+const endpoint = endpointsBySlug.get(slug!)!
+---
+
+<Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
+    <main class="mx-auto p-3">
+        <h1>{endpoint.name}</h1>
+        <p>{endpoint.description}</p>
+    </main>
+</Layout>
