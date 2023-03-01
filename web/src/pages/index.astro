@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+import {endpoints} from 'valorant-api-types'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -31,6 +33,16 @@ import Card from '../components/Card.astro';
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
+		</ul>
+
+		<ul role="list">
+			{Object.values(endpoints).map(endpoint => {
+				return (
+					<li>
+						{endpoint.category} - {endpoint.name}
+					</li>
+				)
+			})}
 		</ul>
 	</main>
 </Layout>

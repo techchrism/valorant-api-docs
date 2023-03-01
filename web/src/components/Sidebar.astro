@@ -1,0 +1,50 @@
+---
+const extraItems = []
+for(let i = 0; i < 100; i++) {
+   extraItems.push(i)
+}
+---
+
+
+<input type="checkbox" id="toggler" class="hidden"/>
+
+
+<aside id="sidebar" class="md:sticky top-0 left-0 z-40 md:h-screen" aria-label="Sidebar">
+   <div class="h-full overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <div class="sticky top-0 px-3 py-4 bg-gray-50 dark:bg-gray-800">
+         <h2>Valorant API Docs</h2>
+         <div class="md:hidden">
+            <label for="toggler" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+               class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+
+               <span>Open sidebar</span>
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true" id="opener-arrow" fill="currentColor" class="transition-transform ease-in-out">
+                  <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+               </svg>
+            </label>
+         </div>
+      </div>
+      
+
+      <ul class="px-3 my-4 space-y-2 hidden md:block" id="sidebar-list">
+         {
+            extraItems.map(item => <li>
+                  <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
+                     <span class="flex-1 ml-3 whitespace-nowrap">Item {item}</span>
+                  </a>
+               </li>)
+         }
+      </ul>
+   </div>
+</aside>
+
+<style>
+#toggler:checked~#sidebar #sidebar-list {
+   display: block;
+}
+
+#toggler:checked~#sidebar #opener-arrow {
+   transform: rotate(90deg);
+}
+</style>
