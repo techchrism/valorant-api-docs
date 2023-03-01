@@ -1,7 +1,32 @@
 ---
-const extraItems = []
-for(let i = 0; i < 100; i++) {
-   extraItems.push(i)
+import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+
+const categories = new Map<string, ValorantEndpoint[]>()
+for(const endpoint of Object.values(endpoints)) {
+   if(!categories.has(endpoint.category)) {
+      categories.set(endpoint.category, [])
+   }
+   categories.get(endpoint.category)!.push(endpoint)
+}
+
+function getEndpointSlug(endpoint: ValorantEndpoint) {
+   return 'endpoints/' + endpoint.name.toLowerCase().replace(/ /g, '-')
+}
+
+function getEndpointMethodColor(endpoint: ValorantEndpoint) {
+   switch(endpoint.method) {
+      case undefined:
+      case 'GET':
+         return 'text-purple-500'
+      case 'POST':
+         return 'text-green-500'
+      case 'PUT':
+         return 'text-orange-500'
+      case 'DELETE':
+         return 'text-red-600'
+      default:
+         return 'text-gray-800'
+   }
 }
 ---
 
@@ -24,17 +49,30 @@ for(let i = 0; i < 100; i++) {
             </label>
          </div>
       </div>
-      
 
       <ul class="px-3 my-4 space-y-2 hidden md:block" id="sidebar-list">
-         {
-            extraItems.map(item => <li>
-                  <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clip-rule="evenodd"></path></svg>
-                     <span class="flex-1 ml-3 whitespace-nowrap">Item {item}</span>
-                  </a>
-               </li>)
-         }
+         {Array.from(categories).map(([category, endpoints]) => {
+            return (
+               <li>
+                  <h3 class="px-3 py-2 text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">{category}</h3>
+                  <ul class="space-y-1">
+                     {endpoints.map(endpoint => {
+                        return (
+                           <li>
+                              <a href={getEndpointSlug(endpoint)} class="flex items-center p-2 text-sm font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 no-underline">
+                                 <span class="flex-1 ml-3 whitespace-nowrap">
+                                    <span class={getEndpointMethodColor(endpoint) + ' font-semibold mr-1'}>{endpoint.method || 'GET'}</span>
+                                    {endpoint.name}
+                                 </span>
+                              </a>
+                           </li>
+                        )
+                     })}
+                  </ul>
+               </li>
+            )
+         })}
+         
       </ul>
    </div>
 </aside>
