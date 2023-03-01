@@ -1,6 +1,7 @@
 ---
 import {endpoints, ValorantEndpoint} from 'valorant-api-types'
 import Layout from '../../layouts/Layout.astro'
+import {marked} from 'marked'
 
 function getEndpointSlug(endpoint: ValorantEndpoint) {
    return endpoint.name.toLowerCase().replace(/ /g, '-')
@@ -23,11 +24,13 @@ export function getStaticPaths() {
 
 const {slug} = Astro.params
 const endpoint = endpointsBySlug.get(slug!)!
+
+const content = marked.parse(endpoint.description)
 ---
 
 <Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
     <main class="mx-auto p-3">
         <h1>{endpoint.name}</h1>
-        <p>{endpoint.description}</p>
+        <p set:html={content} />
     </main>
 </Layout>

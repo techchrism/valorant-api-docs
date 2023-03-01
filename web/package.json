@@ -14,5 +14,9 @@
 		"astro": "^2.0.14",
 		"tailwindcss": "^3.2.7",
 		"valorant-api-types": "^0.4.1"
+	},
+	"devDependencies": {
+		"@types/marked": "^4.0.8",
+		"marked": "^4.2.12"
 	}
 }
