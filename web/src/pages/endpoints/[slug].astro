@@ -23,19 +23,43 @@ export function getStaticPaths() {
     return staticPaths
 }
 
+function endpointToURL(endpoint: ValorantEndpoint): string {
+    switch(endpoint.type) {
+        case 'pd': return `https://pd.{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'glz': return `https://glz-{region}-{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'shared': return `https://shared.{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'local': return `https://127.0.0.1:{port}/${endpoint.suffix}`
+        case 'other': return endpoint.suffix
+    }
+}
+
 const {slug} = Astro.params
 const endpoint = endpointsBySlug.get(slug!)!
 
 const content = marked.parse(endpoint.description)
+
+const variablesToReplace = ['{shard}', '{region}', '{port}']
+if(endpoint.variables !== undefined) {
+    for(const [name, varType] of endpoint.variables.entries()) {
+        variablesToReplace.push(`{${name}}`)
+    }
+}
+
+let urlHtml = endpointToURL(endpoint)
+for(const variable of variablesToReplace) {
+    urlHtml = urlHtml.replace(variable, `<span class="text-emerald-700 dark:text-orange-500 underline">${variable}</span>`)
+}
+
 ---
 
 <Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
     <main class="mx-auto p-3">
-        <h1>
+        <h1 class="text-center">
             <EndpointMethod method={endpoint.method}/>
             {endpoint.name}
         </h1>
-        <div class="text-xl" id="description">
+        <code class="text-center bg-gray-100 dark:bg-black p-2 rounded-xl my-10" set:html={urlHtml}/>
+        <div class="text-xl mt-2" id="description">
             <Fragment set:html={content}/>
         </div>
     </main>
