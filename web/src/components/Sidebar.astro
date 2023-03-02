@@ -1,5 +1,6 @@
 ---
 import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+import EndpointMethod from './EndpointMethod.astro'
 
 const categories = new Map<string, ValorantEndpoint[]>()
 for(const endpoint of Object.values(endpoints)) {
@@ -11,22 +12,6 @@ for(const endpoint of Object.values(endpoints)) {
 
 function getEndpointSlug(endpoint: ValorantEndpoint) {
    return '/endpoints/' + endpoint.name.toLowerCase().replace(/ /g, '-')
-}
-
-function getEndpointMethodColor(endpoint: ValorantEndpoint) {
-   switch(endpoint.method) {
-      case undefined:
-      case 'GET':
-         return 'text-purple-500'
-      case 'POST':
-         return 'text-green-500'
-      case 'PUT':
-         return 'text-orange-500'
-      case 'DELETE':
-         return 'text-red-600'
-      default:
-         return 'text-gray-800'
-   }
 }
 
 const {endpointName} = Astro.props
@@ -67,7 +52,7 @@ const {endpointName} = Astro.props
                                  'hover:bg-gray-100 dark:hover:bg-gray-700')
                               }>
                               <span class="flex-1 ml-3 whitespace-nowrap">
-                                 <span class={getEndpointMethodColor(endpoint) + ' font-semibold mr-1'}>{endpoint.method || 'GET'}</span>
+                                 <EndpointMethod method={endpoint.method}/>
                                  {endpoint.name}
                               </span>
                            </a>

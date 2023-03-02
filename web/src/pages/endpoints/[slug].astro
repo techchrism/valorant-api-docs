@@ -2,6 +2,7 @@
 import {endpoints, ValorantEndpoint} from 'valorant-api-types'
 import Layout from '../../layouts/Layout.astro'
 import {marked} from 'marked'
+import EndpointMethod from '../../components/EndpointMethod.astro'
 
 function getEndpointSlug(endpoint: ValorantEndpoint) {
    return endpoint.name.toLowerCase().replace(/ /g, '-')
@@ -30,7 +31,10 @@ const content = marked.parse(endpoint.description)
 
 <Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
     <main class="mx-auto p-3">
-        <h1>{endpoint.name}</h1>
-        <p set:html={content} />
+        <h1>
+            <EndpointMethod method={endpoint.method}/>
+            {endpoint.name}
+        </h1>
+        <p set:html={content}/>
     </main>
 </Layout>
