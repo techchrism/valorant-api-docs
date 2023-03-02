@@ -4,13 +4,13 @@ import Layout from '../../layouts/Layout.astro'
 import {marked} from 'marked'
 import EndpointMethod from '../../components/EndpointMethod.astro'
 
-function getEndpointSlug(endpoint: ValorantEndpoint) {
-   return endpoint.name.toLowerCase().replace(/ /g, '-')
+function getSlug(str: string) {
+    return str.toLowerCase().replace(/ /g, '-')
 }
 
 const endpointsBySlug = new Map<string, ValorantEndpoint>()
 for(const endpoint of Object.values(endpoints)) {
-    endpointsBySlug.set(getEndpointSlug(endpoint), endpoint)
+    endpointsBySlug.set(getSlug(endpoint.name), endpoint)
 }
 
 export function getStaticPaths() {
@@ -38,23 +38,55 @@ const endpoint = endpointsBySlug.get(slug!)!
 
 const content = marked.parse(endpoint.description)
 
-const variablesToReplace = ['{shard}', '{region}', '{port}']
+interface VariableMeta {
+    name: string
+    slug: string
+    descriptionHtml: string
+}
+
+const variablesToReplace = new Map<string, VariableMeta>([
+    ['{shard}', {
+        name: 'shard',
+        slug: 'shard',
+        descriptionHtml: 'tbd'
+    }],
+    ['{region}', {
+        name: 'region',
+        slug: 'region',
+        descriptionHtml: 'tbd'
+    }],
+    ['{port}', {
+        name: 'port',
+        slug: 'port',
+        descriptionHtml: 'tbd'
+    }]])
 if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
-        variablesToReplace.push(`{${name}}`)
+        variablesToReplace.set(`{${name}}`, {
+            name,
+            slug: getSlug(name),
+            descriptionHtml: marked.parse(varType.description ?? 'tbd')
+        })
     }
 }
 
-let urlHtml = endpointToURL(endpoint)
-for(const variable of variablesToReplace) {
-    urlHtml = urlHtml.replace(variable, `<span class="text-emerald-700 dark:text-orange-500 underline">${variable}</span>`)
+const endpointUrl = endpointToURL(endpoint)
+let urlHtml = endpointUrl
+let usedVariables = []
+for(const [variable, meta] of variablesToReplace.entries()) {
+    if(!urlHtml.includes(variable)) continue
+    urlHtml = urlHtml.replace(variable, `<a href="#${meta.slug}" class="text-emerald-700 dark:text-orange-400 underline">${variable}</a>`)
+    usedVariables.push(variable)
 }
+
+// Sort by appearance in URL such that the first variable in the url is the first in the list
+usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUrl.indexOf(b))
 
 ---
 
 <Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
     <main class="mx-auto p-3">
-        <h1 class="text-center">
+        <h1 class="text-center mb-2">
             <EndpointMethod method={endpoint.method}/>
             {endpoint.name}
         </h1>
@@ -62,6 +94,20 @@ for(const variable of variablesToReplace) {
         <div class="text-xl mt-2" id="description">
             <Fragment set:html={content}/>
         </div>
+
+        <h3 class="text-lg font-semibold my-2">Variables:</h3>
+        <ul class="list-disc list-inside">
+            {usedVariables.map(variable => {
+                const meta = variablesToReplace.get(variable)!
+
+                return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                    <code class="bg-gray-100 dark:bg-black p-1 rounded-xl">{variable}</code>
+                    <div class="ml-12">
+                        <Fragment set:html={meta.descriptionHtml}/>
+                    </div>
+                </li>
+            })}
+        </ul>
     </main>
 </Layout>
 
