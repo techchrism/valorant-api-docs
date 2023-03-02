@@ -35,6 +35,16 @@ const content = marked.parse(endpoint.description)
             <EndpointMethod method={endpoint.method}/>
             {endpoint.name}
         </h1>
-        <p set:html={content}/>
+        <div class="text-xl" id="description">
+            <Fragment set:html={content}/>
+        </div>
     </main>
 </Layout>
+
+<style>
+#description :global(table) {
+    text-align: center;
+    border-spacing: 2rem 0.2rem;
+    border-collapse: separate;
+}
+</style>
