@@ -41,7 +41,7 @@ const content = marked.parse(endpoint.description)
 interface VariableMeta {
     name: string
     slug: string
-    descriptionHtml: string
+    descriptionHtml?: string
 }
 
 const variablesToReplace = new Map<string, VariableMeta>([
@@ -62,10 +62,14 @@ const variablesToReplace = new Map<string, VariableMeta>([
     }]])
 if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
+        let descriptionHtml = undefined
+        if(varType.description !== undefined) {
+            descriptionHtml = marked.parse(varType.description)
+        }
         variablesToReplace.set(`{${name}}`, {
             name,
             slug: getSlug(name),
-            descriptionHtml: marked.parse(varType.description ?? 'tbd')
+            descriptionHtml
         })
     }
 }
@@ -102,9 +106,9 @@ usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUr
 
                 return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
                     <code class="bg-gray-100 dark:bg-black p-1 rounded-xl">{variable}</code>
-                    <div class="ml-12">
+                    {(meta.descriptionHtml !== undefined) && <div class="ml-12">
                         <Fragment set:html={meta.descriptionHtml}/>
-                    </div>
+                    </div>}
                 </li>
             })}
         </ul>
