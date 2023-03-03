@@ -1,0 +1,43 @@
+---
+import type {ValorantEndpoint} from 'valorant-api-types'
+
+export interface Props {
+    endpoint: ValorantEndpoint
+}
+
+const {endpoint} = Astro.props
+
+---
+
+<h3 class="text-lg font-semibold">Query parameters: ({endpoint.query!.size})</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {Array.from(endpoint.query?.entries()!).map(([name, type]) => {
+            return (<tr>
+                <td>{name}</td>
+                <td>{type.isOptional()}</td>
+                <td>{type.description ?? 'none'}</td>
+            </tr>)
+        })}
+    </tbody>
+</table>
+
+{/* Need to use an inline script here to get around astro always including it in the page (even if there is no query) */}
+<script is:inline>
+    const urlDisplay = document.getElementById('endpoint-url')
+    const queryContainer = document.createElement('span')
+    urlDisplay.appendChild(queryContainer)
+
+    function updateQuery() {
+        //TODO implement this
+    }
+    
+    queryContainer.innerText = 'hello query!'
+</script>

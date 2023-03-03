@@ -3,6 +3,13 @@ import {endpoints, ValorantEndpoint} from 'valorant-api-types'
 import Layout from '../../layouts/Layout.astro'
 import {marked} from 'marked'
 import EndpointMethod from '../../components/EndpointMethod.astro'
+import QueryDocs from '../../components/QueryDocs.astro'
+
+interface VariableMeta {
+    name: string
+    slug: string
+    descriptionHtml?: string
+}
 
 function getSlug(str: string) {
     return str.toLowerCase().replace(/ /g, '-')
@@ -33,16 +40,14 @@ function endpointToURL(endpoint: ValorantEndpoint): string {
     }
 }
 
+function variableHtmlTemplate(variable: string, slug: string) {
+    return `<a href="#${slug}" class="text-emerald-700 dark:text-orange-400 underline">${variable}</a>`
+}
+
 const {slug} = Astro.params
 const endpoint = endpointsBySlug.get(slug!)!
 
 const content = marked.parse(endpoint.description)
-
-interface VariableMeta {
-    name: string
-    slug: string
-    descriptionHtml?: string
-}
 
 const variablesToReplace = new Map<string, VariableMeta>([
     ['{shard}', {
@@ -79,12 +84,24 @@ let urlHtml = endpointUrl
 let usedVariables = []
 for(const [variable, meta] of variablesToReplace.entries()) {
     if(!urlHtml.includes(variable)) continue
-    urlHtml = urlHtml.replace(variable, `<a href="#${meta.slug}" class="text-emerald-700 dark:text-orange-400 underline">${variable}</a>`)
+    urlHtml = urlHtml.replace(variable, variableHtmlTemplate(variable, meta.slug))
     usedVariables.push(variable)
 }
 
 // Sort by appearance in URL such that the first variable in the url is the first in the list
 usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUrl.indexOf(b))
+
+// Once Firefox supports it, we can use the css :has selector for this (checkbox toggling parts of the url)
+// https://bugzilla.mozilla.org/show_bug.cgi?id=418039
+// Just your average 15-year-old firefox bug 🥱
+const hasQuery = endpoint.query !== undefined && endpoint.query.size > 0
+if(hasQuery) {
+    let queryText = '?'
+    for(const [name, type] of endpoint.query!.entries()) {
+        queryText += `${name}=${variableHtmlTemplate(`{${name}}`, getSlug(name))}&`
+    }
+    urlHtml += `<noscript>${queryText.slice(0, -1)}</noscript>`
+}
 
 ---
 
@@ -94,7 +111,11 @@ usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUr
             <EndpointMethod method={endpoint.method}/>
             {endpoint.name}
         </h1>
-        <code class="block max-w-fit m-auto break-all bg-gray-100 dark:bg-black p-2 rounded-xl my-5" set:html={urlHtml}/>
+
+        <code id="endpoint-url" class="block max-w-fit m-auto break-all bg-gray-100 dark:bg-black p-2 rounded-xl my-5" set:html={urlHtml}/>
+        
+        {hasQuery && <QueryDocs endpoint={endpoint}/>}
+
         <div class="text-xl mt-2" id="description">
             <Fragment set:html={content}/>
         </div>
@@ -120,5 +141,9 @@ usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUr
     text-align: center;
     border-spacing: 2rem 0.2rem;
     border-collapse: separate;
+}
+
+.testing-check:checked~code :global(.show-if-checked) {
+    display: inline;
 }
 </style>
