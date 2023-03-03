@@ -3,7 +3,6 @@ import {endpoints, ValorantEndpoint} from 'valorant-api-types'
 import Layout from '../../layouts/Layout.astro'
 import {marked} from 'marked'
 import EndpointMethod from '../../components/EndpointMethod.astro'
-import QueryDocs from '../../components/QueryDocs.astro'
 
 interface VariableMeta {
     name: string
@@ -91,16 +90,13 @@ for(const [variable, meta] of variablesToReplace.entries()) {
 // Sort by appearance in URL such that the first variable in the url is the first in the list
 usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUrl.indexOf(b))
 
-// Once Firefox supports it, we can use the css :has selector for this (checkbox toggling parts of the url)
-// https://bugzilla.mozilla.org/show_bug.cgi?id=418039
-// Just your average 15-year-old firefox bug 🥱
 const hasQuery = endpoint.query !== undefined && endpoint.query.size > 0
 if(hasQuery) {
     let queryText = '?'
     for(const [name, type] of endpoint.query!.entries()) {
         queryText += `${name}=${variableHtmlTemplate(`{${name}}`, getSlug(name))}&`
     }
-    urlHtml += `<noscript>${queryText.slice(0, -1)}</noscript>`
+    urlHtml += `${queryText.slice(0, -1)}`
 }
 
 ---
@@ -113,14 +109,12 @@ if(hasQuery) {
         </h1>
 
         <code id="endpoint-url" class="block max-w-fit m-auto break-all bg-gray-100 dark:bg-black p-2 rounded-xl my-5" set:html={urlHtml}/>
-        
-        {hasQuery && <QueryDocs endpoint={endpoint}/>}
 
-        <div class="text-xl mt-2" id="description">
+        <div class="text-xl my-5" id="description">
             <Fragment set:html={content}/>
         </div>
 
-        <h3 class="text-lg font-semibold my-2">Variables:</h3>
+        <h3 class="text-lg font-semibold my-2">URL Parameters:</h3>
         <ul class="list-disc list-inside">
             {usedVariables.map(variable => {
                 const meta = variablesToReplace.get(variable)!
@@ -133,6 +127,21 @@ if(hasQuery) {
                 </li>
             })}
         </ul>
+
+        {hasQuery && <>
+            <h3 class="text-lg font-semibold my-2">Query Parameters:</h3>
+            <ul class="list-disc list-inside">
+                {Array.from(endpoint.query!.entries()).map(([name, type]) => {
+                    return <li id={getSlug(name)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                        <code class="bg-gray-100 dark:bg-black p-1 rounded-xl">{name}</code>
+                        <span> ({type.isOptional() ? 'Optional' : 'Required'})</span>
+                        <div class="ml-12">
+                            <Fragment set:html={marked.parse(type.description ?? '')}/>
+                        </div>
+                    </li>
+                })}
+            </ul>
+        </>}
     </main>
 </Layout>
 
@@ -141,9 +150,5 @@ if(hasQuery) {
     text-align: center;
     border-spacing: 2rem 0.2rem;
     border-collapse: separate;
-}
-
-.testing-check:checked~code :global(.show-if-checked) {
-    display: inline;
 }
 </style>
