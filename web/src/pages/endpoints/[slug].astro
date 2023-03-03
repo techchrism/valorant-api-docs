@@ -89,12 +89,12 @@ usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUr
 ---
 
 <Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
-    <main class="mx-auto p-3">
+    <main class="mx-auto p-3 max-w-4xl">
         <h1 class="text-center mb-2">
             <EndpointMethod method={endpoint.method}/>
             {endpoint.name}
         </h1>
-        <code class="text-center bg-gray-100 dark:bg-black p-2 rounded-xl my-10" set:html={urlHtml}/>
+        <code class="block max-w-fit m-auto break-all bg-gray-100 dark:bg-black p-2 rounded-xl my-5" set:html={urlHtml}/>
         <div class="text-xl mt-2" id="description">
             <Fragment set:html={content}/>
         </div>
