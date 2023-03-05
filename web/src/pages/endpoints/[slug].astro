@@ -3,11 +3,15 @@ import {endpoints, ValorantEndpoint} from 'valorant-api-types'
 import Layout from '../../layouts/Layout.astro'
 import {marked} from 'marked'
 import EndpointMethod from '../../components/EndpointMethod.astro'
+import {createTypeAlias, printNode, zodToTs} from 'zod-to-ts'
+import {Code} from 'astro/components'
+import SimpleCode from '../../components/SimpleCode.astro'
 
 interface VariableMeta {
     name: string
     slug: string
     descriptionHtml?: string
+    type?: any
 }
 
 function getSlug(str: string) {
@@ -73,7 +77,8 @@ if(endpoint.variables !== undefined) {
         variablesToReplace.set(`{${name}}`, {
             name,
             slug: getSlug(name),
-            descriptionHtml
+            descriptionHtml,
+            type: varType
         })
     }
 }
@@ -120,7 +125,7 @@ if(hasQuery) {
                 const meta = variablesToReplace.get(variable)!
 
                 return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
-                    <code class="bg-gray-100 dark:bg-black p-1 rounded-xl">{variable}</code>
+                    <SimpleCode>{variable}</SimpleCode>
                     {(meta.descriptionHtml !== undefined) && <div class="ml-12">
                         <Fragment set:html={meta.descriptionHtml}/>
                     </div>}
@@ -133,14 +138,24 @@ if(hasQuery) {
             <ul class="list-disc list-inside">
                 {Array.from(endpoint.query!.entries()).map(([name, type]) => {
                     return <li id={getSlug(name)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
-                        <code class="bg-gray-100 dark:bg-black p-1 rounded-xl">{name}</code>
+                        <SimpleCode>{name}</SimpleCode>
                         <span> ({type.isOptional() ? 'Optional' : 'Required'})</span>
                         <div class="ml-12">
                             <Fragment set:html={marked.parse(type.description ?? '')}/>
+                            <Code code={
+                                printNode(createTypeAlias(zodToTs(type, '').node, name + 'Type'))
+                            } lang="ts" wrap />
                         </div>
                     </li>
                 })}
             </ul>
+        </>}
+
+        {endpoint.responses?.['200'] && <>
+            <h3 class="text-lg font-semibold my-2">Response:</h3>
+            <Code code={
+                printNode(createTypeAlias(zodToTs(endpoint.responses['200'], 'Response').node, endpoint.name.replaceAll(' ', '') + 'Response'))
+            } lang="ts" wrap />
         </>}
     </main>
 </Layout>
@@ -150,5 +165,9 @@ if(hasQuery) {
     text-align: center;
     border-spacing: 2rem 0.2rem;
     border-collapse: separate;
+}
+
+:global(.astro-code) {
+    padding: 0.5rem;
 }
 </style>

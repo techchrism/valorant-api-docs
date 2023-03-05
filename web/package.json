@@ -17,6 +17,7 @@
 	},
 	"devDependencies": {
 		"@types/marked": "^4.0.8",
-		"marked": "^4.2.12"
+		"marked": "^4.2.12",
+		"zod-to-ts": "^1.1.2"
 	}
 }
