@@ -5,4 +5,4 @@ export interface Props {
 
 const classStr = Astro.props.class || ''
 ---
-<code class={'bg-gray-100 dark:bg-black p-1 rounded-xl' + (classStr.length > 0 ? ' ' : '') + classStr}><slot/></code>
+<code class={'bg-gray-100 dark:bg-black p-1 rounded-xl break-all' + (classStr.length > 0 ? ' ' : '') + classStr}><slot/></code>
