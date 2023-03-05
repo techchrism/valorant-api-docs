@@ -85,15 +85,15 @@ if(endpoint.variables !== undefined) {
 
 const endpointUrl = endpointToURL(endpoint)
 let urlHtml = endpointUrl
-let usedVariables = []
+let urlParameters = []
 for(const [variable, meta] of variablesToReplace.entries()) {
     if(!urlHtml.includes(variable)) continue
     urlHtml = urlHtml.replace(variable, variableHtmlTemplate(variable, meta.slug))
-    usedVariables.push(variable)
+    urlParameters.push(variable)
 }
 
 // Sort by appearance in URL such that the first variable in the url is the first in the list
-usedVariables = usedVariables.sort((a, b) => endpointUrl.indexOf(a) - endpointUrl.indexOf(b))
+urlParameters = urlParameters.sort((a, b) => endpointUrl.indexOf(a) - endpointUrl.indexOf(b))
 
 const hasQuery = endpoint.query !== undefined && endpoint.query.size > 0
 if(hasQuery) {
@@ -119,19 +119,21 @@ if(hasQuery) {
             <Fragment set:html={content}/>
         </div>
 
-        <h3 class="text-lg font-semibold my-2">URL Parameters:</h3>
-        <ul class="list-disc list-inside">
-            {usedVariables.map(variable => {
-                const meta = variablesToReplace.get(variable)!
+        {urlParameters.length > 0 && <>
+            <h3 class="text-lg font-semibold my-2">URL Parameters:</h3>
+            <ul class="list-disc list-inside">
+                {urlParameters.map(variable => {
+                    const meta = variablesToReplace.get(variable)!
 
-                return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
-                    <SimpleCode>{variable}</SimpleCode>
-                    {(meta.descriptionHtml !== undefined) && <div class="ml-12">
-                        <Fragment set:html={meta.descriptionHtml}/>
-                    </div>}
-                </li>
-            })}
-        </ul>
+                    return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                        <SimpleCode>{variable}</SimpleCode>
+                        {(meta.descriptionHtml !== undefined) && <div class="ml-12">
+                            <Fragment set:html={meta.descriptionHtml}/>
+                        </div>}
+                    </li>
+                })}
+            </ul>
+        </>}
 
         {hasQuery && <>
             <h3 class="text-lg font-semibold my-2">Query Parameters:</h3>
