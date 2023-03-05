@@ -104,6 +104,43 @@ if(hasQuery) {
     urlHtml += `${queryText.slice(0, -1)}`
 }
 
+const headerToHtml = new Map<string, string>()
+if(endpoint.headers !== undefined) {
+    for(const [name, value] of endpoint.headers.entries()) {
+        if(variablesToReplace.has(value)) {
+            const meta = variablesToReplace.get(value)!
+            headerToHtml.set(name, variableHtmlTemplate(value, meta.slug))
+        } else {
+            headerToHtml.set(name, value)
+        }   
+    }
+}
+
+const otherVariables: string[] = []
+if(endpoint.riotRequirements !== undefined) {
+    const req = endpoint.riotRequirements
+    if(req.localAuth) {
+        headerToHtml.set('Authorization', `Basic {base64 encoded "riot:${variableHtmlTemplate('{lockfile password}', 'lockfile-password')}"}`)
+        otherVariables.push('{lockfile password}')
+    }
+    if(req.clientPlatform) {
+        headerToHtml.set('X-Riot-ClientPlatform', variableHtmlTemplate('{client platform}', 'client-platform'))
+        otherVariables.push('{client platform}')
+    }
+    if(req.clientVersion) {
+        headerToHtml.set('X-Riot-ClientVersion', variableHtmlTemplate('{client version}', 'client-version'))
+        otherVariables.push('{client version}')
+    }
+    if(req.entitlement) {
+        headerToHtml.set('X-Riot-Entitlements-JWT', variableHtmlTemplate('{entitlement token}', 'entitlement-token'))
+        otherVariables.push('{entitlement token}')
+    }
+    if(req.token) {
+        headerToHtml.set('Authorization', `Bearer ${variableHtmlTemplate('{auth token}', 'auth-token')}`)
+        otherVariables.push('{auth token}')
+    }
+}
+
 ---
 
 <Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
@@ -118,6 +155,17 @@ if(hasQuery) {
         <div class="text-xl my-5" id="description">
             <Fragment set:html={content}/>
         </div>
+
+        {headerToHtml.size > 0 && <>
+            <h3 class="text-lg font-semibold my-2">Headers:</h3>
+            <ul class="list-disc list-inside">
+                {Array.from(headerToHtml).map(([header, value]) => {
+                    return <li>
+                        <SimpleCode set:html={`${header}: ${value}`}/>
+                    </li>
+                })}
+            </ul>
+        </>}
 
         {urlParameters.length > 0 && <>
             <h3 class="text-lg font-semibold my-2">URL Parameters:</h3>
