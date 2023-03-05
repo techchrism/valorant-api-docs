@@ -9,6 +9,7 @@ import SimpleCode from '../../components/SimpleCode.astro'
 
 import shard from '../../doc-fragments/shard.html'
 import Shard from '../../components/doc-fragments/Shard.astro'
+import Region from '../../components/doc-fragments/Region.astro'
 
 interface VariableMeta {
     name: string
@@ -215,7 +216,7 @@ if(endpoint.riotRequirements !== undefined) {
                                     case 'shard':
                                         return <Shard/>
                                     case 'region':
-                                        return <span> (Region ID)</span>
+                                        return <Region/>
                                     case 'port':
                                         return null
                                     default:
