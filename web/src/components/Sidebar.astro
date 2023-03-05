@@ -4,10 +4,13 @@ import EndpointMethod from './EndpointMethod.astro'
 
 const categories = new Map<string, ValorantEndpoint[]>()
 for(const endpoint of Object.values(endpoints)) {
-   if(!categories.has(endpoint.category)) {
-      categories.set(endpoint.category, [])
-   }
-   categories.get(endpoint.category)!.push(endpoint)
+    //TODO remove temporary category split
+    const tempName = endpoint.category.split('/').join(' - ')
+    const categoryName = Array.isArray(tempName) ? tempName.join(' - ') : tempName
+    if(!categories.has(categoryName)) {
+        categories.set(categoryName, [])
+    }
+    categories.get(categoryName)!.push(endpoint)
 }
 
 function getEndpointSlug(endpoint: ValorantEndpoint) {
