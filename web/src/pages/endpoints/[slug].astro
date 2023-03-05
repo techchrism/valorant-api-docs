@@ -140,12 +140,7 @@ if(hasQuery) {
                     return <li id={getSlug(name)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
                         <SimpleCode>{name}</SimpleCode>
                         <span> ({type.isOptional() ? 'Optional' : 'Required'})</span>
-                        <div class="ml-12">
-                            <Fragment set:html={marked.parse(type.description ?? '')}/>
-                            <Code code={
-                                printNode(createTypeAlias(zodToTs(type, '').node, name + 'Type'))
-                            } lang="ts" wrap />
-                        </div>
+                        <div class="ml-12" set:html={marked.parse(type.description ?? '')}/>
                     </li>
                 })}
             </ul>
