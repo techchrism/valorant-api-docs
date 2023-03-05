@@ -1,0 +1,35 @@
+---
+import SimpleCode from "../SimpleCode.astro";
+
+const shards = new Map<string, string[]>([
+    ['na', ['latam', 'br', 'na']],
+    ['pbe', ['na']],
+    ['eu', ['eu']],
+    ['ap', ['ap']],
+    ['kr', ['kr']]
+])
+
+---
+
+<p>
+    The shard (sometimes incorrectly called "region") is dependent on where the Riot account was created.<br>
+    There are {shards.size} shards:
+    <table class="m-1 border rounded border-separate border-spacing-x-3 border-spacing-y-1">
+        <thead class="font-semibold">
+            <tr>
+                <th>Shard</th>
+                <th>Region(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {Array.from(shards.entries()).map(([shard, regions]) => (
+                <tr>
+                    <td><SimpleCode>{shard}</SimpleCode></td>
+                    <td>{regions.join(', ')}</td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+    The shard can be obtained from the local endpoint <a class="link" href="/endpoint/sessions">Sessions</a>, then getting the value of the <SimpleCode>-ares-deployment=</SimpleCode> argument.
+    Alternatively, the shard can be found in the ShooterGame log (<SimpleCode>%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log</SimpleCode>) when it's used in an endpoint.
+</p>

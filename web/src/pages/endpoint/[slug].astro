@@ -7,6 +7,9 @@ import {createTypeAlias, printNode, zodToTs} from 'zod-to-ts'
 import {Code} from 'astro/components'
 import SimpleCode from '../../components/SimpleCode.astro'
 
+import shard from '../../doc-fragments/shard.html'
+import Shard from '../../components/doc-fragments/Shard.astro'
+
 interface VariableMeta {
     name: string
     slug: string
@@ -47,6 +50,40 @@ function variableHtmlTemplate(variable: string, slug: string) {
     return `<a href="#${slug}" class="text-emerald-700 dark:text-orange-400 underline">${variable}</a>`
 }
 
+function getEndpointMethodColor(method: ValorantEndpoint['method']) {
+   switch(method) {
+      case undefined:
+      case 'GET':
+         return 'text-purple-500'
+      case 'POST':
+         return 'text-green-500'
+      case 'PUT':
+         return 'text-orange-500'
+      case 'DELETE':
+         return 'text-red-600'
+      default:
+         return 'text-gray-800'
+   }
+}
+
+function renderEndpointTitleHTML(endpoint: ValorantEndpoint) {
+    return `<span class="${getEndpointMethodColor(endpoint.method)} font-semibold">${endpoint.method || 'GET'}</span> ${endpoint.name}`
+}
+
+function replaceEndpointLinks(str: string, type: 'markdown' | 'html') {
+    const endpointLinks = str.matchAll(/\[(GET|POST|PUT|PATCH|DELETE) (.+?)\]/g)
+    for(const endpointLinkMatch of endpointLinks) {
+        const [linkStr, method, endpointName] = endpointLinkMatch
+        const endpoint = endpointsBySlug.get(getSlug(endpointName))
+        if(endpoint === undefined) continue
+        const link = type === 'markdown' ?
+            `[${endpoint.method || 'GET'} ${endpoint.name}](${getSlug(endpoint.name)})` :
+            `<a href="${getSlug(endpointName)}" class="underline">[${renderEndpointTitleHTML(endpoint)}]</a>`
+        str = str.replaceAll(linkStr, link)
+    }
+    return str
+}
+
 const {slug} = Astro.params
 const endpoint = endpointsBySlug.get(slug!)!
 
@@ -55,18 +92,15 @@ const content = marked.parse(endpoint.description)
 const variablesToReplace = new Map<string, VariableMeta>([
     ['{shard}', {
         name: 'shard',
-        slug: 'shard',
-        descriptionHtml: 'tbd'
+        slug: 'shard'
     }],
     ['{region}', {
         name: 'region',
-        slug: 'region',
-        descriptionHtml: 'tbd'
+        slug: 'region'
     }],
     ['{port}', {
         name: 'port',
-        slug: 'port',
-        descriptionHtml: 'tbd'
+        slug: 'port'
     }]])
 if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
@@ -175,9 +209,20 @@ if(endpoint.riotRequirements !== undefined) {
 
                     return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
                         <SimpleCode>{variable}</SimpleCode>
-                        {(meta.descriptionHtml !== undefined) && <div class="ml-12">
-                            <Fragment set:html={meta.descriptionHtml}/>
-                        </div>}
+                        <div class="ml-12">
+                            {(() => {
+                                switch(meta.name) {
+                                    case 'shard':
+                                        return <Shard/>
+                                    case 'region':
+                                        return <span> (Region ID)</span>
+                                    case 'port':
+                                        return null
+                                    default:
+                                        return (meta.descriptionHtml === undefined) ? null : <Fragment set:html={meta.descriptionHtml}/>
+                                }
+                            })()}
+                        </div>
                     </li>
                 })}
             </ul>

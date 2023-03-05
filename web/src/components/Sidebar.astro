@@ -14,7 +14,7 @@ for(const endpoint of Object.values(endpoints)) {
 }
 
 function getEndpointSlug(endpoint: ValorantEndpoint) {
-   return '/endpoints/' + endpoint.name.toLowerCase().replace(/ /g, '-')
+   return '/endpoint/' + endpoint.name.toLowerCase().replace(/ /g, '-')
 }
 
 const {endpointName} = Astro.props
