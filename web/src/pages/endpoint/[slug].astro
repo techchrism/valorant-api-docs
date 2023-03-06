@@ -272,6 +272,11 @@ if(endpoint.riotRequirements !== undefined) {
             </ul>
         </>}
 
+        {endpoint.body !== undefined && <>
+            <h3 class="text-lg font-semibold my-2">Body:</h3>
+            <Code code={printNode(createTypeAlias(zodToTs(endpoint.body, 'Body').node, endpoint.name.replaceAll(' ', '') + 'Body'))} lang="ts" wrap />
+        </>}
+
         {endpoint.responses?.['200'] && <>
             <h3 class="text-lg font-semibold my-2">Response:</h3>
             <Code code={
