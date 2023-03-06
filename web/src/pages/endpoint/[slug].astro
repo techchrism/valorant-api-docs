@@ -11,6 +11,7 @@ import Shard from '../../components/doc-fragments/Shard.astro'
 import Region from '../../components/doc-fragments/Region.astro'
 import Port from '../../components/doc-fragments/Port.astro'
 import ClientVersion from '../../components/doc-fragments/ClientVersion.astro'
+import LockfilePassword from '../../components/doc-fragments/LockfilePassword.astro'
 
 interface VariableMeta {
     name: string
@@ -308,6 +309,8 @@ if(endpoint.riotRequirements !== undefined) {
                                 switch(variable.name) {
                                     case 'client version':
                                         return <ClientVersion/>
+                                    case 'lockfile password':
+                                        return <LockfilePassword/>
                                     default:
                                         return (variable.descriptionHtml === undefined) ? null : <Fragment set:html={variable.descriptionHtml}/>
                                 }
