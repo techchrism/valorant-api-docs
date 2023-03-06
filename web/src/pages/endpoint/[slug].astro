@@ -105,27 +105,33 @@ const variablesToReplace = new Map<string, VariableMeta>([
     }],
     ['{puuid}', {
         name: 'puuid',
-        slug: 'puuid'
+        slug: 'puuid',
+        descriptionHtml: 'A player\'s UUID'
     }],
     ['{party id}', {
         name: 'party id',
-        slug: 'party-id'
+        slug: 'party-id',
+        descriptionHtml: 'A party ID. The ID of the current party can be found from the <a href="party-player" class="link">Party Player</a> endpoint.'
     }],
     ['{cid}', {
         name: 'cid',
-        slug: 'chat-id'
+        slug: 'conversation-id',
+        descriptionHtml: 'A chat conversation ID. The IDs of all active conversations can be found from the <a href="all-chat-info" class="link">All Chat Info</a> endpoint.'
     }],
     ['{current game match id}', {
         name: 'current game match id',
-        slug: 'current-game-match-id'
+        slug: 'current-game-match-id',
+        descriptionHtml: 'The match ID of the current game. The ID of the current game can be found from the <a href="current-game-player" class="link">Current Game Player</a> endpoint.'
     }],
     ['{pre-game match id}', {
         name: 'pre-game match id',
-        slug: 'pre-game-match-id'
+        slug: 'pre-game-match-id',
+        descriptionHtml: 'The match ID of the pre-game lobby. The ID of the pre-game lobby can be found from the <a href="pre-game-player" class="link">Pre-Game Player</a> endpoint.'
     }],
     ['{agent id}', {
         name: 'agent id',
-        slug: 'agent-id'
+        slug: 'agent-id',
+        descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
     }]])
 if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
