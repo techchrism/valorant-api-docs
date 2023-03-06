@@ -338,6 +338,28 @@ if(endpoint.riotRequirements !== undefined) {
     </main>
 </Layout>
 
+<script>
+    // Scroll to the bottom of the element instead of the top (prevents obscuring the url when the to-be-scrolled-to element is at the top of the page)
+    document.querySelectorAll('a[href^="#"]').forEach(b => b.addEventListener('click', e => {
+        const target = document.getElementById(b.getAttribute('href')!.slice(1))
+        if(target) {
+            e.preventDefault()
+            history.pushState({}, '', b.getAttribute('href')!)
+
+            // From https://github.com/whatwg/html/issues/639#issuecomment-285452237
+            // go back and then come forward again immediately, to force :target to update.
+            history.back()
+            const onpopstate = window.onpopstate
+            window.onpopstate = function() {
+                history.forward()
+                window.onpopstate = onpopstate
+            }
+
+            target.scrollIntoView({block: 'nearest'})
+        }
+    }))
+</script>
+
 <style>
 #description :global(table) {
     text-align: center;
