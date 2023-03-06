@@ -151,12 +151,12 @@ const variablesToReplace = new Map<string, VariableMeta>([
     ['{entitlement token}', {
         name: 'entitlement token',
         slug: 'entitlement-token',
-        descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
+        descriptionHtml: 'Can be obtained locally with the <a class="link" href="entitlements-token">Entitlements Token</a> endpoint or remotely using Riot auth and the <a class="link" href="entitlement">Entitlement</a> endpoint'
     }],
     ['{auth token}', {
         name: 'auth token',
         slug: 'auth-token',
-        descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
+        descriptionHtml: 'Can be obtained locally with the <a class="link" href="entitlements-token">Entitlements Token</a> endpoint or remotely by first using the <a class="link" href="auth-cookies">Auth Cookies</a> endpoint then using the cookies with the <a class="link" href="auth-request">Auth Request</a> endpoint'
     }]])
 if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
