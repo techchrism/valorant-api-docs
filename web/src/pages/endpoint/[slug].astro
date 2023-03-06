@@ -91,7 +91,17 @@ function replaceEndpointLinks(str: string, type: 'markdown' | 'html') {
 const {slug} = Astro.params
 const endpoint = endpointsBySlug.get(slug!)!
 
-const content = marked.parse(endpoint.description)
+const tempReplacements = new Map<string, string>([
+    ['[Auth Cookies]({{#linkto}}Auth Cookies{{/linkto}})', '<a class="link" href="auth-cookies">Auth Cookies</a>'],
+    ['[Auth Request]({{#linkto}}Auth Request{{/linkto}})', '<a class="link" href="auth-request">Auth Request</a>'],
+])
+function performTempReplacements(str: string) {
+    for(const [tempReplacement, replacement] of tempReplacements.entries()) {
+        str = str.replaceAll(tempReplacement, replacement)
+    }
+    return str
+}
+const content = performTempReplacements(marked.parse(endpoint.description))
 
 const variablesToReplace = new Map<string, VariableMeta>([
     ['{shard}', {
