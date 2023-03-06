@@ -1,0 +1,118 @@
+---
+import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+import EndpointMethod from './EndpointMethod.astro'
+
+const categories = new Map<string, ValorantEndpoint[]>()
+for(const endpoint of Object.values(endpoints)) {
+    //TODO remove temporary category split
+    const tempName = endpoint.category.split('/').join(' - ')
+    const categoryName = Array.isArray(tempName) ? tempName.join(' - ') : tempName
+    if(!categories.has(categoryName)) {
+        categories.set(categoryName, [])
+    }
+    categories.get(categoryName)!.push(endpoint)
+}
+
+function getEndpointSlug(endpoint: ValorantEndpoint) {
+   return '/endpoint/' + endpoint.name.toLowerCase().replace(/ /g, '-')
+}
+
+const {endpointName} = Astro.props
+---
+
+
+<input type="checkbox" id="toggler" class="hidden"/>
+
+
+<aside id="sidebar" class="md:sticky top-0 left-0 z-40 md:h-screen overflow-y-auto bg-gray-50 dark:bg-gray-800" aria-label="Sidebar">
+   <div class="sticky top-0 px-3 py-1 bg-gray-50 dark:bg-gray-800">
+      <h2 class="text-center font-semibold">Valorant API Docs</h2>
+      <span class="block text-center text-gray-500 dark:text-gray-300">(unofficial)</span>
+      <span class="block text-center">
+         <a class="github-button" href="https://github.com/techchrism/valorant-api-docs" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star techchrism/valorant-api-docs on GitHub">Star</a>
+      </span>
+
+      <div class="md:hidden text-center">
+         <label for="toggler" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+            class="inline-flex items-center mt-1 p-2 rounded-lg bg-gray-200 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600 dark:text-gray-400 dark:focus:ring-gray-600">
+
+            <span>Open Menu</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 16 16" width="16" height="16" aria-hidden="true" id="opener-arrow" fill="currentColor" class="transition-transform ease-in-out">
+               <path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path>
+            </svg>
+         </label>
+      </div>
+   </div>
+
+   <ul class="px-3 my-4 space-y-2 hidden md:block" id="sidebar-list">
+      <li>
+         <a href="/" class={
+            'flex items-center p-2 text-sm font-normal text-black rounded-lg dark:text-white ' +
+            ((endpointName === undefined) ?
+               'hover:bg-blue-200 dark:hover:bg-blue-700 bg-blue-200 dark:bg-blue-900 active-endpoint' :
+               'hover:bg-gray-200 dark:hover:bg-gray-700')
+            }>
+            <span class="flex-1 ml-3 whitespace-nowrap">
+               Home
+            </span>
+         </a>
+      </li>
+      {Array.from(categories).map(([category, endpoints]) => {
+         return (
+            <li>
+               <h3 class="px-3 py-2 text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">{category}</h3>
+               <ul class="space-y-1">
+                  {endpoints.map(endpoint => {
+                     return (
+                        <li>
+                           <a href={getEndpointSlug(endpoint)} class={
+                              'flex items-center p-2 text-sm font-normal text-black rounded-lg dark:text-white ' +
+                              ((endpointName === endpoint.name) ?
+                                 'hover:bg-blue-200 dark:hover:bg-blue-700 bg-blue-200 dark:bg-blue-900 active-endpoint' :
+                                 'hover:bg-gray-200 dark:hover:bg-gray-700')
+                              }>
+                              <span class="flex-1 ml-3 whitespace-nowrap">
+                                 <EndpointMethod method={endpoint.method}/>
+                                 {endpoint.name}
+                              </span>
+                           </a>
+                        </li>
+                     )
+                  })}
+               </ul>
+            </li>
+         )
+      })}
+      
+   </ul>
+</aside>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<style>
+#toggler:checked~#sidebar #sidebar-list {
+   display: block;
+}
+
+#toggler:checked~#sidebar #opener-arrow {
+   transform: rotate(90deg);
+}
+</style>
+
+<script>
+const sidebar = document.getElementById('sidebar')!
+
+const previousTop = sessionStorage.getItem('sidebar-scroll')
+if(previousTop !== null) {
+   sidebar.scrollTop = parseInt(previousTop)
+} else {
+   const active = document.getElementsByClassName('active-endpoint')[0]
+   if(active !== undefined) {
+      active.scrollIntoView({block: 'center'})
+   }
+}
+
+window.addEventListener('beforeunload', () => {
+   sessionStorage.setItem('sidebar-scroll', sidebar.scrollTop.toString())
+});
+</script>

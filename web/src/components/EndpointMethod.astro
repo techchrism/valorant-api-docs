@@ -1,0 +1,29 @@
+---
+import { HydrationDirectiveProps } from 'astro/dist/runtime/server/hydration'
+import type {ValorantEndpoint} from 'valorant-api-types'
+
+export interface Props {
+    method: ValorantEndpoint['method']
+    class?: string
+}
+
+function getEndpointMethodColor(method: ValorantEndpoint['method']) {
+   switch(method) {
+      case undefined:
+      case 'GET':
+         return 'text-purple-500'
+      case 'POST':
+         return 'text-green-500'
+      case 'PUT':
+         return 'text-orange-500'
+      case 'DELETE':
+         return 'text-red-600'
+      default:
+         return 'text-gray-800'
+   }
+}
+
+const {method} = Astro.props
+const classText = Astro.props.class
+---
+<span class={getEndpointMethodColor(method) + ' font-semibold mr-1 ' + (classText ?? '')}>{method || 'GET'}</span>

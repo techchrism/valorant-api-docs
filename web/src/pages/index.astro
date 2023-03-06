@@ -1,0 +1,55 @@
+---
+import SimpleCode from '../components/SimpleCode.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Valorant API Docs">
+	<main class="mx-auto p-3 max-w-4xl text-lg leading-normal">
+		<h1 class="text-center mb-8 text-4xl">Valorant API Docs <span class="text-gray-500 dark:text-gray-300 text-xl">(unofficial)</span></h1>
+
+		<p>
+			This is a site dedicated to documenting the Valorant API endpoints the client uses internally.
+			These endpoints are <span class="font-bold">not</span> officially supported.
+			However, as long as you use common sense and don't do anything a Riot employee would frown at, you won't get banned.
+		</p>
+		<p>
+			You can join the Discord server here: <a class="link" href="https://discord.gg/a9yzrw3KAm">https://discord.gg/a9yzrw3KAm</a>
+		</p>
+		
+		<h2 class="text-xl font-semibold mt-4 mb-2">Getting Started</h2>
+		<p>
+			One of the easiest ways to get started and get a feel for what kinds of data you can get from the apis is to play around with the requests yourself in a REST client like Insomnia.
+			<ul class="list-disc ml-6">
+				<li>Download and install Insomnia here: <a class="link" href="https://insomnia.rest/download">https://insomnia.rest/download</a></li>
+				<li>Go to Application -&gt; Preferences -&gt; Plugins and add the plugin <SimpleCode>insomnia-plugin-valorant</SimpleCode></li>
+				<li>From the dashboard, click "Create", then import from url and enter <SimpleCode>https://raw.githubusercontent.com/techchrism/valorant-api-docs/trunk/docs/valorant-workspace-insomnia.json</SimpleCode></li>
+			</ul>
+			To learn about how to make the API request yourself, check the "Docs" tab on any request. You can right-click a request and click "Generate Code" to see how to make the request in the language and library of your choice.
+		</p>
+
+		<h2 class="text-xl font-semibold mt-4 mb-2">Local Websocket</h2>
+		<p>
+			The websocket has the uri wss://riot:{'{'}lockfile password{'}'}@localhost:{'{'}lockfile port{'}'} and it also uses a self-signed certificate. Websocket events can be found from the Local Help endpoint.
+			For info on subscribing to events, see here: <a class="link" href="https://hextechdocs.dev/getting-started-with-the-lcu-websocket/">https://hextechdocs.dev/getting-started-with-the-lcu-websocket/</a>
+		</p>
+
+		<h2 class="text-xl font-semibold mt-4 mb-2">Investigating Endpoints and Websocket Events</h2>
+		<p>
+			Endpoints are commonly found from the ShooterGame log located at <SimpleCode>%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log</SimpleCode>
+			You can use <a class="link" href="https://github.com/techchrism/valorant-log-endpoint-scraper">Valorant Log Endpoint Scraper</a> to quickly export a list of endpoints and other urls found in the log.
+
+			For websockets, you can use Valorant <a class="link" href="https://github.com/techchrism/valorant-websocket-logger">Websocket Logger</a> which will listen to all events and export them to a file.
+			Once you have a websocket log, you can use <a class="link" href="https://github.com/techchrism/valorant-websocket-log-viewer">Valorant WebSocket Log Viewer</a> to conveniently go through the data.
+		</p>
+
+		<h2 class="text-xl font-semibold mt-4 mb-2">Prior Work</h2>
+		<p>
+			Documenting the endpoints and making them available is a team effort. Here are some notable contributions:
+			<ul class="list-disc ml-6">
+				<li>RumbleMike's <a class="link" href="https://github.com/HeyM1ke/ValorantClientAPI">ValorantClientAPI</a> repo</li>
+				<li>Hidan's <a class="link" href="https://gist.github.com/Kavan72/b6e0bfdf21d610148f64df878b8a2cc5">endpoint gist</a></li>
+				<li>The assistance of many in the Discord</li>
+			</ul>
+		</p>
+	</main>
+</Layout>

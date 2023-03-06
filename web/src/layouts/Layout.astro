@@ -1,0 +1,58 @@
+---
+import '../styles/base.css'
+import Sidebar from '../components/Sidebar.astro'
+import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+//@ts-ignore
+import markedPlainText from 'marked-plaintext'
+import {marked} from 'marked'
+
+export interface Props {
+	title: string
+	endpointName?: string
+}
+
+const {title, endpointName} = Astro.props
+
+let endpoint: ValorantEndpoint | undefined
+for(const endpointTest of Object.values(endpoints)) {
+	if(endpointTest.name === endpointName) {
+		endpoint = endpointTest
+		break
+	}
+}
+
+let desc = 'A site dedicated to documenting the Valorant API endpoints the Valorant client uses internally'
+if(endpoint) {
+	const renderer = new markedPlainText()
+	desc = `Valorant API endpoint ${endpoint.name} - ${marked.parseInline(endpoint.description, {renderer})}`
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<meta name="description" content={desc}/>
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50 md:grid md:grid-cols-main">
+		<Sidebar endpointName={endpointName}/>
+		<slot/>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

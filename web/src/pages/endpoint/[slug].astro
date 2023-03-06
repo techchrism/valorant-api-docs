@@ -1,0 +1,383 @@
+---
+import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+import Layout from '../../layouts/Layout.astro'
+import {marked} from 'marked'
+import EndpointMethod from '../../components/EndpointMethod.astro'
+import {createTypeAlias, printNode, zodToTs} from 'zod-to-ts'
+import {Code} from 'astro/components'
+import SimpleCode from '../../components/SimpleCode.astro'
+
+import Shard from '../../components/doc-fragments/Shard.astro'
+import Region from '../../components/doc-fragments/Region.astro'
+import Port from '../../components/doc-fragments/Port.astro'
+import ClientVersion from '../../components/doc-fragments/ClientVersion.astro'
+import LockfilePassword from '../../components/doc-fragments/LockfilePassword.astro'
+import ClientPlatform from '../../components/doc-fragments/ClientPlatform.astro'
+
+interface VariableMeta {
+    name: string
+    slug: string
+    descriptionHtml?: string
+    type?: any
+}
+
+function getSlug(str: string) {
+    return str.toLowerCase().replace(/ /g, '-')
+}
+
+const endpointsBySlug = new Map<string, ValorantEndpoint>()
+for(const endpoint of Object.values(endpoints)) {
+    endpointsBySlug.set(getSlug(endpoint.name), endpoint)
+}
+
+export function getStaticPaths() {
+    const staticPaths = []
+    for(const endpoint of Object.values(endpoints)) {
+        staticPaths.push({
+            params: {slug: endpoint.name.toLowerCase().replace(/ /g, '-')}
+        })
+    }
+    return staticPaths
+}
+
+function endpointToURL(endpoint: ValorantEndpoint): string {
+    switch(endpoint.type) {
+        case 'pd': return `https://pd.{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'glz': return `https://glz-{region}-{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'shared': return `https://shared.{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'local': return `https://127.0.0.1:{port}/${endpoint.suffix}`
+        case 'other': return endpoint.suffix
+    }
+}
+
+function variableHtmlTemplate(variable: string, slug: string) {
+    return `<a href="#${slug}" class="text-emerald-700 dark:text-orange-400 underline">${variable}</a>`
+}
+
+function getEndpointMethodColor(method: ValorantEndpoint['method']) {
+   switch(method) {
+      case undefined:
+      case 'GET':
+         return 'text-purple-500'
+      case 'POST':
+         return 'text-green-500'
+      case 'PUT':
+         return 'text-orange-500'
+      case 'DELETE':
+         return 'text-red-600'
+      default:
+         return 'text-gray-800'
+   }
+}
+
+function renderEndpointTitleHTML(endpoint: ValorantEndpoint) {
+    return `<span class="${getEndpointMethodColor(endpoint.method)} font-semibold">${endpoint.method || 'GET'}</span> ${endpoint.name}`
+}
+
+function replaceEndpointLinks(str: string, type: 'markdown' | 'html') {
+    const endpointLinks = str.matchAll(/\[(GET|POST|PUT|PATCH|DELETE) (.+?)\]/g)
+    for(const endpointLinkMatch of endpointLinks) {
+        const [linkStr, method, endpointName] = endpointLinkMatch
+        const endpoint = endpointsBySlug.get(getSlug(endpointName))
+        if(endpoint === undefined) continue
+        const link = type === 'markdown' ?
+            `[${endpoint.method || 'GET'} ${endpoint.name}](${getSlug(endpoint.name)})` :
+            `<a href="${getSlug(endpointName)}" class="underline">[${renderEndpointTitleHTML(endpoint)}]</a>`
+        str = str.replaceAll(linkStr, link)
+    }
+    return str
+}
+
+const {slug} = Astro.params
+const endpoint = endpointsBySlug.get(slug!)!
+
+const tempReplacements = new Map<string, string>([
+    ['[Auth Cookies]({{#linkto}}Auth Cookies{{/linkto}})', '<a class="link" href="auth-cookies">Auth Cookies</a>'],
+    ['[Auth Request]({{#linkto}}Auth Request{{/linkto}})', '<a class="link" href="auth-request">Auth Request</a>'],
+])
+function performTempReplacements(str: string) {
+    for(const [tempReplacement, replacement] of tempReplacements.entries()) {
+        str = str.replaceAll(tempReplacement, replacement)
+    }
+    return str
+}
+const content = performTempReplacements(marked.parse(endpoint.description))
+
+const variablesToReplace = new Map<string, VariableMeta>([
+    ['{shard}', {
+        name: 'shard',
+        slug: 'shard'
+    }],
+    ['{region}', {
+        name: 'region',
+        slug: 'region'
+    }],
+    ['{port}', {
+        name: 'port',
+        slug: 'port'
+    }],
+    ['{puuid}', {
+        name: 'puuid',
+        slug: 'puuid',
+        descriptionHtml: 'A player\'s UUID'
+    }],
+    ['{party id}', {
+        name: 'party id',
+        slug: 'party-id',
+        descriptionHtml: 'A party ID. The ID of the current party can be found from the <a href="party-player" class="link">Party Player</a> endpoint.'
+    }],
+    ['{cid}', {
+        name: 'cid',
+        slug: 'conversation-id',
+        descriptionHtml: 'A chat conversation ID. The IDs of all active conversations can be found from the <a href="all-chat-info" class="link">All Chat Info</a> endpoint.'
+    }],
+    ['{current game match id}', {
+        name: 'current game match id',
+        slug: 'current-game-match-id',
+        descriptionHtml: 'The match ID of the current game. The ID of the current game can be found from the <a href="current-game-player" class="link">Current Game Player</a> endpoint.'
+    }],
+    ['{pre-game match id}', {
+        name: 'pre-game match id',
+        slug: 'pre-game-match-id',
+        descriptionHtml: 'The match ID of the pre-game lobby. The ID of the pre-game lobby can be found from the <a href="pre-game-player" class="link">Pre-Game Player</a> endpoint.'
+    }],
+    ['{agent id}', {
+        name: 'agent id',
+        slug: 'agent-id',
+        descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
+    }],
+    ['{lockfile password}', {
+        name: 'lockfile password',
+        slug: 'lockfile-password'
+    }],
+    ['{client platform}', {
+        name: 'client platform',
+        slug: 'client-platform'
+    }],
+    ['{client version}', {
+        name: 'client version',
+        slug: 'client-version'
+    }],
+    ['{entitlement token}', {
+        name: 'entitlement token',
+        slug: 'entitlement-token',
+        descriptionHtml: 'Can be obtained locally with the <a class="link" href="entitlements-token">Entitlements Token</a> endpoint or remotely using Riot auth and the <a class="link" href="entitlement">Entitlement</a> endpoint'
+    }],
+    ['{auth token}', {
+        name: 'auth token',
+        slug: 'auth-token',
+        descriptionHtml: 'Can be obtained locally with the <a class="link" href="entitlements-token">Entitlements Token</a> endpoint or remotely by first using the <a class="link" href="auth-cookies">Auth Cookies</a> endpoint then using the cookies with the <a class="link" href="auth-request">Auth Request</a> endpoint'
+    }]])
+if(endpoint.variables !== undefined) {
+    for(const [name, varType] of endpoint.variables.entries()) {
+        let descriptionHtml = undefined
+        if(varType.description !== undefined) {
+            descriptionHtml = marked.parse(varType.description)
+        }
+        variablesToReplace.set(`{${name}}`, {
+            name,
+            slug: getSlug(name),
+            descriptionHtml,
+            type: varType
+        })
+    }
+}
+
+const endpointUrl = endpointToURL(endpoint)
+let urlHtml = endpointUrl
+let urlParameters = []
+for(const [variable, meta] of variablesToReplace.entries()) {
+    if(!urlHtml.includes(variable)) continue
+    urlHtml = urlHtml.replace(variable, variableHtmlTemplate(variable, meta.slug))
+    urlParameters.push(variable)
+}
+
+// Sort by appearance in URL such that the first variable in the url is the first in the list
+urlParameters = urlParameters.sort((a, b) => endpointUrl.indexOf(a) - endpointUrl.indexOf(b))
+
+const hasQuery = endpoint.query !== undefined && endpoint.query.size > 0
+if(hasQuery) {
+    let queryText = '?'
+    for(const [name, type] of endpoint.query!.entries()) {
+        queryText += `${name}=${variableHtmlTemplate(`{${name}}`, getSlug(name))}&`
+    }
+    urlHtml += `${queryText.slice(0, -1)}`
+}
+
+const headerToHtml = new Map<string, string>()
+if(endpoint.headers !== undefined) {
+    for(const [name, value] of endpoint.headers.entries()) {
+        if(variablesToReplace.has(value)) {
+            const meta = variablesToReplace.get(value)!
+            headerToHtml.set(name, variableHtmlTemplate(value, meta.slug))
+        } else {
+            headerToHtml.set(name, value)
+        }   
+    }
+}
+
+const otherVariables: string[] = []
+if(endpoint.riotRequirements !== undefined) {
+    const req = endpoint.riotRequirements
+    if(req.localAuth) {
+        headerToHtml.set('Authorization', `Basic {base64 encoded "riot:${variableHtmlTemplate('{lockfile password}', 'lockfile-password')}"}`)
+        otherVariables.push('{lockfile password}')
+    }
+    if(req.clientPlatform) {
+        headerToHtml.set('X-Riot-ClientPlatform', variableHtmlTemplate('{client platform}', 'client-platform'))
+        otherVariables.push('{client platform}')
+    }
+    if(req.clientVersion) {
+        headerToHtml.set('X-Riot-ClientVersion', variableHtmlTemplate('{client version}', 'client-version'))
+        otherVariables.push('{client version}')
+    }
+    if(req.entitlement) {
+        headerToHtml.set('X-Riot-Entitlements-JWT', variableHtmlTemplate('{entitlement token}', 'entitlement-token'))
+        otherVariables.push('{entitlement token}')
+    }
+    if(req.token) {
+        headerToHtml.set('Authorization', `Bearer ${variableHtmlTemplate('{auth token}', 'auth-token')}`)
+        otherVariables.push('{auth token}')
+    }
+}
+
+---
+
+<Layout title={`${endpoint.name} - Valorant API Docs`} endpointName={endpoint.name}>
+    <main class="mx-auto p-3 max-w-4xl">
+        <h1 class="text-center mb-2">
+            <EndpointMethod method={endpoint.method}/>
+            {endpoint.name}
+        </h1>
+
+        <code id="endpoint-url" class="block max-w-fit m-auto break-all bg-gray-100 dark:bg-black p-2 rounded-xl my-5" set:html={urlHtml}/>
+
+        <div class="text-xl my-5" id="description">
+            <Fragment set:html={content}/>
+        </div>
+
+        {headerToHtml.size > 0 && <>
+            <h3 class="text-lg font-semibold my-2">Headers:</h3>
+            <ul class="list-disc list-inside">
+                {Array.from(headerToHtml).map(([header, value]) => {
+                    return <li>
+                        <SimpleCode set:html={`${header}: ${value}`}/>
+                    </li>
+                })}
+            </ul>
+        </>}
+
+        {urlParameters.length > 0 && <>
+            <h3 class="text-lg font-semibold my-2">URL Parameters:</h3>
+            <ul class="list-disc list-inside">
+                {urlParameters.map(variable => {
+                    const meta = variablesToReplace.get(variable)!
+
+                    return <li id={meta.slug} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                        <SimpleCode>{variable}</SimpleCode>
+                        <div class="ml-12">
+                            {(() => {
+                                switch(meta.name) {
+                                    case 'shard':
+                                        return <Shard/>
+                                    case 'region':
+                                        return <Region/>
+                                    case 'port':
+                                        return <Port/>
+                                    default:
+                                        return (meta.descriptionHtml === undefined) ? null : <Fragment set:html={meta.descriptionHtml}/>
+                                }
+                            })()}
+                        </div>
+                    </li>
+                })}
+            </ul>
+        </>}
+
+        {hasQuery && <>
+            <h3 class="text-lg font-semibold my-2">Query Parameters:</h3>
+            <ul class="list-disc list-inside">
+                {Array.from(endpoint.query!.entries()).map(([name, type]) => {
+                    return <li id={getSlug(name)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                        <SimpleCode>{name}</SimpleCode>
+                        <span> ({type.isOptional() ? 'Optional' : 'Required'})</span>
+                        <div class="ml-12" set:html={marked.parse(type.description ?? variablesToReplace.get(`{${name}}`)?.descriptionHtml ?? '')}/>
+                    </li>
+                })}
+            </ul>
+        </>}
+
+        {otherVariables.length > 0 && <>
+            <h3 class="text-lg font-semibold my-2">Other Variables:</h3>
+            <ul class="list-disc list-inside">
+                {otherVariables.map(variableName => {
+                    const variable = variablesToReplace.get(variableName)!
+
+                    return <li id={getSlug(variable.slug)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                        <SimpleCode>{variable.name}</SimpleCode>
+                        <div class="ml-12">
+                            {(() => {
+                                switch(variable.name) {
+                                    case 'client version':
+                                        return <ClientVersion/>
+                                    case 'lockfile password':
+                                        return <LockfilePassword/>
+                                    case 'client platform':
+                                        return <ClientPlatform/>
+                                    default:
+                                        return (variable.descriptionHtml === undefined) ? null : <Fragment set:html={variable.descriptionHtml}/>
+                                }
+                            })()}
+                        </div>
+                    </li>
+                })}
+            </ul>
+        </>}
+
+        {endpoint.body !== undefined && <>
+            <h3 class="text-lg font-semibold my-2">Body:</h3>
+            <Code code={printNode(createTypeAlias(zodToTs(endpoint.body, 'Body').node, endpoint.name.replaceAll(' ', '') + 'Body'))} lang="ts" wrap />
+        </>}
+
+        {endpoint.responses?.['200'] && <>
+            <h3 class="text-lg font-semibold my-2">Response:</h3>
+            <Code code={
+                printNode(createTypeAlias(zodToTs(endpoint.responses['200'], 'Response').node, endpoint.name.replaceAll(' ', '') + 'Response'))
+            } lang="ts" wrap />
+        </>}
+    </main>
+</Layout>
+
+<script>
+    // Scroll to the bottom of the element instead of the top (prevents obscuring the url when the to-be-scrolled-to element is at the top of the page)
+    document.querySelectorAll('a[href^="#"]').forEach(b => b.addEventListener('click', e => {
+        const target = document.getElementById(b.getAttribute('href')!.slice(1))
+        if(target) {
+            e.preventDefault()
+            history.pushState({}, '', b.getAttribute('href')!)
+
+            // From https://github.com/whatwg/html/issues/639#issuecomment-285452237
+            // go back and then come forward again immediately, to force :target to update.
+            history.back()
+            const onpopstate = window.onpopstate
+            window.onpopstate = function() {
+                history.forward()
+                window.onpopstate = onpopstate
+            }
+
+            target.scrollIntoView({block: 'nearest'})
+        }
+    }))
+</script>
+
+<style>
+#description :global(table) {
+    text-align: center;
+    border-spacing: 2rem 0.2rem;
+    border-collapse: separate;
+}
+
+:global(.astro-code) {
+    padding: 0.5rem;
+}
+</style>

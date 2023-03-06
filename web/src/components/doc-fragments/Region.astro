@@ -1,0 +1,34 @@
+---
+import SimpleCode from "../SimpleCode.astro";
+
+const regions = new Map<string, string>([
+    ['na', 'North America'],
+    ['latam', 'Latin America'],
+    ['br', 'Brazil'],
+    ['eu', 'Europe'],
+    ['ap', 'Asia Pacific'],
+    ['kr', 'Korea']
+])
+
+---
+
+<p>
+    There are {regions.size} regions:
+    <table class="m-1 border rounded border-separate border-spacing-x-3 border-spacing-y-1">
+        <thead class="font-semibold">
+            <tr>
+                <th>Region ID</th>
+                <th>Region Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {Array.from(regions.entries()).map(([id, name]) => (
+                <tr>
+                    <td><SimpleCode>{id}</SimpleCode></td>
+                    <td>{name}</td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+    The region can be found in the ShooterGame log (<SimpleCode>%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log</SimpleCode>) when it's used in an endpoint url.
+</p>
