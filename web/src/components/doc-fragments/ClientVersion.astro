@@ -1,0 +1,14 @@
+---
+import SimpleCode from "../SimpleCode.astro";
+
+---
+
+<p>
+    The version of the Valorant client.
+    This can be obtained in a number of ways:
+    <ul class="list-disc list-inside">
+        <li>Parsing the ShooterGame log at <SimpleCode>%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log</SimpleCode></li>
+        <li>Using the <a class="link" href="/endpoint/sessions">Sessions</a> endpoint</li>
+        <li>Using the third-party <a href="https://dash.valorant-api.com/endpoints/version" class="link">Versions</a> endpoint</li>
+    </ul>
+</p>

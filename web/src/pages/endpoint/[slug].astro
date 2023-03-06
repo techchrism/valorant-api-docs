@@ -10,6 +10,7 @@ import SimpleCode from '../../components/SimpleCode.astro'
 import Shard from '../../components/doc-fragments/Shard.astro'
 import Region from '../../components/doc-fragments/Region.astro'
 import Port from '../../components/doc-fragments/Port.astro'
+import ClientVersion from '../../components/doc-fragments/ClientVersion.astro'
 
 interface VariableMeta {
     name: string
@@ -131,6 +132,28 @@ const variablesToReplace = new Map<string, VariableMeta>([
     ['{agent id}', {
         name: 'agent id',
         slug: 'agent-id',
+        descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
+    }],
+    ['{lockfile password}', {
+        name: 'lockfile password',
+        slug: 'lockfile-password'
+    }],
+    ['{client platform}', {
+        name: 'client platform',
+        slug: 'client-platform'
+    }],
+    ['{client version}', {
+        name: 'client version',
+        slug: 'client-version'
+    }],
+    ['{entitlement token}', {
+        name: 'entitlement token',
+        slug: 'entitlement-token',
+        descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
+    }],
+    ['{auth token}', {
+        name: 'auth token',
+        slug: 'auth-token',
         descriptionHtml: 'An agent ID. The IDs of all agents can be found from the third-party <a href="https://dash.valorant-api.com/endpoints/agents" class="link">Agents</a> endpoint.'
     }]])
 if(endpoint.variables !== undefined) {
@@ -266,7 +289,30 @@ if(endpoint.riotRequirements !== undefined) {
                     return <li id={getSlug(name)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
                         <SimpleCode>{name}</SimpleCode>
                         <span> ({type.isOptional() ? 'Optional' : 'Required'})</span>
-                        <div class="ml-12" set:html={marked.parse(type.description ?? '')}/>
+                        <div class="ml-12" set:html={marked.parse(type.description ?? variablesToReplace.get(`{${name}}`)?.descriptionHtml ?? '')}/>
+                    </li>
+                })}
+            </ul>
+        </>}
+
+        {otherVariables.length > 0 && <>
+            <h3 class="text-lg font-semibold my-2">Other Variables:</h3>
+            <ul class="list-disc list-inside">
+                {otherVariables.map(variableName => {
+                    const variable = variablesToReplace.get(variableName)!
+
+                    return <li id={getSlug(variable.slug)} class="target:border-l-2 pl-2 border-emerald-700 dark:border-orange-500">
+                        <SimpleCode>{variable.name}</SimpleCode>
+                        <div class="ml-12">
+                            {(() => {
+                                switch(variable.name) {
+                                    case 'client version':
+                                        return <ClientVersion/>
+                                    default:
+                                        return (variable.descriptionHtml === undefined) ? null : <Fragment set:html={variable.descriptionHtml}/>
+                                }
+                            })()}
+                        </div>
                     </li>
                 })}
             </ul>
