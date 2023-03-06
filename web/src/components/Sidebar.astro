@@ -45,6 +45,18 @@ const {endpointName} = Astro.props
    </div>
 
    <ul class="px-3 my-4 space-y-2 hidden md:block" id="sidebar-list">
+      <li>
+         <a href="/" class={
+            'flex items-center p-2 text-sm font-normal text-black rounded-lg dark:text-white ' +
+            ((endpointName === undefined) ?
+               'hover:bg-blue-200 dark:hover:bg-blue-700 bg-blue-200 dark:bg-blue-900 active-endpoint' :
+               'hover:bg-gray-200 dark:hover:bg-gray-700')
+            }>
+            <span class="flex-1 ml-3 whitespace-nowrap">
+               Home
+            </span>
+         </a>
+      </li>
       {Array.from(categories).map(([category, endpoints]) => {
          return (
             <li>
