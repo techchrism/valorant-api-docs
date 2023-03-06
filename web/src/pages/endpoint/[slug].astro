@@ -7,9 +7,9 @@ import {createTypeAlias, printNode, zodToTs} from 'zod-to-ts'
 import {Code} from 'astro/components'
 import SimpleCode from '../../components/SimpleCode.astro'
 
-import shard from '../../doc-fragments/shard.html'
 import Shard from '../../components/doc-fragments/Shard.astro'
 import Region from '../../components/doc-fragments/Region.astro'
+import Port from '../../components/doc-fragments/Port.astro'
 
 interface VariableMeta {
     name: string
@@ -102,6 +102,30 @@ const variablesToReplace = new Map<string, VariableMeta>([
     ['{port}', {
         name: 'port',
         slug: 'port'
+    }],
+    ['{puuid}', {
+        name: 'puuid',
+        slug: 'puuid'
+    }],
+    ['{party id}', {
+        name: 'party id',
+        slug: 'party-id'
+    }],
+    ['{cid}', {
+        name: 'cid',
+        slug: 'chat-id'
+    }],
+    ['{current game match id}', {
+        name: 'current game match id',
+        slug: 'current-game-match-id'
+    }],
+    ['{pre-game match id}', {
+        name: 'pre-game match id',
+        slug: 'pre-game-match-id'
+    }],
+    ['{agent id}', {
+        name: 'agent id',
+        slug: 'agent-id'
     }]])
 if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
@@ -218,7 +242,7 @@ if(endpoint.riotRequirements !== undefined) {
                                     case 'region':
                                         return <Region/>
                                     case 'port':
-                                        return null
+                                        return <Port/>
                                     default:
                                         return (meta.descriptionHtml === undefined) ? null : <Fragment set:html={meta.descriptionHtml}/>
                                 }
