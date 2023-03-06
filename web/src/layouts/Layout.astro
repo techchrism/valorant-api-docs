@@ -15,13 +15,13 @@ const {title, endpointName} = Astro.props
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50 md:grid md:grid-cols-main">
 		<Sidebar endpointName={endpointName}/>
-		<slot/>		
+		<slot/>
 	</body>
 </html>
 <style is:global>
