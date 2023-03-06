@@ -12,6 +12,7 @@ import Region from '../../components/doc-fragments/Region.astro'
 import Port from '../../components/doc-fragments/Port.astro'
 import ClientVersion from '../../components/doc-fragments/ClientVersion.astro'
 import LockfilePassword from '../../components/doc-fragments/LockfilePassword.astro'
+import ClientPlatform from '../../components/doc-fragments/ClientPlatform.astro'
 
 interface VariableMeta {
     name: string
@@ -311,6 +312,8 @@ if(endpoint.riotRequirements !== undefined) {
                                         return <ClientVersion/>
                                     case 'lockfile password':
                                         return <LockfilePassword/>
+                                    case 'client platform':
+                                        return <ClientPlatform/>
                                     default:
                                         return (variable.descriptionHtml === undefined) ? null : <Fragment set:html={variable.descriptionHtml}/>
                                 }
