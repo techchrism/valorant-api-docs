@@ -48,7 +48,7 @@ const {endpointName} = Astro.props
       <li>
          <a href="/" class={
             'flex items-center p-2 text-sm font-normal text-black rounded-lg dark:text-white ' +
-            ((endpointName === undefined) ?
+            ((Astro.url.pathname === '/') ?
                'hover:bg-blue-200 dark:hover:bg-blue-700 bg-blue-200 dark:bg-blue-900 active-endpoint' :
                'hover:bg-gray-200 dark:hover:bg-gray-700')
             }>
