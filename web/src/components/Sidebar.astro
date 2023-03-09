@@ -1,6 +1,7 @@
 ---
 import {endpoints, ValorantEndpoint} from 'valorant-api-types'
 import EndpointMethod from './EndpointMethod.astro'
+import RepoLink from './RepoLink.astro'
 
 const categories = new Map<string, ValorantEndpoint[]>()
 for(const endpoint of Object.values(endpoints)) {
@@ -20,16 +21,14 @@ function getEndpointSlug(endpoint: ValorantEndpoint) {
 const {endpointName} = Astro.props
 ---
 
-
 <input type="checkbox" id="toggler" class="hidden"/>
-
 
 <aside id="sidebar" class="md:sticky top-0 left-0 z-40 md:h-screen overflow-y-auto bg-gray-50 dark:bg-gray-800" aria-label="Sidebar">
    <div class="sticky top-0 px-3 py-1 bg-gray-50 dark:bg-gray-800">
       <h2 class="text-center font-semibold">Valorant API Docs</h2>
       <span class="block text-center text-gray-500 dark:text-gray-300">(unofficial)</span>
-      <span class="block text-center">
-         <a class="github-button" href="https://github.com/techchrism/valorant-api-docs" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-show-count="true" aria-label="Star techchrism/valorant-api-docs on GitHub">Star</a>
+      <span class="block text-center mt-1">
+         <RepoLink user="techchrism" repo="valorant-api-docs"/>
       </span>
 
       <div class="md:hidden text-center">
@@ -86,8 +85,6 @@ const {endpointName} = Astro.props
       
    </ul>
 </aside>
-
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <style>
 #toggler:checked~#sidebar #sidebar-list {
