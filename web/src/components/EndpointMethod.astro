@@ -11,13 +11,13 @@ function getEndpointMethodColor(method: ValorantEndpoint['method']) {
    switch(method) {
       case undefined:
       case 'GET':
-         return 'text-purple-500'
+         return 'text-purple-700 dark:text-purple-400'
       case 'POST':
          return 'text-green-500'
       case 'PUT':
-         return 'text-orange-500'
+         return 'text-orange-500 dark:text-orange-400'
       case 'DELETE':
-         return 'text-red-600'
+         return 'text-red-600 dark:text-red-400'
       default:
          return 'text-gray-800'
    }
