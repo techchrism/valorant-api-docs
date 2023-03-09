@@ -54,26 +54,6 @@ function variableHtmlTemplate(variable: string, slug: string) {
     return `<a href="#${slug}" class="text-emerald-700 dark:text-orange-400 underline">${variable}</a>`
 }
 
-function getEndpointMethodColor(method: ValorantEndpoint['method']) {
-   switch(method) {
-      case undefined:
-      case 'GET':
-         return 'text-purple-500'
-      case 'POST':
-         return 'text-green-500'
-      case 'PUT':
-         return 'text-orange-500'
-      case 'DELETE':
-         return 'text-red-600'
-      default:
-         return 'text-gray-800'
-   }
-}
-
-function renderEndpointTitleHTML(endpoint: ValorantEndpoint) {
-    return `<span class="${getEndpointMethodColor(endpoint.method)} font-semibold">${endpoint.method || 'GET'}</span> ${endpoint.name}`
-}
-
 function replaceEndpointLinks(str: string, type: 'markdown' | 'html') {
     const endpointLinks = str.matchAll(/\[(GET|POST|PUT|PATCH|DELETE) (.+?)\]/g)
     for(const endpointLinkMatch of endpointLinks) {
@@ -82,7 +62,7 @@ function replaceEndpointLinks(str: string, type: 'markdown' | 'html') {
         if(endpoint === undefined) continue
         const link = type === 'markdown' ?
             `[${endpoint.method || 'GET'} ${endpoint.name}](${getSlug(endpoint.name)})` :
-            `<a href="${getSlug(endpointName)}" class="underline">[${renderEndpointTitleHTML(endpoint)}]</a>`
+            `<a href="${getSlug(endpointName)}" class="link">${endpoint.name}</a>`
         str = str.replaceAll(linkStr, link)
     }
     return str
