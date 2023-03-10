@@ -5,7 +5,7 @@ import {chatMessagesSchema} from '../../../commonTypes'
 export const sendChatEndpoint = {
     name: 'Send Chat',
     description: 'Send a message to the specified group',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v6/messages',
     method: 'POST',

@@ -5,7 +5,7 @@ import {conversationsSchema} from '../../../commonTypes'
 export const pregameChatInfoEndpoint = {
     name: 'Pre-Game Chat Info',
     description: 'Get information about the pre-game chat',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v6/conversations/ares-pregame',
     riotRequirements: {

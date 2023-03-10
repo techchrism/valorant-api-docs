@@ -5,7 +5,7 @@ import {conversationsSchema} from '../../../commonTypes'
 export const allChatInfoEndpoint = {
     name: 'All Chat Info',
     description: 'Get information about all active conversations',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v6/conversations',
     riotRequirements: {

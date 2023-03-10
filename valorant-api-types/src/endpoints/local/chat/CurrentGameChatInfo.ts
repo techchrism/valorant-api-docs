@@ -5,7 +5,7 @@ import {conversationsSchema} from '../../../commonTypes'
 export const currentGameChatInfoEndpoint = {
     name: 'Current Game Chat Info',
     description: 'Get information about the current game chat',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v6/conversations/ares-coregame',
     riotRequirements: {

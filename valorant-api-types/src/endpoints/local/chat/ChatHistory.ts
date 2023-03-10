@@ -5,7 +5,7 @@ import {chatMessagesSchema} from '../../../commonTypes'
 export const chatHistoryEndpoint = {
     name: 'Chat History',
     description: 'Get chat history for all conversations or a specific conversation if the cid is provided',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v6/messages',
     query: new Map([

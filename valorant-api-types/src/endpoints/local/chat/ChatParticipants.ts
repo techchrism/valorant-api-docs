@@ -5,7 +5,7 @@ import {playerUUIDSchema} from '../../../commonTypes'
 export const chatParticipantsEndpoint = {
     name: 'Chat Participants',
     description: 'Get information about the participants of all active conversations or a specific conversation if a cid is provided',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v5/participants',
     query: new Map([

@@ -5,7 +5,7 @@ import {conversationsSchema} from '../../../commonTypes'
 export const partyChatInfoEndpoint = {
     name: 'Party Chat Info',
     description: 'Get information about the party chat',
-    category: 'Local Endpoints/Chat',
+    category: ['Local Endpoints', 'Chat'] as string[],
     type: 'local',
     suffix: 'chat/v6/conversations/ares-parties',
     riotRequirements: {
