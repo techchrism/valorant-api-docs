@@ -57,3 +57,7 @@ for(const endpoint of Object.values(endpoints)) {
     console.log(`${endpoint.name} - ${endpoint.description}`)
 }
 ```
+
+Most text data can be markdown including the description and Zod type descriptions.
+Linking to other endpoints is done with `[{method} {name}]` (for example, `[POST Auth Cookies]`)
+which can be replaced with an appropriate link.
