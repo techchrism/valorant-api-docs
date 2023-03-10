@@ -6,6 +6,9 @@ See https://github.com/techchrism/valorant-api-docs/blob/trunk/contributing.md f
 
 -->
 
+# These markdown docs are deprecated and will no longer be updated. They remain here to prevent broken links.
+## Visit <https://valapidocs.techchrism.me> for the latest documentation (and update your links if possible)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 # Valorant API Docs
 
 This is a repo dedicated to documenting the Valorant API endpoints the client uses internally.

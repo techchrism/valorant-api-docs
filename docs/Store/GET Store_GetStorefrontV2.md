@@ -6,6 +6,9 @@ See https://github.com/techchrism/valorant-api-docs/blob/trunk/contributing.md f
 
 -->
 
+# These markdown docs are deprecated and will no longer be updated. They remain here to prevent broken links.
+## Visit <https://valapidocs.techchrism.me/endpoint/storefront> for the latest documentation (and update your links if possible)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 # GET Store_GetStorefrontV2
 
 Get the currently available items in the store  

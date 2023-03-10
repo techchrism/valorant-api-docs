@@ -6,6 +6,9 @@ See https://github.com/techchrism/valorant-api-docs/blob/trunk/contributing.md f
 
 -->
 
+# These markdown docs are deprecated and will no longer be updated. They remain here to prevent broken links.
+## Visit <https://valapidocs.techchrism.me/endpoint/refresh-competitive-tier> for the latest documentation (and update your links if possible)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 # POST Party_RefreshCompetitiveTier
 
 Refreshes the competitive tier for a player  

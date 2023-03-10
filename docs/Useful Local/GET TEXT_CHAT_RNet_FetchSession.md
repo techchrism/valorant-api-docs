@@ -6,6 +6,9 @@ See https://github.com/techchrism/valorant-api-docs/blob/trunk/contributing.md f
 
 -->
 
+# These markdown docs are deprecated and will no longer be updated. They remain here to prevent broken links.
+## Visit <https://valapidocs.techchrism.me/endpoint/chat-session> for the latest documentation (and update your links if possible)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 # GET TEXT_CHAT_RNet_FetchSession
 
 Get the current session including player name and PUUID  
