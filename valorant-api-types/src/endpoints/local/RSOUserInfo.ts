@@ -5,16 +5,16 @@ import {millisSchema, playerUUIDSchema} from '../../commonTypes'
 const userInfoSchema = z.object({
     acct: z.object({
         adm: z.boolean(),
-        createdAt: millisSchema,
+        created_at: millisSchema,
         game_name: z.string(),
         state: z.string(),
         tag_line: z.string(),
         type: z.number()
     }),
     ban: z.object({
-        code: z.unknown().nullable(),
-        desc: z.string(),
-        exp: z.unknown().nullable(),
+        code: z.unknown().nullable().optional(),
+        desc: z.string().optional(),
+        exp: z.unknown().nullable().optional(),
         restrictions: z.array(z.unknown())
     }),
     country: z.string(),
