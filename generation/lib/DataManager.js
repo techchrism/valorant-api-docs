@@ -99,7 +99,25 @@ export class DataManager
         {
             throw new Error('Unknown "to" id');
         }
-        let text = (platform === 'insomnia') ? '' : `# ${endpoint.method} ${endpoint.name}\n`;
+
+        let text = '';
+        const correlation = this.correlations.find(c => c.old.name === endpoint.name && c.old.method === endpoint.method);
+        text += '# These markdown docs are deprecated and will no longer be updated. They remain here to prevent broken links.\n';
+        if(correlation !== undefined)
+        {
+            const newEndpoint = newEndpoints[correlation.newID];
+            text += `## Visit <https://valapidocs.techchrism.me/endpoint/${newEndpoint.name.toLowerCase().replace(/ /g, '-')}> for the latest documentation (and update your links if possible)\n`;
+        }
+        else
+        {
+            text += `## Visit <https://valapidocs.techchrism.me> for the latest documentation (and update your links if possible)\n`;
+        }
+        text += '<br>'.repeat(15) + '\n';
+
+        if(platform !== 'insomnia')
+        {
+            text += `# ${endpoint.method} ${endpoint.name}\n`;
+        }
         if(endpoint.description)
         {
             text += '\n' + endpoint.description + '  \n\n';
@@ -170,7 +188,6 @@ export class DataManager
             text += components.map(({name, value}) => ` - \`${name}\`: ${value}\n`).join('') + '\n';
         }
 
-        const correlation = this.correlations.find(c => c.old.name === endpoint.name && c.old.method === endpoint.method);
         if(correlation !== undefined)
         {
             const newEndpoint = newEndpoints[correlation.newID];
@@ -194,7 +211,10 @@ export class DataManager
     {
         if(this.docs.hasOwnProperty(name))
         {
-            return this.renderText(this.docs[name], '', platform);
+            return '# These markdown docs are deprecated and will no longer be updated. They remain here to prevent broken links.\n' +
+                '## Visit <https://valapidocs.techchrism.me> for the latest documentation (and update your links if possible)\n' +
+                '<br>'.repeat(15) + '\n' +
+                this.renderText(this.docs[name], '', platform);
         }
         else
         {
