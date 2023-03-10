@@ -1,12 +1,10 @@
 # Valorant API Docs
 
-**To read documentation and get started, see [Docs](docs)**
+### **To read documentation and get started, go to <https://valapidocs.techchrism.me>**
 
-This is a project designed to automatically document Valorant endpoints based on a JSON file containing endpoint data.
-Documentation comes in the form of markdown files and importable Insomnia workspaces.
+This is a project designed to automatically document Valorant endpoints based on a typescript module describing endpoints and types.
+This module is published on npm so it can be consumed from other projects to use the types, generate documentation, or generate api code.
 
-Development for this documentation is currently split between existing endpoint documentation and the new [valorant-api-types](./valorant-api-types)
-module. New endpoint documentation should be added to the `valorant-api-types` module, and existing documentation is correlated with this through the `data/correlations.json` file.
-
-To contribute to the code generating the documentation, see the `generation` directory.
+To contribute to the code generating the documentation, see the `web` directory.
+To contribute to the underlying data and types, see the `valorant-api-types` directory.
 Modifications to the `docs` directory will be removed automatically.
