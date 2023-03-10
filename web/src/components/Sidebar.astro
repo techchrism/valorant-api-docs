@@ -5,9 +5,7 @@ import RepoLink from './RepoLink.astro'
 
 const categories = new Map<string, ValorantEndpoint[]>()
 for(const endpoint of Object.values(endpoints)) {
-    //TODO remove temporary category split
-    const tempName = endpoint.category.split('/').join(' - ')
-    const categoryName = Array.isArray(tempName) ? tempName.join(' - ') : tempName
+    const categoryName = Array.isArray(endpoint.category) ? endpoint.category.join(' - ') : endpoint.category
     if(!categories.has(categoryName)) {
         categories.set(categoryName, [])
     }
