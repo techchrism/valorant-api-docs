@@ -4,7 +4,7 @@ import {playerUUIDSchema} from '../../commonTypes'
 
 export const nameServiceEndpoint = {
     name: 'Name Service',
-    description: 'Get a player's name and tagline by their PUUID. Supports retrieving multiple players in one request.',
+    description: 'Get a player\'s name and tagline by their PUUID. Supports retrieving multiple players in one request.',
     queryName: 'NameService_GetPlayerInfo',
     category: 'PVP Endpoints',
     type: 'pd',
