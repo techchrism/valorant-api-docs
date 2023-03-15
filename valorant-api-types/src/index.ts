@@ -9,6 +9,7 @@ export * from './endpoints/pvp/CompetitiveUpdates'
 export * from './endpoints/pvp/Leaderboard'
 export * from './endpoints/pvp/Penalties'
 export * from './endpoints/pvp/Config'
+export * from './endpoints/pvp/NameService'
 
 export * from './endpoints/party/Party'
 export * from './endpoints/party/PartyPlayer'

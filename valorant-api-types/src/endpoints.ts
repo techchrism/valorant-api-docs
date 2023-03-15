@@ -70,6 +70,7 @@ import {multiFactorAuthenticationEndpoint} from './endpoints/auth/MultiFactorAut
 import {cookieReauthEndpoint} from './endpoints/auth/CookieReauth'
 import {entitlementEndpoint} from './endpoints/auth/Entitlement'
 import {playerInfoEndpoint} from './endpoints/auth/PlayerInfo'
+import {nameServiceEndpoint} from "./endpoints/pvp/NameService";
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -83,6 +84,7 @@ export const endpoints = {
     leaderboardEndpoint,
     penaltiesEndpoint,
     configEndpoint,
+    nameServiceEndpoint,
 
     partyEndpoint,
     partyPlayerEndpoint,
