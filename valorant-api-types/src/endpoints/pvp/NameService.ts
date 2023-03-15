@@ -18,7 +18,7 @@ export const nameServiceEndpoint = {
             TagLine: z.string(),
         }))
     },
-    body: z.array(z.string()).describe("An array of playerUUIDs you want to get the NameService for")
+    body: z.array(playerUUIDSchema).describe("An array of playerUUIDs you want to get the NameService for")
 } as const satisfies ValorantEndpoint
 
 export type NameServiceResponse = z.input<typeof nameServiceEndpoint.responses['200']>
