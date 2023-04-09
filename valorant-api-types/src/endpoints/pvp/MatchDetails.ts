@@ -110,20 +110,20 @@ export const matchDetailsEndpoint = {
                         ability1Casts: z.number(),
                         ability2Casts: z.number(),
                         ultimateCasts: z.number()
-                    })
+                    }).nullable()
                 }),
                 roundDamage: z.array(z.object({
                     round: z.number(),
                     receiver: playerUUIDSchema,
                     damage: z.number()
-                })),
+                })).nullable(),
                 competitiveTier: z.number(),
                 isObserver: z.boolean(),
                 playerCard: cardIDSchema,
                 playerTitle: titleIDSchema,
                 preferredLevelBorder: preferredLevelBorderIDSchema,
                 accountLevel: z.number(),
-                sessionPlaytimeMinutes: z.number(),
+                sessionPlaytimeMinutes: z.number().nullable(),
                 xpModifications: z.array(z.object({
                     Value: z.number().describe('XP multiplier'),
                     ID: xpModificationIDSchema
@@ -207,11 +207,11 @@ export const matchDetailsEndpoint = {
                 roundResultCode: z.enum(['Elimination', 'Detonate', 'Defuse', 'Surrendered', '']).describe('Empty string if the timer expired'),
                 playerEconomies: z.array(z.object({
                     subject: playerUUIDSchema
-                }).merge(economySchema)),
+                }).merge(economySchema)).nullable(),
                 playerScores: z.array(z.object({
                     subject: playerUUIDSchema,
                     score: z.number()
-                }))
+                })).nullable()
             })),
             kills: z.array(killSchema),
         })

@@ -17,7 +17,7 @@ export const playerInfoEndpoint = {
             sub: playerUUIDSchema,
             email_verified: z.boolean(),
             player_plocale: z.unknown().nullable(),
-            country_at: millisSchema,
+            country_at: millisSchema.nullable(),
             pw: z.object({
                 cng_at: millisSchema,
                 reset: z.boolean(),
@@ -27,7 +27,7 @@ export const playerInfoEndpoint = {
             account_verified: z.boolean(),
             ppid: z.unknown().nullable(),
             federated_identity_providers: z.array(z.string()),
-            player_locale: z.string(),
+            player_locale: z.string().nullable(),
             acct: z.object({
                 type: z.number(),
                 state: z.string(),
