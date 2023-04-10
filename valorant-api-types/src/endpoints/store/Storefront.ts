@@ -20,6 +20,15 @@ const bundleSchema = z.object({
     }))
 })
 
+const bonusOfferSchema = z.object({
+    BonusOfferID: weakUUIDSchema,
+    Offer: offerSchema,
+    DiscountPercent: z.number(),
+    DiscountCosts: z.record(weakUUIDSchema, z.number()),
+    IsSeen: z.boolean()
+})
+
+
 export const storefrontEndpoint = {
     name: 'Storefront',
     description: 'Get the currently available items in the store',
@@ -51,13 +60,8 @@ export const storefrontEndpoint = {
                 }))
             }),
             BonusStore: z.object({
-                BonusStoreOffers: z.object({
-                    BonusOfferID: weakUUIDSchema,
-                    Offer: offerSchema,
-                    DiscountPercent: z.number(),
-                    DiscountCosts: z.record(weakUUIDSchema, z.number()),
-                    IsSeen: z.boolean()
-                })
+                BonusStoreOffers: z.array(bonusOfferSchema),
+                BonusStoreRemainingDurationInSeconds: z.number()
             }).optional().describe('Night market')
         })
     }
