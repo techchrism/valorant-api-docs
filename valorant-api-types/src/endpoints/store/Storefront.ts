@@ -28,7 +28,6 @@ const bonusOfferSchema = z.object({
     IsSeen: z.boolean()
 })
 
-
 export const storefrontEndpoint = {
     name: 'Storefront',
     description: 'Get the currently available items in the store',
