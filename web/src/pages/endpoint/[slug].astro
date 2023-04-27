@@ -43,7 +43,7 @@ export function getStaticPaths() {
 function endpointToURL(endpoint: ValorantEndpoint): string {
     switch(endpoint.type) {
         case 'pd': return `https://pd.{shard}.a.pvp.net/${endpoint.suffix}`
-        case 'glz': return `https://glz-{region}-{shard}.a.pvp.net/${endpoint.suffix}`
+        case 'glz': return `https://glz-{region}-1.{shard}.a.pvp.net/${endpoint.suffix}`
         case 'shared': return `https://shared.{shard}.a.pvp.net/${endpoint.suffix}`
         case 'local': return `https://127.0.0.1:{port}/${endpoint.suffix}`
         case 'other': return endpoint.suffix
