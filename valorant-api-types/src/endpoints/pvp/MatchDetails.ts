@@ -42,7 +42,7 @@ const killSchema = z.object({
     assistants: z.array(playerUUIDSchema),
     playerLocations: z.array(playerLocationSchema),
     finishingDamage: z.object({
-        damageType: z.enum(['Weapon', 'Bomb', 'Ability', 'Fall', 'Melee', '']),
+        damageType: z.enum(['Weapon', 'Bomb', 'Ability', 'Fall', 'Melee', 'Invalid', '']),
         damageItem: itemIDSchema
             .or(z.enum(['Ultimate', 'Ability1', 'Ability2', 'GrenadeAbility', 'Primary']))
             .or(z.literal(''))
@@ -74,7 +74,7 @@ export const matchDetailsEndpoint = {
                 gameLoopZone: z.string(),
                 gameServerAddress: z.string(),
                 gameVersion: z.string(),
-                gameLengthMillis: z.number(),
+                gameLengthMillis: z.number().nullable(),
                 gameStartMillis: z.number(),
                 provisioningFlowID: z.enum(['Matchmaking', 'CustomGame']),
                 isCompleted: z.boolean(),
@@ -85,10 +85,10 @@ export const matchDetailsEndpoint = {
                 isRanked: z.boolean(),
                 isMatchSampled: z.boolean(),
                 seasonId: seasonIDSchema,
-                completionState: z.enum(['Surrendered', 'Completed', 'VoteDraw']), // TODO find remake string
+                completionState: z.enum(['Surrendered', 'Completed', 'VoteDraw', '']), // TODO find remake string
                 platformType: platformSchema.shape.platformType,
                 premierMatchInfo: z.object({}),
-                partyRRPenalties: z.record(partyIDSchema, z.number()),
+                partyRRPenalties: z.record(partyIDSchema, z.number()).optional(),
                 shouldMatchDisablePenalties: z.boolean(),
             }),
             players: z.array(z.object({
@@ -111,8 +111,8 @@ export const matchDetailsEndpoint = {
                         ability1Casts: z.number(),
                         ability2Casts: z.number(),
                         ultimateCasts: z.number()
-                    }).nullable()
-                }),
+                    }).nullable().optional()
+                }).nullable(),
                 roundDamage: z.array(z.object({
                     round: z.number(),
                     receiver: playerUUIDSchema,
@@ -124,21 +124,21 @@ export const matchDetailsEndpoint = {
                 playerTitle: titleIDSchema,
                 preferredLevelBorder: preferredLevelBorderIDSchema.optional(),
                 accountLevel: z.number(),
-                sessionPlaytimeMinutes: z.number().nullable(),
+                sessionPlaytimeMinutes: z.number().nullable().optional(),
                 xpModifications: z.array(z.object({
                     Value: z.number().describe('XP multiplier'),
                     ID: xpModificationIDSchema
                 })).optional(),
                 behaviorFactors: z.object({
                     afkRounds: z.number(),
-                    collisions: z.number().describe('Float value of unknown significance. Possibly used to quantify how much the player was in the way of their teammates?'),
+                    collisions: z.number().optional().describe('Float value of unknown significance. Possibly used to quantify how much the player was in the way of their teammates?'),
                     commsRatingRecovery: z.number(),
                     damageParticipationOutgoing: z.number(),
-                    friendlyFireIncoming: z.number(),
-                    friendlyFireOutgoing: z.number(),
-                    mouseMovement: z.number(),
-                    stayedInSpawnRounds: z.number()
-                }),
+                    friendlyFireIncoming: z.number().optional(),
+                    friendlyFireOutgoing: z.number().optional(),
+                    mouseMovement: z.number().optional(),
+                    stayedInSpawnRounds: z.number().optional()
+                }).optional(),
                 newPlayerExperienceDetails: z.object({
                     basicMovement: newPlayerExperienceTimingSchema,
                     basicGunSkill: newPlayerExperienceTimingSchema,
@@ -157,7 +157,7 @@ export const matchDetailsEndpoint = {
                         isCrosshairDefault: z.boolean(),
                     }),
                     versionString: z.literal('')
-                })
+                }).optional()
             })),
             bots: z.array(z.unknown()),
             coaches: z.array(z.object({
@@ -170,7 +170,7 @@ export const matchDetailsEndpoint = {
                 roundsPlayed: z.number(),
                 roundsWon: z.number(),
                 numPoints: z.number()
-            })),
+            })).nullable(),
             roundResults: z.array(z.object({
                 roundNum: z.number(),
                 roundResult: z.enum(['Eliminated', 'Bomb detonated', 'Bomb defused', 'Surrendered', 'Round timer expired']),
@@ -215,10 +215,10 @@ export const matchDetailsEndpoint = {
                     subject: playerUUIDSchema,
                     score: z.number()
                 })).nullable()
-            })),
+            })).nullable(),
             kills: z.array(killSchema.merge(z.object({
                 round: z.number()
-            }))),
+            }))).nullable(),
         })
     }
 } as const satisfies ValorantEndpoint
