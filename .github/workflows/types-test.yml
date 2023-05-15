@@ -4,6 +4,9 @@ on:
   pull_request:
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: valorant-api-types
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -11,6 +14,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-      - run: cd valorant-api-types
       - run: npm ci
       - run: npm test
