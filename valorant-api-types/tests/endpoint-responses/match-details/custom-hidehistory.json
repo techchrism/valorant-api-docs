@@ -1,0 +1,162 @@
+{
+    "matchInfo": {
+        "matchId": "5ef9e142-aa7f-4cae-bb37-d93f40a1721c",
+        "mapId": "/Game/Maps/Duality/Duality",
+        "gamePodId": "aresriot.aws-usw1-prod.na-gp-norcal-1",
+        "gameLoopZone": "aresriot.aws-usw2-prod.na-glz-na-1",
+        "gameServerAddress": "",
+        "gameVersion": "release-06.08-shipping-19-875485",
+        "gameLengthMillis": null,
+        "gameStartMillis": 1684044536076,
+        "provisioningFlowID": "CustomGame",
+        "isCompleted": false,
+        "customGameName": "",
+        "forcePostProcessing": false,
+        "queueID": "",
+        "gameMode": "/Game/GameModes/Bomb/BombGameMode.BombGameMode_C",
+        "isRanked": false,
+        "isMatchSampled": false,
+        "seasonId": "bfb954eb-cb73-48a0-ba4f-cd173aa18a65",
+        "completionState": "",
+        "platformType": "PC",
+        "premierMatchInfo": {},
+        "shouldMatchDisablePenalties": false
+    },
+    "players": [
+        {
+            "subject": "b398d742-da1a-4274-9203-7ab127e7a932",
+            "gameName": "Player01",
+            "tagLine": "0001",
+            "platformInfo": {
+                "platformType": "PC",
+                "platformOS": "Windows",
+                "platformOSVersion": "10.0.22621.1.768.64bit",
+                "platformChipset": "Unknown"
+            },
+            "teamId": "Blue",
+            "partyId": "ff0915e0-a14b-4ae4-99b0-7a53e5319091",
+            "characterId": "bc0a0bd0-3702-47c2-8bd6-e29b6886efa3",
+            "stats": null,
+            "roundDamage": null,
+            "competitiveTier": 0,
+            "isObserver": false,
+            "playerCard": "98f1571a-4bc0-4ccd-854e-5dd02b66252d",
+            "playerTitle": "bfc7f3ee-7b4d-4e11-97fc-4ce1ee8437cf",
+            "preferredLevelBorder": "0fab49bb-fd34-4671-92ae-78a199583662",
+            "accountLevel": 178,
+            "sessionPlaytimeMinutes": 57,
+            "xpModifications": [
+                {
+                    "Value": 1.03,
+                    "ID": "a25048f2-7d2b-4d21-8505-404a9f743c10"
+                }
+            ]
+        },
+        {
+            "subject": "d2f8f59c-b3d8-4351-a5f7-ba86b6fcc9c7",
+            "gameName": "Player02",
+            "tagLine": "0002",
+            "platformInfo": {
+                "platformType": "PC",
+                "platformOS": "Windows",
+                "platformOSVersion": "10.0.19044.1.256.64bit",
+                "platformChipset": "Unknown"
+            },
+            "teamId": "Blue",
+            "partyId": "ff0915e0-a14b-4ae4-99b0-7a53e5319091",
+            "characterId": "0c86d1d8-4a19-4dd6-b7b7-f45a45c751de",
+            "stats": null,
+            "roundDamage": null,
+            "competitiveTier": 0,
+            "isObserver": false,
+            "playerCard": "4711047d-88db-4fbb-8d35-3b5aa77681ed",
+            "playerTitle": "8e829ed4-dee2-4f02-ae9d-05c34bc4b4f7",
+            "preferredLevelBorder": "8c0f6658-6205-4443-b382-0832c7835bdc",
+            "accountLevel": 108,
+            "sessionPlaytimeMinutes": 105,
+            "xpModifications": [
+                {
+                    "Value": 1.03,
+                    "ID": "a25048f2-7d2b-4d21-8505-404a9f743c10"
+                }
+            ]
+        },
+        {
+            "subject": "5b87818f-340c-4347-9188-f1316b7cec87",
+            "gameName": "Player03",
+            "tagLine": "0003",
+            "platformInfo": {
+                "platformType": "PC",
+                "platformOS": "Windows",
+                "platformOSVersion": "10.0.22621.1.768.64bit",
+                "platformChipset": "Unknown"
+            },
+            "teamId": "Blue",
+            "partyId": "ff0915e0-a14b-4ae4-99b0-7a53e5319091",
+            "characterId": "43485ae9-b197-4401-bee0-a23cdbe59bc8",
+            "stats": null,
+            "roundDamage": null,
+            "competitiveTier": 0,
+            "isObserver": false,
+            "playerCard": "e910b9a7-83be-4d63-a62b-3cb4818a97eb",
+            "playerTitle": "8e829ed4-dee2-4f02-ae9d-05c34bc4b4f7",
+            "accountLevel": 62,
+            "sessionPlaytimeMinutes": 104,
+            "xpModifications": [
+                {
+                    "Value": 1.03,
+                    "ID": "a25048f2-7d2b-4d21-8505-404a9f743c10"
+                }
+            ]
+        },
+        {
+            "subject": "1bae405c-5a50-496d-91b2-2f4858c38333",
+            "gameName": "Player04",
+            "tagLine": "0004",
+            "platformInfo": {
+                "platformType": "PC",
+                "platformOS": "Windows",
+                "platformOSVersion": "10.0.19045.1.768.64bit",
+                "platformChipset": "Unknown"
+            },
+            "teamId": "Blue",
+            "partyId": "ff0915e0-a14b-4ae4-99b0-7a53e5319091",
+            "characterId": "4bc6884c-e8d4-43ce-abe4-e77317448438",
+            "stats": null,
+            "roundDamage": null,
+            "competitiveTier": 0,
+            "isObserver": false,
+            "playerCard": "c25ca995-52d6-4594-8b58-253677037525",
+            "playerTitle": "dc0bd01d-6130-4ba4-b643-48e7b9e27708",
+            "accountLevel": 24,
+            "sessionPlaytimeMinutes": 97
+        },
+        {
+            "subject": "72f23cd9-0008-41cc-a654-3c78e6e097ff",
+            "gameName": "Player05",
+            "tagLine": "0005",
+            "platformInfo": {
+                "platformType": "PC",
+                "platformOS": "Windows",
+                "platformOSVersion": "10.0.19044.1.768.64bit",
+                "platformChipset": "Unknown"
+            },
+            "teamId": "Blue",
+            "partyId": "ff0915e0-a14b-4ae4-99b0-7a53e5319091",
+            "characterId": "a4c0a06e-5b2b-4707-baf4-8990b0f70201",
+            "stats": null,
+            "roundDamage": null,
+            "competitiveTier": 0,
+            "isObserver": false,
+            "playerCard": "822e3241-9fad-4c7c-b192-5851da27a108",
+            "playerTitle": "40be36c1-e10d-458b-a01a-2bed0cda8a5d",
+            "accountLevel": 16,
+            "sessionPlaytimeMinutes": 3
+        }
+    ],
+    "bots": [],
+    "coaches": [],
+    "teams": null,
+    "roundResults": null,
+    "kills": null
+}
