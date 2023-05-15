@@ -17,8 +17,8 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "test": "tsc --build ./tests/tsconfig.json && node ./tests/dist/test.js",
+    "build": "tsc --build ./tsconfig.json"
   },
   "keywords": [
     "valorant",
@@ -30,6 +30,7 @@
   "author": "techchrism",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.1.4",
     "typescript": "^4.9.4"
   },
   "dependencies": {

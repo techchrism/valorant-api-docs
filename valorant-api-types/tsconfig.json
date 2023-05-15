@@ -8,8 +8,9 @@
     "declaration": true,
     "downlevelIteration": true,
     "outDir": "./dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "composite": true
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", ".vscode"]
 }
