@@ -10,6 +10,10 @@ export const nameServiceEndpoint = {
     type: 'pd',
     method: 'PUT',
     suffix: 'name-service/v2/players',
+    riotRequirements: {
+        token: true,
+        entitlement: true
+    },
     responses: {
         '200': z.array(z.object({
             DisplayName: z.string(),
