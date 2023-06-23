@@ -71,6 +71,8 @@ import {cookieReauthEndpoint} from './endpoints/auth/CookieReauth'
 import {entitlementEndpoint} from './endpoints/auth/Entitlement'
 import {playerInfoEndpoint} from './endpoints/auth/PlayerInfo'
 import {nameServiceEndpoint} from "./endpoints/pvp/NameService";
+import {sendFriendRequestEndpoint} from './endpoints/local/SendFriendRequest'
+import {removeFriendRequestEndpoint} from './endpoints/local/RemoveFriendRequest'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -135,6 +137,8 @@ export const endpoints = {
     entitlementsTokenEndpoint,
     chatSessionEndpoint,
     friendsEndpoint,
+    sendFriendRequestEndpoint,
+    removeFriendRequestEndpoint,
     presenceEndpoint,
     settingsEndpoint,
     friendRequestsEndpoint,
