@@ -30,7 +30,7 @@ export const accountXPEndpoint = {
                 EndProgress: progressSchema,
                 XPDelta: z.number(),
                 XPSources: z.array(z.object({
-                    ID: z.enum(['time-played', 'match-win']),
+                    ID: z.enum(['time-played', 'match-win', 'first-win-of-the-day']),
                     Amount: z.number()
                 })),
                 XPMultipliers: z.array(z.unknown())

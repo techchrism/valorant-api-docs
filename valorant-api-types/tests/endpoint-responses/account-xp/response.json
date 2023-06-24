@@ -1,0 +1,308 @@
+{
+    "Version": 1545,
+    "Subject": "07c0d846-fde0-4d1c-ac0e-4e8fde5c8d5a",
+    "Progress": {
+        "Level": 150,
+        "XP": 3941
+    },
+    "History": [
+        {
+            "ID": "912b5e54-c923-4c10-a216-2a77720cd98a",
+            "MatchStart": "2023-02-06T07:38:03Z",
+            "StartProgress": {
+                "Level": 149,
+                "XP": 3615
+            },
+            "EndProgress": {
+                "Level": 149,
+                "XP": 3723
+            },
+            "XPDelta": 108,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 108
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "3ffa6569-a195-4eb8-8e31-e1b3ca56f9a8",
+            "MatchStart": "2023-02-06T07:51:56Z",
+            "StartProgress": {
+                "Level": 149,
+                "XP": 3723
+            },
+            "EndProgress": {
+                "Level": 149,
+                "XP": 3814
+            },
+            "XPDelta": 91,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 91
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "d9844530-63a9-4dce-aa7a-ee881e683018",
+            "MatchStart": "2023-02-06T08:03:30Z",
+            "StartProgress": {
+                "Level": 149,
+                "XP": 3814
+            },
+            "EndProgress": {
+                "Level": 149,
+                "XP": 4963
+            },
+            "XPDelta": 1149,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 99
+                },
+                {
+                    "ID": "match-win",
+                    "Amount": 50
+                },
+                {
+                    "ID": "first-win-of-the-day",
+                    "Amount": 1000
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "24954f8b-5d50-433f-9c70-9d0f8a2ad098",
+            "MatchStart": "2023-02-06T08:15:42Z",
+            "StartProgress": {
+                "Level": 149,
+                "XP": 4963
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 56
+            },
+            "XPDelta": 93,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 93
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "ce9857a6-0f26-4be5-bbe1-39d848a0f70c",
+            "MatchStart": "2023-02-06T08:43:27Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 56
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 158
+            },
+            "XPDelta": 102,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 52
+                },
+                {
+                    "ID": "match-win",
+                    "Amount": 50
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "8b48bf19-068e-4882-82fd-17edef8b5884",
+            "MatchStart": "2023-02-06T08:51:07Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 158
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 307
+            },
+            "XPDelta": 149,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 99
+                },
+                {
+                    "ID": "match-win",
+                    "Amount": 50
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "3a2cd6fd-96b2-48e7-8fd6-2de9432bd32f",
+            "MatchStart": "2023-02-08T21:35:41Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 307
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 455
+            },
+            "XPDelta": 148,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 148
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "9a897175-f509-4284-a705-5836fc26ec6d",
+            "MatchStart": "2023-02-08T21:52:35Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 455
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 672
+            },
+            "XPDelta": 217,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 217
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "93c4ef18-a541-451c-9256-cca5a97ebd6b",
+            "MatchStart": "2023-02-08T22:17:25Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 672
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 1836
+            },
+            "XPDelta": 1164,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 114
+                },
+                {
+                    "ID": "match-win",
+                    "Amount": 50
+                },
+                {
+                    "ID": "first-win-of-the-day",
+                    "Amount": 1000
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "3b7e0cda-3f9e-4401-b88a-ffd609a55943",
+            "MatchStart": "2023-02-13T05:13:17Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 1836
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 1992
+            },
+            "XPDelta": 156,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 156
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "75b6b5f0-9d30-4c53-af58-90ac9a13c1fb",
+            "MatchStart": "2023-02-13T05:30:43Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 1992
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 3192
+            },
+            "XPDelta": 1200,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 150
+                },
+                {
+                    "ID": "match-win",
+                    "Amount": 50
+                },
+                {
+                    "ID": "first-win-of-the-day",
+                    "Amount": 1000
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "b75de4ef-6386-4fe2-b6d9-27bea9bb082c",
+            "MatchStart": "2023-02-13T05:49:04Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 3192
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 3478
+            },
+            "XPDelta": 286,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 286
+                }
+            ],
+            "XPMultipliers": []
+        },
+        {
+            "ID": "a18c300b-a9fa-449d-8c28-e3e1aba1087c",
+            "MatchStart": "2023-02-13T06:21:21Z",
+            "StartProgress": {
+                "Level": 150,
+                "XP": 3478
+            },
+            "EndProgress": {
+                "Level": 150,
+                "XP": 3941
+            },
+            "XPDelta": 463,
+            "XPSources": [
+                {
+                    "ID": "time-played",
+                    "Amount": 413
+                },
+                {
+                    "ID": "match-win",
+                    "Amount": 50
+                }
+            ],
+            "XPMultipliers": []
+        }
+    ],
+    "LastTimeGrantedFirstWin": "2023-02-13T05:46:37.647412992Z",
+    "NextTimeFirstWinAvailable": "2023-02-14T03:46:37.647412992Z"
+}
