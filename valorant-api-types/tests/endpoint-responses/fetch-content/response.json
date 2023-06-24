@@ -1,0 +1,281 @@
+{
+    "DisabledIDs": [],
+    "Seasons": [
+        {
+            "ID": "0df5adb9-4dcb-6899-1306-3e9860661dd3",
+            "Name": "Closed Beta",
+            "Type": "episode",
+            "StartTime": "2020-04-07T05:15:00Z",
+            "EndTime": "2020-05-29T20:14:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "3f61c772-4560-cd3f-5d3f-a7ab5abda6b3",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2020-06-01T20:15:00Z",
+            "EndTime": "2020-08-04T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "0530b9c4-4980-f2ee-df5d-09864cd00542",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2020-08-04T13:15:00Z",
+            "EndTime": "2020-10-13T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "46ea6166-4573-1128-9cea-60a15640059b",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2020-10-13T13:15:00Z",
+            "EndTime": "2021-01-12T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "fcf2c8f4-4324-e50b-2e23-718e4a3ab046",
+            "Name": "EPISODE 1",
+            "Type": "episode",
+            "StartTime": "2020-06-01T20:15:00Z",
+            "EndTime": "2021-01-12T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "97b6e739-44cc-ffa7-49ad-398ba502ceb0",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2021-01-12T13:15:00Z",
+            "EndTime": "2021-03-02T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "ab57ef51-4e59-da91-cc8d-51a5a2b9b8ff",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2021-03-02T13:15:00Z",
+            "EndTime": "2021-04-27T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "52e9749a-429b-7060-99fe-4595426a0cf7",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2021-04-27T13:15:00Z",
+            "EndTime": "2021-06-22T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "71c81c67-4fae-ceb1-844c-aab2bb8710fa",
+            "Name": "EPISODE 2",
+            "Type": "episode",
+            "StartTime": "2021-01-12T13:15:00Z",
+            "EndTime": "2021-06-22T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "2a27e5d2-4d30-c9e2-b15a-93b8909a442c",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2021-06-22T13:15:00Z",
+            "EndTime": "2021-09-08T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "4cb622e1-4244-6da3-7276-8daaf1c01be2",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2021-09-08T13:15:00Z",
+            "EndTime": "2021-11-02T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "a16955a5-4ad0-f761-5e9e-389df1c892fb",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2021-11-02T13:15:00Z",
+            "EndTime": "2022-01-11T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "97b39124-46ce-8b55-8fd1-7cbf7ffe173f",
+            "Name": "EPISODE 3",
+            "Type": "episode",
+            "StartTime": "2021-06-22T13:15:00Z",
+            "EndTime": "2022-01-11T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "573f53ac-41a5-3a7d-d9ce-d6a6298e5704",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2022-01-11T13:15:00Z",
+            "EndTime": "2022-03-01T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "d929bc38-4ab6-7da4-94f0-ee84f8ac141e",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2022-03-01T13:15:00Z",
+            "EndTime": "2022-04-26T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "3e47230a-463c-a301-eb7d-67bb60357d4f",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2022-04-26T13:15:00Z",
+            "EndTime": "2022-06-21T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "808202d6-4f2b-a8ff-1feb-b3a0590ad79f",
+            "Name": "EPISODE 4",
+            "Type": "episode",
+            "StartTime": "2022-01-11T13:15:00Z",
+            "EndTime": "2022-06-21T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "67e373c7-48f7-b422-641b-079ace30b427",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2022-06-21T13:15:00Z",
+            "EndTime": "2022-08-23T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "7a85de9a-4032-61a9-61d8-f4aa2b4a84b6",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2022-08-23T13:15:00Z",
+            "EndTime": "2022-10-18T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "aca29595-40e4-01f5-3f35-b1b3d304c96e",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2022-10-18T13:15:00Z",
+            "EndTime": "2023-01-10T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "79f9d00f-433a-85d6-dfc3-60aef115e699",
+            "Name": "EPISODE 5",
+            "Type": "episode",
+            "StartTime": "2022-06-21T13:15:00Z",
+            "EndTime": "2023-01-10T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "9c91a445-4f78-1baa-a3ea-8f8aadf4914d",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2023-01-10T13:15:00Z",
+            "EndTime": "2023-03-07T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "34093c29-4306-43de-452f-3f944bde22be",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2023-03-07T13:15:00Z",
+            "EndTime": "2023-04-25T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "2de5423b-4aad-02ad-8d9b-c0a931958861",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2023-04-25T13:15:00Z",
+            "EndTime": "2023-06-27T13:15:00Z",
+            "IsActive": true
+        },
+        {
+            "ID": "3ec8084a-4e45-4d22-d801-f8a63e5a208b",
+            "Name": "EPISODE 6",
+            "Type": "episode",
+            "StartTime": "2023-01-10T13:15:00Z",
+            "EndTime": "2023-06-27T13:15:00Z",
+            "IsActive": true
+        },
+        {
+            "ID": "0981a882-4e7d-371a-70c4-c3b4f46c504a",
+            "Name": "ACT 1",
+            "Type": "act",
+            "StartTime": "2023-06-27T13:15:00Z",
+            "EndTime": "2023-08-29T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "03dfd004-45d4-ebfd-ab0a-948ce780dac4",
+            "Name": "ACT 2",
+            "Type": "act",
+            "StartTime": "2023-08-29T13:15:00Z",
+            "EndTime": "2023-10-31T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "4401f9fd-4170-2e4c-4bc3-f3b4d7d150d1",
+            "Name": "ACT 3",
+            "Type": "act",
+            "StartTime": "2023-10-31T13:15:00Z",
+            "EndTime": "2024-01-09T13:15:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "1a2fc1de-4f58-4a89-49d0-f28b720ff76f",
+            "Name": "EPISODE 7",
+            "Type": "episode",
+            "StartTime": "2023-06-27T13:15:00Z",
+            "EndTime": "2024-01-09T13:15:00Z",
+            "IsActive": false
+        }
+    ],
+    "Events": [
+        {
+            "ID": "96682481-4f7b-6322-18bb-f1a76f91a35f",
+            "Name": "Champions",
+            "StartTime": "2022-08-23T14:00:00Z",
+            "EndTime": "2022-09-21T21:00:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "024d36a7-46e3-8a29-30c6-09a7fb81bebe",
+            "Name": "Lunar Celebration Event Pass",
+            "StartTime": "2022-02-01T12:00:00Z",
+            "EndTime": "2022-02-16T22:00:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "700c7584-43b8-3e48-bde7-fa88f33da72f",
+            "Name": "2022 Recall Pass",
+            "StartTime": "2022-12-14T14:00:00Z",
+            "EndTime": "2023-01-05T00:00:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "7cfe1d41-463f-8ecd-1065-26bd66d8b138",
+            "Name": "Crossover",
+            "StartTime": "2022-06-22T14:00:00Z",
+            "EndTime": "2022-07-12T21:00:00Z",
+            "IsActive": false
+        },
+        {
+            "ID": "3bd00051-4518-411d-046d-a7a554850267",
+            "Name": "YR1 ANNIVERSARY PASS",
+            "StartTime": "2021-06-22T12:00:00Z",
+            "EndTime": "2021-07-07T07:59:59Z",
+            "IsActive": false
+        },
+        {
+            "ID": "cee09894-41d6-7000-848b-ea9de6c28f44",
+            "Name": "RiotX Arcane Pass",
+            "StartTime": "2021-11-05T21:00:00Z",
+            "EndTime": "2021-11-22T22:00:00Z",
+            "IsActive": false
+        }
+    ]
+}

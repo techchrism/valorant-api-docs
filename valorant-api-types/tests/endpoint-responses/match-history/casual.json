@@ -1,0 +1,133 @@
+{
+    "Subject": "88b780e6-48e2-4654-a57c-513e885bdb61",
+    "BeginIndex": 0,
+    "EndIndex": 25,
+    "Total": 34,
+    "History": [
+        {
+            "MatchID": "027f7a6b-7825-40e7-a9c6-0cdc5b96adf5",
+            "GameStartTime": 1687244622236,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "5efbb840-8fab-4899-83ee-d54fa1c32b4c",
+            "GameStartTime": 1687243597452,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "5b87677e-9c2a-46f1-b86e-1f567a01dd4f",
+            "GameStartTime": 1687242652010,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "3b00c811-22f1-412f-bdb4-5e0e806ea354",
+            "GameStartTime": 1687241853941,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "4d4a74a7-c893-497e-b71d-1f2dd7e3dec1",
+            "GameStartTime": 1687240978386,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "f60d2da9-5a29-43a5-b21d-6c7f0fcfa15c",
+            "GameStartTime": 1687240561612,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "ebfe0d36-d1e1-4e84-9c64-dab0ce6dc6ed",
+            "GameStartTime": 1687239919949,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "4b41515f-34ac-4ced-8c37-ee7188439e5e",
+            "GameStartTime": 1687239472928,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "b3f2b5b7-869d-49ce-920c-9641698d600b",
+            "GameStartTime": 1687238741153,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "e72eabfd-412d-4a45-a4a6-55149b94bd9c",
+            "GameStartTime": 1686043368405,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "f61bb447-b2c8-4f99-aae2-7bda56966bef",
+            "GameStartTime": 1683838571331,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "c9285cbe-49d7-4d61-89ea-6f78c80ed27f",
+            "GameStartTime": 1683838083432,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "a3ab2299-0008-4504-87ab-b3a4edb495f4",
+            "GameStartTime": 1683824553538,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "82cc8ffe-d2f4-4d9a-9ea3-ffcd5b5af9db",
+            "GameStartTime": 1683772809542,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "14eff782-d976-492b-996b-ccfc14a1ddf5",
+            "GameStartTime": 1683772073638,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "f42b358f-0310-4f22-9ebb-03fe4695b24c",
+            "GameStartTime": 1683771308937,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "0266aab6-97ef-4f89-8b1f-845855cf5de5",
+            "GameStartTime": 1683756813717,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "75f222b0-9e88-462a-aa64-a19ec27387e4",
+            "GameStartTime": 1683756226054,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "adcc5f44-4ba5-4dc3-87e1-6647c5c72e42",
+            "GameStartTime": 1683755719239,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "df8aaa71-8ce5-41ba-9ed2-1553118fda88",
+            "GameStartTime": 1683755277934,
+            "QueueID": "deathmatch"
+        },
+        {
+            "MatchID": "9849e248-bf40-40ce-8505-7c35d868b694",
+            "GameStartTime": 1683754517795,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "6c30bc85-340b-4b4d-a822-64060c2db5ed",
+            "GameStartTime": 1683450061342,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "2b342cde-fd26-4b21-b0ed-fd458ebab6ee",
+            "GameStartTime": 1683449265480,
+            "QueueID": "swiftplay"
+        },
+        {
+            "MatchID": "c9a6d52c-96fe-4bdd-92d3-dbe06ee97fb2",
+            "GameStartTime": 1683448675763,
+            "QueueID": "ggteam"
+        },
+        {
+            "MatchID": "3743022a-568e-4d85-9f1e-0293bc4daa49",
+            "GameStartTime": 1683447708711,
+            "QueueID": "swiftplay"
+        }
+    ]
+}
