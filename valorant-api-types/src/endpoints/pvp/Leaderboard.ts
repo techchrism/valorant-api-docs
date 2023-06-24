@@ -44,7 +44,6 @@ export const leaderboardEndpoint = {
             immortalStartingPage: z.number(),
             immortalStartingIndex: z.number(),
             topTierRRThreshold: z.number(),
-            topTierStartingPage: z.number(),
             tierDetails: z.record(z.object({
                 rankedRatingThreshold: z.number(),
                 startingPage: z.number(),

@@ -1,0 +1,165 @@
+{
+    "Deployment": "na-glz-na-1",
+    "QueueID": "competitive",
+    "SeasonID": "b3df5980-2781-47d0-afc7-25fddfdd0b58",
+    "Players": [
+        {
+            "PlayerCardID": "db189915-0804-4ae4-a61a-0976c884ce50",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "ea27bf66-483a-4f2a-89fe-545d95903559",
+            "gameName": "Player01",
+            "tagLine": "0001",
+            "leaderboardRank": 1,
+            "rankedRating": 1143,
+            "numberOfWins": 139,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "03413fc5-3c3c-4751-8b30-4c31f4bbb1ae",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "230bce5c-67ba-4a97-b73c-ab31ac980005",
+            "gameName": "Player02",
+            "tagLine": "0002",
+            "leaderboardRank": 2,
+            "rankedRating": 1110,
+            "numberOfWins": 132,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "011f01b6-7128-47f1-9d8c-7cec1befc680",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "7bae877d-09b2-46e6-9661-7301aba648dd",
+            "gameName": "Player03",
+            "tagLine": "0003",
+            "leaderboardRank": 3,
+            "rankedRating": 1073,
+            "numberOfWins": 115,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "8ceab388-54d9-4be1-83f0-456df725e0a6",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "47795201-1b24-43c4-be27-eb3c7f28f2fa",
+            "gameName": "Player04",
+            "tagLine": "0004",
+            "leaderboardRank": 4,
+            "rankedRating": 1041,
+            "numberOfWins": 90,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "15cd399d-6f08-455a-b412-a72833668446",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "80da22bf-4aae-4ca7-89f1-8153da00659c",
+            "gameName": "Player05",
+            "tagLine": "0005",
+            "leaderboardRank": 5,
+            "rankedRating": 1029,
+            "numberOfWins": 121,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "5c2049e6-0ecb-4218-af40-f63d96aea56b",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "9c95d255-e941-47cd-a083-f889251087f1",
+            "gameName": "Player06",
+            "tagLine": "0006",
+            "leaderboardRank": 6,
+            "rankedRating": 1022,
+            "numberOfWins": 118,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "15d096cb-b1f4-4bb4-a6b3-716d3d361ab9",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "da76afcc-3efd-4465-8912-286f3068ae53",
+            "gameName": "Player07",
+            "tagLine": "0007",
+            "leaderboardRank": 7,
+            "rankedRating": 1021,
+            "numberOfWins": 178,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "b3354581-c96d-4780-9337-ed6f74127ece",
+            "TitleID": "0602fe98-6b73-4a23-bb5c-0b99cbcaae3c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "becf5125-616f-4c95-863b-84b9514f399a",
+            "gameName": "Player08",
+            "tagLine": "0008",
+            "leaderboardRank": 8,
+            "rankedRating": 1016,
+            "numberOfWins": 116,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "c43bba96-8d55-4fcc-b81f-c9f25da67a3a",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "fd002cde-511c-4be8-97e8-8ff9a1b91fde",
+            "gameName": "Player09",
+            "tagLine": "0009",
+            "leaderboardRank": 9,
+            "rankedRating": 996,
+            "numberOfWins": 113,
+            "competitiveTier": 27
+        },
+        {
+            "PlayerCardID": "b73c15e5-1428-4936-b5fa-dada4952e444",
+            "TitleID": "bb326701-dd96-485f-8059-ea4c8d3ecc6c",
+            "IsBanned": false,
+            "IsAnonymized": false,
+            "puuid": "80df11d8-dfa0-4221-9a19-82a0e4cbb564",
+            "gameName": "Player10",
+            "tagLine": "0010",
+            "leaderboardRank": 10,
+            "rankedRating": 987,
+            "numberOfWins": 103,
+            "competitiveTier": 27
+        }
+    ],
+    "totalPlayers": 16002,
+    "immortalStartingPage": 51,
+    "immortalStartingIndex": 501,
+    "topTierRRThreshold": 450,
+    "tierDetails": {
+        "24": {
+            "rankedRatingThreshold": 0,
+            "startingPage": 795,
+            "startingIndex": 7949
+        },
+        "25": {
+            "rankedRatingThreshold": 90,
+            "startingPage": 410,
+            "startingIndex": 4096
+        },
+        "26": {
+            "rankedRatingThreshold": 200,
+            "startingPage": 51,
+            "startingIndex": 501
+        },
+        "27": {
+            "rankedRatingThreshold": 450,
+            "startingPage": 1,
+            "startingIndex": 1
+        }
+    },
+    "startIndex": 0,
+    "query": ""
+}
