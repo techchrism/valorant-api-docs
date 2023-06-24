@@ -1,0 +1,213 @@
+{
+    "Subject": "49e4dd9b-f2b5-4155-96a6-9ae7af3dd95d",
+    "Version": 524,
+    "Guns": [
+        {
+            "ID": "78661430-51c5-4160-a1b6-3da7965f3ace",
+            "SkinID": "19af9724-ad73-4d6b-b103-c150ce5f03da",
+            "SkinLevelID": "399601a1-5b42-4860-b4b8-a83a5873fd8c",
+            "ChromaID": "f831fb66-b68e-4dab-acd1-d48a29bf00f4",
+            "CharmInstanceID": "7751be61-cba1-4848-be3a-c96dd7bb2c49",
+            "CharmID": "4be1c724-678b-4628-b9cd-079d58171b12",
+            "CharmLevelID": "45d57e67-ca75-4feb-a926-3511107b47fa",
+            "Attachments": []
+        },
+        {
+            "ID": "0e5a11be-48ef-4c08-8ce6-d90c77d2e7a2",
+            "SkinID": "dade2b9b-84ad-4d69-9a8d-102527006c71",
+            "SkinLevelID": "d7b9c4c3-67c1-4ca3-a264-afb3afcd9b9b",
+            "ChromaID": "1bc4bd57-fb45-4912-9c44-0ce509d3df7d",
+            "CharmInstanceID": "c41696da-1204-4c72-9a0c-351326d54994",
+            "CharmID": "3eee3ad6-9ce3-4c35-a60d-ab0c5c935c79",
+            "CharmLevelID": "e849df2b-bea7-470e-9b4d-237f5447056c",
+            "Attachments": []
+        },
+        {
+            "ID": "edebd7af-e9ae-462c-8c0d-1bf33e88dc9a",
+            "SkinID": "5ce37b4f-7fba-4042-8d67-a7f3e6d99442",
+            "SkinLevelID": "79eb65aa-5dc5-423d-9f40-32cb1e43d9bf",
+            "ChromaID": "427086b7-a98c-4006-a2d1-bc08e67e2fa0",
+            "CharmInstanceID": "fe811058-a764-4797-97a8-5693d9a797ad",
+            "CharmID": "4fd860a2-4f25-4e02-9f9a-5e2bebeb2019",
+            "CharmLevelID": "da7f29e5-60e5-4b12-a9bb-1f22652f1f64",
+            "Attachments": []
+        },
+        {
+            "ID": "0eacf269-4e17-4781-b4ec-8deda6382cca",
+            "SkinID": "74ddfd8a-1d01-4635-8c8c-6c8164861428",
+            "SkinLevelID": "d522a212-94c0-4ff8-a28b-f9bf13a6f147",
+            "ChromaID": "d4cf2563-f6c9-4727-9621-b1dde2db449e",
+            "CharmInstanceID": "3186c933-1f40-4e4a-b99c-c2e566171433",
+            "CharmID": "b8e8c8c8-fc6a-4412-bfaf-70336c04a652",
+            "CharmLevelID": "c91c342d-c341-4954-98fd-e81611eaa142",
+            "Attachments": []
+        },
+        {
+            "ID": "fd154767-51c9-4a9d-bdc1-b471e32c2ce3",
+            "SkinID": "c51356df-bb4a-49cb-a676-c2e27ff29c48",
+            "SkinLevelID": "b37bf1e1-6651-4157-a928-43c608a51093",
+            "ChromaID": "38081e41-efa9-404c-a8f3-81513b457059",
+            "CharmInstanceID": "b92b6be2-9c5d-4064-91b3-5a251bb9dabe",
+            "CharmID": "a8cafda5-29a4-4a09-8a91-c1faddd963c2",
+            "CharmLevelID": "f6c30f7b-22b2-4cee-829e-f3ac4e59bbf0",
+            "Attachments": []
+        },
+        {
+            "ID": "4774303e-3eb7-4025-a6a3-79ad868e33c3",
+            "SkinID": "6249cfbb-ab9f-496a-be75-dbf579314310",
+            "SkinLevelID": "4442b0d0-ca4c-48f1-8a58-9cb24436a80a",
+            "ChromaID": "d7861df3-d216-4b2a-8439-85d6e58f3516",
+            "CharmInstanceID": "571e2059-f937-4109-8dfd-0432d0819cc5",
+            "CharmID": "fc42cfe1-782c-42d6-b59d-b382d1720d51",
+            "CharmLevelID": "758bebb9-412d-4f6f-a233-c464758c2992",
+            "Attachments": []
+        },
+        {
+            "ID": "a60da96e-f91d-40de-8eb4-f36d19906e57",
+            "SkinID": "04d35d8f-108d-44d7-9024-07c1a7075c1d",
+            "SkinLevelID": "38db6ed8-9e70-4684-917c-37f78b727ed2",
+            "ChromaID": "c0d4eb29-bab4-4e32-b8f1-025a680bc44f",
+            "CharmInstanceID": "bd699dab-a081-449d-aa3a-0860e573bd67",
+            "CharmID": "f4aeeb8c-b802-49fd-867b-c5127e50204a",
+            "CharmLevelID": "aa35f3f3-810a-4d2b-a792-fb6d147356fc",
+            "Attachments": []
+        },
+        {
+            "ID": "c46b2bf2-add6-4c65-9303-4339e71fe37f",
+            "SkinID": "e651ff7a-4ac5-48f0-aa12-9a806d542fdd",
+            "SkinLevelID": "c49e2d55-9fbb-4625-9fb2-a1dc53bc3a24",
+            "ChromaID": "dd098853-1d94-4111-a6d7-6b34673ec70d",
+            "CharmInstanceID": "bd569b67-ce97-4704-ae37-fbd9900ef274",
+            "CharmID": "c533e356-0a53-4a19-95b9-cb603a0acae3",
+            "CharmLevelID": "32faf1cd-3c55-4e95-97ab-31831559e152",
+            "Attachments": []
+        },
+        {
+            "ID": "82600724-5ae1-48ea-bab0-5ef266b5cc7d",
+            "SkinID": "24a33b50-7fc7-4f91-b48d-64de83509fd6",
+            "SkinLevelID": "c2d8fd21-82b1-44a1-a039-27b5897b00df",
+            "ChromaID": "8d020e7f-8c52-4881-80ca-c7f2686a1452",
+            "CharmInstanceID": "2a87dcee-da4f-41a3-a139-78341948d3b5",
+            "CharmID": "636d1ecf-f44f-4ab3-a50d-a0d895b38697",
+            "CharmLevelID": "7cc6bee6-b4df-41e8-a86f-b75454158f52",
+            "Attachments": []
+        },
+        {
+            "ID": "94b94e0a-7c2d-42d9-9f9d-a096ead21b62",
+            "SkinID": "2b221f5c-8d41-4b2e-85c1-47c25eeff0a4",
+            "SkinLevelID": "f07e49dc-4d31-41b9-bfee-1d9534d158d4",
+            "ChromaID": "d001d10d-04ba-4d77-89b1-f0c1604c9273",
+            "CharmInstanceID": "89f83a17-2d75-4c5e-b6bf-c3cf13addbc7",
+            "CharmID": "6bccc2c1-2581-4d6e-8f37-640929962000",
+            "CharmLevelID": "8ec95c2b-f8ea-458d-bd79-c392342d41bd",
+            "Attachments": []
+        },
+        {
+            "ID": "b5833a74-b426-42e9-8d90-b11738e0f2df",
+            "SkinID": "b8337939-bb1f-4378-ab83-0411d3f6b22e",
+            "SkinLevelID": "1c56d1ef-4ed6-4e1e-a680-f40f90dd355f",
+            "ChromaID": "afb28822-f223-491b-806f-b60bd2fe2a5c",
+            "CharmInstanceID": "255f4cc3-0e4e-404f-a762-6d7c2d41c41b",
+            "CharmID": "9f52df5a-fa6c-4cfc-81c3-8b5479e77fcc",
+            "CharmLevelID": "04d168c6-aa3e-4b4a-ad2d-e8e309f6a722",
+            "Attachments": []
+        },
+        {
+            "ID": "3334f71c-2a52-4b21-9bd1-07bd679d900b",
+            "SkinID": "345d389b-732a-43c8-8d65-a9c847ae7d33",
+            "SkinLevelID": "772ce762-d8fb-4316-a78c-25903f92a766",
+            "ChromaID": "74ef66a1-2cf1-45fe-8b22-43ff485a5399",
+            "CharmInstanceID": "2fec02a6-000c-4079-a09b-55f7f748cec4",
+            "CharmID": "da9c27c1-60a6-43c6-81a9-75a5196955ad",
+            "CharmLevelID": "d6e82490-e09a-483e-bcce-1147f98fed18",
+            "Attachments": []
+        },
+        {
+            "ID": "c1ed6da5-bf3d-4f9b-a6e5-bf7dd65e5083",
+            "SkinID": "e20d003f-76a8-4915-a490-39b78cfe1278",
+            "SkinLevelID": "1b10b68f-56ae-488c-be08-15ac667895b2",
+            "ChromaID": "d9f5cb81-82a4-47d5-aa1b-75b5a0dd0e2b",
+            "CharmInstanceID": "db9b63ad-9f62-45b7-af35-af1162869778",
+            "CharmID": "2c4f1d72-dfe3-4e34-9d42-6dc599a24709",
+            "CharmLevelID": "437b6021-43e7-4809-9f84-e6cf6fdbaad8",
+            "Attachments": []
+        },
+        {
+            "ID": "6249aa29-9878-4a9a-bf37-d1870bc336d1",
+            "SkinID": "edc6b952-04bd-4f1c-a740-65de117dadad",
+            "SkinLevelID": "4b368328-c912-4bba-bc1c-6db387deb784",
+            "ChromaID": "ab241eb2-037f-4e68-af01-0f7ada9dec6d",
+            "CharmInstanceID": "b21c5dd4-9c8b-4d6d-b6eb-79a8653efee7",
+            "CharmID": "dd9eb8e8-a2c7-40b3-bb5a-3d7c9346e791",
+            "CharmLevelID": "743f0477-a0ec-41e5-8c0a-a608c670de7a",
+            "Attachments": []
+        },
+        {
+            "ID": "5968acd3-6669-425e-8817-c0bcab4ef11f",
+            "SkinID": "ad8d88d2-f3d1-4115-a556-4960c65167c6",
+            "SkinLevelID": "b1e83652-e289-4abe-a048-f3f7c726326d",
+            "ChromaID": "2630c490-4e46-4ff3-9077-1858d45a4804",
+            "CharmInstanceID": "fdbd8aec-83e7-48f8-9d1c-f685a2172d9b",
+            "CharmID": "4d5c5cae-5387-42c4-b1bb-d0f672eec38c",
+            "CharmLevelID": "59561dc1-b0ba-4b03-8f5c-32668c47561b",
+            "Attachments": []
+        },
+        {
+            "ID": "a16ad016-c6bd-4a42-810a-52b7db9fbe92",
+            "SkinID": "48e4be1b-d2bd-4b72-8f59-1b272c7d3ef2",
+            "SkinLevelID": "e71d422e-39f7-4d62-908d-8477e7f9f0ea",
+            "ChromaID": "90911fc8-e324-40a3-9a35-193654021209",
+            "CharmInstanceID": "c957f8aa-7f5f-4873-9058-cd7be1a76f49",
+            "CharmID": "b24025cf-573d-4adf-bada-3fe54c1178cc",
+            "CharmLevelID": "a2f4b7e4-e4fd-42c9-8d3c-1f595b9043ac",
+            "Attachments": []
+        },
+        {
+            "ID": "e4a49f7e-43e4-48c7-8589-52dcbafdeaf2",
+            "SkinID": "6fed051b-0cfe-4ac9-bf06-d2889fca417a",
+            "SkinLevelID": "a5cea95b-00b6-45e5-8b9a-3ce6fed615a2",
+            "ChromaID": "adbbb60f-4958-4ec2-bb73-85f590f6f8a6",
+            "CharmInstanceID": "7da3041a-d0b6-485a-9a96-03dd8908d177",
+            "CharmID": "4d5c5cae-5387-42c4-b1bb-d0f672eec38c",
+            "CharmLevelID": "59561dc1-b0ba-4b03-8f5c-32668c47561b",
+            "Attachments": []
+        },
+        {
+            "ID": "2877c730-7f7c-462f-a883-ba3646652965",
+            "SkinID": "ffa9ccb2-c5e8-4fe9-bc2a-b423ef94612d",
+            "SkinLevelID": "ad331710-5c82-451a-84e3-5ae91d9b571d",
+            "ChromaID": "563f75b7-a7fa-40f3-98e4-cc61e9a22808",
+            "Attachments": []
+        }
+    ],
+    "Sprays": [
+        {
+            "EquipSlotID": "dd09e235-a58d-47a0-aa9d-88991a81c106",
+            "SprayID": "ad0c6d10-186d-41fe-bae2-ae415491fbb0",
+            "SprayLevelID": null
+        },
+        {
+            "EquipSlotID": "bec9e913-785b-4c7c-9d5b-f5291200c160",
+            "SprayID": "9d49973b-bb80-44f8-be63-c74420a7f4e8",
+            "SprayLevelID": null
+        },
+        {
+            "EquipSlotID": "2d8a8f7a-4e01-4fe9-ba86-5263ddac6013",
+            "SprayID": "99cdf580-0c53-4e6b-8d90-9706c6aba1cd",
+            "SprayLevelID": null
+        },
+        {
+            "EquipSlotID": "dbe519d1-df3e-401f-91df-50c8f714dcf9",
+            "SprayID": "fb569c5f-b935-4f11-8b64-8b484bf680ad",
+            "SprayLevelID": null
+        }
+    ],
+    "Identity": {
+        "PlayerCardID": "5221fe3f-7422-4063-b42b-2ae81b96bd69",
+        "PlayerTitleID": "cb983ddd-b7f1-4b8a-90df-4af5a6717ec5",
+        "AccountLevel": 0,
+        "PreferredLevelBorderID": "a1099d12-2cb1-4ecc-b87b-25051ea84260",
+        "HideAccountLevel": true
+    },
+    "Incognito": false
+}

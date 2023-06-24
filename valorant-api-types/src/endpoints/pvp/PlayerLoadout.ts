@@ -11,12 +11,11 @@ const gunCommonSchema = z.object({
 
 export const playerLoadoutSchema = z.object({
     Guns: z.array(z.object({
-            ID: weakUUIDSchema,
-            CharmInstanceID: weakUUIDSchema,
-            CharmID: weakUUIDSchema,
-            CharmLevelID: weakUUIDSchema
-        }).merge(gunCommonSchema).describe("Guns and knife. Note that the knife (ID: 2f59173c-4bed-b6c3-2191-dea9b58be9c7) does not have charm data (buddies)."),
-    ),
+        ID: weakUUIDSchema,
+        CharmInstanceID: weakUUIDSchema.optional(),
+        CharmID: weakUUIDSchema.optional(),
+        CharmLevelID: weakUUIDSchema.optional()
+    }).merge(gunCommonSchema).describe("Guns and knife. Note that the knife (ID: 2f59173c-4bed-b6c3-2191-dea9b58be9c7) does not have charm data (buddies).")),
     Sprays: z.array(z.object({
         EquipSlotID: weakUUIDSchema,
         SprayID: weakUUIDSchema,
