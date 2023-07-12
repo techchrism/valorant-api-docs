@@ -117,7 +117,7 @@ export const presenceEndpoint = {
                 puuid: playerUUIDSchema,
                 region: z.string(),
                 resource: z.string(),
-                state: z.enum(['mobile', 'dnd', 'away']),
+                state: z.enum(['mobile', 'dnd', 'away', 'chat']),
                 summary: z.string(),
                 time: millisSchema
             }))
