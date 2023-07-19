@@ -58,6 +58,26 @@ export const storefrontEndpoint = {
                     Offer: offerSchema
                 }))
             }),
+            AccessoryStore: z.object({
+                AccessoryStoreOffers: z.array(z.object({
+                    Offer: z.object({
+                        OfferID: weakUUIDSchema,
+                        IsDirectPurchase: z.boolean(),
+                        StartDate: ,
+                        Cost: z.object({
+                            weakUUIDSchema: z.number()
+                        }),
+                        Rewards: z.array(z.object({
+                            ItemTypeID: itemTypeIDSchema,
+                            ItemID: itemIDSchema,
+                            Quantity: z.number()
+                        }))
+                    }),
+                    ContractID: weakUUIDSchema
+                })),
+                AccessoryStoreRemainingDurationInSeconds: z.number(),
+                StorefrontID: 
+            }),
             BonusStore: z.object({
                 BonusStoreOffers: z.array(bonusOfferSchema),
                 BonusStoreRemainingDurationInSeconds: z.number()
