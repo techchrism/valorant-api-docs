@@ -63,7 +63,7 @@ export const storefrontEndpoint = {
                     Offer: z.object({
                         OfferID: weakUUIDSchema,
                         IsDirectPurchase: z.boolean(),
-                        StartDate: ,
+                        StartDate: z.coerce.date(),
                         Cost: z.object({
                             weakUUIDSchema: z.number()
                         }),
@@ -76,7 +76,7 @@ export const storefrontEndpoint = {
                     ContractID: weakUUIDSchema
                 })),
                 AccessoryStoreRemainingDurationInSeconds: z.number(),
-                StorefrontID: 
+                StorefrontID: weakUUIDSchema
             }),
             BonusStore: z.object({
                 BonusStoreOffers: z.array(bonusOfferSchema),
