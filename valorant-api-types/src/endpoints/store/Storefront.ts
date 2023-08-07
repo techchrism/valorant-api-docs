@@ -10,14 +10,25 @@ const bundleSchema = z.object({
         Item: z.object({
             ItemTypeID: itemTypeIDSchema,
             ItemID: itemIDSchema,
-            Quantity: z.number()
+            Amount: z.number()
         }),
         BasePrice: z.number(),
         CurrencyID: currencyIDSchema,
         DiscountPercent: z.number(),
         DiscountedPrice: z.number(),
         IsPromoItem: z.boolean()
-    }))
+    })),
+    ItemOffers: z.array(z.object({
+        BundleItemOfferID: weakUUIDSchema,
+        Offer: offerSchema,
+        DiscountPercent: z.number(),
+        DiscountedCost: z.record(weakUUIDSchema, z.number())
+    })).nullable(),
+    TotalBaseCost: z.record(weakUUIDSchema, z.number()).nullable(),
+    TotalDiscountedCost: z.record(weakUUIDSchema, z.number()).nullable(),
+    TotalDiscountPercent: z.number(),
+    DurationRemainingInSeconds: z.number(),
+    WholesaleOnly: z.boolean()
 })
 
 const bonusOfferSchema = z.object({
@@ -55,24 +66,13 @@ export const storefrontEndpoint = {
                 UpgradeCurrencyOffers: z.array(z.object({
                     OfferID: weakUUIDSchema,
                     StorefrontItemID: itemIDSchema,
-                    Offer: offerSchema
+                    Offer: offerSchema,
+                    DiscountedPercent: z.number()
                 }))
             }),
             AccessoryStore: z.object({
                 AccessoryStoreOffers: z.array(z.object({
-                    Offer: z.object({
-                        OfferID: weakUUIDSchema,
-                        IsDirectPurchase: z.boolean(),
-                        StartDate: z.coerce.date(),
-                        Cost: z.object({
-                            weakUUIDSchema: z.number()
-                        }),
-                        Rewards: z.array(z.object({
-                            ItemTypeID: itemTypeIDSchema,
-                            ItemID: itemIDSchema,
-                            Quantity: z.number()
-                        }))
-                    }),
+                    Offer: offerSchema,
                     ContractID: weakUUIDSchema
                 })),
                 AccessoryStoreRemainingDurationInSeconds: z.number(),
