@@ -10,7 +10,7 @@ import {
 } from '../../commonTypes'
 import {atob} from 'iso-base64'
 
-const leagueOfLegendsPresenceSchema = z.object({
+export const leagueOfLegendsPresenceSchema = z.object({
     bannerIdSelected: z.string(),
     challengeCrystalSelected: z.string(),
     challengeTitleSelected: weakUUIDSchema,
@@ -46,7 +46,7 @@ const leagueOfLegendsPresenceSchema = z.object({
     timeStamp: z.string()
 })
 
-const valorantPresenceSchema = z.object({
+export const valorantPresenceSchema = z.object({
     isValid: z.boolean(),
     sessionLoopState: z.string(),
     partyOwnerSessionLoopState: z.string(),
