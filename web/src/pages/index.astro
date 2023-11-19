@@ -20,7 +20,15 @@ import Layout from '../layouts/Layout.astro';
 		<p>
 			One of the easiest ways to get started and get a feel for what kinds of data you can get from the apis is to play around with the requests yourself in a REST client like Insomnia.
 			<ul class="list-disc ml-6">
-				<li>Download and install Insomnia here: <a class="link" href="https://insomnia.rest/download">https://insomnia.rest/download</a></li>
+				<li>
+					Download and install Insomnia here: <a class="link" href="https://insomnia.rest/download">https://insomnia.rest/download</a>
+					<ul class="list-disc ml-6">
+						<li>
+							Recent updates to Insomnia require a Kong account. For a fork of Insomnia that requires no account, see
+							<a class="link" href="https://github.com/ArchGPT/insomnium">https://github.com/ArchGPT/insomnium</a>
+						</li>
+					</ul>
+				</li>
 				<li>Go to Application -&gt; Preferences -&gt; Plugins and add the plugin <SimpleCode>insomnia-plugin-valorant</SimpleCode></li>
 				<li>From the dashboard, click "Create", then import from url and enter <SimpleCode>https://raw.githubusercontent.com/techchrism/valorant-api-docs/trunk/docs/valorant-workspace-insomnia.json</SimpleCode></li>
 			</ul>
