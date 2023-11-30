@@ -11,7 +11,9 @@ export const fetchContentEndpoint = {
     suffix: 'content-service/v3/content',
     riotRequirements: {
         clientVersion: true,
-        clientPlatform: true
+        clientPlatform: true,
+        token: true,
+        entitlement: true
     },
     responses: {
         '200': z.object({
