@@ -10,15 +10,15 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/tailwind": "^3.1.0",
-		"astro": "^2.1.2",
-		"tailwindcss": "^3.2.7",
+		"@astrojs/tailwind": "^5.0.2",
+		"astro": "^3.6.4",
+		"tailwindcss": "^3.3.5",
 		"valorant-api-types": "~0.7.0"
 	},
 	"devDependencies": {
-		"@types/marked": "^4.0.8",
-		"marked": "^4.2.12",
+		"@types/marked": "^5.0.2",
+		"marked": "^11.0.0",
 		"marked-plaintext": "^0.0.2",
-		"zod-to-ts": "^1.1.2"
+		"zod-to-ts": "^1.2.0"
 	}
 }
