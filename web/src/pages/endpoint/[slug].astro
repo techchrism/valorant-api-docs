@@ -14,6 +14,8 @@ import ClientVersion from '../../components/doc-fragments/ClientVersion.astro'
 import LockfilePassword from '../../components/doc-fragments/LockfilePassword.astro'
 import ClientPlatform from '../../components/doc-fragments/ClientPlatform.astro'
 
+import githubDark from '../../themes/github-dark.json'
+
 interface VariableMeta {
     name: string
     slug: string
@@ -306,14 +308,14 @@ if(endpoint.riotRequirements !== undefined) {
 
         {endpoint.body !== undefined && <>
             <h3 class="text-lg font-semibold my-2">Body:</h3>
-            <Code code={printNode(createTypeAlias(zodToTs(endpoint.body, 'Body').node, endpoint.name.replaceAll(' ', '') + 'Body'))} lang="ts" wrap />
+            <Code code={printNode(createTypeAlias(zodToTs(endpoint.body, 'Body').node, endpoint.name.replaceAll(' ', '') + 'Body'))} lang="ts" wrap theme={githubDark} />
         </>}
 
         {endpoint.responses?.['200'] && <>
             <h3 class="text-lg font-semibold my-2">Response:</h3>
             <Code code={
                 printNode(createTypeAlias(zodToTs(endpoint.responses['200'], 'Response').node, endpoint.name.replaceAll(' ', '') + 'Response'))
-            } lang="ts" wrap />
+            } lang="ts" wrap theme={githubDark} />
         </>}
     </main>
 </Layout>
