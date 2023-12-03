@@ -224,7 +224,7 @@ if(endpoint.riotRequirements !== undefined) {
 
         <code id="endpoint-url" class="block max-w-fit m-auto break-all bg-gray-100 dark:bg-black p-2 rounded-xl my-5" set:html={urlHtml}/>
 
-        <div class="text-xl my-5" id="description">
+        <div class="text-xl my-5 break-words" id="description">
             <Fragment set:html={content}/>
         </div>
 
@@ -347,6 +347,16 @@ if(endpoint.riotRequirements !== undefined) {
     text-align: center;
     border-spacing: 2rem 0.2rem;
     border-collapse: separate;
+}
+
+#description :global(code) {
+    background-color: rgb(243, 244, 246);
+}
+
+@media (prefers-color-scheme: dark) {
+    #description :global(code) {
+        background-color: black;
+    }
 }
 
 :global(.astro-code) {
