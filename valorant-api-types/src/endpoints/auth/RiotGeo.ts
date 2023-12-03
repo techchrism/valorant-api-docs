@@ -22,8 +22,7 @@ export const riotGeoEndpoint = {
                 live: z.string()
             }).describe('The region IDs for PBE and live servers')
         })
-
     }
 } as const satisfies ValorantEndpoint
 
-export type RiotGeoResponse = z.infer<typeof riotGeoEndpoint.body>
+export type RiotGeoResponse = z.infer<typeof riotGeoEndpoint.responses['200']>
