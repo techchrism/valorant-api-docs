@@ -5,8 +5,13 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
-  build: {
-    format: 'file'
-  }
+    integrations: [tailwind()],
+    build: {
+        format: 'file'
+    },
+    vite: {
+        resolve: {
+            preserveSymlinks: true
+        }
+    }
 });
