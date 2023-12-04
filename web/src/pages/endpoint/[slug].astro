@@ -1,5 +1,5 @@
 ---
-import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+import {endpoints, type AugmentedValorantEndpoint} from '../../types/AugmentedValorantEndpoint'
 import Layout from '../../layouts/Layout.astro'
 import {marked} from 'marked'
 import EndpointMethod from '../../components/EndpointMethod.astro'
@@ -27,7 +27,7 @@ function getSlug(str: string) {
     return str.toLowerCase().replace(/ /g, '-')
 }
 
-const endpointsBySlug = new Map<string, ValorantEndpoint>()
+const endpointsBySlug = new Map<string, AugmentedValorantEndpoint>()
 for(const endpoint of Object.values(endpoints)) {
     endpointsBySlug.set(getSlug(endpoint.name), endpoint)
 }
@@ -42,7 +42,7 @@ export function getStaticPaths() {
     return staticPaths
 }
 
-function endpointToURL(endpoint: ValorantEndpoint): string {
+function endpointToURL(endpoint: AugmentedValorantEndpoint): string {
     switch(endpoint.type) {
         case 'pd': return `https://pd.{shard}.a.pvp.net/${endpoint.suffix}`
         case 'glz': return `https://glz-{region}-1.{shard}.a.pvp.net/${endpoint.suffix}`
@@ -57,7 +57,7 @@ function variableHtmlTemplate(variable: string, slug: string) {
 }
 
 function replaceEndpointLinks(str: string, type: 'markdown' | 'html') {
-    const endpointLinks = str.matchAll(/\[(GET|POST|PUT|PATCH|DELETE) (.+?)\]/g)
+    const endpointLinks = str.matchAll(/\[(GET|POST|PUT|PATCH|DELETE|WSS|TCP) (.+?)\]/g)
     for(const endpointLinkMatch of endpointLinks) {
         const [linkStr, method, endpointName] = endpointLinkMatch
         const endpoint = endpointsBySlug.get(getSlug(endpointName))
@@ -144,7 +144,7 @@ if(endpoint.variables !== undefined) {
     for(const [name, varType] of endpoint.variables.entries()) {
         let descriptionHtml = undefined
         if(varType.description !== undefined) {
-            descriptionHtml = marked.parse(varType.description)
+            descriptionHtml = replaceEndpointLinks(marked.parse(varType.description) as string, 'html')
         }
         variablesToReplace.set(`{${name}}`, {
             name,

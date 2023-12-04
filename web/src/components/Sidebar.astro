@@ -1,18 +1,20 @@
 ---
-import {endpoints, ValorantEndpoint} from 'valorant-api-types'
+import {endpoints} from '../types/AugmentedValorantEndpoint'
 import EndpointMethod from './EndpointMethod.astro'
 import RepoLink from './RepoLink.astro'
+import {type AugmentedValorantEndpoint} from '../types/AugmentedValorantEndpoint'
 
-const categories = new Map<string, ValorantEndpoint[]>()
+
+const categories = new Map<string, AugmentedValorantEndpoint[]>()
 for(const endpoint of Object.values(endpoints)) {
-    const categoryName = Array.isArray(endpoint.category) ? endpoint.category.join(' - ') : endpoint.category
+    const categoryName = Array.isArray(endpoint.category) ? endpoint.category.join(' - ') : endpoint.category ?? ''
     if(!categories.has(categoryName)) {
         categories.set(categoryName, [])
     }
-    categories.get(categoryName)!.push(endpoint)
+    categories.get(categoryName)!.push(endpoint as AugmentedValorantEndpoint)
 }
 
-function getEndpointSlug(endpoint: ValorantEndpoint) {
+function getEndpointSlug(endpoint: AugmentedValorantEndpoint) {
    return '/endpoint/' + endpoint.name.toLowerCase().replace(/ /g, '-')
 }
 

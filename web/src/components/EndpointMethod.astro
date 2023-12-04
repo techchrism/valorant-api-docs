@@ -1,23 +1,26 @@
 ---
-import { HydrationDirectiveProps } from 'astro/dist/runtime/server/hydration'
-import type {ValorantEndpoint} from 'valorant-api-types'
+import type { AugmentedValorantEndpoint } from '../types/AugmentedValorantEndpoint'
 
 export interface Props {
-    method: ValorantEndpoint['method']
+    method: AugmentedValorantEndpoint['method']
     class?: string
 }
 
-function getEndpointMethodColor(method: ValorantEndpoint['method']) {
+function getEndpointMethodColor(method: AugmentedValorantEndpoint['method']) {
    switch(method) {
       case undefined:
       case 'GET':
-         return 'text-purple-700 dark:text-purple-400'
+         return 'text-purple-600 dark:text-purple-400'
       case 'POST':
          return 'text-green-500'
       case 'PUT':
          return 'text-orange-500 dark:text-orange-400'
       case 'DELETE':
-         return 'text-red-600 dark:text-red-400'
+         return 'text-red-500 dark:text-red-400'
+      case 'WSS':
+         return 'text-sky-500 dark:text-sky-400'
+      case 'TCP':
+         return 'text-yellow-500 dark:text-yellow-300'
       default:
          return 'text-gray-800'
    }
