@@ -75,6 +75,7 @@ import {sendFriendRequestEndpoint} from './endpoints/local/SendFriendRequest'
 import {removeFriendRequestEndpoint} from './endpoints/local/RemoveFriendRequest'
 import {riotGeoEndpoint} from './endpoints/auth/RiotGeo'
 import {pasTokenEndpoint} from './endpoints/auth/PASToken'
+import {riotClientConfigEndpoint} from './endpoints/auth/RiotClientConfig'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -161,5 +162,6 @@ export const endpoints = {
     entitlementEndpoint,
     playerInfoEndpoint,
     riotGeoEndpoint,
-    pasTokenEndpoint
+    pasTokenEndpoint,
+    riotClientConfigEndpoint
 }
