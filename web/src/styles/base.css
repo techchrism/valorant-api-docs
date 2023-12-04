@@ -18,6 +18,8 @@
         @apply prose-code:before:content-none prose-code:after:content-none prose-code:bg-gray-100 prose-code:dark:bg-black prose-code:p-1 prose-code:rounded-xl prose-code:break-words prose-code:text-current prose-code:font-normal;
         @apply prose-a:font-normal prose-a:text-blue-600 hover:prose-a:text-blue-800 visited:prose-a:text-purple-600 prose-a:dark:text-blue-400 hover:prose-a:dark:text-blue-600 visited:prose-a:dark:text-purple-400;
         @apply prose-p:before:content-none prose-p:after:content-none;
+        @apply prose-ul:my-0;
+        @apply prose-li:my-1;
         @apply bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50;
     }
 }
