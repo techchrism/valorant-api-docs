@@ -1,6 +1,9 @@
 ---
+import InsomniaButton from '../components/InsomniaButton.astro';
 import SimpleCode from '../components/SimpleCode.astro';
 import Layout from '../layouts/Layout.astro';
+
+const insomniaImportURL = `insomnia://app/import?uri=${Astro.url.origin}/insomnia.json`
 ---
 
 <Layout title="Valorant API Docs">
@@ -19,20 +22,30 @@ import Layout from '../layouts/Layout.astro';
 		<h2 class="text-xl font-semibold mt-4 mb-2">Getting Started</h2>
 		<p>
 			One of the easiest ways to get started and get a feel for what kinds of data you can get from the apis is to play around with the requests yourself in a REST client like Insomnia.
-			<ul class="list-disc ml-6">
+			<ol class="list-decimal ml-6 space-y-2 my-2">
 				<li>
 					Download and install Insomnia here: <a class="link" href="https://insomnia.rest/download">https://insomnia.rest/download</a>
 					<ul class="list-disc ml-6">
 						<li>
-							Recent updates to Insomnia require a Kong account. For a fork of Insomnia that requires no account, see
+							Recent updates to Insomnia require a Kong account. For a fork of Insomnia that does not require an account, see
 							<a class="link" href="https://github.com/ArchGPT/insomnium">https://github.com/ArchGPT/insomnium</a>
 						</li>
 					</ul>
 				</li>
-				<li>Go to Application -&gt; Preferences -&gt; Plugins and add the plugin <SimpleCode>insomnia-plugin-valorant</SimpleCode></li>
-				<li>From the dashboard, click "Create", then import from url and enter <SimpleCode>https://raw.githubusercontent.com/techchrism/valorant-api-docs/trunk/docs/valorant-workspace-insomnia.json</SimpleCode></li>
-			</ul>
-			To learn about how to make the API request yourself, check the "Docs" tab on any request. You can right-click a request and click "Generate Code" to see how to make the request in the language and library of your choice.
+				<li>
+					<InsomniaButton href="insomnia://plugins/install?name=insomnia-plugin-valorant">Add insomnia-plugin-valorant</InsomniaButton>
+					<ul class="list-disc ml-6">
+						<li>
+							This plugin autocompletes useful API placeholders such as auth info, lockfile data, and player info.
+							For more info, see <a class="link" href="https://github.com/techchrism/insomnia-plugin-valorant">https://github.com/techchrism/insomnia-plugin-valorant</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<InsomniaButton href={insomniaImportURL}>Import Workspace</InsomniaButton>
+				</li>
+			</ol>
+			You can right-click a request in Insomnia and click "Generate Code" to see how to make the request in the language and library of your choice.
 		</p>
 
 		<h2 class="text-xl font-semibold mt-4 mb-2">Local Websocket</h2>

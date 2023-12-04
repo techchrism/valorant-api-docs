@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import insomniaIcon from '../images/insomnia.svg'
+
+export interface Props {
+	href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href} class="text-white bg-purple-800 inline-block rounded-md p-1">
+    <Image src={insomniaIcon} alt="" class="max-h-6 inline-block w-fit"/>
+    <slot />
+</a>
