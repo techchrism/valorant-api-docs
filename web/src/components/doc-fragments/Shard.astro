@@ -30,6 +30,14 @@ const shards = new Map<string, string[]>([
             ))}
         </tbody>
     </table>
-    The shard can be obtained from the local endpoint <a class="link" href="/endpoint/sessions">Sessions</a>, then getting the value of the <SimpleCode>-ares-deployment=</SimpleCode> argument.
-    Alternatively, the shard can be found in the ShooterGame log (<SimpleCode>%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log</SimpleCode>) when it's used in an endpoint url.
+    Obtaining locally:
+    <p class="ml-6">
+        The shard can be found in the ShooterGame log (<SimpleCode>%LocalAppData%\VALORANT\Saved\Logs\ShooterGame.log</SimpleCode>) when it's used in an endpoint url.<br/>
+        Example regex capturing region and shard: <SimpleCode>https://glz-(.+?)-1.(.+?).a.pvp.net</SimpleCode>
+    </p>
+    Obtaining remotely:
+    <p class="ml-6">
+        The shard can be found from using a lookup table with the region.
+        To find the region, use the <a class="link" href="/endpoint/riot-geo">Riot Geo</a> endpoint with the ID and auth tokens from <a class="link" href="/endpoint/cookie-reauth">Cookie Reauth</a>
+    </p>
 </p>
