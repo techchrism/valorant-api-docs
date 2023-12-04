@@ -3,7 +3,7 @@ import {z} from 'zod'
 
 export const riotClientConfigEndpoint = {
     name: 'Riot Client Config',
-    description: 'Get the PUUID and other info from a token',
+    description: 'Gets the config file used by the Riot Client. This includes a ton of info, most of it undocumented.',
     category: 'Authentication Endpoints',
     type: 'other',
     suffix: 'https://clientconfig.rpg.riotgames.com/api/v1/config/player?app=Riot%20Client',
