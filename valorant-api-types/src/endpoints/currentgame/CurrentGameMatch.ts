@@ -33,6 +33,7 @@ export const currentGameMatchEndpoint = {
             AllMUCName: z.string().describe('Chat room ID for "all" chat'),
             TeamMUCName: z.string().describe('Chat room ID for "team" chat'),
             TeamVoiceID: z.string(),
+            TeamMatchToken: z.string().describe('JWT containing match ID, participant IDs, and match region'),
             IsReconnectable: z.boolean(),
             ConnectionDetails: z.object({
                 GameServerHosts: z.array(z.string()),
