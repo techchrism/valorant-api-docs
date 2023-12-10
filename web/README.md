@@ -14,5 +14,3 @@ Because of Vite's module optimizations, you'll need to kill and restart the deve
 ## To do
  - Use Astro v3's preload feature to preload links on hover
  - Add a search bar
- - Add doc pages for local websocket and xmpp
- - Use Insomnia url scheme for the plugin and workspace links
