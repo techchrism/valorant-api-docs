@@ -295,3 +295,32 @@ export const chatMessagesSchema = z.object({
         type: z.enum(['chat', 'groupchat'])
     }))
 })
+
+export const loadoutsSchema = z.object({
+    Subject: playerUUIDSchema,
+    Sprays: z.object({
+        SpraySelections: z.array(z.object({
+            SocketID: weakUUIDSchema,
+            SprayID: weakUUIDSchema,
+            LevelID: weakUUIDSchema
+        }))
+    }),
+    Expressions: z.object({
+        AESSelections: z.array(z.object({
+            SocketID: weakUUIDSchema,
+            AssetID: weakUUIDSchema,
+            TypeID: weakUUIDSchema
+        }))
+    }),
+    Items: z.record(z.object({
+        ID: itemIDSchema,
+        TypeID: itemTypeIDSchema,
+        Sockets: z.record(z.object({
+            ID: weakUUIDSchema,
+            Item: z.object({
+                ID: itemIDSchema,
+                TypeID: itemTypeIDSchema
+            })
+        }))
+    }))
+})

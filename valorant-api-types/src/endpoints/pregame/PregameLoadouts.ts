@@ -1,6 +1,13 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {characterIDSchema, itemIDSchema, itemTypeIDSchema, playerUUIDSchema, weakUUIDSchema} from '../../commonTypes'
+import {
+    characterIDSchema,
+    itemIDSchema,
+    itemTypeIDSchema,
+    loadoutsSchema,
+    playerUUIDSchema,
+    weakUUIDSchema
+} from '../../commonTypes'
 
 export const pregameLoadoutsEndpoint = {
     name: 'Pre-Game Loadouts',
@@ -15,34 +22,7 @@ export const pregameLoadoutsEndpoint = {
     },
     responses: {
         '200': z.object({
-            Loadouts: z.array(z.object({
-                Subject: playerUUIDSchema,
-                Sprays: z.object({
-                    SpraySelections: z.array(z.object({
-                        SocketID: weakUUIDSchema,
-                        SprayID: weakUUIDSchema,
-                        LevelID: weakUUIDSchema
-                    }))
-                }),
-                Expressions: z.object({
-                    AESSelections: z.array(z.object({
-                        SocketID: weakUUIDSchema,
-                        AssetID: weakUUIDSchema,
-                        TypeID: weakUUIDSchema
-                    }))
-                }),
-                Items: z.record(z.object({
-                    ID: itemIDSchema,
-                    TypeID: itemTypeIDSchema,
-                    Sockets: z.record(z.object({
-                        ID: weakUUIDSchema,
-                        Item: z.object({
-                            ID: itemIDSchema,
-                            TypeID: itemTypeIDSchema
-                        })
-                    }))
-                }))
-            })),
+            Loadouts: z.array(loadoutsSchema),
             LoadoutsValid: z.boolean()
         })
     }
