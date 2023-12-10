@@ -93,7 +93,7 @@ export const partySchema = z.object({
         }),
         MaxPartySize: z.number(),
         AutobalanceEnabled: z.boolean(),
-        AutobalanceMinPlayers: z.boolean(),
+        AutobalanceMinPlayers: z.number(),
         HasRecoveryData: z.boolean()
     }),
     MatchmakingData: z.object({
@@ -115,7 +115,8 @@ export const partySchema = z.object({
         GamePodOverride: z.string(),
         ForcePostGameProcessing: z.boolean()
     }),
-    XPBonuses: z.array(z.unknown())
+    XPBonuses: z.array(z.unknown()),
+    InviteCode: z.string()
 })
 
 export const offerSchema = z.object({

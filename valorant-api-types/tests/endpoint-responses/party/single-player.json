@@ -1,0 +1,122 @@
+{
+    "ID": "d77444cc-abbf-49d5-819f-b82d609a2f57",
+    "MUCName": "d77444cc-abbf-49d5-819f-b82d609a2f57@ares-parties.na1.pvp.net",
+    "VoiceRoomID": "d77444cc-abbf-49d5-819f-b82d609a2f57-pty",
+    "Version": 1702241006830,
+    "ClientVersion": "release-07.12-shipping-15-2164217",
+    "Members": [
+        {
+            "Subject": "d7ff5397-caf5-4451-9057-0db61e73ab33",
+            "CompetitiveTier": 0,
+            "PlayerIdentity": {
+                "Subject": "d7ff5397-caf5-4451-9057-0db61e73ab33",
+                "PlayerCardID": "57218540-d278-4352-a766-a743e40e0232",
+                "PlayerTitleID": "0b28db36-70d8-4455-abc8-1835a324c604",
+                "AccountLevel": 239,
+                "PreferredLevelBorderID": "b7b35085-8749-4628-87c7-9f24abb2ca3d",
+                "Incognito": false,
+                "HideAccountLevel": true
+            },
+            "SeasonalBadgeInfo": null,
+            "IsOwner": true,
+            "QueueEligibleRemainingAccountLevels": 0,
+            "Pings": [
+                {
+                    "Ping": 30,
+                    "GamePodID": "aresriot.aws-use1-prod.na-gp-ashburn-1"
+                },
+                {
+                    "Ping": 53,
+                    "GamePodID": "aresriot.aws-usw1-prod.na-gp-norcal-1"
+                },
+                {
+                    "Ping": 27,
+                    "GamePodID": "aresriot.aws-dfw1-prod.na-gp-dallas-1"
+                },
+                {
+                    "Ping": 16,
+                    "GamePodID": "aresriot.aws-chi1-prod.na-gp-chicago-1"
+                },
+                {
+                    "Ping": 94,
+                    "GamePodID": "aresriot.aws-atl1-prod.na-gp-atlanta-1"
+                },
+                {
+                    "Ping": 21,
+                    "GamePodID": "aresriot.aws-usw2-prod.na-gp-oregon-1"
+                }
+            ],
+            "IsReady": true,
+            "IsModerator": false,
+            "UseBroadcastHUD": false,
+            "PlatformType": "PC"
+        }
+    ],
+    "State": "CUSTOM_GAME_SETUP",
+    "PreviousState": "DEFAULT",
+    "StateTransitionReason": "NONE",
+    "Accessibility": "CLOSED",
+    "CustomGameData": {
+        "Settings": {
+            "Map": "/Game/Maps/Ascent/Ascent",
+            "Mode": "/Game/GameModes/Bomb/BombGameMode.BombGameMode_C",
+            "UseBots": false,
+            "GamePod": "aresriot.aws-usw1-prod.na-gp-norcal-1",
+            "GameRules": {
+                "AllowGameModifiers": "true",
+                "SkipMatchHistory": "true"
+            }
+        },
+        "Membership": {
+            "teamOne": [
+                {
+                    "Subject": "d7ff5397-caf5-4451-9057-0db61e73ab33"
+                }
+            ],
+            "teamTwo": [],
+            "teamSpectate": [],
+            "teamOneCoaches": [],
+            "teamTwoCoaches": []
+        },
+        "MaxPartySize": 12,
+        "AutobalanceEnabled": true,
+        "AutobalanceMinPlayers": 6,
+        "HasRecoveryData": false
+    },
+    "MatchmakingData": {
+        "QueueID": "unrated",
+        "PreferredGamePods": [
+            "aresriot.aws-usw1-prod.na-gp-norcal-1"
+        ],
+        "SkillDisparityRRPenalty": 0
+    },
+    "Invites": null,
+    "Requests": [],
+    "QueueEntryTime": "0001-01-01T00:00:00Z",
+    "ErrorNotification": {
+        "ErrorType": "",
+        "ErroredPlayers": null
+    },
+    "RestrictedSeconds": 0,
+    "EligibleQueues": [
+        "unrated",
+        "competitive",
+        "swiftplay",
+        "spikerush",
+        "deathmatch",
+        "ggteam",
+        "hurm"
+    ],
+    "QueueIneligibilities": [],
+    "CheatData": {
+        "GamePodOverride": "",
+        "ForcePostGameProcessing": false
+    },
+    "XPBonuses": [
+        {
+            "ID": "SOCIAL_XP",
+            "Applied": false
+        }
+    ],
+    "InviteCode": ""
+}
