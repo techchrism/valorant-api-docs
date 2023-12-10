@@ -41,8 +41,18 @@ export const endpoints: {[key: string]: AugmentedValorantEndpoint} = {
     localWebSocketEndpoint: {
         name: 'Local WebSocket',
         description: [
-
-        ].join('\n\n'),
+            'The local websocket provides a way to retrieve live info by subscribing to named events.',
+            '',
+            'For a good guide on connecting to and using the local websocket, see <https://hextechdocs.dev/getting-started-with-the-lcu-websocket/>',
+            '',
+            [
+                'Some open-source tools for interacting with the local websocket:',
+                ' - [Valorant WebSocket Logger](https://github.com/techchrism/valorant-websocket-logger)',
+                '   - Connects to the local websocket and uses the [GET Local Help] endpoint to subscribe to and log all events',
+                ' - [Valorant WebSocket Log Viewer](https://github.com/techchrism/valorant-websocket-log-viewer)',
+                '   - Webapp UI for viewing the websocket logs. Decodes presence data automatically'
+            ].join('\n')
+        ].join('  \n'),
         category: 'Local Endpoints',
         type: 'other',
         suffix: 'wss://127.0.0.1:{port}',
