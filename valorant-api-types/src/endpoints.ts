@@ -54,7 +54,6 @@ import {entitlementsTokenEndpoint} from './endpoints/local/EntitlementsToken'
 import {chatSessionEndpoint} from './endpoints/local/ChatSession'
 import {friendsEndpoint} from './endpoints/local/Friends'
 import {presenceEndpoint} from './endpoints/local/Presence'
-import {settingsEndpoint} from './endpoints/local/Settings'
 import {friendRequestsEndpoint} from './endpoints/local/FriendRequests'
 import {partyChatInfoEndpoint} from './endpoints/local/chat/PartyChatInfo'
 import {pregameChatInfoEndpoint} from './endpoints/local/chat/PregameChatInfo'
@@ -143,7 +142,6 @@ export const endpoints = {
     sendFriendRequestEndpoint,
     removeFriendRequestEndpoint,
     presenceEndpoint,
-    settingsEndpoint,
     friendRequestsEndpoint,
     localSwaggerDocsEndpoint,
 
