@@ -1,0 +1,782 @@
+{
+    "Loadouts": [
+        {
+            "Subject": "a6bbe1f1-a9be-457b-9b58-35db705f7499",
+            "Sprays": {
+                "SpraySelections": [
+                    {
+                        "SocketID": "4194a1f5-187a-4290-adb1-3842d4de2cb6",
+                        "SprayID": "0c420495-274e-4bd9-99ca-2c67f19d13b6",
+                        "LevelID": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                        "SocketID": "dd212b57-d006-4465-bbc2-e5171d005cba",
+                        "SprayID": "ec025b25-165f-484a-9529-f57360fae599",
+                        "LevelID": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                        "SocketID": "9ec251e1-0a9f-42f2-853a-77ddc69215f3",
+                        "SprayID": "5203ed91-9901-46fb-9c00-43b3a4a2deea",
+                        "LevelID": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                        "SocketID": "8c009ef2-8edb-4e88-9fc2-78082a49da72",
+                        "SprayID": "0b888c34-bde3-40a0-acd6-db4dd9e24a14",
+                        "LevelID": "00000000-0000-0000-0000-000000000000"
+                    }
+                ]
+            },
+            "Expressions": {
+                "AESSelections": [
+                    {
+                        "SocketID": "4194a1f5-187a-4290-adb1-3842d4de2cb6",
+                        "AssetID": "0c420495-274e-4bd9-99ca-2c67f19d13b6",
+                        "TypeID": "6fd027ed-f3bf-4791-ba9b-092484265f69"
+                    },
+                    {
+                        "SocketID": "dd212b57-d006-4465-bbc2-e5171d005cba",
+                        "AssetID": "ec025b25-165f-484a-9529-f57360fae599",
+                        "TypeID": "6fd027ed-f3bf-4791-ba9b-092484265f69"
+                    },
+                    {
+                        "SocketID": "9ec251e1-0a9f-42f2-853a-77ddc69215f3",
+                        "AssetID": "5203ed91-9901-46fb-9c00-43b3a4a2deea",
+                        "TypeID": "6fd027ed-f3bf-4791-ba9b-092484265f69"
+                    },
+                    {
+                        "SocketID": "8c009ef2-8edb-4e88-9fc2-78082a49da72",
+                        "AssetID": "0b888c34-bde3-40a0-acd6-db4dd9e24a14",
+                        "TypeID": "6fd027ed-f3bf-4791-ba9b-092484265f69"
+                    }
+                ]
+            },
+            "Items": {
+                "27166dfd-1bd1-4265-9e06-ffd4734e5fca": {
+                    "ID": "27166dfd-1bd1-4265-9e06-ffd4734e5fca",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "847911fe-f977-4c49-b453-2aaae6e5cd21",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "89237b19-02db-4d31-baca-41c82faa7123",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "f55f3c48-b89a-466e-a17b-4f7e7e9fcefa",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "a031d822-00af-4b3d-8991-ffe0348d0354",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "2f8d03cb-393c-42f2-b2b1-48326abaa0e4",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "98ae1867-fc3e-4f56-8867-692898f5b0c5": {
+                    "ID": "98ae1867-fc3e-4f56-8867-692898f5b0c5",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "86ca0d84-a6b6-4c5e-940f-4eb56c2d3d7d",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "bfe774b7-a985-4479-9b74-37857fe99411",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "ccf401b9-0056-4607-b6e1-65c9092cc506",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "ec0bad50-7037-4823-84a7-72f54698417e",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "13737fbe-dbef-458e-aa3b-ae9d1b358c86",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "204fa3b8-75d9-4475-9a0f-ea53d536aa28": {
+                    "ID": "204fa3b8-75d9-4475-9a0f-ea53d536aa28",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "0b4856ae-24e4-43d5-bcb9-57a47c4c11a6",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "1af2d477-5373-4bfe-8ef2-fc14f6866dd3",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "7a85762a-649b-4342-b5aa-f36f8bc8d58a",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "a0d1c967-dbfc-4200-bdc7-b05b9b41e5e3": {
+                    "ID": "a0d1c967-dbfc-4200-bdc7-b05b9b41e5e3",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "9db6b7e5-9b27-47d6-a779-5a5a7f9bd366",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "b0030d61-9f19-4216-a987-993c0f1434b4",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "cdd3b458-9998-4a37-9bab-ab332f316eaa",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "4fa4077a-bb8e-4239-9425-91f74c389662",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "582d7a77-d212-406f-9742-46931e39c140",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "fe9ecd81-2893-40bc-be80-942e4ca7bb7f": {
+                    "ID": "fe9ecd81-2893-40bc-be80-942e4ca7bb7f",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "658d736a-eb4c-43b0-8fe4-af27cc83b45b",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "2ed7a024-7e31-49d4-887d-404c50fc4470",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "a5aed0fa-e274-4114-97ad-9b3878ba6d86",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "4caf2e08-a682-47cb-90ca-5cdc3a0ef02d",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "1c322cbf-c592-49d3-80df-505dbbee5249",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "0c64d040-e4cd-4373-8349-d79b26a88e83": {
+                    "ID": "0c64d040-e4cd-4373-8349-d79b26a88e83",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "ca827fd0-a236-40d3-b94a-29d8f8396197",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "d8dd5f96-c854-44af-bf23-6456b41e360d",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "46363871-eec8-4a97-98f6-7486c24241ca",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "e22c23ba-5ae8-4cb9-960e-82f760777422",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "19420071-c528-4d3a-8836-4221f4f85423",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "b04dd0b1-0b7d-4dab-8b4c-fdd5d7f0019c": {
+                    "ID": "b04dd0b1-0b7d-4dab-8b4c-fdd5d7f0019c",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "ff11776b-1270-4c38-9aaf-85e8fb00ce95",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "aab548fa-5af5-429b-8832-cbad042507bb",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "272f080b-28ed-4031-9e59-ae7374422fd4",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "e045fa23-fe90-4140-8a01-d0b9fb8585e1",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "fc3ec2e2-150a-43a8-b094-e5263ff87ff5",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "f15642f6-0bc3-402a-a6e7-a716116fef87": {
+                    "ID": "f15642f6-0bc3-402a-a6e7-a716116fef87",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "82de4a0a-5229-4504-8f6b-642bcbbf112f",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "31fffe7e-eda7-4449-9635-5692eb61a908",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "13bb0489-932e-48b3-ac1a-971649bf57bb",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "c810ebcf-1a4f-45c4-8b6f-16b3d8194c27",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "61ede319-b718-41fa-89dd-cdc080a1bcd9",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "17a6b485-db9b-44ac-a911-c8887949404d": {
+                    "ID": "17a6b485-db9b-44ac-a911-c8887949404d",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "5e624025-507e-4003-bb57-af937978250e",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "c9bea0d4-d12c-477c-9be5-737dc629662d",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "969025b2-c82e-49d7-b23d-27cdeed5c5d2",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "f1889224-c584-4486-b4f5-62b7fa04cad8",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "fbd548f7-9dff-4eda-9389-32e521f1725b",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "6c7e0086-a904-4d50-8f62-4e0d9f9ab235": {
+                    "ID": "6c7e0086-a904-4d50-8f62-4e0d9f9ab235",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "fee4d15a-205d-4edc-b5ed-c32e1724edf6",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "b1af5ef0-fdba-4160-b490-555497e308bd",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "d7f50916-3ff5-4928-b972-1b97802c1f2a",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "7ed0e149-898d-420d-b73d-ffea6c901bdc",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "42f5d06d-aebb-47f1-953f-de8f65355129",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "59a9371f-0a53-437a-af79-45ea0fb18291": {
+                    "ID": "59a9371f-0a53-437a-af79-45ea0fb18291",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "7331b9dd-1b60-4b16-b6a9-75f2f7a2e429",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "e9d7cb09-8ce3-4771-90ab-4163555e9e47",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "efdc69f5-528b-41d2-b1d7-cf3b6c22b857",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "b0ae5dde-a4ee-4399-8187-b087a3e30a70",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "b1287df5-6ed5-440d-ab79-cb728f32aaa4",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "37472933-7375-448b-a1b0-4a7246475e52": {
+                    "ID": "37472933-7375-448b-a1b0-4a7246475e52",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "5e3b26fc-07e7-432c-bb82-ececa5a207f2",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "9a673e03-d801-4e03-8659-6cc70a8bada6",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "2af78cef-114a-4fbf-a423-a85b9883b76a",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "69baaa57-2490-4e28-a428-d2a8912fdc23",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "7dabaf3b-1c64-47c8-b8d4-e9238974a781",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "ba2c9394-ec7f-47f9-8966-32b6008657f0": {
+                    "ID": "ba2c9394-ec7f-47f9-8966-32b6008657f0",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "14105b83-a3e2-47ee-ace6-2b9c91523358",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "a53ff6f5-5d59-407f-993b-b25e94e48934",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "bd172309-1f60-402a-801c-0a09c095d33d",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "f45f6a21-ca20-41bb-b5b2-438a19f287f1",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "076d6af1-754c-4466-a16a-0ccdac4fef8f",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "94c87b49-d3a5-4bb0-a55e-f145acfa401f": {
+                    "ID": "94c87b49-d3a5-4bb0-a55e-f145acfa401f",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "01a4910b-770f-4621-913c-c8f5bbe18b3d",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "a78dcb59-8652-4e7f-9e66-4018af1e2207",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "6f0fb508-0640-4dcc-a1ff-72862509f368",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "d0a9f442-3e22-41a1-94ee-d99a5f69788e",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "83ed04d8-01e4-4e93-8603-dade70b2dc3d",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "21370b01-0bca-42a7-a9ad-132aa48e5380": {
+                    "ID": "21370b01-0bca-42a7-a9ad-132aa48e5380",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "a16d663e-b38a-4219-ae7f-e855af3d00ca",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "9a94fc79-38a9-4bad-9466-e742b900d638",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "3c03164f-62e4-4bf2-b7a6-fae88853cff9",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "0765b1c7-6d6a-4d27-86fd-ffa901b3d83c",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "1aa183c5-c700-4139-9b91-1d3b64762573",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "718bb99b-2779-4e86-8d9e-355e9c63d5fe": {
+                    "ID": "718bb99b-2779-4e86-8d9e-355e9c63d5fe",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "feedc129-4db0-426d-b344-0f59dfe2a253",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "8417fb6a-4d92-434a-b4f8-4a3ef7dbb05b",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "96aa472b-7c8c-4aae-9bc7-46bb1b04c8c4",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "61a9874f-3d2c-4c84-addb-e6640bf73ba6",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "fd2e9549-2f19-4e54-b92b-777835b30ea3",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "5429fa43-0189-4c48-a968-ea18e5416451": {
+                    "ID": "5429fa43-0189-4c48-a968-ea18e5416451",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "b57c2cee-0181-415d-b3ec-b13e4f4ebb6d",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "5f91ef87-c789-47fe-ac78-aff347d29a40",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "c5b44b73-d419-48af-8418-84c208e05047",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "606a1476-1dd6-41ec-8e1c-3844695756fb",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "cb471e84-ac84-4a4b-bda7-2d37c06ce619",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                },
+                "af3021c5-ead6-4e93-a2f3-50042cde635f": {
+                    "ID": "af3021c5-ead6-4e93-a2f3-50042cde635f",
+                    "TypeID": "eae93b3e-6f19-4137-8537-77e7ecebb054",
+                    "Sockets": {
+                        "b72e1061-7e6b-4b95-a507-c88d49945dce": {
+                            "ID": "b72e1061-7e6b-4b95-a507-c88d49945dce",
+                            "Item": {
+                                "ID": "ddaa4ce7-b47e-459e-be22-4c3613781473",
+                                "TypeID": "b72e1061-7e6b-4b95-a507-c88d49945dce"
+                            }
+                        },
+                        "1f110b77-bd33-4caf-895a-df4fe8c33669": {
+                            "ID": "1f110b77-bd33-4caf-895a-df4fe8c33669",
+                            "Item": {
+                                "ID": "a78dcb59-8652-4e7f-9e66-4018af1e2207",
+                                "TypeID": "1f110b77-bd33-4caf-895a-df4fe8c33669"
+                            }
+                        },
+                        "8846aaae-dfa5-450f-8b3b-d811f58a6b16": {
+                            "ID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16",
+                            "Item": {
+                                "ID": "64d32399-3812-4245-942d-db90446c5e8b",
+                                "TypeID": "8846aaae-dfa5-450f-8b3b-d811f58a6b16"
+                            }
+                        },
+                        "58eaeb70-65df-4390-b164-89b569cc05be": {
+                            "ID": "58eaeb70-65df-4390-b164-89b569cc05be",
+                            "Item": {
+                                "ID": "d0a9f442-3e22-41a1-94ee-d99a5f69788e",
+                                "TypeID": "58eaeb70-65df-4390-b164-89b569cc05be"
+                            }
+                        },
+                        "70bcdeed-d242-4415-afaf-af99bf44cb08": {
+                            "ID": "70bcdeed-d242-4415-afaf-af99bf44cb08",
+                            "Item": {
+                                "ID": "1792162d-9df5-41fc-a3b3-73d12800db81",
+                                "TypeID": "70bcdeed-d242-4415-afaf-af99bf44cb08"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "LoadoutsValid": true
+}
