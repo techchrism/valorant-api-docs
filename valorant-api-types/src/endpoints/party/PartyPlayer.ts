@@ -1,6 +1,6 @@
 import {ValorantEndpoint} from '../../ValorantEndpoint'
 import {z} from 'zod'
-import {dateSchema, partyIDSchema, platformSchema, playerUUIDSchema} from '../../commonTypes'
+import {dateSchema, partyIDSchema, partyPlayerSchema, platformSchema, playerUUIDSchema} from '../../commonTypes'
 
 export const partyPlayerEndpoint = {
     name: 'Party Player',
@@ -15,22 +15,7 @@ export const partyPlayerEndpoint = {
         clientVersion: true
     },
     responses: {
-        '200': z.object({
-            Subject: playerUUIDSchema,
-            Version: z.number(),
-            CurrentPartyID: partyIDSchema,
-            Invites: z.null(),
-            Requests: z.array(z.object({
-                ID: z.string(),
-                PartyID: partyIDSchema,
-                RequestedBySubject: playerUUIDSchema,
-                Subjects: z.array(playerUUIDSchema),
-                CreatedAt: dateSchema,
-                RefreshedAt: dateSchema,
-                ExpiresIn: z.number()
-            })),
-            PlatformInfo: platformSchema
-        })
+        '200': partyPlayerSchema
     }
 } as const satisfies ValorantEndpoint
 

@@ -75,6 +75,9 @@ import {removeFriendRequestEndpoint} from './endpoints/local/RemoveFriendRequest
 import {riotGeoEndpoint} from './endpoints/auth/RiotGeo'
 import {pasTokenEndpoint} from './endpoints/auth/PASToken'
 import {riotClientConfigEndpoint} from './endpoints/auth/RiotClientConfig'
+import {partyDisableCodeEndpoint} from './endpoints/party/PartyDisableCode'
+import {partyGenerateCodeEndpoint} from './endpoints/party/PartyGenerateCode'
+import {partyJoinByCodeEndpoint} from './endpoints/party/PartyJoinByCode'
 
 export const endpoints = {
     fetchContentEndpoint,
@@ -109,6 +112,9 @@ export const endpoints = {
     customGameConfigsEndpoint,
     partyChatTokenEndpoint,
     partyVoiceTokenEndpoint,
+    partyDisableCodeEndpoint,
+    partyGenerateCodeEndpoint,
+    partyJoinByCodeEndpoint,
 
     pricesEndpoint,
     storefrontEndpoint,

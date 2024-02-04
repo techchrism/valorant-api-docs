@@ -116,7 +116,24 @@ export const partySchema = z.object({
         ForcePostGameProcessing: z.boolean()
     }),
     XPBonuses: z.array(z.unknown()),
-    InviteCode: z.string()
+    InviteCode: z.string().describe('Empty string when there is no invite code')
+})
+
+export const partyPlayerSchema = z.object({
+    Subject: playerUUIDSchema,
+    Version: z.number(),
+    CurrentPartyID: partyIDSchema,
+    Invites: z.null(),
+    Requests: z.array(z.object({
+        ID: z.string(),
+        PartyID: partyIDSchema,
+        RequestedBySubject: playerUUIDSchema,
+        Subjects: z.array(playerUUIDSchema),
+        CreatedAt: dateSchema,
+        RefreshedAt: dateSchema,
+        ExpiresIn: z.number()
+    })),
+    PlatformInfo: platformSchema
 })
 
 export const offerSchema = z.object({
